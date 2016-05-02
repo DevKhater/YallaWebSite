@@ -1,0 +1,59 @@
+{% extends "backend_base.html.twig" %}
+{% block title %}Events Section{% endblock %}
+{% block stylesheets %}
+    <link href="{{ asset ('css/jquery.simple-dtpicker.css') }}" rel="stylesheet">
+{% endblock %}
+{% block body %}
+    <div class="row">
+        <div class="col-md-12">
+            <h4 class="page-head-line">Events</h4>
+        </div>
+    </div>
+    <div>
+        <a href="{{ path ('backend_event_new')}}"><button class="btn btn-primary create_new"><i class="fa fa-edit "></i> Create New</button></a>
+        {% block extraOptions %}{% endblock %}
+    </div>
+{% block controlleraction %}{% endblock %}
+{% endblock %}
+{% block datepicker %}
+    <script src="{{ asset ('js/simple-dtpicker.js') }}"></script>
+    <script type="text/javascript">
+        $(function () {
+            $('*[name="event_create[startDate]"]').appendDtpicker({"inline": true, "autodateOnStart": false});
+            $('*[name="event_create[endDate]"]').appendDtpicker({"inline": true, "autodateOnStart": false});
+            $('*[name="event_update[startDate]"]').appendDtpicker({"inline": true, "autodateOnStart": false});
+            $('*[name="event_update[endDate]"]').appendDtpicker({"inline": true, "autodateOnStart": false});
+            
+            $('#event_create_isVenue').click(disable_cb);
+{#            $('#event_venue_locations_venue').change(function() {
+                    var value = this.value.split('//')
+                    $('#event_create_location_address').val(value[2])
+                    $('#event_create_location_telephone').val(value[1])
+                    $('#event_update_location_address').val(value[2])
+                    $('#event_update_location_telephone').val(value[1])
+    });#}
+               
+        });
+        
+        function disable_cb() {
+          if (this.checked) {
+              $('#event_create_location').css("display", 'none');
+              $('#event_create_location input').val('');
+              {#
+                $("#event_create_location_address").attr("value", null);
+                $("#event_create_location_address").css("display", 'none');
+                $("#event_create_location_telephone").attr("disabled", true);
+                $("#event_update_location_address").attr("disabled", true);
+                $("#event_update_location_telephone").attr("disabled", true);#}
+           } else {
+              $('#event_create_location').css("display", 'block');
+              $('#event_create_location input').val('');
+               {#$("#event_create_location_address").removeAttr("disabled");
+               $("#event_create_location_telephone").removeAttr("disabled");
+               $("#event_update_location_address").removeAttr("disabled");
+               $("#event_update_location_telephone").removeAttr("disabled");#}
+           }
+       }
+
+    </script>
+{% endblock %}

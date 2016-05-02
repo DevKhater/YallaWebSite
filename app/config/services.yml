@@ -1,0 +1,34 @@
+# Learn more about services, parameters and containers at
+# http://symfony.com/doc/current/book/service_container.html
+parameters:
+#    parameter_name: value
+
+services:
+    app.form.type.location:
+        class: YallaWebsite\BackendBundle\Form\Type\LocationType
+        tags:
+            - { name: form.type, alias: location_information }
+    app.form.type.venue.location:
+        class: YallaWebsite\BackendBundle\Form\Type\VenueLocationType
+        arguments: ['@doctrine.orm.entity_manager']
+        tags:
+            - { name: form.type, alias: venue_location_information }
+    app.form.type.event:
+        class: YallaWebsite\BackendBundle\Form\Type\EventType
+        tags:
+            - { name: form.type, alias: event }
+    app.form.type.media:
+        class: YallaWebsite\BackendBundle\Form\Type\MediaType
+        tags:
+            - { name: form.type, alias: media_file }        
+    app.form.type.gallery_media:
+        class: YallaWebsite\BackendBundle\Form\Type\multiMediaType
+        tags:
+            - { name: form.type, alias: multi_media_files }
+            
+            
+            
+            
+     
+    app.custom_sitemap_service:
+            class: YallaWebsite\BackendBundle\Model\SitemapIterator
