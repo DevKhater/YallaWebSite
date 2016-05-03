@@ -1,3 +1,7 @@
+yalla_website_frontend:
+    resource: "@YallaWebsiteFrontendBundle/Resources/config/routing.yml"
+    prefix:   /
+    
 yalla_website_backend:
     resource: "@YallaWebsiteBackendBundle/Resources/config/routing.yml"
     prefix:   /backend

@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "ea0f909ab7b76df5308f3ccfeaf0c062",
-    "content-hash": "bbe6a3702cde674f28729c2ca9ae8ea8",
+    "hash": "d3caabff7b40255aa100942577be9edf",
+    "content-hash": "da2c781e168bdd5a276952e746e22659",
     "packages": [
         {
             "name": "aferrandini/urlizer",
@@ -2076,53 +2076,6 @@
             "time": "2015-06-25 17:26:56"
         },
         {
-            "name": "leafo/lessphp",
-            "version": "dev-master",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/leafo/lessphp.git",
-                "reference": "e701984d5d488599441623d3d56bd42103019ab6"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/leafo/lessphp/zipball/e701984d5d488599441623d3d56bd42103019ab6",
-                "reference": "e701984d5d488599441623d3d56bd42103019ab6",
-                "shasum": ""
-            },
-            "require-dev": {
-                "phpunit/phpunit": "~4.3"
-            },
-            "bin": [
-                "plessc"
-            ],
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "0.4.x-dev"
-                }
-            },
-            "autoload": {
-                "classmap": [
-                    "lessc.inc.php"
-                ]
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT",
-                "GPL-3.0"
-            ],
-            "authors": [
-                {
-                    "name": "Leaf Corcoran",
-                    "email": "leafot@gmail.com",
-                    "homepage": "http://leafo.net"
-                }
-            ],
-            "description": "lessphp is a compiler for LESS written in PHP.",
-            "homepage": "http://leafo.net/lessphp/",
-            "time": "2014-12-29 20:45:53"
-        },
-        {
             "name": "michelf/php-markdown",
             "version": "1.6.0",
             "source": {
@@ -2334,6 +2287,68 @@
                 "rest"
             ],
             "time": "2015-12-16 15:17:51"
+        },
+        {
+            "name": "oyejorge/less.php",
+            "version": "v1.7.0.10",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/oyejorge/less.php.git",
+                "reference": "a1e2d3c20794b37ac4d0baeb24613e579584033b"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/oyejorge/less.php/zipball/a1e2d3c20794b37ac4d0baeb24613e579584033b",
+                "reference": "a1e2d3c20794b37ac4d0baeb24613e579584033b",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "~4.8.18"
+            },
+            "bin": [
+                "bin/lessc"
+            ],
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "Less": "lib/"
+                },
+                "classmap": [
+                    "lessc.inc.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "Apache-2.0"
+            ],
+            "authors": [
+                {
+                    "name": "Matt Agar",
+                    "homepage": "https://github.com/agar"
+                },
+                {
+                    "name": "Martin Jantošovič",
+                    "homepage": "https://github.com/Mordred"
+                },
+                {
+                    "name": "Josh Schmidt",
+                    "homepage": "https://github.com/oyejorge"
+                }
+            ],
+            "description": "PHP port of the Javascript version of LESS http://lesscss.org",
+            "homepage": "http://lessphp.gpeasy.com",
+            "keywords": [
+                "css",
+                "less",
+                "less.js",
+                "lesscss",
+                "php",
+                "stylesheet"
+            ],
+            "time": "2015-12-30 05:47:36"
         },
         {
             "name": "paragonie/random_compat",
@@ -4686,8 +4701,7 @@
     "aliases": [],
     "minimum-stability": "stable",
     "stability-flags": {
-        "friendsofsymfony/user-bundle": 20,
-        "leafo/lessphp": 20
+        "friendsofsymfony/user-bundle": 20
     },
     "prefer-stable": false,
     "prefer-lowest": false,

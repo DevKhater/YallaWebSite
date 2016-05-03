@@ -41,6 +41,7 @@ class AppKernel extends Kernel
             
             new AppBundle\AppBundle(),
             new YallaWebsite\BackendBundle\YallaWebsiteBackendBundle(),
+            new YallaWebsite\FrontendBundle\YallaWebsiteFrontendBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'), true)) {

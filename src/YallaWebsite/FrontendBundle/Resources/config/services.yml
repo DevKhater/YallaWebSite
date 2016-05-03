@@ -1,0 +1,4 @@
+services:
+#    yalla_website_frontend.example:
+#        class: YallaWebsite\FrontendBundle\Example
+#        arguments: [@service_id, "plain_value", %parameter%]
