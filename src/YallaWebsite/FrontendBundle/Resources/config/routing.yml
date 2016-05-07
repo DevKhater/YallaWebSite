@@ -1,3 +1,7 @@
 yalla_website_frontend_homepage:
     path:     /main
     defaults: { _controller: YallaWebsiteFrontendBundle:Default:index }
+
+yalla_website_frontend_page_about:
+    path:     /page/about
+    defaults: { _controller: YallaWebsiteFrontendBundle:Default:about }

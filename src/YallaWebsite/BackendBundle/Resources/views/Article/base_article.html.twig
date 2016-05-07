@@ -8,19 +8,28 @@
     </div>
     <div>
         <a href="{{ path ('backend_article_new')}}"><button class="btn btn-primary create_new"><i class="fa fa-edit "></i> Create Article</button></a>
-        {% block extraOptions %}{% endblock %}
-    </div>
+    {% block extraOptions %}{% endblock %}
+</div>
 {% block controlleraction %}{% endblock %}
 {% endblock %}
 
-{% block tinymce %} 
- {{ tinymce_init() }}
-{% endblock %}
 
 {% block javascripts %}
-    <script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $("#article_tags").tagit({
+                allowSpaces: true
+            });
+        });
+    </script>
+{% endblock %}
+
+{% block tinymce %} 
+    {{ tinymce_init() }}
+{#        <script>
         tinymce.init({
             paste_data_images: true
         });
     </script>
+#}
 {% endblock %}

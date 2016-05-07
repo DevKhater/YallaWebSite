@@ -10,4 +10,9 @@ class DefaultController extends Controller
     {
         return $this->render('YallaWebsiteFrontendBundle:Default:index.html.twig');
     }
+    
+    public function aboutAction()
+    {
+        return $this->render('YallaWebsiteFrontendBundle:Page:about.html.twig');
+    }
 }

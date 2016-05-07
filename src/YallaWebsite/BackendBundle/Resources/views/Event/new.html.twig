@@ -25,14 +25,14 @@
 
 
                 <div class="form-group col-md-4">
-                    <label for="date">Venue Details</label><br/>
-                    <label for="date">Check if it's a stored Venue</label> {{ form_widget(form.isVenue) }}<br/>
+                    <label for="venue">Venue Details</label><br/>
+                    <label for="isvenue">Check if it's a stored Venue</label> {{ form_widget(form.isVenue) }}<br/>
                     {{ form_widget(form.location)}}
-                    <label for="venue">Venues List</label><br/>
+                    <label for="venuelist">Venues List</label><br/>
                     {{ form_widget(form.venue)}}
                 </div>
                 <div class="form-group col-md-12">
-                    <label for="date">Add Tags Separated by Comma </label>
+                    <label for="tags">Add Tags Separated by Comma </label>
                     {{ form_widget(form.tags)}}
                 </div>
                 <div class="form-group col-md-12">

@@ -8,7 +8,7 @@
         <meta charset="UTF-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        {% stylesheets '@frontend_css' filter='lessphp' combine=true %}
+        {% stylesheets '@bootstrap_css'  '@frontend_css' filter='lessphp' combine=true %}
         <link rel="stylesheet" type="text/css" media="screen" href="{{ asset_url }}"/>
         {% endstylesheets %}
     {% block stylesheets %}{% endblock %}
@@ -21,13 +21,76 @@
     <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
 </head>
 <body>
-    <div id="page">
-    <div id="left_banner"></div>
-    {% block body %}{% endblock %}
-<div id="right_banner"></div>
+    <header>
+        <div id="preHeader"></div>
+        <!-- <div class="address-bar">3481 Melrose Place | Beverly Hills, CA 90210 | 123.456.7890</div> -->
+
+        <!-- Navigation -->
+        <nav role="navigation">
+
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <!-- navbar-brand is hidden on larger screens, but visible when the menu is collapsed -->
+                <a class="navbar-brand" href="index.html">Yalla Night Life</a>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li><a href="index.html">Yalla</a></li>
+                    <li><a href="index.html">About</a></li>
+                    <li><a href="index.html">Snapshots</a></li>
+                    <li><a href="index.html">Events</a></li>
+                    <li id='menuImageLogo'>THE CIRCLE LOGO</li>
+                    <li><a href="index.html">Gossip</a></li>
+                    <li><a href="index.html">Guides</a></li>
+                    <li><a href="index.html">Artists</a></li>
+                    <li><a href="index.html">Contact</a></li>
+
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+
+            <!-- /.container -->
+        </nav>
+        <div id='topAdvRow'>
+            <div id='leftAdv'></div>
+            <div id='rightAdv'></div>
+        </div>
+
+        <div id='socialSearchRow'>
+            <div id='socialLinks'></div>
+            <div id='searchBar'></div>
+        </div>
+    </header>
+    <div class="wrapper">
+        <div id="bodyLeftAdv"></div>
+        <div id='content'>
+        {% block body %}{% endblock %}
+    </div>
+    <div id="bodyRightAdv"></div>
 </div>
-    
-{% block extrabody %}{% endblock %}
+<footer>
+    <div id='footerAdv'></div>
+    <div id="footerContent">
+        <div class="wrapper">
+            <div class='col-lg-3'>
+                {% image '@YallaWebsiteFrontendBundle/Resources/public/images/base/PlatCaiFooter.png' %}
+                <img id='footer_pl_icon' src="{{ asset_url }}" alt="Platinum Cairo" />
+                {% endimage %}
+            </div>
+            <div class="col-lg-6 text-center">
+                <p>Copyright &copy; Your Website 2014</p>
+            </div>
+            <div class='col-lg-3'></div>
+        </div>
+    </div>
+</footer>
 {% javascripts '@jquery' '@bootstrap_js' %}
 <script type="text/javascript" src="{{ asset_url }}"></script>
 {% endjavascripts %}

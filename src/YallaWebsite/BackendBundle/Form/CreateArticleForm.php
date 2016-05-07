@@ -6,9 +6,10 @@ use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolverInterface;
 
-class CreateArticleType extends AbstractType
+class CreateArticleForm extends AbstractType
 {
-     public function __construct(\Doctrine\ORM\EntityManager $manager)
+
+    public function __construct(\Doctrine\ORM\EntityManager $manager)
     {
         $this->manager = $manager;
     }
@@ -25,12 +26,10 @@ class CreateArticleType extends AbstractType
                     'label' => false,
                     'attr' => array(
                         'class' => 'tinymce')))
-
                 ->add('tags', 'dcs_tag', array(
-                    
                     'attr' => array('class' => 'form-control',
-                )))
-               ->add('media', 'media_file', array())
+            )))
+                ->add('media', 'media_file', array())
         ;
     }
 

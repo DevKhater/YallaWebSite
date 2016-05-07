@@ -45,7 +45,7 @@ twig:
     strict_variables: "%kernel.debug%"
     paths:
         "%kernel.root_dir%/../app/Resources/FOSUserBundle": FOSUserBundle
-        "%kernel.root_dir%/../src/YallaWebsite/FrontendBundle/Resources/views": FrontendBundle
+        "%kernel.root_dir%/../src/YallaWebsite/FrontendBundle/Resources": YallaWebsiteFrontendBundle
 
 # Assetic Configuration
 assetic:
@@ -99,7 +99,11 @@ assetic:
             inputs:
                 - %kernel.root_dir%/../src/YallaWebsite/FrontendBundle/Resources/public/less/style.less
             output: "css/style.css"
-
+            
+        frontend_assets:
+            inputs:
+                - %kernel.root_dir%/../src/YallaWebsite/FrontendBundle/Resources/public/images/
+            
                 
 
 # Doctrine Configuration

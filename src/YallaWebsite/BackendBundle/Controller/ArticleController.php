@@ -9,7 +9,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\RedirectResponse;
 use YallaWebsite\BackendBundle\Entity\Article;
-use YallaWebsite\BackendBundle\Form\CreateArticleType;
+use YallaWebsite\BackendBundle\Form\CreateArticleForm;
 use YallaWebsite\BackendBundle\Form\EditArticleType;
 
 class ArticleController extends Controller
@@ -65,7 +65,7 @@ class ArticleController extends Controller
     {
         $article = new Article();
         $manager = $this->getDoctrine()->getManager();
-        $createForm = $this->createForm(new CreateArticleType($manager), $article);
+        $createForm = $this->createForm(new CreateArticleForm($manager), $article);
         if ($request->isMethod("POST")) {
             $createForm->handleRequest($request);
             if ($createForm->isValid()) {

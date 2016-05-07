@@ -55,7 +55,7 @@ class EventController extends Controller
             if ($createEventForm->isValid()) {
                 $BEManager = $this->container->get('backend_manager.manager');
                 $BEManager->saveMedia($event, 'event');
-                $event = $this->create($event, $request, 'save');
+                $event = $this->create($event, 'save');
                 return new RedirectResponse($this->generateUrl('backend_event_show', array('id' => $event->getId())));
             } else {
                 return $this->render('YallaWebsiteBackendBundle:Event:new.html.twig', array(
@@ -65,7 +65,7 @@ class EventController extends Controller
         }
         return $this->render('YallaWebsiteBackendBundle:Event:new.html.twig', array(
                     'form' => $createEventForm->createView(),
-                    'venues' => $this->getVenuesAddress(),
+                    'venues' => $this->getEventsAddress(),
         ));
     }
 
@@ -83,16 +83,11 @@ class EventController extends Controller
                 return new RedirectResponse($this->generateUrl('backend_event_show', array('id' => $entity->getId())));
             } else {
                 return $this->render('YallaWebsiteBackendBundle:Event:edit.html.twig', array(
-                            'event' => $entity,
-                            'form' => $editForm->createView(),
-                            'list' => $this->getVenuesAddress(),
-                            'error' => $editForm->getErrors()));
+                            'event' => $entity, 'form' => $editForm->createView(), 'list' => $this->getEventsAddress(), 'error' => $editForm->getErrors()));
             }
         }
         return $this->render('YallaWebsiteBackendBundle:Event:edit.html.twig', array(
-                    'event' => $entity,
-                    'form' => $editForm->createView(),
-                    'list' => $this->getVenuesAddress()
+                    'event' => $entity, 'form' => $editForm->createView(), 'list' => $this->getEventsAddress()
         ));
     }
 
@@ -108,7 +103,7 @@ class EventController extends Controller
         return new RedirectResponse($this->generateUrl('backend_event_index'));
     }
 
-    private function create(Event $event, Request $request, $mode)
+    private function create(Event $event, $mode)
     {
         $mode == 'save' ? $form = 'event_create' : $form = 'event_edit';
         $em = $this->getDoctrine()->getManager();
@@ -118,24 +113,25 @@ class EventController extends Controller
         return $event;
     }
 
-    private function getVenuesAddress()
+    private function getEventsAddress()
     {
         $manager = $this->getDoctrine()->getManager();
         $trans = new VenueLocationTransformer($manager);
-        $list = $trans->transform($manager->getRepository('YallaWebsiteBackendBundle:Venue')->findAll());
+        $list = $trans->transform($manager->getRepository('YallaWebsiteBackendBundle:Event')->findAll());
         return $list;
     }
 
     private function getEvent(Request $request)
     {
+        
         $id = $request->get('id');
         if (!$id) {
-            throw $this->createNotFoundException('No Venue Submited to Edit');
+            throw $this->createNotFoundException('No Event Submited to Edit');
         }
         $em = $this->getDoctrine()->getEntityManager();
-        $entity = $em->getRepository('YallaWebsiteBackendBundle:Venue')->find($id);
+        $entity = $em->getRepository('YallaWebsiteBackendBundle:Event')->find($id);
         if (!$entity) {
-            throw $this->createNotFoundException('Unable to find This Venue.');
+            throw $this->createNotFoundException('Unable to find This Event.');
         }
         return $entity;
     }

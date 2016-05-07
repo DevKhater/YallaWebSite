@@ -10,42 +10,195 @@ and open the template in the editor.
 
 @import "bootstrap/bootstrap.less";
 
-@thecolor: #3BCDE0;
+@Color1: #eaeaea;
+@Color2: #4d4d4d;
 
-#page {
-    .container;
-    position:relative;
-    .clearfix;
-    #m0 {
-        .row();
-        #m1, #m12, #m3, #m5, #m10, #m8 {
-            .make-md-column(3);
-            background-color: @thecolor - 500;
-            height: 20px;
-        }
-        #m2, #m4, #m6, #m7, #m9, #m11 {
-            .make-md-column(1);
-            background-color: (@thecolor) - 100;
-            height: 20px;
-        }
+.topAdv {
+    .make-lg-column(5);
+    .make-md-column(5);
+    .make-sm-column(5);
+    .make-xs-column(5);
+    min-height: 50px;
+    border: 2px dashed black;
+    margin-right: 3%;
+    margin-left: 3%;
+}
+.navbar-brand {
+    text-transform: uppercase;
+    font-weight: 900;
+    letter-spacing: 2px;
+}
+.navbar-nav {
+    text-transform: uppercase;
+    font-weight: 400;
+    letter-spacing: 3px;
+    @media screen and (max-width:1080px) { letter-spacing: 2px; }
+    @media screen and (max-width:985px) { letter-spacing: 0px; }
+    @media screen and (min-width:768px) {
+        display: table;
+        float: none;
+        margin: 0 auto;
+        table-layout: fixed;
+        font-size: 1.1em;
+    }
+}
+@media screen and (min-width:768px) {
+    .navbar {
+        border-radius: 0;
+        min-height: 0;
+    }
+
+    .navbar-header {
+        display: none;
+    }
+}
+#menuImageLogo {
+    @media screen and (max-width:768px) {
+        display:none;
     }
 }
 
+body {
+    background-color: @Color1;
+    header {
+        #preHeader{
+            height:15px;
+            background-color: @Color1;
+        }
 
-.adv {
-    position: absolute;
-    top: 10%;
-    background-color: red;
-    height: 400px;
-    width: 80px;
-    .clearfix;
-}
-#left_banner {
-    left:-15%; 
-    .adv;
+        nav {
+            .navbar;
+            .navbar-default;
+            background-color: @Color2;
+            border-bottom: 1px solid yellow;
+            #bs-navbar-collapse-1 {
+                ul {
+                    li{
+                        a{
+                            color:white;
+                            padding: 35px;
+                            line-height: normal;
+                            @media screen and (max-width:1500px) { padding: 30px; }
+                            @media screen and (max-width:1435px) { padding: 19px; }
+                            @media screen and (max-width:1260px) { padding: 9px; }
+                            @media screen and (max-width:1080px) { padding: 11px; }
+                            @media screen and (max-width:1035px) { padding: 6px; }
+                            @media screen and (max-width:985px) { padding: 12px; }
+                            @media screen and (max-width:860px) { padding: 10px; }
+                            @media screen and (max-width:845px) { padding: 8px; }
+                            @media screen and (max-width:800px) { padding: 6px; }
+                            @media screen and (max-width:768px) { padding: 5px; }
+                        }
+                        &:hover {
+                            background-color: @Color1;
+                            a {
+                                color:black;
+                            }
+                        }
+                    } 
+                }
+            }
+        }
 
-}
-#right_banner {
-    right: -15%;
-    .adv;
+        #topAdvRow{
+            .row();
+            margin-top: 15px;
+            min-height: 50px;
+            #leftAdv,#rightAdv {.topAdv;}
+            #leftAdv {
+                float: left;
+            }
+            #rightAdv {
+                float: right;
+            }
+        }
+
+        #socialSearchRow{
+            .row();
+            min-height: 50px;
+            #socialLinks,#searchBar {
+                .make-lg-column(6);
+                .make-md-column(6);
+                .make-sm-column(6);
+                .make-xs-column(6);
+                min-height: 20px;
+                margin-top: 1%;
+            }
+            #socialLinks {
+                float: left;
+                background-color: red;
+            }
+            #searchBar {
+                float: right;
+                background-color: #ff00ff;
+            }
+        }
+    }
+    .wrapper {
+        .container;
+        .clearfix;
+        #bodyLeftAdv,#bodyRightAdv{
+            position: absolute;
+            min-width: 100px;
+            min-height: 400px;
+            background-color: black;
+            top: 30%;
+            .clearfix;
+            .hidden-xs;
+            .hidden-sm;
+        }
+        #bodyLeftAdv{ left:0; }
+        #bodyRightAdv{ right: 0 }
+
+        #content {
+            .row();
+            margin-bottom: 4%;
+            #missionContent,#visionContent {
+                .make-lg-column(6);
+                .make-md-column(6);
+                .make-sm-column(6);
+                .make-xs-column(6);
+                min-height: 200px;
+                background-color: red;
+            }
+            #visionContent  { 
+                background-color: #ff00ff;
+                border-left: 2px solid black;
+            }
+            #membersContent { 
+                .make-lg-column(12);
+                .make-md-column(12);
+                .make-sm-column(12);
+                .make-xs-column(12);
+                margin-top: 2%;
+                min-height: 200px;
+                background-color: turquoise;
+            }
+        }
+    }
+    
+    footer{
+        #footerAdv {
+            .make-lg-column(12);
+            .make-md-column(12);
+            .make-sm-column(12);
+            .make-xs-column(12);
+            height: 50px;
+            background-color: red;
+        }
+        #footerContent {
+                .make-lg-column(12);
+                .make-md-column(12);
+                .make-sm-column(12);
+                .make-xs-column(12);
+                height: 110px;
+                background-color: @Color2;
+                margin-top: 10px;
+                border-top: 2px solid yellow;
+                #footer_pl_icon {
+                    height: 100px;
+                    width: 150px;
+                }
+        }
+    }
 }
