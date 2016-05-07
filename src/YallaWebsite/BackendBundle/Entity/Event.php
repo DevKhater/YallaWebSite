@@ -65,7 +65,7 @@ class Event extends BaseEntity
      * 
      */
     private $isVenue;
-    
+
     /**
      * @var string
      * 
@@ -73,6 +73,7 @@ class Event extends BaseEntity
      * @ORM\JoinColumn(name="venue_id", referencedColumnName="id", nullable=true)     * 
      */
     private $venue;
+
     /**
      * @var string
      * 
@@ -297,7 +298,6 @@ class Event extends BaseEntity
         return $this->tags;
     }
 
-
     /**
      * Set slug
      *
@@ -367,4 +367,22 @@ class Event extends BaseEntity
     {
         return $this->venue;
     }
+
+    /**
+     * @ORM\PrePersist
+     * @ORM\PreUpdate
+     */
+    public function prePersist()
+    {
+        $this->createdAt = new \DateTime();
+        $this->updatedAt = new \DateTime();
+
+        if ($this->isVenue == true) {
+            $this->location = null;
+        } else {
+            $this->isVenue = false;
+            $this->venue = null;
+        }
+    }
+
 }

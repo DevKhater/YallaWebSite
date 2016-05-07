@@ -7,7 +7,7 @@
     </style>
 {% endblock %}
 {% block controlleraction  %}
-    {% if entities is empty %}
+    {% if pagination is empty %}
         <div class="alert alert-info" role="alert">
             <strong>No Events!</strong> Found in database.
         </div>
@@ -19,7 +19,7 @@
                         Events Information
                     </div>
                     <div class="panel-body">
-                        <p><strong>Number of Evenets : </strong><span class="badge badge-inverse">{{ entities|length }}</span></p>
+                        <p><strong>Number of Evenets : </strong><span class="badge badge-inverse">{{ entities }}</span></p>
                     </div>
                 </div>
             </div>
@@ -44,7 +44,7 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    {% for event in entities %}
+                                    {% for event in pagination %}
                                         <tr>
                                             <th style="text-align: center;">
                                                 <a href="{{path ('backend_event_delete',  {'id': event.id}) }}"><button class="btn btn-danger btn-sm"><i class="fa fa-pencil"></i> Delete</button></a>
@@ -85,7 +85,9 @@
                         </div>
                     </div>
                     <div class="panel-footer">
-                        ....
+                        <div class="navigation">
+                            {{ knp_pagination_render(pagination) }}
+                        </div>
                     </div>
                 </div>
             </div>        

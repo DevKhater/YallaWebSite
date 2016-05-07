@@ -8,14 +8,21 @@
         <meta charset="UTF-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        {% stylesheets '@bootstrap_css' %}
+        {% stylesheets 
+                '@bootstrap_css' 
+                '@YallaWebsiteBackendBundle/Resources/public/css/font-awesome.css'
+                '@YallaWebsiteBackendBundle/Resources/public/css/jquery-ui.css'
+                '@YallaWebsiteBackendBundle/Resources/public/css/select2.min.css'
+                '@YallaWebsiteBackendBundle/Resources/public/css/jquery.tagit.css'
+                '@YallaWebsiteBackendBundle/Resources/public/css/style.css'
+        %}
         <link rel="stylesheet" type="text/css" media="screen" href="{{ asset_url }}"/>
         {% endstylesheets %}
-        <link href="{{ asset ('css/font-awesome.css') }}" rel="stylesheet">
-        <link href="{{ asset ('css/jquery-ui.css') }}" rel="stylesheet">
-        <link href="{{ asset ('css/style.css') }}" rel="stylesheet">
-        <link href="{{ asset ('css/select2.min.css') }}" rel="stylesheet">
-        <link href="{{ asset ('css/jquery.tagit.css') }}" rel="stylesheet">
+{#        <link href="{{ asset ('@YallaWebsiteBackendBundle/Resources/public/css/font-awesome.css') }}" rel="stylesheet">
+        <link href="{{ asset ('@YallaWebsiteBackendBundle/Resources/public/css/jquery-ui.css') }}" rel="stylesheet">
+        <link href="{{ asset ('@YallaWebsiteBackendBundle/Resources/public/css/style.css') }}" rel="stylesheet">
+        <link href="{{ asset ('@YallaWebsiteBackendBundle/Resources/public/css/select2.min.css') }}" rel="stylesheet">
+        <link href="{{ asset ('@YallaWebsiteBackendBundle/Resources/public/css/jquery.tagit.css') }}" rel="stylesheet">#}
     {% block stylesheets %}{% endblock %}
     <!-- HTML5 Shiv and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->

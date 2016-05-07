@@ -11,8 +11,8 @@ class LocationInformationTransformer implements DataTransformerInterface
     public function transform($locationCollection)
     {
      
-        if ($locationCollection->isEmpty()) return;
         if ($locationCollection == null) return;
+        if ($locationCollection->isEmpty()) return;
         
         $location = array();
 
@@ -25,7 +25,7 @@ class LocationInformationTransformer implements DataTransformerInterface
     public function reverseTransform($location)
     {   
         if (!is_array($location)) return $location;
-        if (is_null($location->getAdress())) return null;
+        if (is_null($location['address'])) return null;
         $thelocation = new LocationInformation();
         $thelocation->setAddress($location['address']);
         $thelocation->setTelephone($location['telephone']);

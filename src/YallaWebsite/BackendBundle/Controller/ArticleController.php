@@ -1,10 +1,8 @@
 <?php
-
 /**
  * @author DevKhate<m.f.khater@gmail.com>
  * 
  */
-
 namespace YallaWebsite\BackendBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
@@ -22,7 +20,7 @@ class ArticleController extends Controller
         $em = $this->getDoctrine()->getManager();
         $entity = $em->getRepository('YallaWebsiteBackendBundle:Article')->findAll();
         return $this->render('YallaWebsiteBackendBundle:Article:index.html.twig', array(
-                    'entities' => $entity,
+                'entities' => $entity,
         ));
     }
 
@@ -59,7 +57,7 @@ class ArticleController extends Controller
 
         $this->prepareSEO($entity);
         return $this->render('YallaWebsiteBackendBundle:Article:show.html.twig', array(
-                    'entity' => $entity
+                'entity' => $entity
         ));
     }
 
@@ -76,12 +74,12 @@ class ArticleController extends Controller
                 return new RedirectResponse($this->generateUrl('backend_article_show', array('id' => $article->getId())));
             } else {
                 return $this->render('YallaWebsiteBackendBundle:Article:new.html.twig', array(
-                            'form' => $createForm->createView(),
-                            'error' => $createForm->getErrors()));
+                        'form' => $createForm->createView(),
+                        'error' => $createForm->getErrors()));
             }
         }
         return $this->render('YallaWebsiteBackendBundle:Article:new.html.twig', array(
-                    'form' => $createForm->createView()
+                'form' => $createForm->createView()
         ));
     }
 
@@ -111,14 +109,14 @@ class ArticleController extends Controller
                 return new RedirectResponse($this->generateUrl('backend_article_show', array('id' => $entity->getId())));
             } else {
                 return $this->render('YallaWebsiteBackendBundle:Article:edit.html.twig', array(
-                            'event' => $entity,
-                            'form' => $editForm->createView(),
-                            'error' => $editForm->getErrors()));
+                        'event' => $entity,
+                        'form' => $editForm->createView(),
+                        'error' => $editForm->getErrors()));
             }
         }
         return $this->render('YallaWebsiteBackendBundle:Article:edit.html.twig', array(
-                    'article' => $entity,
-                    'form' => $editForm->createView()
+                'article' => $entity,
+                'form' => $editForm->createView()
         ));
     }
 
@@ -169,8 +167,8 @@ class ArticleController extends Controller
         $mediaManager->save($entity->getMedia());
         return ($entity);
     }
-    
-     private function deleteTags($entity)
+
+    private function deleteTags($entity)
     {
         if ($entity != NULL) {
             $tags = $entity->getTags();
@@ -179,28 +177,28 @@ class ArticleController extends Controller
             }
         }
     }
-    
-        private function prepareSEO($entity)
+
+    private function prepareSEO($entity)
     {
-        
+
         $seoPage = $this->container->get('sonata.seo.page');
         $seoPage
-                ->addHeadAttribute('prefix', 'og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# article: http://ogp.me/ns/article#')
-        ->setTitle('YallaNightLife - ' . $entity->getTitle())
-        ->addMeta('name', 'description', $entity->getMetaDescription())
-        ->addMeta('name', 'keywords', $entity->getMetaTags())
-        ->addMeta('property', 'og:title', $entity->getTitle())
-        ->addMeta('property', 'og:type', $entity->getOgType())
-        ->addMeta('property', 'og:image', $this->getRequest()->getUriForPath($entity->getUrls($this->container->get('sonata.media.provider.image'))))
-        ->addMeta('property', 'og:description', $entity->getMetaDescription())
-        ->addMeta('property', 'og:url', $this->generateUrl('backend_article_show', array('id' => $entity->getId()), true))
-        ->addMeta('property', 'twitter:description', $entity->getMetaDescription())
-        ->addMeta('property', 'twitter:url', $this->generateUrl('backend_article_show', array('id' => $entity->getId()), true))
-        ->addMeta('property', 'twitter:card', $entity->getMetaDescription())
-        ->addMeta('property', 'twitter:title', $entity->getTitle())
-        ->addMeta('property', 'twitter:title', $entity->getTitle())
-                ;
-        
-                return $seoPage;
+            ->addHeadAttribute('prefix', 'og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# article: http://ogp.me/ns/article#')
+            ->setTitle('YallaNightLife - ' . $entity->getTitle())
+            ->addMeta('name', 'description', $entity->getMetaDescription())
+            ->addMeta('name', 'keywords', $entity->getMetaTags())
+            ->addMeta('property', 'og:title', $entity->getTitle())
+            ->addMeta('property', 'og:type', $entity->getOgType())
+            ->addMeta('property', 'og:image', $this->getRequest()->getUriForPath($entity->getUrls($this->container->get('sonata.media.provider.image'))))
+            ->addMeta('property', 'og:description', $entity->getMetaDescription())
+            ->addMeta('property', 'og:url', $this->generateUrl('backend_article_show', array('id' => $entity->getId()), true))
+            ->addMeta('property', 'twitter:description', $entity->getMetaDescription())
+            ->addMeta('property', 'twitter:url', $this->generateUrl('backend_article_show', array('id' => $entity->getId()), true))
+            ->addMeta('property', 'twitter:card', $entity->getMetaDescription())
+            ->addMeta('property', 'twitter:title', $entity->getTitle())
+            ->addMeta('property', 'twitter:title', $entity->getTitle())
+        ;
+
+        return $seoPage;
     }
 }

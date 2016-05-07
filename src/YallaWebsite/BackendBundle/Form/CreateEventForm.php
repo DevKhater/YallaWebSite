@@ -31,18 +31,16 @@ class CreateEventForm extends AbstractType
                     'html5' => false,
                     'attr' => array('class' => 'date_picker form-control',)))
                 ->add('isVenue', 'checkbox', array(
-                        'label'    => 'Is it A Venue?',
-                        'required' => false,
-                    ))
+                    'label' => 'Is it A Venue?',
+                    'required' => false,
+                ))
                 ->add('location', 'location_information', array(
-                        'required' => false,
-                    ))
-//                ->add('venue', 'venue_location_information', array(
-//                        'required' => false,
-//                    ))
+                    'required' => false,
+                ))
                 ->add('venue', 'entity', array(
                     'class' => 'YallaWebsiteBackendBundle:Venue',
                     'choice_label' => 'title',
+                    'attr' => array('class' => 'form-control',)
                 ))
                 ->add('content', 'textarea', array(
                     'label' => false,

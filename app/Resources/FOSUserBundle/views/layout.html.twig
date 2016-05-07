@@ -5,10 +5,14 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>{% block title %}Yalla Nightlife Backend{% endblock %}</title>
-        <link href="{{ asset ('css/bootstrap.css') }}" rel="stylesheet">
-        <link href="{{ asset ('css/font-awesome.css') }}" rel="stylesheet">
-        <link href="{{ asset ('css/jquery-ui.css') }}" rel="stylesheet">
-        <link href="{{ asset ('css/style.css') }}" rel="stylesheet">
+        {% stylesheets 
+                '@bootstrap_css' 
+                '@YallaWebsiteBackendBundle/Resources/public/css/font-awesome.css'
+                '@YallaWebsiteBackendBundle/Resources/public/css/jquery-ui.css'
+                '@YallaWebsiteBackendBundle/Resources/public/css/style.css'
+        %}
+        <link rel="stylesheet" type="text/css" media="screen" href="{{ asset_url }}"/>
+        {% endstylesheets %}
     </head>
     <body>
         <div class="navbar navbar-inverse set-radius-zero">

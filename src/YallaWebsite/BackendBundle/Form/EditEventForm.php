@@ -30,7 +30,19 @@ class EditEventForm extends AbstractType
                     'widget' => 'single_text',
                     'html5' => false,
                     'attr' => array('class' => 'date_picker form-control',)))
-                ->add('location', 'location_information', array('data_class' => null))
+                ->add('isVenue', 'checkbox', array(
+                    'label' => 'Is it A Venue?',
+                    'required' => false,
+                ))
+                ->add('location', 'location_information', array(
+                    'required' => false,
+                    'data_class' => null
+                ))
+                ->add('venue', 'entity', array(
+                    'class' => 'YallaWebsiteBackendBundle:Venue',
+                    'choice_label' => 'title',
+                    'attr' => array('class' => 'form-control',)
+                ))
                 ->add('content', 'textarea', array(
                     'label' => false,
                     'attr' => array('placeholder' => 'Venue Description', 'class' => 'dropdown form-control', 'rows' => 10)))

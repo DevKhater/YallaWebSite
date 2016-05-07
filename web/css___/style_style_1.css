@@ -1737,16 +1737,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   top: 10%;
   background-color: red;
   height: 400px;
-  position: relative;
-  min-height: 1px;
-  padding-left: 15px;
-  padding-right: 15px;
-}
-@media (min-width: 992px) {
-  .adv {
-    float: left;
-    width: 16.66666667%;
-  }
+  width: 80px;
 }
 .adv:before,
 .adv:after {
@@ -1770,16 +1761,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   top: 10%;
   background-color: red;
   height: 400px;
-  position: relative;
-  min-height: 1px;
-  padding-left: 15px;
-  padding-right: 15px;
-}
-@media (min-width: 992px) {
-  #left_banner {
-    float: left;
-    width: 16.66666667%;
-  }
+  width: 80px;
 }
 #left_banner:before,
 #left_banner:after {
@@ -1803,16 +1785,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   top: 10%;
   background-color: red;
   height: 400px;
-  position: relative;
-  min-height: 1px;
-  padding-left: 15px;
-  padding-right: 15px;
-}
-@media (min-width: 992px) {
-  #right_banner {
-    float: left;
-    width: 16.66666667%;
-  }
+  width: 80px;
 }
 #right_banner:before,
 #right_banner:after {
