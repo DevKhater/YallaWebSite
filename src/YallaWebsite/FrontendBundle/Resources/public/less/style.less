@@ -99,12 +99,18 @@ body {
                 }
             }
         }
-
+        
         #topAdvRow{
             .row();
             margin-top: 15px;
             min-height: 50px;
-            #leftAdv,#rightAdv {.topAdv;}
+            #leftAdv,#rightAdv {
+                .topAdv;
+                img {
+                    height: 90px;
+                    width: 590px;
+                }
+            }
             #leftAdv {
                 float: left;
             }
@@ -146,6 +152,10 @@ body {
             .clearfix;
             .hidden-xs;
             .hidden-sm;
+            img {
+                width: 120px;
+                height: 600px;
+            }
         }
         #bodyLeftAdv{ left:0; }
         #bodyRightAdv{ right: 0 }

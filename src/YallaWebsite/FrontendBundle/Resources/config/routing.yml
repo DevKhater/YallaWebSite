@@ -5,3 +5,7 @@ yalla_website_frontend_homepage:
 yalla_website_frontend_page_about:
     path:     /page/about
     defaults: { _controller: YallaWebsiteFrontendBundle:Default:about }
+
+ads_manager:
+    resource: "@YallaWebsiteFrontendBundle/Resources/config/ads_manager_routing.yml"
+    prefix:   /ads_manager

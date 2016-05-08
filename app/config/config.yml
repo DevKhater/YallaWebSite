@@ -10,7 +10,6 @@ imports:
     - { resource: fpn_tag/fpn_tag.yml }
     - { resource: gedmo/gedmo.yml }
 
-
 # Put parameters here that don't need to change on each machine where the app is deployed
 # http://symfony.com/doc/current/best_practices/configuration.html#application-related-configuration
 parameters:
@@ -45,6 +44,7 @@ twig:
     strict_variables: "%kernel.debug%"
     paths:
         "%kernel.root_dir%/../app/Resources/FOSUserBundle": FOSUserBundle
+        "%kernel.root_dir%/../src/YallaWebsite/BackendBundle/Resources": YallaWebsiteBackendBundle
         "%kernel.root_dir%/../src/YallaWebsite/FrontendBundle/Resources": YallaWebsiteFrontendBundle
 
 # Assetic Configuration

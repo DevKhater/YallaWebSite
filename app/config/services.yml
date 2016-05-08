@@ -32,4 +32,3 @@ services:
     backend_manager.manager:
         class: %backend_manager.class%
         arguments: [ @doctrine.orm.entity_manager, @sonata.media.manager.media ]
-        

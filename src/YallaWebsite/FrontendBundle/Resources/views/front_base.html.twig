@@ -59,8 +59,8 @@
             <!-- /.container -->
         </nav>
         <div id='topAdvRow'>
-            <div id='leftAdv'></div>
-            <div id='rightAdv'></div>
+            <div id='leftAdv'>{{ render_esi(url('ads_manager_index', { 'id': 'home_sidebar_spot' })) }}</div>
+            <div id='rightAdv'>{{ render_esi(url('ads_manager_index', { 'id': 'test_new' })) }}</div>
         </div>
 
         <div id='socialSearchRow'>
@@ -95,8 +95,8 @@
 <script type="text/javascript" src="{{ asset_url }}"></script>
 {% endjavascripts %}
 <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.12/jquery-ui.min.js" type="text/javascript" charset="utf-8"></script>
-{% javascripts '@YallaWebsiteFrontendBundle/Resources/public/js/*' %}
+{#{% javascripts '@YallaWebsiteFrontendBundle/Resources/public/js/*' %}
 <script src="{{ asset_url }}"></script>
-{% endjavascripts %}
+{% endjavascripts %}#}
 </body>
 </html>
