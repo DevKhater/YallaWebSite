@@ -1,9 +1,14 @@
 <?php
+
 /**
  * @author DevKhate <m.f.khater@gmail.com>
  * 
  */
+
 namespace YallaWebsite\BackendBundle\Factory;
+
+use Symfony\Component\Yaml\Parser;
+use Symfony\Component\Yaml\Dumper;
 
 class BackendManager
 {
@@ -50,8 +55,25 @@ class BackendManager
             }
         }
     }
-    
-        private function prepareSEO($entity)
+
+    public function getAdv($url, $id)
+    {
+        $parser = new Parser();
+        try {
+            $data = $parser->parse(file_get_contents($url));
+        } catch (ParseException $e) {
+            throw new ParseException('Unable to parse the YAML string:' . $e->getMessage());
+        }
+
+        try {
+            return $data = $data[$id];
+        } catch (\Exception $e) {
+            throw new \Exception('Cannot find `' + $id + '` id in configuration:' . $e->getMessage());
+        }
+    }
+
+
+    private function prepareSEO($entity)
     {
 
         $seoPage = $this->container->get('sonata.seo.page');
@@ -74,4 +96,5 @@ class BackendManager
 
         return $seoPage;
     }
+
 }

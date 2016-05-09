@@ -1,12 +1,21 @@
-test_new:
+home_header_first:
     cache_public: true
     cache_shared_max_age: 86400
     cache_max_age: 28800
     random: true
-    data: [{ type: image, link: 'http://127.0.0.1:8000/uploads/media/adv/download2.jpg', target: 'http://www.google.com', weight: 5 }]
-home_sidebar_spot:
+    data: 
+        - type: "image"
+          link: "http://127.0.0.1:8000/uploads/media/adv/download.png"
+          target: "http://google.fr/"
+          weight: 1
+          
+home_header_second:
     cache_public: true
     cache_shared_max_age: 86400
     cache_max_age: 28800
     random: true
-    data: [{ type: image, link: 'http://127.0.0.1:8000/uploads/media/adv/download.jpg', target: 'http://google.fr/', weight: 5 }]
+    data: 
+        - type: "image"
+          link: "http://127.0.0.1:8000/uploads/media/adv/download2.png"
+          target: "http://google.arizona/"
+          weight: 1

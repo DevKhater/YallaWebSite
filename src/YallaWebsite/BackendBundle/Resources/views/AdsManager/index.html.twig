@@ -1,41 +1,20 @@
-{# If there are several items to display #}
-{% if content.data|length > 1 %}
-  {# Output a carousel #}
-  <div class="carousel  slide" data-ride="carousel" data-interval="3000">
-    {# Carousel indicators #}
-    {% for i in 0..(content.data|length)-1 %}
-    {% if loop.first %}
-    <ol class="carousel-indicators">
-    {% endif %}
-      <li data-target=".carousel" data-slide-to="{{ i }}" {% if loop.first %}class="active"{% endif %}></li>
-    {% if loop.last %}
-    </ol>
-    {% endif %}
-    {% endfor %}
+{{ dump(content) }}
 
-    {# Carousel items #}
-    {% for item in content.data %}
-    {% if loop.first %}
-    <div class="carousel-inner">
-    {% endif %}
-      <div class="item{% if loop.first %}  active{% endif %}">
-        {% include '@YallaWebsiteBackendBundle/AdsManager/_type.html.twig' with {
-          type: item.type, 
-          item: item
-        } %}
-      </div>
-    {% if loop.last %}
-    </div>
-    {% endif %}
-    {% endfor %}
-  </div>
-
-{# If there is a single item, include it #}
-{% else %}
-
-  {% include '@YallaWebsiteBackendBundle/views/AdsManager/_type.html.twig' with {
-    type: (content.data|first).type, 
-    item: (content.data|first)
-  } %}
-
+{% if content %}
+    {% for adv in content %}
+        {{dump(adv.data[0]['link'])}}
+        <img src="{{ adv.data[0]['link'] }}" width="150" height="100"/>
+        {% endfor %}
 {% endif %}
+
+
+{#
+<form enctype="multipart/form-data" action="{{ path('backend_adv_save',  {'id': adv.id})}}" class="" method="POST">
+    #}
+    
+{{ form_widget(form) }}
+
+                {{ form_errors(form) }}
+                {{ form_row(form._token) }}
+                    <input type="submit" class="btn btn-default" value="Save"/>
+{#            </form>#}

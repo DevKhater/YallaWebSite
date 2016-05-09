@@ -46,7 +46,10 @@
                     <li><a href="index.html">About</a></li>
                     <li><a href="index.html">Snapshots</a></li>
                     <li><a href="index.html">Events</a></li>
-                    <li id='menuImageLogo'>THE CIRCLE LOGO</li>
+                    <li id='menuImageLogo'>{% image '@YallaWebsiteFrontendBundle/Resources/public/images/base/logo.png' %}
+                        <img id='logo_icon' src="{{ asset_url }}" alt="YNL Logo" />
+                        {% endimage %}
+                    </li>
                     <li><a href="index.html">Gossip</a></li>
                     <li><a href="index.html">Guides</a></li>
                     <li><a href="index.html">Artists</a></li>
@@ -59,8 +62,8 @@
             <!-- /.container -->
         </nav>
         <div id='topAdvRow'>
-            <div id='leftAdv'>{{ render_esi(url('ads_manager_index', { 'id': 'home_sidebar_spot' })) }}</div>
-            <div id='rightAdv'>{{ render_esi(url('ads_manager_index', { 'id': 'test_new' })) }}</div>
+            <div id='leftAdv'>{{ render_esi(url('ads_manager_show', { 'id': 'home_header_first' })) }}</div>
+            <div id='rightAdv'>{{ render_esi(url('ads_manager_show', { 'id': 'home_header_second' })) }}</div>
         </div>
 
         <div id='socialSearchRow'>

@@ -1,11 +1,12 @@
-ads_manager_index:
+ads_manager_show:
     path:   /{id}
-    defaults:  { _controller: YallaWebsiteBackendBundle:AdsManager:index }
+    defaults:  { _controller: YallaWebsiteBackendBundle:AdsManager:display }
 
 ads_manager_save:
     path:   /add/new
     defaults:  { _controller: YallaWebsiteBackendBundle:AdsManager:add }
-
-ads_manager_modify:
-    path:   /add/modify
+    
+ads_manager_save:
+    path:   /update
     defaults:  { _controller: YallaWebsiteBackendBundle:AdsManager:modify }
+    
