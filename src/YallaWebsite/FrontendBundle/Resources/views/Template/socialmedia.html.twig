@@ -1,0 +1,10 @@
+<h4>Follow Us</h4>
+
+<div id='socialLinksIcons'>
+    {% for key,value in content %}
+        <a href='{{value}}'>
+            <img src="{{ asset('bundles/yallawebsitefrontend/images/base/' ~ key ~ '_sm_icon.svg') }}" alt="{{key|capitalize}} Icon" />
+        </a>
+    {% endfor %}
+</div>
+

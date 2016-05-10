@@ -9,3 +9,7 @@ yalla_website_frontend_page_about:
 ads_manager:
     resource: "@YallaWebsiteFrontendBundle/Resources/config/ads_manager_routing.yml"
     prefix:   /ads_manager
+    
+social_media_follow_us:
+    path:     /template/social_media
+    defaults: { _controller: YallaWebsiteFrontendBundle:Template:social }

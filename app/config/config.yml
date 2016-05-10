@@ -9,6 +9,7 @@ imports:
     - { resource: sonata_seo/sonata_seo.yml }
     - { resource: fpn_tag/fpn_tag.yml }
     - { resource: gedmo/gedmo.yml }
+    - { resource: yallawebsite.yml }
 
 # Put parameters here that don't need to change on each machine where the app is deployed
 # http://symfony.com/doc/current/best_practices/configuration.html#application-related-configuration
@@ -16,7 +17,7 @@ parameters:
     locale: en
 
 framework:
-    #esi:             ~
+    esi: { enabled: true }
     translator:      { fallbacks: ["%locale%"] }
     secret:          "%secret%"
     router:

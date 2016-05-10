@@ -20,8 +20,6 @@ and open the template in the editor.
     .make-xs-column(5);
     min-height: 50px;
     border: 2px dashed black;
-    margin-right: 3%;
-    margin-left: 3%;
 }
 .navbar-brand {
     text-transform: uppercase;
@@ -138,16 +136,25 @@ body {
             .row();
             min-height: 50px;
             #socialLinks,#searchBar {
-                .make-lg-column(6);
-                .make-md-column(6);
-                .make-sm-column(6);
-                .make-xs-column(6);
+                .make-lg-column(2);
+                .make-md-column(2);
+                .make-sm-column(2);
+                .make-xs-column(2);
                 min-height: 20px;
                 margin-top: 1%;
+                margin-left: 3%;
             }
             #socialLinks {
                 float: left;
-                background-color: red;
+                text-align: center;
+                #socialLinksIcons {
+                    img {
+                        height: 30px;
+                        width: 30px;
+                        border-radius: 3px;
+                        margin-right: 1%;
+                    }
+                }
             }
             #searchBar {
                 float: right;
@@ -163,7 +170,7 @@ body {
             min-width: 100px;
             min-height: 400px;
             background-color: black;
-            top: 30%;
+            top: 45%;
             .clearfix;
             .hidden-xs;
             .hidden-sm;
