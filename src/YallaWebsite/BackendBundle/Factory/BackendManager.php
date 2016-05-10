@@ -72,6 +72,25 @@ class BackendManager
         }
     }
 
+    public function getAllAdv($url)
+    {
+        $parser = new Parser();
+        try {
+            $data = $parser->parse(file_get_contents($url));
+        } catch (ParseException $e) {
+            throw new ParseException('Unable to parse the YAML string:' . $e->getMessage());
+        }
+        return $data;
+    }
+
+    public function saveAdvMedia($media)
+    {
+
+        $media->setContext('default');
+        $media->setProviderName('sonata.media.provider.image');
+        $this->mediaManager->save($media);
+        return $media;
+    }
 
     private function prepareSEO($entity)
     {

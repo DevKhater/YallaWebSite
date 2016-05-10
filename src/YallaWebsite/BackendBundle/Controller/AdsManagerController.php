@@ -1,8 +1,10 @@
 <?php
+
 /**
  * @author DevKhate<m.f.khater@gmail.com>
  * 
  */
+
 namespace YallaWebsite\BackendBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
@@ -10,57 +12,55 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\RedirectResponse;
 use YallaWebsite\BackendBundle\Form\AdvTypeForm;
-
-
+use Symfony\Component\Yaml\Parser;
+use Symfony\Component\Yaml\Dumper;
+use YallaWebsite\BackendBundle\Transformer\MediaFileTransformer;
 class AdsManagerController extends Controller
 {
-    
+
     public function displayAction(Request $request)
     {
         $id = $request->get('id');
         $BEManager = $this->container->get('backend_manager.manager');
         $data = $BEManager->getAdv($this->container->getParameter('ads')['uri'], $id);
-        
+
         //dump($data);exit;
-        
+
         return $this->render('YallaWebsiteFrontendBundle:Ads:display.html.twig', array(
-                'allowed_type' => $this->container->getParameter('ads')['allowed_types'],
-                'content' => $data,
-                'id' => $id
+                    'allowed_type' => $this->container->getParameter('ads')['allowed_types'],
+                    'content' => $data,
+                    'id' => $id
         ));
     }
 
-    public function indexAction()
+    public function indexAction($id)
     {
         $BEManager = $this->container->get('backend_manager.manager');
-        $data = $BEManager->getAdvData($this->container->getParameter('ads')['uri']);
+        $data = $BEManager->getAdv($this->container->getParameter('ads')['uri'], $id);
         $manager = $this->getDoctrine()->getManager();
         $createVenueForm = $this->createForm(new AdvTypeForm($manager));
-        
+
         return $this->render('YallaWebsiteBackendBundle:AdsManager:index.html.twig', array(
-                'allowed_type' => $this->container->getParameter('ads')['allowed_types'],
-                'content' => $data,
-                'form' =>$createVenueForm->createView()
-                //'id' => $id
+                    'allowed_type' => $this->container->getParameter('ads')['allowed_types'],
+                    'content' => $data,
+                    'form' => $createVenueForm->createView(),
+                    'id' => $id
         ));
-        
-        
+
+
         // Fetch data
         //$data = $this->getData($id);
         // Prepare response
         //$response = new Response();
-
         // Configure cache
 //        if ($data['cache_public'] === true) {
 //            $response->setPublic();
 //        } else {
 //            $response->setPrivate();
 //        }
-        
         // Set max age
 //        $response->setMaxAge($data['cache_max_age']);
 //        $response->setSharedMaxAge($data['cache_shared_max_age']);
-
         // Handle the weight random
 //        if ($data['random'] === true) {
 //            $data['data'] = [$this->randomItem($data['data'])];
@@ -71,21 +71,34 @@ class AdsManagerController extends Controller
 //                $item['content'] = file_get_contents($item['link']) || $item['link'];
 //            }
 //        }
-        
     }
-   
-    public function modifyAction(Request $request){
+
+    public function modifyAction(Request $request)
+    {
         $id = $request->get('id');
-        $BEManager = $this->container->get('backend_manager.manager');
-        $data = $BEManager->getAdv($this->container->getParameter('ads')['uri'], $id);
+        if (!$id) {
+            throw $this->createNotFoundException('No Articles Submited to Edit');
+        }
+
+        $manager = $this->getDoctrine()->getManager();
+        $createVenueForm = $this->createForm(new AdvTypeForm($manager));
+        if ($this->getRequest()->isMethod('POST')) {
+            $newmedia = MediaFileTransformer::reverseTransform($request->files->get('adve_form')['media']);
+            $BEManager = $this->container->get('backend_manager.manager');
+            $BEManager->saveAdvMedia($newmedia);
+            $path = $this->container->get('sonata.media.twig.extension')->path($newmedia, 'small');
+            $url = $request->request->get('adve_form')['linkfor'];
+            $this->addAdvYaml($id, $path, $url);
+        }
+
         /*
          *  $media = new Media();
-            $media->setBinaryContent($uploadImage);
-            $media->setContext('default');
-            $media->setProviderName('sonata.media.provider.image');
-            $mediaManager->save($media);
-            $post->setImage($media);
-            print_r($media);exit;
+          $media->setBinaryContent($uploadImage);
+          $media->setContext('default');
+          $media->setProviderName('sonata.media.provider.image');
+          $mediaManager->save($media);
+          $post->setImage($media);
+          print_r($media);exit;
 
          * get the form
          * validate
@@ -98,38 +111,20 @@ class AdsManagerController extends Controller
          * 
          * 
          *          */
-        $data[$id]['data'][0]['link'] = "http://127.0.0.1:8000/uploads/media/adv/download2.jpg";
-        $data[$id]['data'][0]['target'] = "http://www.google.com";
-        $dumper = new Dumper();
-        $yaml = $dumper->dump($data, 2);
-        file_put_contents($url, $yaml);
+//        $dumper = new Dumper();
+//        $yaml = $dumper->dump($allData, 2);
+//        file_put_contents($this->container->getParameter('ads')['uri'], $yaml);
     }
-    
-    public function addAction(){
+
+    public function addAdvYaml($id, $image_url, $adv_url)
+    {
+        $BEManager = $this->container->get('backend_manager.manager');
         $url = $this->container->getParameter('ads')['uri'];
-        $parser = new Parser();
-        $data = $parser->parse(file_get_contents($url));
-        
-        $newData = array(
-            'test_new' => array(
-                "cache_public" => true,
-                "cache_shared_max_age" => 86400,
-                "cache_max_age" => 28800,
-                "random" => true,
-                "data" => array(
-                    0 => array(
-                        "type" => "image",
-                        "link" => "http://127.0.0.1:8000/uploads/media/adv/download.jpg",
-                        "target" => "http://google.fr/",
-                        "weight" => 5,
-                    ))));
-        
-        $result = array_merge($newData, $data);
-        
-        //dump($result);exit;
+        $allData = $BEManager->getAllAdv($url);
+        $allData[$id]['data'][0]['link'] = $image_url;
+        $allData[$id]['data'][0]['target'] = $adv_url;
         $dumper = new Dumper();
-        $yaml = $dumper->dump($result, 2);
-        $url = $this->container->getParameter('ads')['uri'];
+        $yaml = $dumper->dump($allData, 2);
         file_put_contents($url, $yaml);
     }
 
@@ -148,5 +143,4 @@ class AdsManagerController extends Controller
 //            }
 //        }
 //    }
-    
 }

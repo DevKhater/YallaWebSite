@@ -1,20 +1,17 @@
 {{ dump(content) }}
 
 {% if content %}
-    {% for adv in content %}
-        {{dump(adv.data[0]['link'])}}
-        <img src="{{ adv.data[0]['link'] }}" width="150" height="100"/>
-        {% endfor %}
+        {{dump(content.data[0]['link'])}}
+        <img src="{{ content.data[0]['link'] }}" width="150" height="100"/>
+     
 {% endif %}
 
 
-{#
-<form enctype="multipart/form-data" action="{{ path('backend_adv_save',  {'id': adv.id})}}" class="" method="POST">
-    #}
+<form enctype="multipart/form-data" action="{{ path('ads_manager_save',  {'id': id})}}" class="" method="POST">
     
 {{ form_widget(form) }}
 
                 {{ form_errors(form) }}
                 {{ form_row(form._token) }}
                     <input type="submit" class="btn btn-default" value="Save"/>
-{#            </form>#}
+            </form>
