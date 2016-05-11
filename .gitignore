@@ -13,3 +13,7 @@
 /nbproject
 /web/bundles/*
 /web/uploads/media/*
+/web/uploads/css/*
+/web/uploads/js/*
+/web/uploads/images/*
+/web/uploads/fonts/*

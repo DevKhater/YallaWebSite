@@ -1,0 +1,29 @@
+{# empty Twig template #}
+{% extends "@YallaWebsiteFrontendBundle/views/front_base.html.twig" %}
+{% block body %}
+    <div class="pageContent">
+
+        <div class="IndexTitle">
+            <h1>Place To Go</h1>
+        </div>
+        {% for venue in pagination  %}
+            <div class="venueDiv">
+                <div class="venueContent" style="background-image: url('{% path  venue.media, 'medium' %}')">
+                    <div class="venueDivTitle">
+                        {{ venue.title }}
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+
+
+
+        <div class="page_pagination">
+
+            {% if (pagination) %}
+                {{ knp_pagination_render(pagination, 'YallaWebsiteFrontendBundle:Template:pagination.html.twig') }}
+            {% endif %}
+        </div>
+    </div>
+
+{% endblock %}

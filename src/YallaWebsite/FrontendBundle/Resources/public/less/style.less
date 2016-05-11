@@ -13,6 +13,12 @@ and open the template in the editor.
 @Color1: #eaeaea;
 @Color2: #4d4d4d;
 
+
+.venueBackground {
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
 .topAdv {
     .make-lg-column(5);
     .make-md-column(5);
@@ -40,6 +46,39 @@ and open the template in the editor.
         font-size: 1.1em;
     }
 }
+
+.innerPagesTitle {
+    .make-lg-column(12);
+    .make-md-column(12);
+    .make-sm-column(12);
+    .make-xs-column(12);
+    text-align: center;
+    margin-bottom: 15px;
+    h1 {
+    }
+}
+
+.page_pagination {
+    .make-lg-column(12);
+    .make-md-column(12);
+    .make-sm-column(12);
+    .make-xs-column(12);
+    text-align: center;
+    margin-bottom: 15px;
+}
+.pagination_image {
+    color: #eaeaea;
+    background-color: #eaeaea;
+    border-color: #eaeaea;
+    margin-top: -5px;
+    &:hover {
+        z-index: 2;
+        color: #eaeaea;
+        background-color: #eaeaea;
+        border-color: #eaeaea;
+    }
+}
+
 
 #menuImageLogo {
     /*    position: absolute;
@@ -206,31 +245,62 @@ body {
                 min-height: 200px;
                 background-color: turquoise;
             }
+            //All Inner Pages Defaults
+            .pageContent{
+                .row();
+                //VenuesPage
+                .IndexTitle {
+                    .innerPagesTitle;
+                }
+                .venueDiv {
+                    .make-lg-column(6);
+                    .make-md-column(6);
+                    .make-sm-column(6);
+                    .make-xs-column(6);
+                    margin-bottom: 2%;
+                    text-align: center;
+                    .venueContent{
+                        .venueBackground;
+                        border-radius: 5px;
+                        background-color: white;
+                        min-height: 180px;
+                        .venueDivTitle {
+                            border-top-right-radius: 5px;
+                            border-top-left-radius: 5px;
+                            width: 100%;
+                            height: 40px;
+                            background-color: rgba(156, 149, 149, 0.8);
+                            font-size: 30px;
+                            color: white;
+                        }
+                    }
+                }
+            }
         }
     }
+}
 
-    footer{
-        #footerAdv {
-            .make-lg-column(12);
-            .make-md-column(12);
-            .make-sm-column(12);
-            .make-xs-column(12);
-            height: 50px;
-            background-color: red;
-        }
-        #footerContent {
-            .make-lg-column(12);
-            .make-md-column(12);
-            .make-sm-column(12);
-            .make-xs-column(12);
-            height: 110px;
-            background-color: @Color2;
-            margin-top: 10px;
-            border-top: 2px solid yellow;
-            #footer_pl_icon {
-                height: 100px;
-                width: 150px;
-            }
+footer{
+    #footerAdv {
+        .make-lg-column(12);
+        .make-md-column(12);
+        .make-sm-column(12);
+        .make-xs-column(12);
+        height: 50px;
+        background-color: red;
+    }
+    #footerContent {
+        .make-lg-column(12);
+        .make-md-column(12);
+        .make-sm-column(12);
+        .make-xs-column(12);
+        height: 110px;
+        background-color: @Color2;
+        margin-top: 10px;
+        border-top: 2px solid yellow;
+        #footer_pl_icon {
+            height: 100px;
+            width: 150px;
         }
     }
 }

@@ -1,6 +1,8 @@
 //
 // Pagination (multiple pages)
 // --------------------------------------------------
+
+
 .pagination {
   display: inline-block;
   padding-left: 0;
@@ -21,17 +23,23 @@
       border: 1px solid @pagination-border;
       margin-left: -1px;
     }
+    > span{
+        &:last--child {
+            .border-right-radius(16px);
+        }
+    }
+    
     &:first-child {
       > a,
       > span {
         margin-left: 0;
-        .border-left-radius(@border-radius-base);
+        .border-left-radius(16px);
       }
     }
     &:last-child {
       > a,
       > span {
-        .border-right-radius(@border-radius-base);
+        .border-right-radius(16px);
       }
     }
   }
