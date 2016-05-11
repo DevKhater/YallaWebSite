@@ -35,7 +35,6 @@ class AppKernel extends Kernel
             // Sonata SEO
              new Knp\Bundle\MenuBundle\KnpMenuBundle(),
              new Sonata\SeoBundle\SonataSeoBundle(),
-            
             // Doctrine extension for glug
             new Stof\DoctrineExtensionsBundle\StofDoctrineExtensionsBundle(),
             

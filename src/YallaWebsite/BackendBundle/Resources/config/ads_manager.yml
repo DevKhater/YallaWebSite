@@ -3,10 +3,54 @@ home_header_first:
     cache_shared_max_age: 86400
     cache_max_age: 28800
     random: true
-    data: [{ type: image, link: /uploads/media/default/0001/01/thumb_83_default_small.jpeg, target: 'http://www.hotmail.com/', weight: 5 }]
+    format: horiz
+    media: 13
+    data: [{ type: image, link: /uploads/media/adv/0001/01/thumb_13_adv_horiz.jpeg, target: 'http://www.metallica.com', weight: 5 }]
 home_header_second:
     cache_public: true
     cache_shared_max_age: 86400
     cache_max_age: 28800
     random: true
+    format: horiz
+    media: 14
+    data: [{ type: image, link: /uploads/media/adv/0001/01/thumb_14_adv_horiz.jpeg, target: 'http://www.megadeth.com/', weight: 5 }]
+home_body_first:
+    cache_public: true
+    cache_shared_max_age: 86400
+    cache_max_age: 28800
+    random: true
+    format: verti
+    media: 9
+    data: [{ type: image, link: /uploads/media/adv/0001/01/thumb_9_adv_verti.jpeg, target: 'http://www.metallica.com', weight: 5 }]
+home_body_second:
+    cache_public: true
+    cache_shared_max_age: 86400
+    cache_max_age: 28800
+    random: true
+    format: verti
+    media: 15
+    data: [{ type: image, link: /uploads/media/adv/0001/01/thumb_15_adv_verti.png, target: 'http://www.slayer.com/', weight: 5 }]
+home_footer_first:
+    cache_public: true
+    cache_shared_max_age: 86400
+    cache_max_age: 28800
+    random: true
+    format: horiz
+    media: 16
+    data: [{ type: image, link: /uploads/media/adv/0001/01/thumb_16_adv_horiz.png, target: 'http://www.slayer.com/', weight: 5 }]
+home_footer_second:
+    cache_public: true
+    cache_shared_max_age: 86400
+    cache_max_age: 28800
+    random: true
+    format: horiz
+    media: 0
     data: [{ type: image, link: 'http://127.0.0.1:8000/uploads/media/adv/download.jpg', target: 'http://google.fr/', weight: 5 }]
+snapshot_popup:
+    cache_public: true
+    cache_shared_max_age: 86400
+    cache_max_age: 28800
+    random: true
+    format: snapadv
+    media: 17
+    data: [{ type: image, link: /uploads/media/adv/0001/01/thumb_17_adv_snapadv.jpeg, target: 'http://www.megadeth.com/', weight: 5 }]

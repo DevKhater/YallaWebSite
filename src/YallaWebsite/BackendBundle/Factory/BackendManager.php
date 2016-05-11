@@ -1,14 +1,11 @@
 <?php
-
 /**
  * @author DevKhate <m.f.khater@gmail.com>
  * 
  */
-
 namespace YallaWebsite\BackendBundle\Factory;
 
 use Symfony\Component\Yaml\Parser;
-use Symfony\Component\Yaml\Dumper;
 
 class BackendManager
 {
@@ -83,12 +80,12 @@ class BackendManager
         return $data;
     }
 
-    public function saveAdvMedia($media)
+    public function saveAdvMedia($media, $oldMediaId)
     {
-
-        $media->setContext('default');
+        $media->setContext('adv');
         $media->setProviderName('sonata.media.provider.image');
         $this->mediaManager->save($media);
+        if ($oldMediaId != 0 && !is_null($oldMediaId)) $this->mediaManager->delete($this->mediaManager->find($oldMediaId));
         return $media;
     }
 
@@ -97,23 +94,22 @@ class BackendManager
 
         $seoPage = $this->container->get('sonata.seo.page');
         $seoPage
-                ->addHeadAttribute('prefix', 'og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# place: http://ogp.me/ns/place#')
-                ->setTitle('YallaNightLife - ' . $entity->getTitle())
-                ->addMeta('name', 'description', $entity->getMetaDescription())
-                ->addMeta('name', 'keywords', $entity->getMetaTags())
-                ->addMeta('property', 'og:title', $entity->getTitle())
-                ->addMeta('property', 'og:type', $entity->getOgType())
-                ->addMeta('property', 'og:image', $this->getRequest()->getUriForPath($entity->getUrls($this->container->get('sonata.media.provider.image'))))
-                ->addMeta('property', 'og:description', $entity->getMetaDescription())
-                ->addMeta('property', 'og:url', $this->generateUrl('backend_venue_show', array('id' => $entity->getId()), true))
-                ->addMeta('property', 'twitter:description', $entity->getMetaDescription())
-                ->addMeta('property', 'twitter:url', $this->generateUrl('backend_venue_show', array('id' => $entity->getId()), true))
-                ->addMeta('property', 'twitter:card', $entity->getMetaDescription())
-                ->addMeta('property', 'twitter:title', $entity->getTitle())
-                ->addMeta('property', 'twitter:title', $entity->getTitle())
+            ->addHeadAttribute('prefix', 'og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# place: http://ogp.me/ns/place#')
+            ->setTitle('YallaNightLife - ' . $entity->getTitle())
+            ->addMeta('name', 'description', $entity->getMetaDescription())
+            ->addMeta('name', 'keywords', $entity->getMetaTags())
+            ->addMeta('property', 'og:title', $entity->getTitle())
+            ->addMeta('property', 'og:type', $entity->getOgType())
+            ->addMeta('property', 'og:image', $this->getRequest()->getUriForPath($entity->getUrls($this->container->get('sonata.media.provider.image'))))
+            ->addMeta('property', 'og:description', $entity->getMetaDescription())
+            ->addMeta('property', 'og:url', $this->generateUrl('backend_venue_show', array('id' => $entity->getId()), true))
+            ->addMeta('property', 'twitter:description', $entity->getMetaDescription())
+            ->addMeta('property', 'twitter:url', $this->generateUrl('backend_venue_show', array('id' => $entity->getId()), true))
+            ->addMeta('property', 'twitter:card', $entity->getMetaDescription())
+            ->addMeta('property', 'twitter:title', $entity->getTitle())
+            ->addMeta('property', 'twitter:title', $entity->getTitle())
         ;
 
         return $seoPage;
     }
-
 }

@@ -20,6 +20,8 @@ media:
     
 fos_user:
     resource: "@FOSUserBundle/Resources/config/routing/all.xml"
+
+
 #    
 #mykees_tag_admin:
 #    resource: "@MykeesTagBundle/Resources/config/routing_admin.yml"

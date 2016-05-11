@@ -9,6 +9,7 @@ doctrine:
     dbal:
         types:
             json: Sonata\Doctrine\Types\JsonType
+
 sonata_media:
     # if you don't use default namespace configuration
     #class:
@@ -63,7 +64,6 @@ sonata_media:
                 small:     { width: 200, quality: 100}
                 medium:     { width: 400, quality: 100}
                 large:     { width: 600, quality: 100}
- 
         profile:
             providers:
                 - sonata.media.provider.image
@@ -71,6 +71,13 @@ sonata_media:
                 preview:   { width: 100, quality: 100}
                 small:     { width: 200, quality: 100}
                 medium:     { width: 400, quality: 100}
+        adv:
+            providers:
+                - sonata.media.provider.image
+            formats:
+                horiz : { width: 590, height: 90, quality: 100}
+                verti : { width: 120, height: 600, quality: 100}
+                snapadv: { width: 300, height: 300, quality: 100}
     cdn:
         server:
             path: /uploads/media
@@ -93,10 +100,12 @@ sonata_media:
 
         image:
             service:    sonata.media.provider.image
-            resizer:    sonata.media.resizer.simple # sonata.media.resizer.square
+            #resizer:    sonata.media.resizer.simple # sonata.media.resizer.square
+            resizer: sonata.media.resizer.custom
             filesystem: sonata.media.filesystem.local
             cdn:        sonata.media.cdn.server
             generator:  sonata.media.generator.default
             thumbnail:  sonata.media.thumbnail.format
             allowed_extensions: ['jpg', 'png', 'jpeg']
             allowed_mime_types: ['image/pjpeg', 'image/jpeg', 'image/png', 'image/x-png']
+            

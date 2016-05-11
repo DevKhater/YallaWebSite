@@ -28,7 +28,11 @@ services:
             - { name: form.type, alias: multi_media_files }
     app.custom_sitemap_service:
             class: YallaWebsite\BackendBundle\Model\SitemapIterator
-            
+    
+    sonata.media.resizer.custom:
+        class: YallaWebsite\BackendBundle\Resizer\CustomResizer
+        arguments: [@sonata.media.adapter.image.gd, 'outbound', @sonata.media.metadata.proxy]
+        
     backend_manager.manager:
         class: %backend_manager.class%
         arguments: [ @doctrine.orm.entity_manager, @sonata.media.manager.media ]
