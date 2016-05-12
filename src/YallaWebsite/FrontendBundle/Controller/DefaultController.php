@@ -23,7 +23,6 @@ class DefaultController extends Controller
         $em = $this->getDoctrine()->getManager();
         $entities = $em->getRepository('YallaWebsiteBackendBundle:Venue');
         $query = $entities->findAll();
-        dump($query);
         if ($query != NULL) {
             $paginator = $this->get('knp_paginator');
             $pagination = $paginator->paginate(

@@ -1,0 +1,31 @@
+//TopAdv
+.topAdv {
+    .make-lg-column(5);
+    .make-md-column(5);
+    .make-sm-column(5);
+    .make-xs-column(5);
+    min-height: 50px;
+    img {
+        max-width: 100%;
+    }
+}
+
+
+
+//Right-Left Adv
+#bodyLeftAdv,#bodyRightAdv{
+    position: absolute;
+    min-width: 100px;
+    min-height: 40px;
+    background-color: @tempColor - 200;
+    top: 45%;
+    .clearfix;
+    .hidden-xs;
+    .hidden-sm;
+    img {
+        width: 120px;
+        height: 600px;
+    }
+}
+#bodyLeftAdv{ left:0; }
+#bodyRightAdv{ right: 0 }

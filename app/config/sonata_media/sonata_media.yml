@@ -48,6 +48,7 @@ sonata_media:
                 small:     { width: 200, quality: 100}
                 medium:     { width: 400, quality: 100}
                 large:     { width: 600, quality: 100}
+                displayIndex: {width:570, height:250, quality:50}
         article:
             providers:
                 - sonata.media.provider.image
@@ -100,7 +101,7 @@ sonata_media:
 
         image:
             service:    sonata.media.provider.image
-            #resizer:    sonata.media.resizer.simple # sonata.media.resizer.square
+            #resizer:    sonata.media.resizer.simple
             resizer: sonata.media.resizer.custom
             filesystem: sonata.media.filesystem.local
             cdn:        sonata.media.cdn.server

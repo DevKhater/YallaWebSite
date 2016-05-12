@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html {{ sonata_seo_html_attributes() }}>
     <head {{ sonata_seo_head_attributes() }}>
-    	<title>Yalla Night Life</title>
+        <title>Yalla Night Life</title>
         {{ sonata_seo_metadatas() }}
         {{ sonata_seo_link_canonical() }}
         {{ sonata_seo_lang_alternates() }}
@@ -21,46 +21,14 @@
     <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
 </head>
 <body>
-    <header>
+    <header class="clearfix">
         <div id="preHeader"></div>
         <!-- <div class="address-bar">3481 Melrose Place | Beverly Hills, CA 90210 | 123.456.7890</div> -->
 
         <!-- Navigation -->
-        <nav role="navigation">
-
-            <!-- Brand and toggle get grouped for better mobile display -->
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-navbar-collapse-1">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <!-- navbar-brand is hidden on larger screens, but visible when the menu is collapsed -->
-                <a class="navbar-brand" href="index.html">Yalla Night Life</a>
-            </div>
-            <!-- Collect the nav links, forms, and other content for toggling -->
-            <div class="collapse navbar-collapse" id="bs-navbar-collapse-1">
-                <ul class="nav navbar-nav">
-                    <li><a href="index.html">Yalla</a></li>
-                    <li><a href="index.html">About</a></li>
-                    <li><a href="index.html">Snapshots</a></li>
-                    <li><a href="index.html">Events</a></li>
-                    <li id='menuImageLogo'>{% image '@YallaWebsiteFrontendBundle/Resources/public/images/base/logo.png' %}
-                        <img id='logo_icon' src="{{ asset_url }}" alt="YNL Logo" />
-                        {% endimage %}
-                    </li>
-                    <li><a href="index.html">Gossip</a></li>
-                    <li><a href="index.html">Guides</a></li>
-                    <li><a href="index.html">Artists</a></li>
-                    <li><a href="index.html">Contact</a></li>
-
-                </ul>
-            </div>
-            <!-- /.navbar-collapse -->
-
-            <!-- /.container -->
-        </nav>
+        
+        {% include '@YallaWebsiteFrontendBundle/views/Template/menu.html.twig' %}
+        
         <div id='topAdvRow'>
             <div id='leftAdv'>{{ render_esi(url('ads_manager_show', { 'id': 'home_header_first' })) }}</div>
             <div id='rightAdv'>{{ render_esi(url('ads_manager_show', { 'id': 'home_header_second' })) }}</div>
@@ -71,13 +39,13 @@
             <div id='searchBar'></div>
         </div>
     </header>
+    <div id="bodyLeftAdv"></div>
     <div class="wrapper">
-        <div id="bodyLeftAdv"></div>
         <div id='content'>
         {% block body %}{% endblock %}
     </div>
-    <div id="bodyRightAdv"></div>
 </div>
+<div id="bodyRightAdv"></div>
 <footer>
     <div id='footerAdv'></div>
     <div id="footerContent">

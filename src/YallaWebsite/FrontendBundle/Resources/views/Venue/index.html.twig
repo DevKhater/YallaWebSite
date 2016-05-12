@@ -4,11 +4,11 @@
     <div class="pageContent">
 
         <div class="IndexTitle">
-            <h1>Place To Go</h1>
+            <h1>Places To Go</h1>
         </div>
         {% for venue in pagination  %}
             <div class="venueDiv">
-                <div class="venueContent" style="background-image: url('{% path  venue.media, 'medium' %}')">
+                <div class="venueContent" style="background-image: url('{% path  venue.media, 'displayIndex' %}')">
                     <div class="venueDivTitle">
                         {{ venue.title }}
                     </div>

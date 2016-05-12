@@ -21,8 +21,8 @@
                 <img src="{{ asset_url }}" height="30" alt="left" />
                 {% endimage %}</a>
             {% endif %}
-            <li class="disabled"><span style='height: 34px'></span></li>
-        {% if startPage > 1 %}
+        <li class='pagination_round_border'><span style='border-bottom-left-radius: 16px;border-top-left-radius: 16px;'></span></li>
+            {% if startPage > 1 %}
             <li>
                 <a href="{{ path(route, query|merge({(pageParameterName): 1})) }}">1</a>
             </li>
@@ -66,8 +66,8 @@
                 <a href="{{ path(route, query|merge({(pageParameterName): pageCount})) }}">{{ pageCount }}</a>
             </li>
         {% endif %}
-<li><span style='height: 34px;border-bottom-right-radius: 16px;border-top-right-radius: 16px;'></span></li>
-        {% if next is defined %}
+        <li class='pagination_round_border'><span style='border-bottom-right-radius: 16px;border-top-right-radius: 16px;'></span></li>
+            {% if next is defined %}
 
             <a class='pagination_image' rel="next" href="{{ path(route, query|merge({(pageParameterName): next})) }}">{% image '@YallaWebsiteFrontendBundle/Resources/public/images/base/pagination_arrow_right.png' %}
                 <img src="{{ asset_url }}" height="30"  alt="right" />

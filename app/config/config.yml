@@ -102,6 +102,44 @@ assetic:
                 - %kernel.root_dir%/../src/YallaWebsite/FrontendBundle/Resources/public/less/style.less
             output: "css/style.css"
             
+        century_gothic_boldttf:
+            inputs:
+                - %kernel.root_dir%/../src/YallaWebsite/FrontendBundle/Resources/public/fonts/CenturyGothic-Bold/CenturyGothic-Bold.ttf
+            output: "fonts/CenturyGothic-Bold.ttf"
+        century_gothic_boldeot:
+            inputs:
+                - %kernel.root_dir%/../src/YallaWebsite/FrontendBundle/Resources/public/fonts/CenturyGothic-Bold/CenturyGothic-Bold.eot
+            output: "fonts/CenturyGothic-Bold.eot"
+#        century_gothic_boldsvg:
+#            inputs:
+#                - %kernel.root_dir%/../src/YallaWebsite/FrontendBundle/Resources/public/fonts/CenturyGothic-Bold/CenturyGothic-Bold.svg
+#            output: "fonts/CenturyGothic-Bold.svg"
+#        century_gothic_boldwoff:
+#            inputs:
+#                - %kernel.root_dir%/../src/YallaWebsite/FrontendBundle/Resources/public/fonts/CenturyGothic-Bold/CenturyGothic-Bold.woff
+#            output: "fonts/CenturyGothic-Bold.woff"
+            
+        ebrima_ttf:
+            inputs:
+                - %kernel.root_dir%/../src/YallaWebsite/FrontendBundle/Resources/public/fonts/Ebrima/Ebrima.ttf
+            output: "fonts/Ebrima.ttf"
+        ebrima_eot:
+            inputs:
+                - %kernel.root_dir%/../src/YallaWebsite/FrontendBundle/Resources/public/fonts/Ebrima/Ebrima.eot
+            output: "fonts/Ebrima.eot"
+        ebrima_svg:
+            inputs:
+                - %kernel.root_dir%/../src/YallaWebsite/FrontendBundle/Resources/public/fonts/Ebrima/Ebrima.svg
+            output: "fonts/Ebrima.svg"
+        ebrima_woff:
+            inputs:
+                - %kernel.root_dir%/../src/YallaWebsite/FrontendBundle/Resources/public/fonts/Ebrima/Ebrima.woff
+            output: "fonts/Ebrima.woff"
+        ebrima_woff2:
+            inputs:
+                - %kernel.root_dir%/../src/YallaWebsite/FrontendBundle/Resources/public/fonts/Ebrima/Ebrima.woff2
+            output: "fonts/Ebrima.woff2"
+            
                 
 
 # Doctrine Configuration
