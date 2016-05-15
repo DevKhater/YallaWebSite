@@ -4,16 +4,16 @@ home_header_first:
     cache_max_age: 28800
     random: true
     format: horiz
-    media: 13
-    data: [{ type: image, link: /uploads/media/adv/0001/01/thumb_13_adv_horiz.jpeg, target: 'http://www.metallica.com', weight: 5 }]
+    media: 21
+    data: [{ type: image, link: /uploads/media/adv/0001/01/thumb_21_adv_horiz.jpeg, target: 'http://www.india.in/', weight: 5 }]
 home_header_second:
     cache_public: true
     cache_shared_max_age: 86400
     cache_max_age: 28800
     random: true
     format: horiz
-    media: 14
-    data: [{ type: image, link: /uploads/media/adv/0001/01/thumb_14_adv_horiz.jpeg, target: 'http://www.megadeth.com/', weight: 5 }]
+    media: 23
+    data: [{ type: image, link: /uploads/media/adv/0001/01/thumb_23_adv_horiz.jpeg, target: 'http://www.india.in/', weight: 5 }]
 home_body_first:
     cache_public: true
     cache_shared_max_age: 86400

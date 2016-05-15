@@ -21,3 +21,7 @@ User:
 Profile:
     resource: "@YallaWebsiteBackendBundle/Resources/config/profile_routing.yml"
     prefix:   /profile
+
+Advertisment:
+    resource: "@YallaWebsiteBackendBundle/Resources/config/ad_manager_routing.yml"
+    prefix:   /adv

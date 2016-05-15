@@ -9,7 +9,7 @@
     </div>
     {% if is_granted('ROLE_SUPER_ADMIN') %} 
         <div class="row">
-            <div class="col-md-12">
+            <div class="col-md-6">
                 <div class="col-md-3"></div>
                 <a href="{{ path ('backend_user_index')}}">
                     <div class="col-md-6 col-sm-12 col-xs-12">
@@ -17,6 +17,19 @@
                             <i class="fa fa-venus dashboard-div-icon"></i>
                             <h5>USERS</h5>
                             <h6>Total Number <span class="badge badge-inverse">{{users}}</span></h6>
+                        </div>
+                    </div></a>
+
+                <div class="col-md-3"></div>
+            </div>
+            <div class="col-md-6">
+                <div class="col-md-3"></div>
+                <a href="{{ path ('backend_ads_manager_index')}}">
+                    <div class="col-md-6 col-sm-12 col-xs-12">
+                        <div class="dashboard-div-wrapper" style="background-color: #dd1144">
+                            <i class="fa fa-venus dashboard-div-icon"></i>
+                            <h5>Advertisments</h5>
+                            <h6>Total Number <span class="badge badge-inverse">7</span></h6>
                         </div>
                     </div></a>
 

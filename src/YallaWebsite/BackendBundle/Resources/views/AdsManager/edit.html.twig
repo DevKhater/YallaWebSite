@@ -1,17 +1,14 @@
-{{ dump(content) }}
-
+{% extends "YallaWebsiteBackendBundle:AdsManager:base_adv.html.twig" %}
+{% block controlleraction  %}
 {% if content %}
-        {{dump(content.data[0]['link'])}}
-        <img src="{{ content.data[0]['link'] }}" width="150" height="100"/>
-     
+    <img src="{{ content.data[0]['link'] }}" width="150" height="100"/>
 {% endif %}
 
 
-<form enctype="multipart/form-data" action="{{ path('ads_manager_save',  {'id': id})}}" class="" method="POST">
-    
-{{ form_widget(form) }}
-
-                {{ form_errors(form) }}
-                {{ form_row(form._token) }}
-                    <input type="submit" class="btn btn-default" value="Save"/>
-            </form>
+<form enctype="multipart/form-data" action="{{ path('backend_ads_manager_save',  {'id': id})}}" class="" method="POST">
+    {{ form_widget(form) }}
+    {{ form_errors(form) }}
+    {{ form_row(form._token) }}
+    <input type="submit" class="btn btn-default" value="Save"/>
+</form>
+{% endblock%}

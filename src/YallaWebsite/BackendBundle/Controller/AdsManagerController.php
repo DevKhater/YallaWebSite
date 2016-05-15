@@ -6,11 +6,9 @@
 namespace YallaWebsite\BackendBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
-//use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpFoundation\Request;
-//use Symfony\Component\HttpFoundation\RedirectResponse;
+use Symfony\Component\HttpFoundation\RedirectResponse;
 use YallaWebsite\BackendBundle\Form\AdvTypeForm;
-//use Symfony\Component\Yaml\Parser;
 use Symfony\Component\Yaml\Dumper;
 use YallaWebsite\BackendBundle\Transformer\MediaFileTransformer;
 
@@ -28,16 +26,16 @@ class AdsManagerController extends Controller
                 'id' => $id
         ));
     }
-    
-    public function indexAction(){
+
+    public function indexAction()
+    {
         $BEManager = $this->container->get('backend_manager.manager');
         $data = $BEManager->getAllAdv($this->container->getParameter('ads')['uri']);
-        
+
         return $this->render('YallaWebsiteBackendBundle:AdsManager:index.html.twig', array(
                 'allowed_type' => $this->container->getParameter('ads')['allowed_types'],
                 'content' => $data
         ));
-        
     }
 
     public function changeAction($id)
@@ -59,10 +57,8 @@ class AdsManagerController extends Controller
     {
         $id = $request->get('id');
         if (!$id) {
-            throw $this->createNotFoundException('No Articles Submited to Edit');
+            throw $this->createNotFoundException('No Advertisment Submited to Edit');
         }
-        $manager = $this->getDoctrine()->getManager();
-        $createVenueForm = $this->createForm(new AdvTypeForm($manager));
         if ($this->getRequest()->isMethod('POST')) {
             //$newmedia = MediaFileTransformer::reverseTransform($request->files->get('adve_form')['media']);
             $mt = new MediaFileTransformer;
@@ -72,7 +68,9 @@ class AdsManagerController extends Controller
             $BEManager->saveAdvMedia($newmedia, $old[$id]['media']);
             $url = $request->request->get('adve_form')['linkfor'];
             $this->addAdvYaml($id, $newmedia, $url);
+            return new RedirectResponse($this->generateUrl('backend_ads_manager_index'));
         }
+        return new RedirectResponse($this->generateUrl('backend_ads_manager_change', array('id' => $id)));
     }
 
     private function addAdvYaml($id, $image, $adv_url)

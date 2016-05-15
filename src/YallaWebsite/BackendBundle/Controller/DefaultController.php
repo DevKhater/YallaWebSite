@@ -2,11 +2,11 @@
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\RedirectResponse;
-use YallaWebsite\BackendBundle\Entity\Article;
-use YallaWebsite\BackendBundle\Entity\Event;
-use YallaWebsite\BackendBundle\Entity\Venue;
-use Application\Sonata\MediaBundle\Entity\Media;
-use Application\Sonata\MediaBundle\Entity\Gallery;
+#use YallaWebsite\BackendBundle\Entity\Article;
+#use YallaWebsite\BackendBundle\Entity\Event;
+#use YallaWebsite\BackendBundle\Entity\Venue;
+#use Application\Sonata\MediaBundle\Entity\Media;
+#use Application\Sonata\MediaBundle\Entity\Gallery;
 
 
 class DefaultController extends Controller
@@ -15,8 +15,9 @@ class DefaultController extends Controller
     public function indexAction()
     {
         $currentUser = $this->get('security.token_storage')->getToken()->getUser();
+        
         $curentProfile = $currentUser->getProfile();
-        if (!$curentProfile) { return New RedirectResponse ($this->generateUrl('backend_profile_index')); }
+        if (!$curentProfile && $this->get('security.authorization_checker')->isGranted('ROLE_ADMIN_A') && !$this->get('security.authorization_checker')->isGranted('ROLE_SUPER_ADMIN')) { return New RedirectResponse ($this->generateUrl('backend_profile_index')); }
         $em = $this->getDoctrine()->getManager();
         $numbArt = count($em->getRepository('YallaWebsiteBackendBundle:Article')->findAll());
         $numbVen = count($em->getRepository('YallaWebsiteBackendBundle:Venue')->findAll());

@@ -18,11 +18,7 @@
         %}
         <link rel="stylesheet" type="text/css" media="screen" href="{{ asset_url }}"/>
         {% endstylesheets %}
-{#        <link href="{{ asset ('@YallaWebsiteBackendBundle/Resources/public/css/font-awesome.css') }}" rel="stylesheet">
-        <link href="{{ asset ('@YallaWebsiteBackendBundle/Resources/public/css/jquery-ui.css') }}" rel="stylesheet">
-        <link href="{{ asset ('@YallaWebsiteBackendBundle/Resources/public/css/style.css') }}" rel="stylesheet">
-        <link href="{{ asset ('@YallaWebsiteBackendBundle/Resources/public/css/select2.min.css') }}" rel="stylesheet">
-        <link href="{{ asset ('@YallaWebsiteBackendBundle/Resources/public/css/jquery.tagit.css') }}" rel="stylesheet">#}
+
     {% block stylesheets %}{% endblock %}
     <!-- HTML5 Shiv and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -93,6 +89,7 @@
                             <li>{% if is_granted('ROLE_ADMIN_V') %}<a href="{{path('backend_venue_index')}}">Venues</a>{% endif %}</li>
                             <li>{% if is_granted('ROLE_ADMIN_G') %}<a href="{{path('backend_gallery_index')}}">Galleries</a>{% endif %}</li>
                             <li>{% if is_granted('ROLE_ADMIN_A') %}<a href="{{path('backend_article_index')}}">Articles</a>{% endif %}</li>
+                            <li>{% if is_granted('ROLE_SUPER_ADMIN') %}<a href="{{path('backend_ads_manager_index')}}">Advertisement</a>{% endif %}</li>
                             <li>{% if is_granted('ROLE_SUPER_ADMIN') %}<a href="{{path('backend_user_index')}}">Users</a>{% endif %}</li>
                         </ul>
                     </div>
