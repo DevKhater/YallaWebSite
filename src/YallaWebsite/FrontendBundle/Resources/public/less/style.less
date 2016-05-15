@@ -35,6 +35,19 @@ and open the template in the editor.
 @Pagination-Gray: #565656;
 @tempColor: #ff00ff;
 
+.hyperlink() {
+    a {
+        font-weight: bold;
+        &:link
+            {
+            color: @Color3;
+        }
+        &:visited,&:active {
+            color: @Color3 - 100 ;
+        }
+
+    } 
+}
 .venueBackground {
     background-size: cover;
     background-repeat: no-repeat;
@@ -94,24 +107,24 @@ and open the template in the editor.
 }
 
 .pagination_round_border {
-            span {
-                height: 34px;
-                z-index: 2;
-                color: @Pagination-Gray;
-                background-color: @Pagination-Gray;
-                border-color: @Pagination-Gray;
-                border-color: @Pagination-Gray;
-                border: 1px solid @Pagination-Gray;
-                &:hover {
-                    height: 34px;
-                    z-index: 2;
-                    color: @Pagination-Gray;
-                    background-color: @Pagination-Gray;
-                    border-color: @Pagination-Gray;
-                    border-color: @Pagination-Gray;
-                    border: 1px solid @Pagination-Gray;
-                }
-            } 
+    span {
+        height: 34px;
+        z-index: 2;
+        color: @Pagination-Gray;
+        background-color: @Pagination-Gray;
+        border-color: @Pagination-Gray;
+        border-color: @Pagination-Gray;
+        border: 1px solid @Pagination-Gray;
+        &:hover {
+            height: 34px;
+            z-index: 2;
+            color: @Pagination-Gray;
+            background-color: @Pagination-Gray;
+            border-color: @Pagination-Gray;
+            border-color: @Pagination-Gray;
+            border: 1px solid @Pagination-Gray;
+        }
+    } 
 }
 
 #menuImageLogo {
@@ -142,6 +155,7 @@ and open the template in the editor.
 
 body {
     background-color: @Color1;
+    overflow-x: hidden;
     header {
         font-family: 'CenturyGothicBold';
         #preHeader{
@@ -303,11 +317,59 @@ body {
                             color: white;
                         }
                     }
+                    .modal-dialog {
+                        .modal-content {
+                            color: white;
+                            background-color: @Color2;
+                            .modal_description, .modal_footer {
+                                text-align:left;
+                                padding: 2%;
+                            }   
+                            .modal_footer{
+                                .hyperlink();
+                            }
+                        }
+                    }
+                }
+            }
+            .articleDiv {
+                .make-lg-column(4);
+                .make-md-column(4);
+                .make-sm-column(4);
+                .make-xs-column(4);
+                margin-bottom: 2%;
+                text-align: center;
+                .articleContent{
+                    .venueBackground;
+                    border-radius: 5px;
+                    min-height: 250px;
+                    .articleDivTitle {
+                        display:none;
+                        font-weight: bold;
+                        border-top-right-radius: 5px;
+                        border-top-left-radius: 5px;
+                        width: 100%;
+                        height: 40px;
+                        background-color: rgba(26,26,26, 0.5);
+                        font-size: 30px;
+                        color: white;
+                    }
+                    &:hover {
+                        .articleDivTitle {
+                            display: block;
+                        }
+                    }
+
+                }
+                .theArticleContent{
+                    text-align: left;
+                    .hyperlink();
                 }
             }
         }
     }
 }
+
 
 footer{
     #footerAdv {

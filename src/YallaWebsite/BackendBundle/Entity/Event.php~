@@ -61,24 +61,19 @@ class Event extends BaseEntity
     /**
      * @var boolean
      * 
-     * @ORM\Column(name="isVenue", type="boolean")
+     * @ORM\Column(name="is_venue", type="boolean")
      * 
      */
     private $isVenue;
-    
+
     /**
      * @var string
      * 
      * @ORM\ManyToOne(targetEntity="YallaWebsite\BackendBundle\Entity\Venue", cascade={"persist"})
-     * @ORM\JoinColumn(name="venue_id", referencedColumnName="id", nullable=true)
-     *
-     * @Assert\Expression(
-     *     "this.isVenue == true",
-     *      message="Start date should be before end date!"
-     * )
-     * 
+     * @ORM\JoinColumn(name="venue_id", referencedColumnName="id", nullable=true)     * 
      */
     private $venue;
+
     /**
      * @var string
      * 
@@ -107,7 +102,6 @@ class Event extends BaseEntity
     {
         $this->location = new ArrayCollection();
         $this->tags = new \Doctrine\Common\Collections\ArrayCollection();
-        $this->isVenue = false;
     }
 
     /**
@@ -304,7 +298,6 @@ class Event extends BaseEntity
         return $this->tags;
     }
 
-
     /**
      * Set slug
      *
@@ -328,4 +321,68 @@ class Event extends BaseEntity
     {
         return $this->slug;
     }
+
+    /**
+     * Set isVenue
+     *
+     * @param boolean $isVenue
+     * @return Event
+     */
+    public function setIsVenue($isVenue)
+    {
+        $this->isVenue = $isVenue;
+
+        return $this;
+    }
+
+    /**
+     * Get isVenue
+     *
+     * @return boolean 
+     */
+    public function getIsVenue()
+    {
+        return $this->isVenue;
+    }
+
+    /**
+     * Set venue
+     *
+     * @param \YallaWebsite\BackendBundle\Entity\Venue $venue
+     * @return Event
+     */
+    public function setVenue(\YallaWebsite\BackendBundle\Entity\Venue $venue = null)
+    {
+        $this->venue = $venue;
+
+        return $this;
+    }
+
+    /**
+     * Get venue
+     *
+     * @return \YallaWebsite\BackendBundle\Entity\Venue 
+     */
+    public function getVenue()
+    {
+        return $this->venue;
+    }
+
+    /**
+     * @ORM\PrePersist
+     * @ORM\PreUpdate
+     */
+    public function prePersist()
+    {
+        $this->createdAt = new \DateTime();
+        $this->updatedAt = new \DateTime();
+
+        if ($this->isVenue == true) {
+            $this->location = null;
+        } else {
+            $this->isVenue = false;
+            $this->venue = null;
+        }
+    }
+
 }

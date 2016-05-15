@@ -2,21 +2,36 @@
 {% extends "@YallaWebsiteFrontendBundle/views/front_base.html.twig" %}
 {% block body %}
     <div class="pageContent">
-
         <div class="IndexTitle">
             <h1>Places To Go</h1>
         </div>
         {% for venue in pagination  %}
             <div class="venueDiv">
-                <div class="venueContent" style="background-image: url('{% path  venue.media, 'displayIndex' %}')">
+                <div class="venueContent" data-toggle="modal" data-target="#{{venue.slug}}" style="background-image: url('{% path  venue.media, 'displayIndex' %}')">
                     <div class="venueDivTitle">
                         {{ venue.title }}
                     </div>
                 </div>
+                <div id="{{venue.slug}}" class="modal fade" role="dialog">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal_image">
+                                {% thumbnail venue.media, 'large' with {'class': 'img-responsive'} %}
+                            </div>
+                            <div class="modal_description">
+                                <p>{{venue.content}}</p>
+                            </div>
+                            <div class="modal_footer">
+                                <p>Address: {{venue.location.address}}<br/>
+                                Telephone: {{venue.location.telephone}}<br/>
+                                Website: <a href="{{venue.website}}">{{venue.title}}</a></p>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
             </div>
         {% endfor %}
-
-
 
         <div class="page_pagination">
 
