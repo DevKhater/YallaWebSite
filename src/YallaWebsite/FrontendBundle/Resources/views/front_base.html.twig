@@ -39,15 +39,19 @@
             <div id='searchBar'></div>
         </div>
     </header>
-    <div id="bodyLeftAdv"></div>
+    <div id="bodyLeftAdv">{{ render_esi(url('ads_manager_show', { 'id': 'home_body_first' })) }}</div>
     <div class="wrapper">
         <div id='content'>
         {% block body %}{% endblock %}
     </div>
 </div>
-<div id="bodyRightAdv"></div>
+<div id="bodyRightAdv">{{ render_esi(url('ads_manager_show', { 'id': 'home_body_second' })) }}</div>
 <footer>
-    <div id='footerAdv'></div>
+    <div id='bottomAdvRow'>
+        <div id='leftBottomAdv'>{{ render_esi(url('ads_manager_show', { 'id': 'home_footer_first' })) }}</div>
+        <div id='rightBottomAdv'>{{ render_esi(url('ads_manager_show', { 'id': 'home_footer_second' })) }}</div>
+
+    </div>
     <div id="footerContent">
         <div class="wrapper">
             <div class='col-lg-3'>

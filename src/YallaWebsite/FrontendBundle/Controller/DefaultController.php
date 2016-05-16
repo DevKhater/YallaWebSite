@@ -66,9 +66,9 @@ class DefaultController extends Controller
         if (!$entity) {
             throw $this->createNotFoundException('Unable to find This Venue.');
         }
-        dump($entity);exit;
-//        return $this->render('YallaWebsiteFrontendBundle:Venue:show.html.twig', array(
-//                    'entity' => $entity,
-//        ));
+
+        return $this->render('YallaWebsiteFrontendBundle:Article:show.html.twig', array(
+                    'entity' => $entity,
+        ));
     }
 }

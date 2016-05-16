@@ -6,7 +6,6 @@
             <h1>Places To Go</h1>
         </div>
         {% for venue in pagination  %}
-            {{dump(venue)}}
             <div class="venueDiv">
                 <div class="venueContent" data-toggle="modal" data-target="#{{venue.slug}}" style="background-image: url('{% path  venue.media, 'displayIndex' %}')">
                     <div class="venueDivTitle">
@@ -25,7 +24,7 @@
                             <div class="modal_footer">
                                 <p>Address: {{venue.location.address}}<br/>
                                 Telephone: {{venue.location.telephone}}<br/>
-                                {#Working Hours: From <strong>{{venue.workingFrom}}</strong> to <strong>{{venue.workingTo}}</strong>#}
+                                Working Hours: From <span id='yellow_color'>{{venue.workingFrom.date|date("g:iA")}}</span> to <span id='yellow_color'>{{venue.workingTo.date|date("g:iA")}}</span><br/>
                                 Website: <a href="{{venue.website}}">{{venue.title}}</a></p>
                             </div>
                         </div>

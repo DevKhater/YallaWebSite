@@ -34,7 +34,7 @@ class EditVenueForm extends AbstractType
                 )
                 )
             
-            ->add('$workingTo', 'time', array(
+            ->add('workingTo', 'time', array(
                 'placeholder' => array(
                     'hour' => 'Hour', 'minute' => 'Minute',
                 )

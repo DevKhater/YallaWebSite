@@ -9188,7 +9188,11 @@ body .wrapper:after,
 body .wrapper #content:before,
 body .wrapper #content:after,
 body .wrapper #content .pageContent:before,
-body .wrapper #content .pageContent:after {
+body .wrapper #content .pageContent:after,
+body .wrapper #content .theArticleDiv:before,
+body .wrapper #content .theArticleDiv:after,
+footer #bottomAdvRow:before,
+footer #bottomAdvRow:after {
   content: " ";
   display: table;
 }
@@ -9212,7 +9216,9 @@ body header #topAdvRow:after,
 body header #socialSearchRow:after,
 body .wrapper:after,
 body .wrapper #content:after,
-body .wrapper #content .pageContent:after {
+body .wrapper #content .pageContent:after,
+body .wrapper #content .theArticleDiv:after,
+footer #bottomAdvRow:after {
   clear: both;
 }
 .topAdv {
@@ -9243,6 +9249,36 @@ body .wrapper #content .pageContent:after {
   }
 }
 .topAdv img {
+  max-width: 100%;
+}
+.bottomAdv {
+  position: relative;
+  float: left;
+  width: 41.66666667%;
+  min-height: 1px;
+  padding-left: 15px;
+  padding-right: 15px;
+  min-height: 50px;
+}
+@media (min-width: 1200px) {
+  .bottomAdv {
+    float: left;
+    width: 41.66666667%;
+  }
+}
+@media (min-width: 992px) {
+  .bottomAdv {
+    float: left;
+    width: 41.66666667%;
+  }
+}
+@media (min-width: 768px) {
+  .bottomAdv {
+    float: left;
+    width: 41.66666667%;
+  }
+}
+.bottomAdv img {
   max-width: 100%;
 }
 #bodyLeftAdv,
@@ -9311,6 +9347,10 @@ body .wrapper #content .pageContent:after {
   src: url('../fonts/Ebrima.eot?#iefix') format('embedded-opentype'), url('../fonts/Ebrima.woff') format('woff'), url('../fonts/Ebrima.woff') format('woff2'), url('../fonts/Ebrima.ttf') format('truetype'), url('../fonts/Ebrima.svg') format('svg');
   font-weight: normal;
   font-style: normal;
+}
+#yellow_color {
+  font-weight: bold;
+  color: #ffde16;
 }
 .venueBackground {
   background-size: cover;
@@ -10095,33 +10135,178 @@ body .wrapper #content .articleDiv .theArticleContent a:visited,
 body .wrapper #content .articleDiv .theArticleContent a:active {
   color: #9b7a00;
 }
-footer #footerAdv {
+body .wrapper #content .theArticleDiv {
+  margin-left: -15px;
+  margin-right: -15px;
+  margin-bottom: 2%;
+  text-align: center;
+}
+body .wrapper #content .theArticleDiv .innerTitle {
   position: relative;
   float: left;
   width: 100%;
   min-height: 1px;
   padding-left: 15px;
   padding-right: 15px;
-  height: 50px;
-  background-color: red;
+  text-align: center;
+  margin-bottom: 15px;
+  color: #4d4d4d;
 }
 @media (min-width: 1200px) {
-  footer #footerAdv {
+  body .wrapper #content .theArticleDiv .innerTitle {
     float: left;
     width: 100%;
   }
 }
 @media (min-width: 992px) {
-  footer #footerAdv {
+  body .wrapper #content .theArticleDiv .innerTitle {
     float: left;
     width: 100%;
   }
 }
 @media (min-width: 768px) {
-  footer #footerAdv {
+  body .wrapper #content .theArticleDiv .innerTitle {
     float: left;
     width: 100%;
   }
+}
+@media (min-width: 1200px) {
+  body .wrapper #content .theArticleDiv .innerTitle {
+    float: left;
+    width: 100%;
+  }
+}
+@media (min-width: 992px) {
+  body .wrapper #content .theArticleDiv .innerTitle {
+    float: left;
+    width: 100%;
+  }
+}
+@media (min-width: 768px) {
+  body .wrapper #content .theArticleDiv .innerTitle {
+    float: left;
+    width: 100%;
+  }
+}
+body .wrapper #content .theArticleDiv .innerTitle h1 {
+  font-weight: bold;
+  display: inline-block;
+  border-bottom: 3px solid #ffde16;
+}
+body .wrapper #content .theArticleDiv #innerArticleImage {
+  position: relative;
+  float: left;
+  width: 100%;
+  min-height: 1px;
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-bottom: 2%;
+}
+@media (min-width: 1200px) {
+  body .wrapper #content .theArticleDiv #innerArticleImage {
+    float: left;
+    width: 100%;
+  }
+}
+@media (min-width: 992px) {
+  body .wrapper #content .theArticleDiv #innerArticleImage {
+    float: left;
+    width: 100%;
+  }
+}
+@media (min-width: 768px) {
+  body .wrapper #content .theArticleDiv #innerArticleImage {
+    float: left;
+    width: 100%;
+  }
+}
+body .wrapper #content .theArticleDiv #innerArticleImage img {
+  margin: 0 auto;
+}
+body .wrapper #content .theArticleDiv #innerArticleContent {
+  position: relative;
+  float: left;
+  width: 100%;
+  min-height: 1px;
+  padding-left: 15px;
+  padding-right: 15px;
+  text-align: left;
+}
+@media (min-width: 1200px) {
+  body .wrapper #content .theArticleDiv #innerArticleContent {
+    float: left;
+    width: 100%;
+  }
+}
+@media (min-width: 992px) {
+  body .wrapper #content .theArticleDiv #innerArticleContent {
+    float: left;
+    width: 100%;
+  }
+}
+@media (min-width: 768px) {
+  body .wrapper #content .theArticleDiv #innerArticleContent {
+    float: left;
+    width: 100%;
+  }
+}
+footer #bottomAdvRow {
+  margin-left: -15px;
+  margin-right: -15px;
+  margin-top: 15px;
+  min-height: 50px;
+}
+footer #bottomAdvRow #leftBottomAdv,
+footer #bottomAdvRow #rightBottomAdv {
+  position: relative;
+  float: left;
+  width: 41.66666667%;
+  min-height: 1px;
+  padding-left: 15px;
+  padding-right: 15px;
+  min-height: 50px;
+}
+@media (min-width: 1200px) {
+  footer #bottomAdvRow #leftBottomAdv,
+  footer #bottomAdvRow #rightBottomAdv {
+    float: left;
+    width: 41.66666667%;
+  }
+}
+@media (min-width: 992px) {
+  footer #bottomAdvRow #leftBottomAdv,
+  footer #bottomAdvRow #rightBottomAdv {
+    float: left;
+    width: 41.66666667%;
+  }
+}
+@media (min-width: 768px) {
+  footer #bottomAdvRow #leftBottomAdv,
+  footer #bottomAdvRow #rightBottomAdv {
+    float: left;
+    width: 41.66666667%;
+  }
+}
+footer #bottomAdvRow #leftBottomAdv img,
+footer #bottomAdvRow #rightBottomAdv img {
+  max-width: 100%;
+}
+footer #bottomAdvRow #leftBottomAdv img,
+footer #bottomAdvRow #rightBottomAdv img {
+  height: 90px;
+  width: 590px;
+}
+footer #bottomAdvRow #leftBottomAdv {
+  float: left;
+}
+footer #bottomAdvRow #leftBottomAdv img {
+  float: left;
+}
+footer #bottomAdvRow #rightBottomAdv {
+  float: right;
+}
+footer #bottomAdvRow #rightBottomAdv img {
+  float: right;
 }
 footer #footerContent {
   position: relative;

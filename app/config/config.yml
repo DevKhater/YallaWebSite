@@ -47,6 +47,7 @@ twig:
         "%kernel.root_dir%/../app/Resources/FOSUserBundle": FOSUserBundle
         "%kernel.root_dir%/../src/YallaWebsite/BackendBundle/Resources": YallaWebsiteBackendBundle
         "%kernel.root_dir%/../src/YallaWebsite/FrontendBundle/Resources": YallaWebsiteFrontendBundle
+        #"%kernel.root_dir%/../app/Resources/ApplicationSonataMediaBundle": SonataMediaBundle
 
 # Assetic Configuration
 assetic:

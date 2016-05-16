@@ -100,6 +100,7 @@ class Event extends BaseEntity
 
     public function __construct()
     {
+        $this->createdAt = new \DateTime();
         $this->location = new ArrayCollection();
         $this->tags = new \Doctrine\Common\Collections\ArrayCollection();
     }
@@ -374,7 +375,6 @@ class Event extends BaseEntity
      */
     public function prePersist()
     {
-        $this->createdAt = new \DateTime();
         $this->updatedAt = new \DateTime();
 
         if ($this->isVenue == true) {

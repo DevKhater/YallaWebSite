@@ -79,7 +79,7 @@ class EventController extends Controller
             if ($editForm->isValid()) {
                 $BEManager = $this->container->get('backend_manager.manager');
                 $BEManager->updateMedia($entity, $oldMedia, 'event');
-                $entity = $this->create($entity, $request, 'update');
+                $entity = $this->create($entity);
                 return new RedirectResponse($this->generateUrl('backend_event_show', array('id' => $entity->getId())));
             } else {
                 return $this->render('YallaWebsiteBackendBundle:Event:edit.html.twig', array(
@@ -103,9 +103,8 @@ class EventController extends Controller
         return new RedirectResponse($this->generateUrl('backend_event_index'));
     }
 
-    private function create(Event $event, $mode)
+    private function create(Event $event)
     {
-        $mode == 'save' ? $form = 'event_create' : $form = 'event_edit';
         $em = $this->getDoctrine()->getManager();
         $em->persist($event);
         $em->flush();

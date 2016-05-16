@@ -98,6 +98,7 @@ class Venue extends BaseEntity
     
     public function __construct()
     {
+        $this->createdAt = new \DateTime();
         $this->location = new ArrayCollection();
         $this->tags = new \Doctrine\Common\Collections\ArrayCollection();
     }
@@ -332,4 +333,16 @@ class Venue extends BaseEntity
     {
         return $this->workingTo;
     }
+    
+    /**
+     * @ORM\PrePersist
+     * @ORM\PreUpdate
+     */
+    public function prePersist()
+    {
+        $this->updatedAt = new \DateTime();
+        $this->workingFrom = new \DateTime(date('H:i', $this->workingFrom->getTimestamp()));
+        $this->workingTo = new \DateTime(date('H:i', $this->workingTo->getTimestamp()));
+    }
+
 }
