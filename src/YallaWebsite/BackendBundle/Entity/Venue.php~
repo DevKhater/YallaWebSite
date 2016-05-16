@@ -40,6 +40,22 @@ class Venue extends BaseEntity
      * 
      */
     private $location;
+    
+    /**
+     * @var datetime
+     *
+     * @ORM\Column(name="workingFrom", type="time")
+     * 
+     */
+    private $workingFrom;
+
+    /**
+     * @var datetime
+     *
+     * @ORM\Column(name="workingTo", type="time")
+     * 
+     */
+    private $workingTo;
 
     /**
      * @var string

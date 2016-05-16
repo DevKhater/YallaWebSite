@@ -172,6 +172,8 @@ body {
                 max-height: 88px;
                 ul {
                     li{
+                        height: 88px;
+                        min-height: 88px;
                         a{
                             color:white;
                             padding: 35px;
@@ -179,21 +181,27 @@ body {
                             letter-spacing: 7px;
                             @media screen and (max-width:1500px) { padding: 25px; }
                             @media screen and (max-width:1435px) { padding: 19px; padding-top: 30px;}
+                            @media screen and (max-width:1315px) { padding: 15px; padding-top: 30px;}
                             @media screen and (max-width:1260px) { padding: 9px; padding-top: 30px;}
+                            @media screen and (max-width:1155px) { padding: 7px; padding-top: 30px;}
+                            @media screen and (max-width:1122px) { padding: 7px; letter-spacing: 5px; padding-top: 30px;}
                             @media screen and (max-width:1080px) { padding: 11px; letter-spacing: 4px; padding-top: 35px;}
                             @media screen and (max-width:1035px) { padding: 6px; letter-spacing: 5px; padding-top: 35px;}
+                            @media screen and (max-width:1004px) { padding: 6px; letter-spacing: 3px; padding-top: 35px;}
                             @media screen and (max-width:985px) { padding: 12px; letter-spacing: 2px; padding-top: 35px;}
+                            @media screen and (max-width:948px) { padding: 6px; letter-spacing: 2px; padding-top: 35px;}
                             @media screen and (max-width:860px) { padding: 10px; letter-spacing: 0.5px;padding-top: 30px;}
                             @media screen and (max-width:845px) { padding: 8px; letter-spacing: 1px;padding-top: 35px;}
-                            @media screen and (max-width:800px) { padding: 6px; letter-spacing: 1px;padding-top: 30px;}
+                            @media screen and (max-width:832px) { padding: 5px; letter-spacing: 1px;padding-top: 35px;}
+                            @media screen and (max-width:800px) { padding: 3px; letter-spacing: 1px;}
                             @media screen and (max-width:768px) { padding: 5px; letter-spacing: none;}
                         }
-                        &:hover {
-                            background-color: @Color1;
-                            a {
-                                color:black;
-                            }
+                    &:hover {
+                        background-color: @Color1;
+                        a {
+                            color:black;
                         }
+                    }
                     } 
                 }
             }

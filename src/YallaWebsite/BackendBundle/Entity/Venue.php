@@ -40,6 +40,22 @@ class Venue extends BaseEntity
      * 
      */
     private $location;
+    
+    /**
+     * @var datetime
+     *
+     * @ORM\Column(name="workingFrom", type="time")
+     * 
+     */
+    private $workingFrom;
+
+    /**
+     * @var datetime
+     *
+     * @ORM\Column(name="workingTo", type="time")
+     * 
+     */
+    private $workingTo;
 
     /**
      * @var string
@@ -269,5 +285,51 @@ class Venue extends BaseEntity
     public function getSlug()
     {
         return $this->slug;
+    }
+
+    /**
+     * Set workingFrom
+     *
+     * @param \DateTime $workingFrom
+     * @return Venue
+     */
+    public function setWorkingFrom($workingFrom)
+    {
+        $this->workingFrom = $workingFrom;
+
+        return $this;
+    }
+
+    /**
+     * Get workingFrom
+     *
+     * @return \DateTime 
+     */
+    public function getWorkingFrom()
+    {
+        return $this->workingFrom;
+    }
+
+    /**
+     * Set workingTo
+     *
+     * @param \DateTime $workingTo
+     * @return Venue
+     */
+    public function setWorkingTo($workingTo)
+    {
+        $this->workingTo = $workingTo;
+
+        return $this;
+    }
+
+    /**
+     * Get workingTo
+     *
+     * @return \DateTime 
+     */
+    public function getWorkingTo()
+    {
+        return $this->workingTo;
     }
 }
