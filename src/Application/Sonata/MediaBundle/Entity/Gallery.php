@@ -13,6 +13,7 @@ namespace Application\Sonata\MediaBundle\Entity;
 
 use Sonata\MediaBundle\Entity\BaseGallery as BaseGallery;
 use Application\Sonata\MediaBundle\Entity\Media;
+use Doctrine\ORM\Mapping as ORM;
 
 //use Mykees\TagBundle\Traits\TaggableTrait;
 //use Mykees\TagBundle\Interfaces\Taggable;
@@ -82,6 +83,7 @@ class Gallery extends BaseGallery //implements Taggable
     public function __construct()
     {
         parent::__construct();
+        $this->createdAt = new \DateTime();
         $this->tags = new \Doctrine\Common\Collections\ArrayCollection();
     }
 
@@ -165,4 +167,44 @@ class Gallery extends BaseGallery //implements Taggable
     {
         return $this->description;
     }
+    /**
+     * @var \DateTime
+     */
+    private $date;
+
+
+    /**
+     * Set date
+     *
+     * @param \DateTime $date
+     * @return Gallery
+     */
+    public function setDate($date)
+    {
+        $this->date = $date;
+
+        return $this;
+    }
+
+    /**
+     * Get date
+     *
+     * @return \DateTime 
+     */
+    public function getDate()
+    {
+        return $this->date;
+    }
+    
+        /**
+     * @ORM\PrePersist
+     * @ORM\PreUpdate
+     */
+    public function prePersist()
+    {
+        $this->updatedAt = new \DateTime();
+        $this->date = new \DateTime(date('Y-m-d', $this->date->getTimestamp()));
+    }
+
+    
 }

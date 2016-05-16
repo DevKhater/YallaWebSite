@@ -36,7 +36,7 @@ class Gallery extends BaseGallery //implements Taggable
     protected $id;
 
     /**
-     * @var int $id
+     * @var text $description
      */
     protected $description;
 
@@ -141,5 +141,28 @@ class Gallery extends BaseGallery //implements Taggable
     public function getPreview()
     {
         return $this->preview;
+    }
+
+    /**
+     * Set description
+     *
+     * @param string $description
+     * @return Gallery
+     */
+    public function setDescription($description)
+    {
+        $this->description = $description;
+
+        return $this;
+    }
+
+    /**
+     * Get description
+     *
+     * @return string 
+     */
+    public function getDescription()
+    {
+        return $this->description;
     }
 }

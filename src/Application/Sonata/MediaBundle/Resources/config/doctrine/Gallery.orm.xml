@@ -18,6 +18,7 @@
         </id>
         
         <field name="description" type="text" nullable="true" />
+        <field name="date" type="date" nullable="true" />
         
         <one-to-one field="preview" target-entity="Application\Sonata\MediaBundle\Entity\Media">
             <cascade>

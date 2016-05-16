@@ -8,9 +8,8 @@
 
         {% for gallery in pagination  %}
             <div class="galleryDiv">
-                <div class="galleryContent" style="background-image: url('{% path  gallery.preview, 'medium' %}')">
-                    
-                    
+                <div class="galleryContent" style="background-image: url('{% path gallery.preview, 'displayIndex' %}')">
+                    {{dump(gallery)}}
                 </div>
             </div>
         {% endfor %}

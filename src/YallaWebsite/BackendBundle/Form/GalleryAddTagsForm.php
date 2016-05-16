@@ -22,6 +22,11 @@ class GalleryAddTagsForm extends AbstractType
                     'attr' => array(
                         'class' => 'form-control',
                         'placeholder' => 'Gallery Name')))
+                ->add('date', 'date', array(
+                    'placeholder' => array(
+                        'year' => 'Year', 'month' => 'Month', 'day' => 'Day'
+                    )
+                ))
                 ->add('description', 'textarea', array(
                     'label' => false,
                     'attr' => array(

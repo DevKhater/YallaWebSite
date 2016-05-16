@@ -5,48 +5,33 @@
         {% if medias is empty %}
         {% else %}
             <div class="col-md-12">
-                <div class="form-group">
-                    <strong>Tags</strong>
-                    {# {% for tag in tags %}
-                         <span class="label label-primary"> {{ tag.name }}  
-                             <a class="delete btn btn-danger btn-xs glyphicon glyphicon-trash" data-playgroup-id="{{ tag.name }}" ></a>
-                         {#    <a class="btn-danger btn-xs" href="{{path('backend_ajax_delete_tag', {'id':tag.name, 'g':entity.id })}}">[X}</a> #}
 
-                    {#    </span>
-                    {% endfor %} <br/>#}
-
-                    <label for="title">Add Tags Separated By Comma</label>
-                </div>
-                    <select class="image-picker show-html">
+                <select class="image-picker show-html">
                     {% for media in medias %}
                         <option data-img-src="{% path media.media, 'preview' %}" value="{{media.media.id}}">  {{media.id}}  </option>
                     {% endfor %}
-                    </select>
-                    <div class="col-md-12" style="text-align: center"><span class="savepreview">SAVE</span></div>
+                </select>
+                <div class="col-md-12" style="text-align: center"><span class="savepreview">SAVE</span></div>
             </div>
         {% endif %}
     </div>
 {% endblock %}
 
 {% block javascripts %} 
-    {{ parent() }}
     <script>
         $("select").imagepicker({
             hide_select: true,
             show_label: false
-        })
-
-
-
+        });
         function aButtonPressed(pid) {
             $.post('{{path('backend_gallery_ajax_set_preview')}}',
                     {id: pid, g: '{{entity.id}}'},
-            function (response) {
-                if (response.code == 100) {//dummy check
-                    alertSucc();
-                }
+                    function (response) {
+                        if (response.code == 100) {//dummy check
+                            alertSucc();
+                        }
 
-            }, "json");
+                    }, "json");
         }
 
         function alertSucc() {
@@ -56,8 +41,8 @@
 
         $(document).ready(function () {
             $('.alert').hide();
-            
-           $('.savepreview').on('click', function () {
+
+            $('.savepreview').on('click', function () {
                 var pid = $("select").val();
                 aButtonPressed(pid);
             });
