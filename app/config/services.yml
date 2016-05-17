@@ -36,3 +36,9 @@ services:
     backend_manager.manager:
         class: %backend_manager.class%
         arguments: [ @doctrine.orm.entity_manager, @sonata.media.manager.media ]
+    
+    app.calendar_listener:
+        class: YallaWebsite\FrontendBundle\EventListener\CalendarEventListener
+        arguments: ['@doctrine.orm.entity_manager', '@service_container']
+        tags:
+            - { name: kernel.event_listener, event:calendar.load_events, method:loadEvents }

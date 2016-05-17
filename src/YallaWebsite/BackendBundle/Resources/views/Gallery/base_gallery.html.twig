@@ -16,16 +16,8 @@
             <strong>Gallery Name : </strong>
             <a href="{{path ('backend_gallery_show',  {'id': entity.id}) }}">{{entity.name}}</a><br/>
         {% if pagination is defined %}{% if pagination is not empty %}<strong>Number of Images : </strong>{{ pagination.getTotalItemCount }}<br/>{% endif %}{% endif %}
-            {#{% if entity.getTags() %}
-                <strong>Tags</strong>
-                {% for tag in entity.getTags %}
-                    <span class="label label-primary"> {{ tag.name }} </span>
-                {% endfor %}
-            {% endif %}#}
-        
-        
-        
-        </div>
+
+    </div>
     <div class='row'>
         <div class="col-md-12" style="font: 20px;;">
             <a href='{{ path ('backend_gallery_edit', {'id': entity.id})}}'><span class="label label-primary">Add Tags/Chanege Gallery Name</span></a>    

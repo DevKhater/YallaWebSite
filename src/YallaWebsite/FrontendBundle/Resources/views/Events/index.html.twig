@@ -1,0 +1,68 @@
+{% extends "@YallaWebsiteFrontendBundle/views/front_base.html.twig" %}
+{% block body %}
+    <div class="row">
+        <div id="calendar-holder" class="col-lg-offset-3 col-lg-6"></div>
+    </div>
+
+{% endblock %}
+
+{% block js_calednar %}
+    <script>
+        $(function () {
+            var date = new Date();
+            var d = date.getDate();
+            var m = date.getMonth();
+            var y = date.getFullYear();
+            $('#calendar-holder').fullCalendar({
+                header: {
+                    left: 'prev',
+                    center: 'title',
+                    right: 'next'
+                },
+                lazyFetching: true,
+                timeFormat: {
+                    // for agendaWeek and agendaDay
+                    agenda: 'h:mmt', // 5:00 - 6:30
+
+                    // for all other views
+                    '': 'h:mmt'         // 7p
+                },
+                eventSources: [
+                    {
+                        url: Routing.generate('fullcalendar_loader'),
+                        type: 'POST',
+                        // A way to add custom filters to your event listeners
+                        data: {
+                            //filter: 'my_custom_filter_param'
+                        },
+                        error: function (xhr, textStatus, errorThrown) {
+                            console.log(xhr.responseText);
+                        },
+                    }
+
+                ],
+                dayClick: function (date, jsEvent, view) {
+                    console.log(date);
+                    displayEvents(date.getFullYear()+'-'+date.getMonth()+'-'+date.getDate());
+                    //alert('Clicked on: ' + date.getFullYear()+'-'+date.getMonth()+'-'+date.getDate());      
+                },
+            });
+        });
+
+        function displayEvents(thedate) {
+            $.ajax({
+                type: "POST",
+                url: Routing.generate('frontend_ajax_get_event_by_date', { id: thedate }),
+            //}).done(function(data) {console.log(data);});
+                success: function(data){
+                    console.log(data);
+                },
+                error: function (xhr, textStatus, errorThrown) {
+                            console.log(xhr.responseText);
+                            console.log(textStatus);
+                            console.log(errorThrown);
+                }
+            });
+        }
+    </script>
+{% endblock %}

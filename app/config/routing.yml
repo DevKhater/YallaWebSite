@@ -21,8 +21,8 @@ media:
 fos_user:
     resource: "@FOSUserBundle/Resources/config/routing/all.xml"
 
-
-#    
-#mykees_tag_admin:
-#    resource: "@MykeesTagBundle/Resources/config/routing_admin.yml"
-#    prefix:   /admin/tag
+fos_js_routing:
+    resource: "@FOSJsRoutingBundle/Resources/config/routing/routing.xml"
+    
+adesigns_calendar:
+    resource: "@ADesignsCalendarBundle/Resources/config/routing.xml"    

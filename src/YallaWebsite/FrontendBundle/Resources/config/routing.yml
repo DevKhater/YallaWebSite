@@ -18,6 +18,20 @@ yalla_website_frontened_article:
     path: /gossip/{id}
     defaults: { _controller: YallaWebsiteFrontendBundle:Default:getArticleBySlug }
 
+yalla_website_frontened_events:
+    path: /events
+    defaults: { _controller: YallaWebsiteFrontendBundle:Default:events }
+
+yalla_website_frontened_event:
+    path: /event/{id}
+    defaults: { _controller: YallaWebsiteFrontendBundle:Default:getEventBySlug }
+    
+frontend_ajax_get_event_by_date:
+    path: /allevents/{id}
+    defaults: { _controller: YallaWebsiteFrontendBundle:Ajax:getEventByDate }
+    options:
+        expose: true
+
 ads_manager:
     resource: "@YallaWebsiteFrontendBundle/Resources/config/ads_manager_routing.yml"
     prefix:   /ads_manager

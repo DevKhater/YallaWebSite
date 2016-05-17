@@ -37,6 +37,9 @@ class AppKernel extends Kernel
              new Sonata\SeoBundle\SonataSeoBundle(),
             // Doctrine extension for glug
             new Stof\DoctrineExtensionsBundle\StofDoctrineExtensionsBundle(),
+             new FOS\JsRoutingBundle\FOSJsRoutingBundle(),
+            new ADesigns\CalendarBundle\ADesignsCalendarBundle(),
+
             
             new AppBundle\AppBundle(),
             new YallaWebsite\BackendBundle\YallaWebsiteBackendBundle(),
@@ -56,5 +59,11 @@ class AppKernel extends Kernel
     public function registerContainerConfiguration(LoaderInterface $loader)
     {
         $loader->load($this->getRootDir().'/config/config_'.$this->getEnvironment().'.yml');
+    }
+    
+    public function init()
+    {
+        date_default_timezone_set( 'Africa/Cairo' );
+        parent::init();
     }
 }

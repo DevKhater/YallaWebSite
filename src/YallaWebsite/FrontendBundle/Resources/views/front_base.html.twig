@@ -18,6 +18,7 @@
         <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
+    <link rel="stylesheet" href="{{ asset('bundles/adesignscalendar/css/fullcalendar/fullcalendar.css') }}" />
     <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
 </head>
 <body>
@@ -26,9 +27,9 @@
         <!-- <div class="address-bar">3481 Melrose Place | Beverly Hills, CA 90210 | 123.456.7890</div> -->
 
         <!-- Navigation -->
-        
+
         {% include '@YallaWebsiteFrontendBundle/views/Template/menu.html.twig' %}
-        
+
         <div id='topAdvRow'>
             <div id='leftAdv'>{{ render_esi(url('ads_manager_show', { 'id': 'home_header_first' })) }}</div>
             <div id='rightAdv'>{{ render_esi(url('ads_manager_show', { 'id': 'home_header_second' })) }}</div>
@@ -69,7 +70,13 @@
 {% javascripts '@jquery' '@bootstrap_js' %}
 <script type="text/javascript" src="{{ asset_url }}"></script>
 {% endjavascripts %}
+<script src="{{ asset('bundles/fosjsrouting/js/router.js') }}"></script>
+<script src="{{ path('fos_js_routing_js', { callback: 'fos.Router.setData' }) }}"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.12/jquery-ui.min.js" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript" src="{{ asset('bundles/adesignscalendar/js/fullcalendar/jquery.fullcalendar.min.js') }}"></script>
+{% block js_calednar %}
+{% endblock %}
+
 {#{% javascripts '@YallaWebsiteFrontendBundle/Resources/public/js/*' %}
 <script src="{{ asset_url }}"></script>
 {% endjavascripts %}#}
