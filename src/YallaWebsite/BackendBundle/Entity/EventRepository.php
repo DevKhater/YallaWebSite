@@ -7,6 +7,7 @@
 namespace YallaWebsite\BackendBundle\Entity;
 
 use Doctrine\ORM\EntityRepository;
+use Symfony\Component\HttpFoundation\JsonResponse;
 
 class EventRepository extends EntityRepository
 {
@@ -33,28 +34,22 @@ class EventRepository extends EntityRepository
                 ->setParameter('end', $end)
                 ->getResult();
     }
-    
+
     public function findEventsByDates($theDay)
     {
-        $start = date('Y-m-d 00:00:00', $theDay);
-        var_dump($start);
-        $end = date('Y-m-d 23:59:59', $theDay);
-        var_dump($end);
-        
-        return $this->getEntityManager()
-                ->createQuery(
-                    'SELECT a FROM YallaWebsiteBackendBundle:Event a WHERE a.startDate BETWEEN :start AND :end')
-                ->setParameter('start', $start)
-                ->setParameter('end', $end)
-                ->getResult();
+        $data = $this->getEntityManager()
+            ->createQuery(
+                'SELECT a FROM YallaWebsiteBackendBundle:Event a WHERE a.startDate LIKE :start ORDER BY a.startDate ASC')
+            ->setParameter('start', $theDay);
+        return $data->getResult(\Doctrine\ORM\Query::HYDRATE_OBJECT);
     }
-    
+
     public function findBySlug($id)
     {
         return $this->getEntityManager()
-                        ->createQuery(
-                                'SELECT a FROM YallaWebsiteBackendBundle:Event a WHERE a.slug = :id'
-                        )->setParameter('id', $id)
-                        ->getSingleResult();
+                ->createQuery(
+                    'SELECT a FROM YallaWebsiteBackendBundle:Event a WHERE a.slug = :id'
+                )->setParameter('id', $id)
+                ->getSingleResult();
     }
 }

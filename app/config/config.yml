@@ -179,3 +179,7 @@ swiftmailer:
     username:  "%mailer_user%"
     password:  "%mailer_password%"
     spool:     { type: memory }
+    
+    
+web_profiler:
+    excluded_ajax_paths:  ^/bundles|^/_wdt

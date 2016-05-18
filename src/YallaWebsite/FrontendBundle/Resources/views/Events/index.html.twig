@@ -4,6 +4,14 @@
         <div id="calendar-holder" class="col-lg-offset-3 col-lg-6"></div>
     </div>
 
+
+
+    <div class="row">
+        <div id="DisplayedAjax"></div>
+    </div>
+
+
+
 {% endblock %}
 
 {% block js_calednar %}
@@ -43,26 +51,50 @@
                 ],
                 dayClick: function (date, jsEvent, view) {
                     console.log(date);
-                    displayEvents(date.getFullYear()+'-'+date.getMonth()+'-'+date.getDate());
+                    getEvents(date);
                     //alert('Clicked on: ' + date.getFullYear()+'-'+date.getMonth()+'-'+date.getDate());      
                 },
             });
         });
 
-        function displayEvents(thedate) {
+        function getEvents(thedate) {
             $.ajax({
-                type: "POST",
-                url: Routing.generate('frontend_ajax_get_event_by_date', { id: thedate }),
-            //}).done(function(data) {console.log(data);});
-                success: function(data){
-                    console.log(data);
-                },
-                error: function (xhr, textStatus, errorThrown) {
-                            console.log(xhr.responseText);
-                            console.log(textStatus);
-                            console.log(errorThrown);
-                }
-            });
-        }
+                type: "GET",
+                dataType: 'json',
+                url: Routing.generate('frontend_ajax_get_event_by_date', {id: thedate}),
+                async: false,
+                success: function (response) {
+
+                            $('#DisplayedAjax').html(response);
+                        }});
+            return false;
+        }{#  .done(function (response) {
+                        console.log(response);
+                        template = response;
+                        $('#DisplayedAjax').html(template.html); //Change the html of the div with the id = "your_div"                        
+                    })
+                    .fail(function (jqXHR, textStatus, errorThrown) {
+                        alert('Error : ' + errorThrown);
+                    });#}
+
+
+        {#
+        $.ajax({
+            type: "POST",
+            url: Routing.generate('frontend_ajax_get_event_by_date', { id: thedate }),
+            success: function(data){
+                 template = data;
+                $('#DisplayedAjax').html(template.html);
+                //OB = JSON.parse(data);
+                //displayEvents(OB);
+                //displayEvents(data);
+            },
+            error: function (xhr, textStatus, errorThrown) {
+                        console.log(xhr.responseText);
+                        console.log(textStatus);
+                        console.log(errorThrown);
+            }
+        });#}
+            //               }
     </script>
 {% endblock %}

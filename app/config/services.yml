@@ -3,6 +3,7 @@
 parameters:
 #    parameter_name: value
     backend_manager.class: YallaWebsite\BackendBundle\Factory\BackendManager
+    frontend_manager.class: YallaWebsite\FrontendBundle\Factory\FrontendManager
 
 services:
     app.form.type.location:
@@ -35,6 +36,10 @@ services:
         
     backend_manager.manager:
         class: %backend_manager.class%
+        arguments: [ @doctrine.orm.entity_manager, @sonata.media.manager.media ]
+    
+    frontend_manager.manager:
+        class: %frontend_manager.class%
         arguments: [ @doctrine.orm.entity_manager, @sonata.media.manager.media ]
     
     app.calendar_listener:

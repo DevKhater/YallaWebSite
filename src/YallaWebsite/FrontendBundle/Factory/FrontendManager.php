@@ -38,7 +38,7 @@ class FrontendManager
         }
     }
 
-
+ 
 //    private function prepareSEO($entity)
 //    {
 //
