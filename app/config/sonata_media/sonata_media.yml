@@ -40,6 +40,7 @@ sonata_media:
                 small:     { width: 200, quality: 100}
                 medium:     { width: 400, quality: 100}
                 large:     { width: 600, quality: 100}
+                displayIndex: {width:370, height:250, quality:50}
         venue:
             providers:
                 - sonata.media.provider.image

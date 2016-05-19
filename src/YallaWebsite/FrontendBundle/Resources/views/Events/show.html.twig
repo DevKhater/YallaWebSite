@@ -3,22 +3,52 @@
 {% block body %}
     <div class="pageContent">
         {%  if (entity) %}
-        {#    <div class="theArticleDiv">
+            <div class="theArticleDiv">
                 <div class="innerTitle">
                     <h1>{{entity.title}}</h1>
                 </div>
-                <div id="innerArticleImage">
-                    {% thumbnail entity.media, 'large' with {'class': 'img-responsive'} %}
+                <div class="col-lg-7 col-md-7 col-sm-7 col-xs-7">
+                    <div id="innerArticleImage">
+
+                        {% thumbnail entity.media, 'large' with {'class': 'img-responsive'} %}
+                    </div>
                 </div>
+                <div class="col-lg-5 col-md-5 col-sm-5  col-xs-5">
+                    <div id="innerEventInformation">
+                        {% if entity.startDate|date("F jS") ==  entity.endDate|date("F jS") %} 
+                            <strong>Date : </strong>{{entity.startDate|date("F jS")}}
+                            &emsp;&emsp;Start : {{entity.startDate|date("g:ia")}}
+                            &emsp;&emsp;End : {{entity.endDate|date("g:ia")}}<br/>
+                        {% else %}
+                            <strong>Start Date : </strong>{{entity.startDate|date("F jS \\a\\t g:ia")}} <br/>
+                            <strong>End Date : </strong>{{entity.endDate|date("F jS \\a\\t g:ia")}} <br/>
+                        {% endif %}
+                        {% if entity.isVenue == true %}
+                            <strong>Venue : </strong> <a href="{{entity.venue.website}}">{{ entity.venue.title }}</a><br />
+                            <strong><i>Address : </i></strong>{{ entity.venue.location.address }} <br/>
+                            <strong><i>Telephone : </i></strong>{{ entity.venue.location.telephone }} <br/></td>
+
+                        {% else %}
+
+                            <td>{{entity.location.address}}</td>
+                            <td>{{entity.location.telephone}}</td>
+
+                        {% endif %}
+
+
+
+                    </div>
+
+                </div>
+
 
                 <div id="innerArticleContent">
                     {{ entity.content| raw }}
                 </div>
-            </div>#}
-        
-        {{dump(entity)}}
+            </div>
+
+            {{dump(entity)}}
         {% endif %}
 
     </div>
-
 {% endblock %}

@@ -34,12 +34,6 @@ and open the template in the editor.
 @Color3: #ffde16;   //BG COLOR YELLOW
 @Pagination-Gray: #565656;
 @tempColor: #ff00ff;
-
-
-#yellow_color {
-    font-weight: bold;
-    color: @Color3;
-}
 .hyperlink() {
     a {
         font-weight: bold;
@@ -53,11 +47,38 @@ and open the template in the editor.
 
     } 
 }
-.venueBackground {
+
+#yellow_color {
+    font-weight: bold;
+    color: @Color3;
+}
+
+.mediaIntoBG {
     background-size: cover;
     background-repeat: no-repeat;
 }
-
+.RowIn4Col {
+    .make-lg-column(4);
+    .make-md-column(4);
+    .make-sm-column(4);
+    .make-xs-column(4);
+    margin-bottom: 2%;
+    text-align: center;
+}
+.innerPagesTitle {
+    .make-lg-column(12);
+    .make-md-column(12);
+    .make-sm-column(12);
+    .make-xs-column(12);
+    text-align: center;
+    margin-bottom: 15px;
+    color: @Color2;
+    h1 {
+        font-weight: bold;
+        display: inline-block;
+        border-bottom: 3px solid @Color3;
+    }
+}
 .navbar-brand {
     text-transform: uppercase;
     font-weight: 900;
@@ -72,21 +93,6 @@ and open the template in the editor.
         margin: 0 auto;
         table-layout: fixed;
         font-size: 1.1em;
-    }
-}
-
-.innerPagesTitle {
-    .make-lg-column(12);
-    .make-md-column(12);
-    .make-sm-column(12);
-    .make-xs-column(12);
-    text-align: center;
-    margin-bottom: 15px;
-    color: @Color2;
-    h1 {
-        font-weight: bold;
-        display: inline-block;
-        border-bottom: 3px solid @Color3;
     }
 }
 
@@ -110,7 +116,6 @@ and open the template in the editor.
         border-color: @Color1;
     }
 }
-
 .pagination_round_border {
     span {
         height: 34px;
@@ -131,7 +136,6 @@ and open the template in the editor.
         }
     } 
 }
-
 #menuImageLogo {
     z-index: 2;
     img {
@@ -140,8 +144,6 @@ and open the template in the editor.
         margin-top: -30px;
     }
 }
-
-
 @media screen and (min-width:768px) {
     .navbar {
         border-radius: 0;
@@ -316,7 +318,7 @@ body {
                     margin-bottom: 2%;
                     text-align: center;
                     .venueContent{
-                        .venueBackground;
+                        .mediaIntoBG;
                         border-radius: 5px;
                         min-height: 250px;
                         .venueDivTitle {
@@ -346,14 +348,9 @@ body {
                 }
             }
             .articleDiv {
-                .make-lg-column(4);
-                .make-md-column(4);
-                .make-sm-column(4);
-                .make-xs-column(4);
-                margin-bottom: 2%;
-                text-align: center;
+                .RowIn4Col;
                 .articleContent{
-                    .venueBackground;
+                    .mediaIntoBG;
                     border-radius: 5px;
                     min-height: 250px;
                     .articleDivTitle {
@@ -384,10 +381,10 @@ body {
                 margin-bottom: 2%;
                 text-align: center;
                 .innerTitle {
-                    .make-lg-column(12);
+/*                    .make-lg-column(12);
                     .make-md-column(12);
                     .make-sm-column(12);
-                    .make-xs-column(12);
+                    .make-xs-column(12);*/
                     .innerPagesTitle;
                 }
                 #innerArticleImage {
@@ -396,14 +393,53 @@ body {
                     .make-sm-column(12);
                     .make-xs-column(12);
                     margin-bottom: 2%;
-                        img {margin: 0 auto;}
-                    }
+                    img {margin: 0 auto;}
+                }
                 #innerArticleContent {
                     .make-lg-column(12);
                     .make-md-column(12);
                     .make-sm-column(12);
                     .make-xs-column(12);
                     text-align: left;
+                }
+                
+                #innerEventInformation{
+                    text-align: left;
+                    .hyperlink();
+                }
+            }
+            #theCalendarRow{
+                .row();
+                margin-top: 15px;
+                #calendar-holder{
+                    .make-lg-column-offset(3);
+                    .make-lg-column(6);
+                    .make-md-column-offset(3);
+                    .make-md-column(6);
+                    .make-sm-column-offset(3);
+                    .make-sm-column(6);
+                    .make-xs-column-offset(3);
+                    .make-xs-column(6);    
+                }
+            }
+            #DisplayedAjaxRow{
+                .row();
+                margin: 0 auto;
+                .eventAjaxDiv {
+                    margin: 2%;
+                    //.RowIn4Col;
+                    .mediaIntoBG;
+                    .eventTitleHoverDisplay {
+                        text-align: center;
+                        display: none;
+                        color: @Color1;
+                        margin-top: 30%;
+                        font-size: 30px;
+                        
+                    }
+                    &:hover {
+                        .eventTitleHoverDisplay { display: block; }
+                    }
                 }
             }
         }
@@ -413,30 +449,30 @@ body {
 
 footer{
     #bottomAdvRow{
-            .row();
-            margin-top: 15px;
-            min-height: 50px;
-            #leftBottomAdv,#rightBottomAdv {
-                .bottomAdv;
-                img {
-                    height: 90px;
-                    width: 590px;
-                }
-            }
-            #leftBottomAdv {
-                float: left;
-                img {
-                    float: left;
-                }
-            }
-            #rightBottomAdv {
-                float: right;
-                img {
-                    float: right;
-                }
+        .row();
+        margin-top: 15px;
+        min-height: 50px;
+        #leftBottomAdv,#rightBottomAdv {
+            .bottomAdv;
+            img {
+                height: 90px;
+                width: 590px;
             }
         }
-    
+        #leftBottomAdv {
+            float: left;
+            img {
+                float: left;
+            }
+        }
+        #rightBottomAdv {
+            float: right;
+            img {
+                float: right;
+            }
+        }
+    }
+
     #footerContent {
         .make-lg-column(12);
         .make-md-column(12);

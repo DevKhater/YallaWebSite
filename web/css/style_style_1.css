@@ -1758,6 +1758,10 @@ body .wrapper #content .pageContent:before,
 body .wrapper #content .pageContent:after,
 body .wrapper #content .theArticleDiv:before,
 body .wrapper #content .theArticleDiv:after,
+body .wrapper #content #theCalendarRow:before,
+body .wrapper #content #theCalendarRow:after,
+body .wrapper #content #DisplayedAjaxRow:before,
+body .wrapper #content #DisplayedAjaxRow:after,
 footer #bottomAdvRow:before,
 footer #bottomAdvRow:after {
   content: " ";
@@ -1785,6 +1789,8 @@ body .wrapper:after,
 body .wrapper #content:after,
 body .wrapper #content .pageContent:after,
 body .wrapper #content .theArticleDiv:after,
+body .wrapper #content #theCalendarRow:after,
+body .wrapper #content #DisplayedAjaxRow:after,
 footer #bottomAdvRow:after {
   clear: both;
 }
@@ -1919,26 +1925,36 @@ footer #bottomAdvRow:after {
   font-weight: bold;
   color: #ffde16;
 }
-.venueBackground {
+.mediaIntoBG {
   background-size: cover;
   background-repeat: no-repeat;
 }
-.navbar-brand {
-  text-transform: uppercase;
-  font-weight: 900;
-  letter-spacing: 2px;
+.RowIn4Col {
+  position: relative;
+  float: left;
+  width: 33.33333333%;
+  min-height: 1px;
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-bottom: 2%;
+  text-align: center;
 }
-.navbar-nav {
-  text-transform: uppercase;
-  font-weight: 400;
+@media (min-width: 1200px) {
+  .RowIn4Col {
+    float: left;
+    width: 33.33333333%;
+  }
 }
-@media screen and (min-width: 768px) {
-  .navbar-nav {
-    display: table;
-    float: none;
-    margin: 0 auto;
-    table-layout: fixed;
-    font-size: 1.1em;
+@media (min-width: 992px) {
+  .RowIn4Col {
+    float: left;
+    width: 33.33333333%;
+  }
+}
+@media (min-width: 768px) {
+  .RowIn4Col {
+    float: left;
+    width: 33.33333333%;
   }
 }
 .innerPagesTitle {
@@ -1974,6 +1990,24 @@ footer #bottomAdvRow:after {
   font-weight: bold;
   display: inline-block;
   border-bottom: 3px solid #ffde16;
+}
+.navbar-brand {
+  text-transform: uppercase;
+  font-weight: 900;
+  letter-spacing: 2px;
+}
+.navbar-nav {
+  text-transform: uppercase;
+  font-weight: 400;
+}
+@media screen and (min-width: 768px) {
+  .navbar-nav {
+    display: table;
+    float: none;
+    margin: 0 auto;
+    table-layout: fixed;
+    font-size: 1.1em;
+  }
 }
 .page_pagination {
   position: relative;
@@ -2709,6 +2743,10 @@ body .wrapper #content .theArticleDiv {
   text-align: center;
 }
 body .wrapper #content .theArticleDiv .innerTitle {
+  /*                    .make-lg-column(12);
+                    .make-md-column(12);
+                    .make-sm-column(12);
+                    .make-xs-column(12);*/
   position: relative;
   float: left;
   width: 100%;
@@ -2718,24 +2756,6 @@ body .wrapper #content .theArticleDiv .innerTitle {
   text-align: center;
   margin-bottom: 15px;
   color: #4d4d4d;
-}
-@media (min-width: 1200px) {
-  body .wrapper #content .theArticleDiv .innerTitle {
-    float: left;
-    width: 100%;
-  }
-}
-@media (min-width: 992px) {
-  body .wrapper #content .theArticleDiv .innerTitle {
-    float: left;
-    width: 100%;
-  }
-}
-@media (min-width: 768px) {
-  body .wrapper #content .theArticleDiv .innerTitle {
-    float: left;
-    width: 100%;
-  }
 }
 @media (min-width: 1200px) {
   body .wrapper #content .theArticleDiv .innerTitle {
@@ -2816,6 +2836,86 @@ body .wrapper #content .theArticleDiv #innerArticleContent {
     float: left;
     width: 100%;
   }
+}
+body .wrapper #content .theArticleDiv #innerEventInformation {
+  text-align: left;
+}
+body .wrapper #content .theArticleDiv #innerEventInformation a {
+  font-weight: bold;
+}
+body .wrapper #content .theArticleDiv #innerEventInformation a:link {
+  color: #ffde16;
+}
+body .wrapper #content .theArticleDiv #innerEventInformation a:visited,
+body .wrapper #content .theArticleDiv #innerEventInformation a:active {
+  color: #9b7a00;
+}
+body .wrapper #content #theCalendarRow {
+  margin-left: -15px;
+  margin-right: -15px;
+  margin-top: 15px;
+}
+body .wrapper #content #theCalendarRow #calendar-holder {
+  margin-left: 25%;
+  position: relative;
+  float: left;
+  width: 50%;
+  min-height: 1px;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+@media (min-width: 1200px) {
+  body .wrapper #content #theCalendarRow #calendar-holder {
+    margin-left: 25%;
+  }
+}
+@media (min-width: 1200px) {
+  body .wrapper #content #theCalendarRow #calendar-holder {
+    float: left;
+    width: 50%;
+  }
+}
+@media (min-width: 992px) {
+  body .wrapper #content #theCalendarRow #calendar-holder {
+    margin-left: 25%;
+  }
+}
+@media (min-width: 992px) {
+  body .wrapper #content #theCalendarRow #calendar-holder {
+    float: left;
+    width: 50%;
+  }
+}
+@media (min-width: 768px) {
+  body .wrapper #content #theCalendarRow #calendar-holder {
+    margin-left: 25%;
+  }
+}
+@media (min-width: 768px) {
+  body .wrapper #content #theCalendarRow #calendar-holder {
+    float: left;
+    width: 50%;
+  }
+}
+body .wrapper #content #DisplayedAjaxRow {
+  margin-left: -15px;
+  margin-right: -15px;
+  margin: 0 auto;
+}
+body .wrapper #content #DisplayedAjaxRow .eventAjaxDiv {
+  margin: 2%;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+body .wrapper #content #DisplayedAjaxRow .eventAjaxDiv .eventTitleHoverDisplay {
+  text-align: center;
+  display: none;
+  color: #eaeaea;
+  margin-top: 30%;
+  font-size: 30px;
+}
+body .wrapper #content #DisplayedAjaxRow .eventAjaxDiv:hover .eventTitleHoverDisplay {
+  display: block;
 }
 footer #bottomAdvRow {
   margin-left: -15px;

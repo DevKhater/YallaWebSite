@@ -1,17 +1,14 @@
 {% extends "@YallaWebsiteFrontendBundle/views/front_base.html.twig" %}
 {% block body %}
-    <div class="row">
-        <div id="calendar-holder" class="col-lg-offset-3 col-lg-6"></div>
+    <div class="pageContent">
+        <div class="IndexTitle">
+            <h1>Events</h1>
+        </div>
+        <div class="theCalendarRow">
+            <div id="calendar-holder"></div>
+        </div>
+        <div id="ajaxDiv" class="row" ></div>
     </div>
-
-
-
-    <div class="row">
-        <div id="DisplayedAjax"></div>
-    </div>
-
-
-
 {% endblock %}
 
 {% block js_calednar %}
@@ -59,42 +56,18 @@
 
         function getEvents(thedate) {
             $.ajax({
-                type: "GET",
-                dataType: 'json',
+                type: "POST",
                 url: Routing.generate('frontend_ajax_get_event_by_date', {id: thedate}),
-                async: false,
-                success: function (response) {
+                success: function (data) {
+                    $('#ajaxDiv').html(data);
+                },
+                error: function (xhr, textStatus, errorThrown) {
+                    console.log(xhr.responseText);
+                    console.log(textStatus);
+                    console.log(errorThrown);
+                }
+            });
 
-                            $('#DisplayedAjax').html(response);
-                        }});
-            return false;
-        }{#  .done(function (response) {
-                        console.log(response);
-                        template = response;
-                        $('#DisplayedAjax').html(template.html); //Change the html of the div with the id = "your_div"                        
-                    })
-                    .fail(function (jqXHR, textStatus, errorThrown) {
-                        alert('Error : ' + errorThrown);
-                    });#}
-
-
-        {#
-        $.ajax({
-            type: "POST",
-            url: Routing.generate('frontend_ajax_get_event_by_date', { id: thedate }),
-            success: function(data){
-                 template = data;
-                $('#DisplayedAjax').html(template.html);
-                //OB = JSON.parse(data);
-                //displayEvents(OB);
-                //displayEvents(data);
-            },
-            error: function (xhr, textStatus, errorThrown) {
-                        console.log(xhr.responseText);
-                        console.log(textStatus);
-                        console.log(errorThrown);
-            }
-        });#}
-            //               }
+        }
     </script>
 {% endblock %}
