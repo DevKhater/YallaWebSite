@@ -1,17 +1,16 @@
-{# empty Twig template #}
 {% extends "@YallaWebsiteFrontendBundle/views/front_base.html.twig" %}
 {% block body %}
     <div class="pageContent">
         {%  if (entity) %}
-            <div class="theArticleDiv">
+            <div class="theEntityDiv">
                 <div class="innerTitle">
                     <h1>{{entity.title}}</h1>
                 </div>
-                <div id="innerArticleImage">
+                <div id="innerEntityImage">
                     {% thumbnail entity.media, 'large' with {'class': 'img-responsive'} %}
                 </div>
 
-                <div id="innerArticleContent">
+                <div id="innerEntityContent">
                     {{ entity.content| raw }}
                 </div>
             </div>

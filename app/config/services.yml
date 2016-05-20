@@ -47,3 +47,15 @@ services:
         arguments: ['@doctrine.orm.entity_manager', '@service_container']
         tags:
             - { name: kernel.event_listener, event:calendar.load_events, method:loadEvents }
+    
+    app.socialBarHelper:
+        class : YallaWebsite\FrontendBundle\Templating\Helper\SocialBarHelper
+        tags : 
+            - {name : 'templating.helper', alias : 'social-buttons'} 
+        arguments : [ @templating ]
+
+    twig.extension.ynl_social_bar:
+        class : YallaWebsite\FrontendBundle\Twig\Extensions\YNLTwigSocialBar
+        tags:
+            - { name: 'twig.extension' }
+        arguments : [ @service_container ]

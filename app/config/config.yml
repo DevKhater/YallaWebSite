@@ -57,6 +57,7 @@ assetic:
         - YallaWebsiteBackendBundle
         - YallaWebsiteFrontendBundle
         - FOSUserBundle
+        - SonataMediaBundle
     # java: C:\\Program Files\\Java\\jdk1.8.0_60\\bin\\java.exe
     filters:
         cssrewrite:
@@ -140,7 +141,17 @@ assetic:
             inputs:
                 - %kernel.root_dir%/../src/YallaWebsite/FrontendBundle/Resources/public/fonts/Ebrima/Ebrima.woff2
             output: "fonts/Ebrima.woff2"
-            
+        
+        massonary:
+            inputs:
+                - %kernel.root_dir%/../src/YallaWebsite/FrontendBundle/Resources/public/js/masonry.pkgd.min.js
+        lightbox:
+            inputs:
+                - %kernel.root_dir%/../src/YallaWebsite/FrontendBundle/Resources/public/js/lightbox.js
+        lightbox_css:
+            inputs:
+                - %kernel.root_dir%/../src/YallaWebsite/FrontendBundle/Resources/public/css/lightbox.css
+    
                 
 
 # Doctrine Configuration

@@ -3,12 +3,12 @@
 {% block body %}
     <div class="pageContent">
         {%  if (entity) %}
-            <div class="theArticleDiv">
+            <div class="theEntityDiv">
                 <div class="innerTitle">
                     <h1>{{entity.title}}</h1>
                 </div>
                 <div class="col-lg-7 col-md-7 col-sm-7 col-xs-7">
-                    <div id="innerArticleImage">
+                    <div id="innerEntityImage">
 
                         {% thumbnail entity.media, 'large' with {'class': 'img-responsive'} %}
                     </div>
@@ -26,13 +26,11 @@
                         {% if entity.isVenue == true %}
                             <strong>Venue : </strong> <a href="{{entity.venue.website}}">{{ entity.venue.title }}</a><br />
                             <strong><i>Address : </i></strong>{{ entity.venue.location.address }} <br/>
-                            <strong><i>Telephone : </i></strong>{{ entity.venue.location.telephone }} <br/></td>
+                            <strong><i>Telephone : </i></strong>{{ entity.venue.location.telephone }} <br/>
 
                         {% else %}
-
-                            <td>{{entity.location.address}}</td>
-                            <td>{{entity.location.telephone}}</td>
-
+                            <strong><i>Address : </i></strong>{{ entity.location.address }} <br/>
+                            <strong><i>Telephone : </i></strong>{{ entity.location.telephone }} <br/>
                         {% endif %}
 
 
@@ -42,8 +40,8 @@
                 </div>
 
 
-                <div id="innerArticleContent">
-                    {{ entity.content| raw }}
+                <div id="innerEntityContent">
+                    <p>{{ entity.content }}</p> 
                 </div>
             </div>
 

@@ -1756,8 +1756,8 @@ body .wrapper #content:before,
 body .wrapper #content:after,
 body .wrapper #content .pageContent:before,
 body .wrapper #content .pageContent:after,
-body .wrapper #content .theArticleDiv:before,
-body .wrapper #content .theArticleDiv:after,
+body .wrapper #content .theEntityDiv:before,
+body .wrapper #content .theEntityDiv:after,
 body .wrapper #content #theCalendarRow:before,
 body .wrapper #content #theCalendarRow:after,
 body .wrapper #content #DisplayedAjaxRow:before,
@@ -1788,7 +1788,7 @@ body header #socialSearchRow:after,
 body .wrapper:after,
 body .wrapper #content:after,
 body .wrapper #content .pageContent:after,
-body .wrapper #content .theArticleDiv:after,
+body .wrapper #content .theEntityDiv:after,
 body .wrapper #content #theCalendarRow:after,
 body .wrapper #content #DisplayedAjaxRow:after,
 footer #bottomAdvRow:after {
@@ -2009,6 +2009,15 @@ footer #bottomAdvRow:after {
     font-size: 1.1em;
   }
 }
+@media screen and (min-width: 768px) {
+  .navbar {
+    border-radius: 0;
+    min-height: 0;
+  }
+  .navbar-header {
+    display: none;
+  }
+}
 .page_pagination {
   position: relative;
   float: left;
@@ -2072,15 +2081,6 @@ footer #bottomAdvRow:after {
   height: 150px;
   width: 150px;
   margin-top: -30px;
-}
-@media screen and (min-width: 768px) {
-  .navbar {
-    border-radius: 0;
-    min-height: 0;
-  }
-  .navbar-header {
-    display: none;
-  }
 }
 @media screen and (max-width: 780px) {
   #menuImageLogo {
@@ -2675,6 +2675,69 @@ body .wrapper #content .pageContent .venueDiv .modal-dialog .modal-content .moda
 body .wrapper #content .pageContent .venueDiv .modal-dialog .modal-content .modal_footer a:active {
   color: #9b7a00;
 }
+body .wrapper #content .galleryDiv {
+  position: relative;
+  float: left;
+  width: 33.33333333%;
+  min-height: 1px;
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-bottom: 2%;
+  text-align: center;
+}
+@media (min-width: 1200px) {
+  body .wrapper #content .galleryDiv {
+    float: left;
+    width: 33.33333333%;
+  }
+}
+@media (min-width: 992px) {
+  body .wrapper #content .galleryDiv {
+    float: left;
+    width: 33.33333333%;
+  }
+}
+@media (min-width: 768px) {
+  body .wrapper #content .galleryDiv {
+    float: left;
+    width: 33.33333333%;
+  }
+}
+body .wrapper #content .galleryDiv .galleryContent {
+  background-size: cover;
+  background-repeat: no-repeat;
+  border-radius: 5px;
+  min-height: 250px;
+  position: relative;
+}
+body .wrapper #content .galleryDiv .galleryContent .galleryDivTitle {
+  font-weight: bold;
+  width: 100%;
+  height: 50px;
+  background-color: rgba(26, 26, 26, 0.5);
+  font-size: 30px;
+  color: white;
+  position: absolute;
+  bottom: 0;
+}
+body .wrapper #content .galleryDiv .galleryContent .galleryDivTitle .galleryDivTitleContent h3,
+body .wrapper #content .galleryDiv .galleryContent .galleryDivTitle .galleryDivTitleContent h5 {
+  margin: 0;
+  padding: 0;
+}
+body .wrapper #content .galleryDiv .theGalleryContent {
+  text-align: left;
+}
+body .wrapper #content .galleryDiv .theGalleryContent a {
+  font-weight: bold;
+}
+body .wrapper #content .galleryDiv .theGalleryContent a:link {
+  color: #ffde16;
+}
+body .wrapper #content .galleryDiv .theGalleryContent a:visited,
+body .wrapper #content .galleryDiv .theGalleryContent a:active {
+  color: #9b7a00;
+}
 body .wrapper #content .articleDiv {
   position: relative;
   float: left;
@@ -2736,17 +2799,13 @@ body .wrapper #content .articleDiv .theArticleContent a:visited,
 body .wrapper #content .articleDiv .theArticleContent a:active {
   color: #9b7a00;
 }
-body .wrapper #content .theArticleDiv {
+body .wrapper #content .theEntityDiv {
   margin-left: -15px;
   margin-right: -15px;
   margin-bottom: 2%;
   text-align: center;
 }
-body .wrapper #content .theArticleDiv .innerTitle {
-  /*                    .make-lg-column(12);
-                    .make-md-column(12);
-                    .make-sm-column(12);
-                    .make-xs-column(12);*/
+body .wrapper #content .theEntityDiv .innerTitle {
   position: relative;
   float: left;
   width: 100%;
@@ -2758,29 +2817,29 @@ body .wrapper #content .theArticleDiv .innerTitle {
   color: #4d4d4d;
 }
 @media (min-width: 1200px) {
-  body .wrapper #content .theArticleDiv .innerTitle {
+  body .wrapper #content .theEntityDiv .innerTitle {
     float: left;
     width: 100%;
   }
 }
 @media (min-width: 992px) {
-  body .wrapper #content .theArticleDiv .innerTitle {
+  body .wrapper #content .theEntityDiv .innerTitle {
     float: left;
     width: 100%;
   }
 }
 @media (min-width: 768px) {
-  body .wrapper #content .theArticleDiv .innerTitle {
+  body .wrapper #content .theEntityDiv .innerTitle {
     float: left;
     width: 100%;
   }
 }
-body .wrapper #content .theArticleDiv .innerTitle h1 {
+body .wrapper #content .theEntityDiv .innerTitle h1 {
   font-weight: bold;
   display: inline-block;
   border-bottom: 3px solid #ffde16;
 }
-body .wrapper #content .theArticleDiv #innerArticleImage {
+body .wrapper #content .theEntityDiv #innerEntityImage {
   position: relative;
   float: left;
   width: 100%;
@@ -2790,27 +2849,27 @@ body .wrapper #content .theArticleDiv #innerArticleImage {
   margin-bottom: 2%;
 }
 @media (min-width: 1200px) {
-  body .wrapper #content .theArticleDiv #innerArticleImage {
+  body .wrapper #content .theEntityDiv #innerEntityImage {
     float: left;
     width: 100%;
   }
 }
 @media (min-width: 992px) {
-  body .wrapper #content .theArticleDiv #innerArticleImage {
+  body .wrapper #content .theEntityDiv #innerEntityImage {
     float: left;
     width: 100%;
   }
 }
 @media (min-width: 768px) {
-  body .wrapper #content .theArticleDiv #innerArticleImage {
+  body .wrapper #content .theEntityDiv #innerEntityImage {
     float: left;
     width: 100%;
   }
 }
-body .wrapper #content .theArticleDiv #innerArticleImage img {
+body .wrapper #content .theEntityDiv #innerEntityImage img {
   margin: 0 auto;
 }
-body .wrapper #content .theArticleDiv #innerArticleContent {
+body .wrapper #content .theEntityDiv #innerEntityContent {
   position: relative;
   float: left;
   width: 100%;
@@ -2820,34 +2879,118 @@ body .wrapper #content .theArticleDiv #innerArticleContent {
   text-align: left;
 }
 @media (min-width: 1200px) {
-  body .wrapper #content .theArticleDiv #innerArticleContent {
+  body .wrapper #content .theEntityDiv #innerEntityContent {
     float: left;
     width: 100%;
   }
 }
 @media (min-width: 992px) {
-  body .wrapper #content .theArticleDiv #innerArticleContent {
+  body .wrapper #content .theEntityDiv #innerEntityContent {
     float: left;
     width: 100%;
   }
 }
 @media (min-width: 768px) {
-  body .wrapper #content .theArticleDiv #innerArticleContent {
+  body .wrapper #content .theEntityDiv #innerEntityContent {
     float: left;
     width: 100%;
   }
 }
-body .wrapper #content .theArticleDiv #innerEventInformation {
+body .wrapper #content .theEntityDiv #galleryViewPhotogtapher {
+  position: relative;
+  float: left;
+  width: 100%;
+  min-height: 1px;
+  padding-left: 15px;
+  padding-right: 15px;
+  text-align: right;
+  border-bottom: 3px solid #ffde16;
+}
+@media (min-width: 1200px) {
+  body .wrapper #content .theEntityDiv #galleryViewPhotogtapher {
+    float: left;
+    width: 100%;
+  }
+}
+@media (min-width: 992px) {
+  body .wrapper #content .theEntityDiv #galleryViewPhotogtapher {
+    float: left;
+    width: 100%;
+  }
+}
+@media (min-width: 768px) {
+  body .wrapper #content .theEntityDiv #galleryViewPhotogtapher {
+    float: left;
+    width: 100%;
+  }
+}
+body .wrapper #content .theEntityDiv #innerGalleryImages {
+  position: relative;
+  float: left;
+  width: 100%;
+  min-height: 1px;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+@media (min-width: 1200px) {
+  body .wrapper #content .theEntityDiv #innerGalleryImages {
+    float: left;
+    width: 100%;
+  }
+}
+@media (min-width: 992px) {
+  body .wrapper #content .theEntityDiv #innerGalleryImages {
+    float: left;
+    width: 100%;
+  }
+}
+@media (min-width: 768px) {
+  body .wrapper #content .theEntityDiv #innerGalleryImages {
+    float: left;
+    width: 100%;
+  }
+}
+body .wrapper #content .theEntityDiv #innerGalleryImages #innerGalleryImage {
+  position: relative;
+  float: left;
+  width: 50%;
+  min-height: 1px;
+  padding-left: 15px;
+  padding-right: 15px;
+  height: 250px;
+  min-height: 250px;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+@media (min-width: 1200px) {
+  body .wrapper #content .theEntityDiv #innerGalleryImages #innerGalleryImage {
+    float: left;
+    width: 25%;
+  }
+}
+@media (min-width: 992px) {
+  body .wrapper #content .theEntityDiv #innerGalleryImages #innerGalleryImage {
+    float: left;
+    width: 33.33333333%;
+  }
+}
+@media (min-width: 768px) {
+  body .wrapper #content .theEntityDiv #innerGalleryImages #innerGalleryImage {
+    float: left;
+    width: 41.66666667%;
+  }
+}
+body .wrapper #content .theEntityDiv #innerEventInformation {
   text-align: left;
 }
-body .wrapper #content .theArticleDiv #innerEventInformation a {
+body .wrapper #content .theEntityDiv #innerEventInformation a {
   font-weight: bold;
 }
-body .wrapper #content .theArticleDiv #innerEventInformation a:link {
+body .wrapper #content .theEntityDiv #innerEventInformation a:link {
   color: #ffde16;
 }
-body .wrapper #content .theArticleDiv #innerEventInformation a:visited,
-body .wrapper #content .theArticleDiv #innerEventInformation a:active {
+body .wrapper #content .theEntityDiv #innerEventInformation a:visited,
+body .wrapper #content .theEntityDiv #innerEventInformation a:active {
   color: #9b7a00;
 }
 body .wrapper #content #theCalendarRow {

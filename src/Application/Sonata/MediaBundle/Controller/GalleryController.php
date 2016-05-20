@@ -53,7 +53,7 @@ class GalleryController extends Controller
     public function viewAction($id)
     {
         $gallery = $this->get('sonata.media.manager.gallery')->findOneBy(array(
-            'id'      => $id,
+            'slug'      => $id,
             'enabled' => true,
         ));
 
