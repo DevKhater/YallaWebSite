@@ -11,7 +11,7 @@ use Doctrine\Common\Collections\ArrayCollection;
  * Venue
  * @ORM\HasLifecycleCallbacks 
  * @ORM\Table()
- * @ORM\Entity()
+ * @ORM\Entity(repositoryClass="YallaWebsite\BackendBundle\Entity\VenueRepository")
  */
 class Venue extends BaseEntity
 {
@@ -98,6 +98,7 @@ class Venue extends BaseEntity
     
     public function __construct()
     {
+        $this->createdAt = new \DateTime();
         $this->location = new ArrayCollection();
         $this->tags = new \Doctrine\Common\Collections\ArrayCollection();
     }
@@ -286,4 +287,62 @@ class Venue extends BaseEntity
     {
         return $this->slug;
     }
+
+    /**
+     * Set workingFrom
+     *
+     * @param \DateTime $workingFrom
+     * @return Venue
+     */
+    public function setWorkingFrom($workingFrom)
+    {
+        $this->workingFrom = $workingFrom;
+
+        return $this;
+    }
+
+    /**
+     * Get workingFrom
+     *
+     * @return \DateTime 
+     */
+    public function getWorkingFrom()
+    {
+        return $this->workingFrom;
+    }
+
+    /**
+     * Set workingTo
+     *
+     * @param \DateTime $workingTo
+     * @return Venue
+     */
+    public function setWorkingTo($workingTo)
+    {
+        $this->workingTo = $workingTo;
+
+        return $this;
+    }
+
+    /**
+     * Get workingTo
+     *
+     * @return \DateTime 
+     */
+    public function getWorkingTo()
+    {
+        return $this->workingTo;
+    }
+    
+    /**
+     * @ORM\PrePersist
+     * @ORM\PreUpdate
+     */
+    public function prePersist()
+    {
+        $this->updatedAt = new \DateTime();
+        $this->workingFrom = new \DateTime(date('H:i', $this->workingFrom->getTimestamp()));
+        $this->workingTo = new \DateTime(date('H:i', $this->workingTo->getTimestamp()));
+    }
+
 }

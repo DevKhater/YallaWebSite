@@ -22,4 +22,13 @@ class ArticleRepository extends EntityRepository
                         ->getSingleResult();
     }
 
+    public function getLastTen()
+    {
+        return $this->getEntityManager()
+                        ->createQuery(
+                                'SELECT a FROM YallaWebsiteBackendBundle:Article a ORDER BY a.createdAt DESC')
+                        ->setMaxResults(10)
+                        ->getResult();
+    }
+
 }

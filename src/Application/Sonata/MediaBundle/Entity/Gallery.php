@@ -79,12 +79,13 @@ class Gallery extends BaseGallery //implements Taggable
 
 
     protected $tags;
-
+    private $photographers;
     public function __construct()
     {
         parent::__construct();
         $this->createdAt = new \DateTime();
         $this->tags = new \Doctrine\Common\Collections\ArrayCollection();
+        $this->photographers = new \Doctrine\Common\Collections\ArrayCollection();
     }
 
     /**
@@ -234,5 +235,38 @@ class Gallery extends BaseGallery //implements Taggable
     public function getSlug()
     {
         return $this->slug;
+    }
+
+    /**
+     * Add photographers
+     *
+     * @param \YallaWebsite\BackendBundle\Entity\Photographer $photographers
+     * @return Gallery
+     */
+    public function addPhotographer(\YallaWebsite\BackendBundle\Entity\Photographer $photographers)
+    {
+        $this->photographers[] = $photographers;
+
+        return $this;
+    }
+
+    /**
+     * Remove photographers
+     *
+     * @param \YallaWebsite\BackendBundle\Entity\Photographer $photographers
+     */
+    public function removePhotographer(\YallaWebsite\BackendBundle\Entity\Photographer $photographers)
+    {
+        $this->photographers->removeElement($photographers);
+    }
+
+    /**
+     * Get photographers
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getPhotographers()
+    {
+        return $this->photographers;
     }
 }

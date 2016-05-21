@@ -88,7 +88,41 @@ class BackendManager
         if ($oldMediaId != 0 && !is_null($oldMediaId)) $this->mediaManager->delete($this->mediaManager->find($oldMediaId));
         return $media;
     }
-
+    
+    public function getLasts($entity)
+    {
+        return $this->em->getRepository('YallaWebsiteBackendBundle:'. $entity)->getLastTen();
+        
+        
+    }
+    
+    public function getHomepageSlider() 
+            {
+        $homepage = $this->em->getRepository('YallaWebsiteFrontendBundle:HomePage')->find(3);
+        $slider = $homepage->getSliderEntities();
+        foreach ($slider as $entity) {
+        $object = $this->em->getRepository($this->em->getClassMetadata(get_class($entity))->getName())->find($entity->getId());
+        $arrr[] = $object;
+        }
+        $homepage->setSliderEntities($arrr);
+        $this->em->persist($homepage);
+        $this->em->flush();
+        return $homepage;
+    }
+    public function updateSlider($id, $pos, $type) 
+            {
+        $homepage = $this->em->getRepository('YallaWebsiteFrontendBundle:HomePage')->find(3);
+        $slider = $homepage->getSliderEntities();
+        $slider[(int)$pos] = $this->em->getRepository('YallaWebsiteBackendBundle:'. $type)->find((int)$id);
+        foreach ($slider as $entity) {
+            $object = $this->em->getRepository($this->em->getClassMetadata(get_class($entity))->getName())->find($entity->getId());
+            $arrr[] = $object;
+        }
+        $homepage->setSliderEntities($arrr);
+        $this->em->persist($homepage);
+        $this->em->flush();
+        return $homepage;
+    }
     private function prepareSEO($entity)
     {
 

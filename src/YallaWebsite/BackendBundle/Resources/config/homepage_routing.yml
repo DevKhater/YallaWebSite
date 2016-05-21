@@ -1,0 +1,10 @@
+## YAML Template.
+---
+backend_homepage_index:
+    path: /
+    defaults: { _controller: YallaWebsiteBackendBundle:Default:homePage }
+backend_ajax_set_slider:
+    path: /slider/{id}/{pos}/{type}
+    defaults: { _controller: YallaWebsiteBackendBundle:Default:setSlider }
+    options:
+        expose: true

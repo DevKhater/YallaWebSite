@@ -79,12 +79,13 @@ class Gallery extends BaseGallery //implements Taggable
 
 
     protected $tags;
-
+    private $photographers;
     public function __construct()
     {
         parent::__construct();
         $this->createdAt = new \DateTime();
         $this->tags = new \Doctrine\Common\Collections\ArrayCollection();
+        $this->photographers = new \Doctrine\Common\Collections\ArrayCollection();
     }
 
     /**

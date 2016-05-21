@@ -39,3 +39,9 @@ ads_manager:
 social_media_follow_us:
     path:     /template/social_media
     defaults: { _controller: YallaWebsiteFrontendBundle:Template:social }
+    
+gogogo:
+    path:     /hp
+    defaults: { _controller: YallaWebsiteFrontendBundle:Template:homepage }
+    
+    

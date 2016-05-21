@@ -10,6 +10,11 @@ services:
         class: YallaWebsite\BackendBundle\Form\Type\LocationType
         tags:
             - { name: form.type, alias: location_information }
+    app.form.type.photographer:
+        class: YallaWebsite\BackendBundle\Form\Type\PhotographerType
+        tags:
+            - { name: form.type, alias: photographer_type }
+            
     app.form.type.venue.location:
         class: YallaWebsite\BackendBundle\Form\Type\VenueLocationType
         arguments: ['@doctrine.orm.entity_manager']

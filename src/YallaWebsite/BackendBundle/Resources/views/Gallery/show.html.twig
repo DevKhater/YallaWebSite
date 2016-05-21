@@ -1,6 +1,5 @@
 {% extends "YallaWebsiteBackendBundle:Gallery:base_gallery.html.twig" %}
 {% block controlleraction  %}
-
     <br style="clear: both">
     <div class='col-md-6 center clear-fix' style="margin-bottom: 1em;border:1px solid black">
         {% if entity.description != null %} 
@@ -8,8 +7,13 @@
         {% endif %}
     </div>
     <div class='col-md-6 center clear-fix' style="margin-bottom: 1em;border:1px solid black">
-        {% if entity.description != null %} 
-            {{ entity.description }}
+        {% if entity.photographers is not empty  %}
+            Photo Credit : 
+            {% for ph in entity.photographers %}
+                <a href='ph.website'>{{ph.name}}</a> - 
+            {% endfor %}
+            {% else %}
+                No Photographers Assigned to This Gallery
         {% endif %}
     </div>
     <div class="col-md-3" style="text-align: center; border-right: #001f3f;border-right-width: 4px;border-right-style: double">

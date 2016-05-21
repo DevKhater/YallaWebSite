@@ -2,6 +2,11 @@ yalla_website_backend_homepage:
     path:     /
     defaults: { _controller: YallaWebsiteBackendBundle:Default:index }
 
+Homepage:
+    resource: "@YallaWebsiteBackendBundle/Resources/config/homepage_routing.yml"
+    prefix:   /homepage
+
+
 Venues:
     resource: "@YallaWebsiteBackendBundle/Resources/config/venues_routing.yml"
     prefix:   /venue
@@ -11,6 +16,9 @@ Events:
 Gallery:
     resource: "@YallaWebsiteBackendBundle/Resources/config/gallery_routing.yml"
     prefix:   /gallery
+Photographer:
+    resource: "@YallaWebsiteBackendBundle/Resources/config/photographer_routing.yml"
+    prefix:   /photographer
 Article:
     resource: "@YallaWebsiteBackendBundle/Resources/config/article_routing.yml"
     prefix:   /article

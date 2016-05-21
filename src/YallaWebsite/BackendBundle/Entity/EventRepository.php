@@ -52,4 +52,13 @@ class EventRepository extends EntityRepository
                 )->setParameter('id', $id)
                 ->getSingleResult();
     }
+    
+    public function getLastTen()
+    {
+        return $this->getEntityManager()
+                        ->createQuery(
+                                'SELECT a FROM YallaWebsiteBackendBundle:Event a ORDER BY a.startDate DESC')
+                        ->setMaxResults(10)
+                        ->getResult();
+    }
 }

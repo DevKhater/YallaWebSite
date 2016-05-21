@@ -32,6 +32,14 @@ class GalleryAddTagsForm extends AbstractType
                     'attr' => array(
                         'class' => 'form-control',
                         'placeholder' => 'Gallery Description')))
+                ->add('photographers', 'entity', array(
+                    'class' => 'YallaWebsiteBackendBundle:Photographer',
+                    'choice_label' => 'name',
+                    'expanded' => false,
+                    'multiple' => true,
+                    'required' => false,
+                    'attr' => array('class' => 'form-control',)
+                ))
                 ->add('tags', 'dcs_tag', array(
                     'attr' => array('class' => 'form-control',
             )))
