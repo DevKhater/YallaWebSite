@@ -35,7 +35,8 @@
         "oyejorge/less.php": "~1.7.0.9",
         "patchwork/jsqueeze": "^2.0",
         "adesigns/calendar-bundle": "^1.1",
-        "friendsofsymfony/jsrouting-bundle": "^1.6"
+        "friendsofsymfony/jsrouting-bundle": "^1.6",
+        "luxifer/doctrine-functions": "dev-master"
 
 
     },
