@@ -4,8 +4,8 @@ namespace YallaWebsite\FrontendBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Validator\Constraints as Assert;
-
 use YallaWebsite\FrontendBundle\Model\Homepage as BaseHome;
+
 /**
  * HomePage
  *
@@ -14,7 +14,16 @@ use YallaWebsite\FrontendBundle\Model\Homepage as BaseHome;
  */
 class HomePage extends BaseHome
 {
-    
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="AUTO")
+     */
+    private $id;
+
     /**
      * @ORM\Column(name="slider", type="array")
      */
@@ -24,11 +33,9 @@ class HomePage extends BaseHome
      * @var string
      *
      * @ORM\Column(name="videolink", type="string", length=255)
-     * @Assert\Url(
-     * message = "The url '{{ value }}' is not a valid url.Format : http://xxx.xxxxxx.xxx",
      * )
      */
-    protected $videoLink;
+    protected $videoLink = 'dummmy';
 
     /**
      * @var gallery
@@ -47,14 +54,25 @@ class HomePage extends BaseHome
     protected $mainArticle;
 
     /**
+     * @ORM\Column(name="sidearticlesindex", type="integer")
+     * @Assert\Range(min=0, max=3)
+     */
+    protected $sideArticlesIndex;
+    /**
      * @ORM\Column(name="sidearticles", type="array")
      */
     protected $sideArticles;
 
-  /**
+    /**
      * @ORM\Column(name="weekevents", type="array")
      */
-    protected $weekEvents;
+    protected $weekEvents = null;
+
+    public function __construct()
+    {
+        $this->sliderEntities = new \Doctrine\Common\Collections\ArrayCollection();
+        $this->weekEvents = new \Doctrine\Common\Collections\ArrayCollection();
+    }
 
     /**
      * Get id
@@ -72,6 +90,13 @@ class HomePage extends BaseHome
      * @param array $sliderEntities
      * @return HomePage
      */
+    public function addSliderEntities($sliderEntities)
+    {
+        $this->sliderEntities[] = $sliderEntities;
+
+        return $this;
+    }
+
     public function setSliderEntities($sliderEntities)
     {
         $this->sliderEntities = $sliderEntities;
@@ -203,4 +228,5 @@ class HomePage extends BaseHome
     {
         return $this->mainArticle;
     }
+
 }

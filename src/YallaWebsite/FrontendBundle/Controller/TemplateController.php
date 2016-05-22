@@ -22,11 +22,15 @@ class TemplateController extends Controller
     public function homepageAction()
     {
         $em = $this->getDoctrine()->getManager();
-//            $ent = $em->getRepository('YallaWebsiteFrontendBundle:HomePage')->find(3);
-//            $ent->setSelectedGallery($em->getRepository('ApplicationSonataMediaBundle:Gallery')->find(5));
-
-        $hp = new HomePage();
-        
+        $homepage= $em->getRepository('YallaWebsiteFrontendBundle:HomePage')->find(1);
+        $oldArt = $homepage->getSideArticles();
+        $oldArt[3] = $em->getRepository('YallaWebsiteBackendBundle:Article')->find(2);
+        $homepage->setSideArticlesIndex(0);
+        $homepage->setSideArticles($oldArt);
+        //$ent->setSelectedGallery($em->getRepository('ApplicationSonataMediaBundle:Gallery')->find(5));
+//        $hm = $em->getRepository('YallaWebsiteBackendBundle:Event')->getEventsbyDay(1);
+//        $hp = new HomePage();
+//        
 //        for ($i = 0 ; $i <3 ; $i++)
 //        {
 //            $hp->addSliderEntities($em->getRepository('YallaWebsiteBackendBundle:Event')->find(rand(16, 19)));
@@ -41,10 +45,10 @@ class TemplateController extends Controller
 //        $hp->addSliderEntities($em->getRepository('YallaWebsiteBackendBundle:Venue')->find(1));
 //        $hp->addSliderEntities($em->getRepository('YallaWebsiteBackendBundle:Article')->find(1));
 //        $hp->addSliderEntities($em->getRepository('ApplicationSonataMediaBundle:Gallery')->find(1));
-//        $em->persist($hp);
-//        $em->flush();
+        $em->persist($homepage);
+        $em->flush();
 
-        dump($hp);
+        dump($homepage);
         exit;
     }
 }

@@ -97,15 +97,11 @@ class BackendManager
         }
         return $this->em->getRepository('YallaWebsiteBackendBundle:'. $entity)->getLastTen();  
     }   
-    public function getHomepageSlider() 
+    public function getHomepage() 
             {
         $homepage = $this->em->getRepository('YallaWebsiteFrontendBundle:HomePage')->find($this->homePageId);
-        $slider = $homepage->getSliderEntities();
-        foreach ($slider as $entity) {
-        $object = $this->em->getRepository($this->em->getClassMetadata(get_class($entity))->getName())->find($entity->getId());
-        $arrr[] = $object;
-        }
-        $homepage->setSliderEntities($arrr);
+        $slider = $homepage->getSliderEntities();   
+        $homepage->setSliderEntities($this->modifyArray($slider));
         $this->em->persist($homepage);
         $this->em->flush();
         return $homepage;
@@ -115,11 +111,7 @@ class BackendManager
         $homepage = $this->em->getRepository('YallaWebsiteFrontendBundle:HomePage')->find($this->homePageId);
         $slider = $homepage->getSliderEntities();
         $slider[(int)$pos] = $this->em->getRepository('YallaWebsiteBackendBundle:'. $type)->find((int)$id);
-        foreach ($slider as $entity) {
-            $object = $this->em->getRepository($this->em->getClassMetadata(get_class($entity))->getName())->find($entity->getId());
-            $arrr[] = $object;
-        }
-        $homepage->setSliderEntities($arrr);
+        $homepage->setSliderEntities($this->modifyArray($slider));
         $this->em->persist($homepage);
         $this->em->flush();
         return $homepage;
@@ -151,10 +143,52 @@ class BackendManager
         $this->em->flush();
     }
     
+    public function setFourArticle($id)
+    {
+        $homepage = $this->em->getRepository('YallaWebsiteFrontendBundle:HomePage')->find($this->homePageId);
+        $oldArt = $homepage->getSideArticles();
+        $index = $homepage->getSideArticlesIndex();
+       if ($index >= 0 && $index < 3) {
+           $oldArt[$index] = $this->em->getRepository('YallaWebsiteBackendBundle:Article')->find((int)$id);
+            $homepage->setSideArticlesIndex($index+1);
+        }  else {
+            $oldArt[3] = $this->em->getRepository('YallaWebsiteBackendBundle:Article')->find((int)$id);
+            $homepage->setSideArticlesIndex(0);
+        }
+        $homepage->setSideArticles($this->modifyArray($oldArt));
+        $this->em->persist($homepage);
+        $this->em->flush();
+        return $homepage;
+    }
     
+    public function getEventsInDay($id)
+    {
+        $homepage = $this->em->getRepository('YallaWebsiteFrontendBundle:HomePage')->find($this->homePageId);
+        $events = $this->em->getRepository('YallaWebsiteBackendBundle:Event')->getEventsbyDay($id);
+        return $events;
+    }
+
+    public function setEventsInDay($id, $d)
+    {
+        $homepage = $this->em->getRepository('YallaWebsiteFrontendBundle:HomePage')->find($this->homePageId);
+        $events = $this->em->getRepository('YallaWebsiteBackendBundle:Event')->find(intval($id));
+        $oldWeek = $homepage->getWeekEvents();
+        $oldWeek[intval($d)] = $events;
+        $homepage->setWeekEvents($oldWeek);
+        $this->em->persist($homepage);
+        $this->em->flush();
+    }
     
-    
-    
+    private function modifyArray($ents)
+    {
+        foreach ($ents as $ent) {
+        $object = $this->em->getRepository($this->em->getClassMetadata(get_class($ent))->getName())->find($ent->getId());
+        $arrr[] = $object;
+        }
+        return $arrr;
+    }
+
+
     private function prepareSEO($entity)
     {
 

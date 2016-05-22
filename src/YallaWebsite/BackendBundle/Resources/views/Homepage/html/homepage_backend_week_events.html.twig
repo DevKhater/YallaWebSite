@@ -1,0 +1,15 @@
+<h4>Homepage Weeks Events</h4>
+<div class='col-md-12'>
+   <div style="float:left">
+       {% set days = {0: 'Sunday', 1:'Monday', 2:'Tuesday', 3: 'Wednesday', 4: 'Thursday', 5: 'Friday', 6: 'Saturday' }%}
+       <select id="dd_days" class="form-control">
+           <option>Select A Day</option>
+            {% for key, day in days %}
+                <option value="{{key}}">{{day}}</option>
+            {% endfor %}
+        </select>
+   </div>
+   <div style="float:left">
+       <div id='eventsAjax'></div>
+   </div>
+</div>

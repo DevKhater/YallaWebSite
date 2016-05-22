@@ -33,6 +33,7 @@
                 type: "POST",
                 url: Routing.generate('backend_ajax_update_four_articles', {id: $(this).val()}),
                 success: function (data) {
+                    console.log(data);
                     art4message = 'Article Updated';
                 },
                 error: function (xhr, textStatus, errorThrown) {

@@ -16,11 +16,12 @@ class HomepageController extends Controller
     public function homePageAction()
     {
         $BEManager = $this->container->get('backend_manager.manager');
-        $hom = $BEManager->getHomepageSlider();
+        
         $ddArtciles = $BEManager->getLasts('Article');
         $ddEvent = $BEManager->getLasts('Event');
         $ddVenue = $BEManager->getLasts('Venue');
         $ddGallery = $BEManager->getLasts('Gallery');
+        $hom = $BEManager->getHomepage();
 
 
 //        $em = $this->getDoctrine()->getManager();
@@ -65,7 +66,7 @@ class HomepageController extends Controller
     {
         $BEManager = $this->container->get('backend_manager.manager');
         $template = $this->render(
-            'YallaWebsiteBackendBundle:Homepage:slider_preview.html.twig', array('homepage' => $BEManager->getHomepageSlider()))->getContent();
+            'YallaWebsiteBackendBundle:Homepage:html\slider_preview.html.twig', array('homepage' => $BEManager->getHomepage()))->getContent();
         $json = json_encode($template);
         $response = new Response($json, 200);
         $response->headers->set('Content-Type', 'application/json');
@@ -87,7 +88,7 @@ class HomepageController extends Controller
         $id = $request->get('id');
         $BEManager = $this->container->get('backend_manager.manager');
         if ($BEManager->setFeaturedArticle($id)) {$res = 200;} else {$res = 500;}
-        $response = new Response(200);
+        $response = new Response($res);
         $response->headers->set('Content-Type', 'application/json');
         return $response;
     }
@@ -96,8 +97,33 @@ class HomepageController extends Controller
     {
         $id = $request->get('id');
         $BEManager = $this->container->get('backend_manager.manager');
-        if ($BEManager->setFeaturedArticle($id)) {$res = 200;} else {$res = 500;}
-        $response = new Response(200);
+        if ($BEManager->setFourArticle($id)) {$res = 200;} else {$res = 500;}
+        $response = new Response($res);
+        $response->headers->set('Content-Type', 'application/json');
+        return $response;
+    }
+    
+    public function getEventsInDayAction(Request $request)
+    {
+        $id = $request->get('id');
+        $BEManager = $this->container->get('backend_manager.manager');
+        $events = $BEManager->getEventsInDay($id);
+        if ($events) {$res = 200;} else {$res = 500;}
+        $template = $this->render(
+            'YallaWebsiteBackendBundle:Homepage:html\dropdown_day_event.html.twig', array('events' => $events))->getContent();
+        $json = json_encode($template);
+        $response = new Response($json, $res);        
+        $response->headers->set('Content-Type', 'application/json');
+        return $response;
+    }
+
+    public function setEventsInDayAction(Request $request)
+    {
+        $id = $request->get('id');
+        $d = $request->get('d');
+        $BEManager = $this->container->get('backend_manager.manager');
+        if ($BEManager->setEventsInDay($id, $d)) {$res = 200;} else {$res = 500;}
+        $response = new Response($res);        
         $response->headers->set('Content-Type', 'application/json');
         return $response;
     }

@@ -1,7 +1,7 @@
 <h4>Homepage Featured Article</h4>
 <div class='col-md-12'>
     <div id='featuredArticleAjax'></div>
-   <div style="float:left">
+    <div style="float:left">
         <select id="dd_one_article" class="form-control">
             {% for entity in articles %}
                 <option value="{{entity.id}}">{{entity.title}} - {{entity.createdAt|date("Y-m-d")}}</option>
@@ -11,15 +11,21 @@
     </div>
 </div>
 
-<h4>Homepage Featured Article</h4>
-<div class='col-md-12'>
-   <div style="float:left">
-       <h6>Select 4 Articles.</h6>
-       <div id='multiple_select_articles'>
+<h4>Homepage Other Articles</h4>
+<div class='col-md-6'>
+    <div style="float:left">
+        <h6>Select 4 Articles.</h6>
+        <div id='multiple_select_articles'>
             {% for entity in articles %}
                 <input class="single-checkbox" type="checkbox" name="article" value="{{entity.id}}">  {{entity.title}} - {{entity.createdAt|date("Y-m-d")}}<br>
             {% endfor %}
-        <a id='four_articles' href='#' class='btn-sm btn-default'>Add Articles To HomePage</a>
-    </div>
+            <a id='four_articles' href='#' class='btn-sm btn-default'>Add Articles To HomePage</a>
+        </div>
     </div>
 </div>
+            <div class='col-md-6'>
+                <div id="four_articles_preview">
+                    
+                </div>
+            </div>
+                

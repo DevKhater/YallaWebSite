@@ -77,7 +77,6 @@ class Gallery extends BaseGallery //implements Taggable
         $this->galleryHasMedias->removeElement($galleryHasMedia);
     }
 
-
     protected $tags;
     private $photographers;
     public function __construct()

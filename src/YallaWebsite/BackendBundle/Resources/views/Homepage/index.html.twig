@@ -32,6 +32,14 @@
         </div>
     </div>
             <hr>
+            
+    <div id='HomePagePartThree'>
+        <h1>Homepage Events Section</h1>
+        <div class="row">
+            {% include '@YallaWebsiteBackendBundle/views/Homepage/html/homepage_backend_week_events.html.twig' %}
+        </div>
+    </div>
+            <hr>
 {% endblock %}
 
 {% block javascripts %}
@@ -59,4 +67,5 @@
     {% include '@YallaWebsiteBackendBundle/views/Homepage/js/homepage_video_js.html.twig' %}
     {% include '@YallaWebsiteBackendBundle/views/Homepage/js/homepage_gallery_js.html.twig' %}
     {% include '@YallaWebsiteBackendBundle/views/Homepage/js/homepage_one_article_js.html.twig' %}
+    {% include '@YallaWebsiteBackendBundle/views/Homepage/js/homepage_week_events_js.html.twig' %}
 {%endblock%}

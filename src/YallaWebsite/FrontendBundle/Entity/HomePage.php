@@ -4,8 +4,8 @@ namespace YallaWebsite\FrontendBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Validator\Constraints as Assert;
-
 use YallaWebsite\FrontendBundle\Model\Homepage as BaseHome;
+
 /**
  * HomePage
  *
@@ -14,6 +14,7 @@ use YallaWebsite\FrontendBundle\Model\Homepage as BaseHome;
  */
 class HomePage extends BaseHome
 {
+
     /**
      * @var integer
      *
@@ -53,18 +54,25 @@ class HomePage extends BaseHome
     protected $mainArticle;
 
     /**
+     * @ORM\Column(name="sidearticlesindex", type="integer")
+     * @Assert\Range(min=0, max=3)
+     */
+    protected $sideArticlesIndex;
+    /**
      * @ORM\Column(name="sidearticles", type="array")
      */
     protected $sideArticles;
 
-  /**
+    /**
      * @ORM\Column(name="weekevents", type="array")
      */
-    protected $weekEvents;
-    
+    protected $weekEvents = null;
+
     public function __construct()
     {
         $this->sliderEntities = new \Doctrine\Common\Collections\ArrayCollection();
+        $this->sideArticles = new \Doctrine\Common\Collections\ArrayCollection();
+        $this->weekEvents = new \Doctrine\Common\Collections\ArrayCollection();
     }
 
     /**
@@ -89,6 +97,7 @@ class HomePage extends BaseHome
 
         return $this;
     }
+
     public function setSliderEntities($sliderEntities)
     {
         $this->sliderEntities = $sliderEntities;
@@ -219,5 +228,29 @@ class HomePage extends BaseHome
     public function getMainArticle()
     {
         return $this->mainArticle;
+    }
+
+
+    /**
+     * Set sideArticlesIndex
+     *
+     * @param integer $sideArticlesIndex
+     * @return HomePage
+     */
+    public function setSideArticlesIndex($sideArticlesIndex)
+    {
+        $this->sideArticlesIndex = $sideArticlesIndex;
+
+        return $this;
+    }
+
+    /**
+     * Get sideArticlesIndex
+     *
+     * @return integer 
+     */
+    public function getSideArticlesIndex()
+    {
+        return $this->sideArticlesIndex;
     }
 }
