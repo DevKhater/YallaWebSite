@@ -2,9 +2,41 @@
 ---
 backend_homepage_index:
     path: /
-    defaults: { _controller: YallaWebsiteBackendBundle:Default:homePage }
+    defaults: { _controller: YallaWebsiteBackendBundle:Homepage:homePage }
+
+
 backend_ajax_set_slider:
     path: /slider/{id}/{pos}/{type}
-    defaults: { _controller: YallaWebsiteBackendBundle:Default:setSlider }
+    defaults: { _controller: YallaWebsiteBackendBundle:Homepage:setSlider }
+    options:
+        expose: true
+
+backend_ajax_update_slider_view:
+    path: /slider/get/view
+    defaults: { _controller: YallaWebsiteBackendBundle:Homepage:updateSliderView }
+    options:
+        expose: true
+
+backend_ajax_update_video_link:
+    path: /video/{id}
+    defaults: { _controller: YallaWebsiteBackendBundle:Homepage:setVideoLink }
+    options:
+        expose: true
+
+backend_ajax_update_featured_gallery:
+    path: /gallery/{id}
+    defaults: { _controller: YallaWebsiteBackendBundle:Homepage:setFeaturedGallery }
+    options:
+        expose: true
+
+backend_ajax_update_featured_article:
+    path: /article/{id}
+    defaults: { _controller: YallaWebsiteBackendBundle:Homepage:setFeaturedArticle }
+    options:
+        expose: true
+        
+backend_ajax_update_four_articles:
+    path: /articles/{id}
+    defaults: { _controller: YallaWebsiteBackendBundle:Homepage:setFourArticles }
     options:
         expose: true

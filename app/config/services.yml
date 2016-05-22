@@ -64,3 +64,9 @@ services:
         tags:
             - { name: 'twig.extension' }
         arguments : [ @service_container ]
+
+    twig.extension.class_twig_extension:
+        class : YallaWebsite\BackendBundle\Twig\Extensions\ClassTwigExtension
+        tags:
+            - { name: 'twig.extension' }
+        arguments : [ ]

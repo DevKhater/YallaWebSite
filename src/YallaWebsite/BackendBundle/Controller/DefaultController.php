@@ -32,32 +32,7 @@ class DefaultController extends Controller
         ));
     }
 
-    public function homePageAction()
-    {
-        $BEManager = $this->container->get('backend_manager.manager');
-        $hom = $BEManager->getHomepageSlider();
-        $ddArtciles = $BEManager->getLasts('Article');
-        $ddEvent = $BEManager->getLasts('Event');
-        $ddVenue = $BEManager->getLasts('Venue');
-        
-        
-//        $em = $this->getDoctrine()->getManager();
-//        $homepage = $em->getRepository('YallaWebsiteFrontendBundle:HomePage')->find(3);
-//        $slider = $homepage->getSliderEntities();
-//        foreach ($slider as $entity) {
-//        $object = $em->getRepository($em->getClassMetadata(get_class($entity))->getName())->find($entity->getId());
-//        $arrr[] = $object;
-//        }
-     
-        
-        return $this->render('YallaWebsiteBackendBundle:Homepage:index.html.twig', array(
-            'articles' => $ddArtciles,
-            'events' => $ddEvent,
-            'venues' => $ddVenue,
-            'hom' => $hom
-            ));
-    }
-    
+   
     public function deleteTagAction (\Symfony\Component\HttpFoundation\Request $request)
             {
         $data1 = $request->get('id');
@@ -88,16 +63,5 @@ class DefaultController extends Controller
             return new RedirectResponse($this->generateUrl('backend_gallery_set_preview', array('id' => $gID)));
         }
     
-        public function setSliderAction(Request $request)
-        {
-            $id = $request->get('id');
-            $pos = $request->get('pos');
-            $type = $request->get('type');
-              $BEManager = $this->container->get('backend_manager.manager');
-              $json = json_encode($BEManager->updateSlider($id, $pos, $type));  
-              $response = new Response($json, 200); 
-              $response->headers->set('Content-Type', 'application/json');
-              return $response;
-              
-        }
+
 }

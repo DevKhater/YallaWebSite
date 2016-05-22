@@ -1,0 +1,30 @@
+{% set  arr = ['Event', 'Article', 'Venue', 'Gallery'] %}
+<script>
+    $(function () {
+    {% for entity in arr %}
+        $('a#{{entity}}').click(function (e) {
+        e.preventDefault();
+                var Value = $('#dd_{{entity}}').val();
+                var Position = $('#dd_p_{{entity}}').val();
+                var Type = '{{entity}}';
+                console.log(Value, Position, Type);
+                updateSlider(Value, Position, Type);
+        });
+    {% endfor %}
+    $('p#get_slider_view').click(function () {
+            $.ajax({
+                type: "POST",
+                url: Routing.generate('backend_ajax_update_slider_view'),
+                success: function (data) {
+                    $('#ajaxDiv').css('display', 'block');
+                    $('#ajaxDiv').html(data);
+                },
+                error: function (xhr, textStatus, errorThrown) {
+                    console.log(xhr.responseText);
+                    console.log(textStatus);
+                    console.log(errorThrown);
+                }
+            });
+        });
+    });
+    </script>

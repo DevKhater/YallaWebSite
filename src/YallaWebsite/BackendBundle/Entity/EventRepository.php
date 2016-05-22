@@ -7,7 +7,6 @@
 namespace YallaWebsite\BackendBundle\Entity;
 
 use Doctrine\ORM\EntityRepository;
-use Symfony\Component\HttpFoundation\JsonResponse;
 
 class EventRepository extends EntityRepository
 {
@@ -52,13 +51,19 @@ class EventRepository extends EntityRepository
                 )->setParameter('id', $id)
                 ->getSingleResult();
     }
-    
+
     public function getLastTen()
     {
         return $this->getEntityManager()
-                        ->createQuery(
-                                'SELECT a FROM YallaWebsiteBackendBundle:Event a ORDER BY a.startDate DESC')
-                        ->setMaxResults(10)
-                        ->getResult();
+                ->createQuery(
+                    'SELECT a FROM YallaWebsiteBackendBundle:Event a ORDER BY a.startDate DESC')
+                ->setMaxResults(10)
+                ->getResult();
+    }
+
+    public function getEventsbyDay()
+    {
+        
+        
     }
 }

@@ -1,0 +1,19 @@
+<script>
+    $('#featured_gallery').click(function (e) {
+        e.preventDefault();
+        var Gallery = $('#dd_feature_gallery').val();
+        $.ajax({
+            type: "POST",
+            url: Routing.generate('backend_ajax_update_featured_gallery', {id: Gallery}),
+            success: function (data) {
+                $('#featuredGalleryAjax').text('Article Updated');
+            },
+            error: function (xhr, textStatus, errorThrown) {
+                console.log(xhr.responseText);
+                console.log(textStatus);
+                console.log(errorThrown);
+                $('#featuredGalleryAjax').text('Error Contact Your Administrator.');
+            }
+        });
+    });
+</script>

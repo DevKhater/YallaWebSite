@@ -1,0 +1,35 @@
+<script>
+    $('#video_update_button').click(function (e) {
+        e.preventDefault();
+        var v = $("input[name='videoLink']").val();
+        if (ytVidId(v))
+        {
+            $.ajax({
+                type: "POST",
+                url: Routing.generate('backend_ajax_update_video_link', {id: encodeURIComponent(v)}),
+                success: function (data) {
+                    $('#video_messages').css('background-color', 'wheat');
+                    $('#video_messages').css('color', 'black');
+                    $('#video_messages').css('text-align', 'center');
+                    $('#video_messages').text('Video Link Updated');
+                },
+                error: function (xhr, textStatus, errorThrown) {
+                    console.log(xhr.responseText);
+                    console.log(textStatus);
+                    console.log(errorThrown);
+                    $('#video_messages').text('Opps, Something Wrong Happens... contact the administrator.');
+                }
+            });
+        } else {
+            $('#video_messages').text('Enter a Valid URL');
+        }
+    });
+    
+
+    function ytVidId(url) {
+        var p = /^(?:https?:\/\/)?(?:www\.)?(?:youtu\.be\/|youtube\.com\/(?:embed\/|v\/|watch\?v=|watch\?.+&v=))((\w|-){11})(?:\S+)?$/;
+        return (url.match(p)) ? RegExp.$1 : false;
+    }
+    
+    $("input[name='videoLink']").val(decodeURIComponent('{{homepage.videoLink}}'));
+</script>

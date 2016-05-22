@@ -236,4 +236,37 @@ class Gallery extends BaseGallery //implements Taggable
     {
         return $this->slug;
     }
+
+    /**
+     * Add photographers
+     *
+     * @param \YallaWebsite\BackendBundle\Entity\Photographer $photographers
+     * @return Gallery
+     */
+    public function addPhotographer(\YallaWebsite\BackendBundle\Entity\Photographer $photographers)
+    {
+        $this->photographers[] = $photographers;
+
+        return $this;
+    }
+
+    /**
+     * Remove photographers
+     *
+     * @param \YallaWebsite\BackendBundle\Entity\Photographer $photographers
+     */
+    public function removePhotographer(\YallaWebsite\BackendBundle\Entity\Photographer $photographers)
+    {
+        $this->photographers->removeElement($photographers);
+    }
+
+    /**
+     * Get photographers
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getPhotographers()
+    {
+        return $this->photographers;
+    }
 }

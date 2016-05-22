@@ -12,6 +12,7 @@ class BackendManager
 
     protected $em;
     protected $mediaManager;
+    protected $homePageId = 1;
 
     public function __construct(\Doctrine\ORM\EntityManager $em, \Sonata\MediaBundle\Entity\MediaManager $mediaManager)
     {
@@ -91,14 +92,14 @@ class BackendManager
     
     public function getLasts($entity)
     {
-        return $this->em->getRepository('YallaWebsiteBackendBundle:'. $entity)->getLastTen();
-        
-        
-    }
-    
+        if ($entity == 'Gallery') {
+            return $this->em->getRepository('ApplicationSonataMediaBundle:'. $entity)->getLastTen();
+        }
+        return $this->em->getRepository('YallaWebsiteBackendBundle:'. $entity)->getLastTen();  
+    }   
     public function getHomepageSlider() 
             {
-        $homepage = $this->em->getRepository('YallaWebsiteFrontendBundle:HomePage')->find(3);
+        $homepage = $this->em->getRepository('YallaWebsiteFrontendBundle:HomePage')->find($this->homePageId);
         $slider = $homepage->getSliderEntities();
         foreach ($slider as $entity) {
         $object = $this->em->getRepository($this->em->getClassMetadata(get_class($entity))->getName())->find($entity->getId());
@@ -111,7 +112,7 @@ class BackendManager
     }
     public function updateSlider($id, $pos, $type) 
             {
-        $homepage = $this->em->getRepository('YallaWebsiteFrontendBundle:HomePage')->find(3);
+        $homepage = $this->em->getRepository('YallaWebsiteFrontendBundle:HomePage')->find($this->homePageId);
         $slider = $homepage->getSliderEntities();
         $slider[(int)$pos] = $this->em->getRepository('YallaWebsiteBackendBundle:'. $type)->find((int)$id);
         foreach ($slider as $entity) {
@@ -123,6 +124,37 @@ class BackendManager
         $this->em->flush();
         return $homepage;
     }
+
+    public function updateVideoLink($id)
+    {
+        $homepage = $this->em->getRepository('YallaWebsiteFrontendBundle:HomePage')->find($this->homePageId);
+        $homepage->setVideoLink($id);
+        $this->em->persist($homepage);
+        $this->em->flush();
+    }
+
+    public function setFeaturedGallery($id)
+    {
+        $homepage = $this->em->getRepository('YallaWebsiteFrontendBundle:HomePage')->find($this->homePageId);
+        $gallery = $this->em->getRepository('ApplicationSonataMediaBundle:Gallery')->find($id);
+        $homepage->setSelectedGallery($gallery);
+        $this->em->persist($homepage);
+        $this->em->flush();
+    }
+
+    public function setFeaturedArticle($id)
+    {
+        $homepage = $this->em->getRepository('YallaWebsiteFrontendBundle:HomePage')->find($this->homePageId);
+        $article = $this->em->getRepository('YallaWebsiteBackendBundle:Article')->find($id);
+        $homepage->setMainArticle($article);
+        $this->em->persist($homepage);
+        $this->em->flush();
+    }
+    
+    
+    
+    
+    
     private function prepareSEO($entity)
     {
 
