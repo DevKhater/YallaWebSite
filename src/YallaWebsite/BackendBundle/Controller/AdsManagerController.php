@@ -18,8 +18,8 @@ class AdsManagerController extends Controller
     public function displayAction(Request $request)
     {
         $id = $request->get('id');
-        $BEManager = $this->container->get('backend_manager.manager');
-        $data = $BEManager->getAdv($this->container->getParameter('ads')['uri'], $id);
+        $YManager = $this->container->get('yaml_manager.manager');
+        $data = $YManager->getAdv($this->container->getParameter('ads')['uri'], $id);
         return $this->render('YallaWebsiteFrontendBundle:Ads:display.html.twig', array(
                 'allowed_type' => $this->container->getParameter('ads')['allowed_types'],
                 'content' => $data,
@@ -29,8 +29,8 @@ class AdsManagerController extends Controller
 
     public function indexAction()
     {
-        $BEManager = $this->container->get('backend_manager.manager');
-        $data = $BEManager->getAllAdv($this->container->getParameter('ads')['uri']);
+        $YManager = $this->container->get('yaml_manager.manager');
+        $data = $YManager->getAllAdv($this->container->getParameter('ads')['uri']);
 
         return $this->render('YallaWebsiteBackendBundle:AdsManager:index.html.twig', array(
                 'allowed_type' => $this->container->getParameter('ads')['allowed_types'],
@@ -40,8 +40,8 @@ class AdsManagerController extends Controller
 
     public function changeAction($id)
     {
-        $BEManager = $this->container->get('backend_manager.manager');
-        $data = $BEManager->getAdv($this->container->getParameter('ads')['uri'], $id);
+        $YManager = $this->container->get('yaml_manager.manager');
+        $data = $YManager->getAdv($this->container->getParameter('ads')['uri'], $id);
         $manager = $this->getDoctrine()->getManager();
         $createVenueForm = $this->createForm(new AdvTypeForm($manager));
 
@@ -63,9 +63,9 @@ class AdsManagerController extends Controller
             //$newmedia = MediaFileTransformer::reverseTransform($request->files->get('adve_form')['media']);
             $mt = new MediaFileTransformer;
             $newmedia = $mt->reverseTransform($request->files->get('adve_form')['media']);
-            $BEManager = $this->container->get('backend_manager.manager');
-            $old = $BEManager->getAllAdv($this->container->getParameter('ads')['uri']);
-            $BEManager->saveAdvMedia($newmedia, $old[$id]['media']);
+            $YManager = $this->container->get('yaml_manager.manager');
+            $old = $YManager->getAllAdv($this->container->getParameter('ads')['uri']);
+            $YManager->saveAdvMedia($newmedia, $old[$id]['media']);
             $url = $request->request->get('adve_form')['linkfor'];
             $this->addAdvYaml($id, $newmedia, $url);
             return new RedirectResponse($this->generateUrl('backend_ads_manager_index'));
@@ -75,9 +75,9 @@ class AdsManagerController extends Controller
 
     private function addAdvYaml($id, $image, $adv_url)
     {
-        $BEManager = $this->container->get('backend_manager.manager');
+        $YManager = $this->container->get('yaml_manager.manager');
         $url = $this->container->getParameter('ads')['uri'];
-        $allData = $BEManager->getAllAdv($url);
+        $allData = $YManager->getAllAdv($url);
         $allData[$id]['media'] = $image->getId();
         $allData[$id]['data'][0]['link'] = $this->container->get('sonata.media.twig.extension')->path($image, $allData[$id]['format']);
         $allData[$id]['data'][0]['target'] = $adv_url;

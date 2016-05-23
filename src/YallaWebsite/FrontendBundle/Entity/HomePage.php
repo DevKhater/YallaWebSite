@@ -67,6 +67,21 @@ class HomePage extends BaseHome
      * @ORM\Column(name="weekevents", type="array")
      */
     protected $weekEvents = null;
+    
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="about", type="text")
+     */
+    private $about;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="vision", type="text")
+     */
+    private $vision;
+
 
     public function __construct()
     {
@@ -252,5 +267,51 @@ class HomePage extends BaseHome
     public function getSideArticlesIndex()
     {
         return $this->sideArticlesIndex;
+    }
+
+    /**
+     * Set about
+     *
+     * @param string $about
+     * @return HomePage
+     */
+    public function setAbout($about)
+    {
+        $this->about = $about;
+
+        return $this;
+    }
+
+    /**
+     * Get about
+     *
+     * @return string 
+     */
+    public function getAbout()
+    {
+        return $this->about;
+    }
+
+    /**
+     * Set vision
+     *
+     * @param string $vision
+     * @return HomePage
+     */
+    public function setVision($vision)
+    {
+        $this->vision = $vision;
+
+        return $this;
+    }
+
+    /**
+     * Get vision
+     *
+     * @return string 
+     */
+    public function getVision()
+    {
+        return $this->vision;
     }
 }

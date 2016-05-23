@@ -1,10 +1,10 @@
 {% extends "@YallaWebsiteFrontendBundle/views/front_base.html.twig" %}
 {% block stylesheets %}
     {{parent()}}
-    {% stylesheets '@css1' '@css2' %}
-    <link rel="stylesheet" type="text/css" media="screen" href="{{ asset_url }}"/>
-    {% endstylesheets %}
-{% endblock %}
+    <link rel="stylesheet" href="{{ asset('bundles/yallawebsitefrontend/css/blueimp-gallery.min.css') }}" />
+    <link rel="stylesheet" href="{{ asset('bundles/yallawebsitefrontend/css/bootstrap-image-gallery.css') }}" />
+{% endblock %}    
+
 {% block body %}
     <style>
         .thumbnail {
@@ -94,7 +94,7 @@
 
                 {% for galleryHasMedia in gallery.GalleryHasMedias %}
                     <div class="im-item">
-                        <a title="" href="{% path galleryHasMedia.media, 'large' %}" data-gallery><img class="thumbnail img-responsive" src="{% path galleryHasMedia.media, 'large' %}"></a></div>
+                        <a data-gallery='' title="" href="{% path galleryHasMedia.media, 'large' %}"><img class="thumbnail img-responsive" src="{% path galleryHasMedia.media, 'small' %}"></a></div>
 
                 {% endfor %}
             </div>
@@ -123,6 +123,7 @@
                     </div>
                     <div class="modal-body next"></div>
                     <div class="modal-footer">
+                        <div>{{ render_esi(url('ads_manager_show', { 'id': 'snapshot_popup' })) }}</div>
                         <button type="button" class="btn btn-default pull-left prev">
                             <i class="glyphicon glyphicon-chevron-left"></i>
                             Previous
@@ -139,7 +140,7 @@
 {% endblock %}
 
 {% block massonary %}
-    {% javascripts '@massonary' '@imagesloaded' '@gallery_js' '@blueimp'%}
+    {% javascripts '@massonary' '@imagesloaded'%}
     <script type="text/javascript" src="{{ asset_url }}"></script>
     {% endjavascripts %}
     <script>
@@ -166,4 +167,6 @@
             blueimp.Gallery(links, options);
         };
     </script>
+    <script src="{{ asset('bundles/yallawebsitefrontend/js/jquery.blueimp-gallery.min.js') }}"></script>
+    <script src="{{ asset('bundles/yallawebsitefrontend/js/bootstrap-image-gallery.js') }}"></script>
 {% endblock %}

@@ -8,8 +8,8 @@ class DefaultController extends Controller
 
     public function indexAction()
     {
-        $em = $this->getDoctrine()->getManager();
-        $hp = $em->getRepository('YallaWebsiteFrontendBundle:HomePage')->find(1);
+        $BEManager = $this->container->get('backend_manager.manager');
+        $hp = $BEManager->getHomepage();
         return $this->render('YallaWebsiteFrontendBundle:Default:index.html.twig', array('home' => $hp));
     }
 

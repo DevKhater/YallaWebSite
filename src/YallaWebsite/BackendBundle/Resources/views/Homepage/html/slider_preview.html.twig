@@ -1,7 +1,7 @@
 <div>
 {% for ss in homepage.sliderEntities %}
     {% if class(ss) == 'Gallery' %}
-        <div style="float:left">{% thumbnail ss.preview, 'small' %}<br/>
+        <div style="float:left">{% thumbnail ss.media, 'small' %}<br/>
             <p>{{ ss.name }}</p>
         </div>
     {% else %}

@@ -4,6 +4,10 @@ backend_homepage_index:
     path: /
     defaults: { _controller: YallaWebsiteBackendBundle:Homepage:homePage }
 
+backend_homepage_about:
+    path: /about
+    defaults: { _controller: YallaWebsiteBackendBundle:Homepage:homePageAbout }
+
 
 backend_ajax_set_slider:
     path: /slider/{id}/{pos}/{type}
@@ -50,5 +54,18 @@ backend_ajax_get_events_for_day:
 backend_ajax_set_events_for_day:
     path: /event/{id}/{d}
     defaults: { _controller: YallaWebsiteBackendBundle:Homepage:setEventsInDay }
+    options:
+        expose: true
+
+
+backend_ajax_set_about:
+    path: /set/about/{data}
+    defaults: { _controller: YallaWebsiteBackendBundle:Homepage:setAbout }
+    options:
+        expose: true
+        
+backend_ajax_set_vision:
+    path: /set/vision/{data}
+    defaults: { _controller: YallaWebsiteBackendBundle:Homepage:setVision }
     options:
         expose: true

@@ -3,6 +3,7 @@
 parameters:
 #    parameter_name: value
     backend_manager.class: YallaWebsite\BackendBundle\Factory\BackendManager
+    yaml_manager.class: YallaWebsite\BackendBundle\Factory\YamlManager
     frontend_manager.class: YallaWebsite\FrontendBundle\Factory\FrontendManager
 
 services:
@@ -42,6 +43,9 @@ services:
     backend_manager.manager:
         class: %backend_manager.class%
         arguments: [ @doctrine.orm.entity_manager, @sonata.media.manager.media ]
+    yaml_manager.manager:
+        class: %yaml_manager.class%
+        arguments: [ @sonata.media.manager.media ]
     
     frontend_manager.manager:
         class: %frontend_manager.class%

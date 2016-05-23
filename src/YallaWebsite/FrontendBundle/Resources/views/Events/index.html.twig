@@ -1,4 +1,5 @@
 {% extends "@YallaWebsiteFrontendBundle/views/front_base.html.twig" %}
+{% block stylesheets %}<link rel="stylesheet" href="{{ asset('bundles/adesignscalendar/css/fullcalendar/fullcalendar.css') }}" />{% endblock %}
 {% block body %}
     <div class="pageContent">
         <div class="IndexTitle">
@@ -11,6 +12,7 @@
     </div>
 {% endblock %}
 
+{% block javascripts %}<script type="text/javascript" src="{{ asset('bundles/adesignscalendar/js/fullcalendar/jquery.fullcalendar.min.js') }}"></script>{% endblock %}
 {% block js_calednar %}
     <script>
         $(function () {
