@@ -51,7 +51,7 @@ class Gallery extends BaseGallery //implements Taggable
         return $this->id;
     }
 
-    private $preview;
+    private $media;
 
     /**
      * Add galleryHasMedia
@@ -122,27 +122,27 @@ class Gallery extends BaseGallery //implements Taggable
 
 
     /**
-     * Set preview
+     * Set media
      *
-     * @param \Application\Sonata\MediaBundle\Entity\GalleryHasMedia $preview
+     * @param \Application\Sonata\MediaBundle\Entity\GalleryHasMedia $media
      *
      * @return Gallery
      */
-    public function setPreview(\Application\Sonata\MediaBundle\Entity\Media $preview = null)
+    public function setMedia(\Application\Sonata\MediaBundle\Entity\Media $media = null)
     {
-        $this->preview = $preview;
+        $this->media = $media;
 
         return $this;
     }
 
     /**
-     * Get preview
+     * Get media
      *
      * @return \Application\Sonata\MediaBundle\Entity\GalleryHasMedia
      */
-    public function getPreview()
+    public function getMedia()
     {
-        return $this->preview;
+        return $this->media;
     }
 
     /**

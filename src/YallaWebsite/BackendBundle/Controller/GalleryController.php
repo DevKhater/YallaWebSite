@@ -135,10 +135,11 @@ class GalleryController extends Controller
     {
         $data1 = $request->get('id');
         $gID = $request->get('g');
+        
         $em = $this->getDoctrine()->getManager();
         $G = $em->getRepository("ApplicationSonataMediaBundle:Gallery")->find($gID);
         $M = $em->getRepository('ApplicationSonataMediaBundle:Media')->find($data1);
-        $G->setPreview($M);
+        $G->setMedia($M);
         $em->persist($G);
         $em->flush();
         return new JsonResponse(array('code' => 100, 'data' => "Preview Image Changed."));

@@ -18,8 +18,8 @@
     </div>
     <div class="col-md-3" style="text-align: center; border-right: #001f3f;border-right-width: 4px;border-right-style: double">
         <div style="min-height: 400px;">
-            {% if entity.preview is not empty %}
-                {%  thumbnail entity.preview, 'preview' %}
+            {% if entity.media is not empty %}
+                {%  thumbnail entity.media, 'preview' %}
                 <p>Image Cover Preview</p>
             {% else %} <p>No Cover Image Found 
                     {% if pagination is not empty %}<br/><strong><a href="{{ path ('backend_gallery_set_preview',  {'id': entity.id})}}">Set Preview Image Now</a></strong> </p> {% endif %}

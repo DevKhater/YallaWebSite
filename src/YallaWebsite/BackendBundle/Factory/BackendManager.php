@@ -86,31 +86,38 @@ class BackendManager
         $media->setContext('adv');
         $media->setProviderName('sonata.media.provider.image');
         $this->mediaManager->save($media);
-        if ($oldMediaId != 0 && !is_null($oldMediaId)) $this->mediaManager->delete($this->mediaManager->find($oldMediaId));
+        if ($oldMediaId != 0 && !is_null($oldMediaId))
+            $this->mediaManager->delete($this->mediaManager->find($oldMediaId));
         return $media;
     }
-    
+
     public function getLasts($entity)
     {
         if ($entity == 'Gallery') {
-            return $this->em->getRepository('ApplicationSonataMediaBundle:'. $entity)->getLastTen();
+            return $this->em->getRepository('ApplicationSonataMediaBundle:' . $entity)->getLastTen();
         }
-        return $this->em->getRepository('YallaWebsiteBackendBundle:'. $entity)->getLastTen();  
-    }   
-    public function getHomepage() 
-            {
+        return $this->em->getRepository('YallaWebsiteBackendBundle:' . $entity)->getLastTen();
+    }
+
+    public function getHomepage()
+    {
         $homepage = $this->em->getRepository('YallaWebsiteFrontendBundle:HomePage')->find($this->homePageId);
-        $slider = $homepage->getSliderEntities();   
+        $slider = $homepage->getSliderEntities();
         $homepage->setSliderEntities($this->modifyArray($slider));
         $this->em->persist($homepage);
         $this->em->flush();
         return $homepage;
     }
-    public function updateSlider($id, $pos, $type) 
-            {
+
+    public function updateSlider($id, $pos, $type)
+    {
         $homepage = $this->em->getRepository('YallaWebsiteFrontendBundle:HomePage')->find($this->homePageId);
         $slider = $homepage->getSliderEntities();
-        $slider[(int)$pos] = $this->em->getRepository('YallaWebsiteBackendBundle:'. $type)->find((int)$id);
+        if ($type == 'Gallery') {
+            $slider[intval($pos)] = $this->em->getRepository('ApplicationSonataMediaBundle:Gallery')->find(intval($id));
+        } else {
+            $slider[intval($pos)] = $this->em->getRepository('YallaWebsiteBackendBundle:' . $type)->find(intval($id));
+        }
         $homepage->setSliderEntities($this->modifyArray($slider));
         $this->em->persist($homepage);
         $this->em->flush();
@@ -142,17 +149,17 @@ class BackendManager
         $this->em->persist($homepage);
         $this->em->flush();
     }
-    
+
     public function setFourArticle($id)
     {
         $homepage = $this->em->getRepository('YallaWebsiteFrontendBundle:HomePage')->find($this->homePageId);
         $oldArt = $homepage->getSideArticles();
         $index = $homepage->getSideArticlesIndex();
-       if ($index >= 0 && $index < 3) {
-           $oldArt[$index] = $this->em->getRepository('YallaWebsiteBackendBundle:Article')->find((int)$id);
-            $homepage->setSideArticlesIndex($index+1);
-        }  else {
-            $oldArt[3] = $this->em->getRepository('YallaWebsiteBackendBundle:Article')->find((int)$id);
+        if ($index >= 0 && $index < 3) {
+            $oldArt[$index] = $this->em->getRepository('YallaWebsiteBackendBundle:Article')->find((int) $id);
+            $homepage->setSideArticlesIndex($index + 1);
+        } else {
+            $oldArt[3] = $this->em->getRepository('YallaWebsiteBackendBundle:Article')->find((int) $id);
             $homepage->setSideArticlesIndex(0);
         }
         $homepage->setSideArticles($this->modifyArray($oldArt));
@@ -160,7 +167,7 @@ class BackendManager
         $this->em->flush();
         return $homepage;
     }
-    
+
     public function getEventsInDay($id)
     {
         $homepage = $this->em->getRepository('YallaWebsiteFrontendBundle:HomePage')->find($this->homePageId);
@@ -178,16 +185,15 @@ class BackendManager
         $this->em->persist($homepage);
         $this->em->flush();
     }
-    
+
     private function modifyArray($ents)
     {
         foreach ($ents as $ent) {
-        $object = $this->em->getRepository($this->em->getClassMetadata(get_class($ent))->getName())->find($ent->getId());
-        $arrr[] = $object;
+            $object = $this->em->getRepository($this->em->getClassMetadata(get_class($ent))->getName())->find($ent->getId());
+            $arrr[] = $object;
         }
         return $arrr;
     }
-
 
     private function prepareSEO($entity)
     {

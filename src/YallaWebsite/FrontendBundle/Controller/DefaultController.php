@@ -8,11 +8,9 @@ class DefaultController extends Controller
 
     public function indexAction()
     {
-        $MM = $this->container->get('frontend_manager.manager');
-        $image = $MM->getMediaForEventById(25);
-        $serializedEntity = $this->container->get('serializer')->serialize($image, 'json');
-        dump($serializedEntity);exit;
-        return $this->render('YallaWebsiteFrontendBundle:Default:index.html.twig');
+        $em = $this->getDoctrine()->getManager();
+        $hp = $em->getRepository('YallaWebsiteFrontendBundle:HomePage')->find(1);
+        return $this->render('YallaWebsiteFrontendBundle:Default:index.html.twig', array('home' => $hp));
     }
 
     public function aboutAction()

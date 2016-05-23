@@ -41,7 +41,7 @@
                                                 <a href="{{path ('backend_gallery_show',  {'id': gallery.id}) }}"><button class="btn btn-primary btn-sm"><i class="fa fa-eye"></i> View </button></a>
                                             </td>
                                             <td><a href="{{ path ('backend_gallery_show',  {'id': gallery.id})}}">{{gallery.name}}</a></td>
-                                            <td>{% thumbnail  gallery.preview, 'small' %}</td>
+                                            <td>{% thumbnail  gallery.media, 'small' %}</td>
                                         </tr>
                                     {% endfor %}
                                 </tbody>

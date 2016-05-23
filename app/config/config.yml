@@ -145,13 +145,23 @@ assetic:
         massonary:
             inputs:
                 - %kernel.root_dir%/../src/YallaWebsite/FrontendBundle/Resources/public/js/masonry.pkgd.min.js
-        lightbox:
+        imagesloaded:
             inputs:
-                - %kernel.root_dir%/../src/YallaWebsite/FrontendBundle/Resources/public/js/lightbox.js
-        lightbox_css:
+                - %kernel.root_dir%/../src/YallaWebsite/FrontendBundle/Resources/public/js/imagesloaded.pkgd.min.js
+                
+        css1:
             inputs:
-                - %kernel.root_dir%/../src/YallaWebsite/FrontendBundle/Resources/public/css/lightbox.css
-    
+                - %kernel.root_dir%/../src/YallaWebsite/FrontendBundle/Resources/public/css/blueimp-gallery.min.css
+        css2:
+            inputs:
+                - %kernel.root_dir%/../src/YallaWebsite/FrontendBundle/Resources/public/css/bootstrap-image-gallery.min.css
+        gallery_js:
+            inputs:
+                - %kernel.root_dir%/../src/YallaWebsite/FrontendBundle/Resources/public/js/bootstrap-image-gallery.min.js
+        blueimp:
+            inputs:
+                - %kernel.root_dir%/../src/YallaWebsite/FrontendBundle/Resources/public/js/blueimp-gallery.js
+                
                 
 
 # Doctrine Configuration

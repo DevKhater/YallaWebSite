@@ -2,7 +2,6 @@
 {% block title %}Homepage Section{% endblock %}
 {% block body %}
     <div class="row">
-        {{dump(homepage)}}
         {% set  arr = [events, articles, venues, galleries]%}
         <div class="col-md-12">
             <h4 class="page-head-line">Homepage</h4>
@@ -31,15 +30,38 @@
             {% include '@YallaWebsiteBackendBundle/views/Homepage/html/homepage_backend_selected_article.html.twig' %}
         </div>
     </div>
-            <hr>
-            
+    <hr>
     <div id='HomePagePartThree'>
         <h1>Homepage Events Section</h1>
         <div class="row">
             {% include '@YallaWebsiteBackendBundle/views/Homepage/html/homepage_backend_week_events.html.twig' %}
         </div>
     </div>
-            <hr>
+    <hr>
+    
+    
+    
+
+    <!-- Modal -->
+    <div class="modal fade" id="ajaxResultMessages" role="dialog">
+        <div class="modal-dialog">
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title" id="ajaxTitle"></h4>
+                </div>
+                <div class="modal-body" id="ajaxMessage">
+                    <p></p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    
 {% endblock %}
 
 {% block javascripts %}
@@ -59,6 +81,9 @@
                     console.log(xhr.responseText);
                     console.log(textStatus);
                     console.log(errorThrown);
+                        $('h4#ajaxTitle').text('Error');
+                        $('#ajaxMessage p').text(errorThrown);
+                        $('#ajaxResultMessages').modal('show');
                 }
             });
         }
