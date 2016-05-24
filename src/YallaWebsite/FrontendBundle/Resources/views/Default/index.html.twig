@@ -1,14 +1,25 @@
 {% extends "@YallaWebsiteFrontendBundle/views/front_base.html.twig" %}
+
+{% block stylesheets %}
+    <link rel="stylesheet" href="{{ asset('bundles/yallawebsitefrontend/css/slick.css') }}" />
+    <link rel="stylesheet" href="{{ asset('bundles/yallawebsitefrontend/css/slick-theme.css') }}" />
+    <style>
+        .custom {
+            width: 100%;
+        }
+    </style>
+{% endblock %}
+
 {% block body %}
     <div class="pageContent">
-        {{ dump(home) }}
+        
         <div class="IndexTitle">
             <h1>EXCEPTIONAL LEVEL OF ENTERTAINMENT</h1>
         </div>
         <div class="row" id='homepage_part1'>
-            <div class="col-lg-9" style="height:250px;background-color: green;">
+            <div class="hp_slider col-lg-9" style="height:250px;background-color: green;">
             {% for slider in home.SliderEntities %}
-                {% thumbnail slider.media, 'small' %}
+                <div> {% thumbnail slider.media, 'homePage' %}</div>
                 {% endfor %}
             </div>
             <div class="col-lg-3" style="padding:0">
@@ -36,7 +47,7 @@
             .fancy span:after {
                 content: "";
                 position: absolute;
-                height: 5px;
+                height: 5px  ;
                 //border-bottom: 1px solid white;
                 border-bottom: 3px solid #ffde16;
                 top: 0;
@@ -88,6 +99,7 @@
 
 
 {% block javascripts %}
+    <script src="{{asset('bundles/yallawebsitefrontend/js/slick.min.js')}}"></script>    
 <script>
   // Load the IFrame Player API code asynchronously.
   var tag = document.createElement('script');
@@ -105,5 +117,11 @@
       videoId: '{{home.videoLink}}'
     });
   }
+  
+  $(document).ready(function(){
+  $('.hp_slider').slick({
+    //setting-name: setting-value
+  });
+});
 </script>
 {% endblock %}

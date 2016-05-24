@@ -31,6 +31,7 @@ sonata_media:
                 medium:   { width: 512 , quality: 100}
                 medium:     { width: 400, quality: 100}
                 big:   { width: 1024 , quality: 100}
+                homePage: {width:920, height:250, quality:50}
 
         event:
             providers:
@@ -41,6 +42,7 @@ sonata_media:
                 medium:     { width: 400, quality: 100}
                 large:     { width: 600, quality: 100}
                 displayIndex: {width:370, height:250, quality:50}
+                homePage: {width:920, height:250, quality:50}
         venue:
             providers:
                 - sonata.media.provider.image
@@ -50,6 +52,7 @@ sonata_media:
                 medium:     { width: 400, quality: 100}
                 large:     { width: 598, quality: 100}
                 displayIndex: {width:570, height:250, quality:50}
+                homePage: {width:920, height:250, quality:50}
         article:
             providers:
                 - sonata.media.provider.image
@@ -59,6 +62,7 @@ sonata_media:
                 medium:     { width: 400, quality: 100}
                 large:     { width: 600, quality: 100}
                 displayIndex: {width:370, height:250, quality:50}
+                homePage: {width:920, height:250, quality:50}
         gallery:
             providers:
                 - sonata.media.provider.image
@@ -68,6 +72,7 @@ sonata_media:
                 medium:     { width: 400, quality: 100}
                 large:     { width: 600, quality: 100}
                 displayIndex: {width:370, height:370, quality:50}
+                homePage: {width:920, height:250, quality:50}
         profile:
             providers:
                 - sonata.media.provider.image
