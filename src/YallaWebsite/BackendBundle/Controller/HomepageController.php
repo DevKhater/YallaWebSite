@@ -1,6 +1,4 @@
-<?php
-
-namespace YallaWebsite\BackendBundle\Controller;
+<?php namespace YallaWebsite\BackendBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
@@ -24,11 +22,11 @@ class HomepageController extends Controller
         $ddGallery = $BEManager->getLasts('Gallery');
         $hom = $BEManager->getHomepage();
         return $this->render('YallaWebsiteBackendBundle:Homepage:index.html.twig', array(
-                    'articles' => $ddArtciles,
-                    'events' => $ddEvent,
-                    'venues' => $ddVenue,
-                    'galleries' => $ddGallery,
-                    'homepage' => $hom
+                'articles' => $ddArtciles,
+                'events' => $ddEvent,
+                'venues' => $ddVenue,
+                'galleries' => $ddGallery,
+                'homepage' => $hom
         ));
     }
 
@@ -38,8 +36,8 @@ class HomepageController extends Controller
         $about = $BEManager->getHomepage()->getAbout();
         $vision = $BEManager->getHomepage()->getVision();
         return $this->render('YallaWebsiteBackendBundle:Homepage:about.html.twig', array(
-                    'about' => $about,
-                    'vision' => $vision
+                'about' => $about,
+                'vision' => $vision
         ));
     }
 
@@ -71,7 +69,7 @@ class HomepageController extends Controller
     {
         $BEManager = $this->container->get('backend_manager.manager');
         $template = $this->render(
-                        'YallaWebsiteBackendBundle:Homepage:html\slider_preview.html.twig', array('homepage' => $BEManager->getHomepage()))->getContent();
+                'YallaWebsiteBackendBundle:Homepage:html\slider_preview.html.twig', array('homepage' => $BEManager->getHomepage()))->getContent();
         $json = json_encode($template);
         $response = new Response($json, 200);
         $response->headers->set('Content-Type', 'application/json');
@@ -131,7 +129,7 @@ class HomepageController extends Controller
             $res = 500;
         }
         $template = $this->render(
-                        'YallaWebsiteBackendBundle:Homepage:html\dropdown_day_event.html.twig', array('events' => $events))->getContent();
+                'YallaWebsiteBackendBundle:Homepage:html\dropdown_day_event.html.twig', array('events' => $events))->getContent();
         $json = json_encode($template);
         $response = new Response($json, $res);
         $response->headers->set('Content-Type', 'application/json');
@@ -162,7 +160,7 @@ class HomepageController extends Controller
         $em->flush();
         $response = new Response(200);
         $response->headers->set('Content-Type', 'application/json');
-        return $response;   
+        return $response;
     }
 
     public function setVisionAction($data)
@@ -174,7 +172,6 @@ class HomepageController extends Controller
         $em->flush();
         $response = new Response(200);
         $response->headers->set('Content-Type', 'application/json');
-        return $response;   
+        return $response;
     }
-
 }

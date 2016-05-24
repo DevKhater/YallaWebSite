@@ -171,7 +171,12 @@ doctrine:
         entity_managers:
             default:
                 naming_strategy: doctrine.orm.naming_strategy.underscore
+                #naming_strategy: doctrine.orm.naming_strategy.default
                 auto_mapping: true
+#                mappings:
+#                    YallaWebsiteFrontendBundle: ~
+#                    YallaWebsiteBackendBundle: ~
+#                    DCSTagBundle: ~
                 dql:
                     datetime_functions:
                         dayofweek:     Luxifer\DQL\Datetime\DayOfWeek

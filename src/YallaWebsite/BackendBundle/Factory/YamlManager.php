@@ -1,10 +1,8 @@
 <?php
-
 /**
  * @author DevKhate <m.f.khater@gmail.com>
  * 
  */
-
 namespace YallaWebsite\BackendBundle\Factory;
 
 use Symfony\Component\Yaml\Parser;
@@ -51,10 +49,18 @@ class YamlManager
     {
         $media->setContext('adv');
         $media->setProviderName('sonata.media.provider.image');
+        dump($media);
         $this->mediaManager->save($media);
-        if ($oldMediaId != 0 && !is_null($oldMediaId))
-            $this->mediaManager->delete($this->mediaManager->find($oldMediaId));
+        dump($media);
+        if ($oldMediaId != 0 && !is_null($oldMediaId)) {
+            try {
+                $oldImg = $this->mediaManager->find($oldMediaId);
+                if ($oldImg) {$this->mediaManager->delete($oldImg);}
+                
+            } catch (Exception $e) {
+                throw new Exception($e->getMessage());
+            }
+        }
         return $media;
     }
-
 }

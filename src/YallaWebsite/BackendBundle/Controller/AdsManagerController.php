@@ -65,9 +65,11 @@ class AdsManagerController extends Controller
             $newmedia = $mt->reverseTransform($request->files->get('adve_form')['media']);
             $YManager = $this->container->get('yaml_manager.manager');
             $old = $YManager->getAllAdv($this->container->getParameter('ads')['uri']);
+            dump($old);
             $YManager->saveAdvMedia($newmedia, $old[$id]['media']);
             $url = $request->request->get('adve_form')['linkfor'];
             $this->addAdvYaml($id, $newmedia, $url);
+            
             return new RedirectResponse($this->generateUrl('backend_ads_manager_index'));
         }
         return new RedirectResponse($this->generateUrl('backend_ads_manager_change', array('id' => $id)));
@@ -77,8 +79,11 @@ class AdsManagerController extends Controller
     {
         $YManager = $this->container->get('yaml_manager.manager');
         $url = $this->container->getParameter('ads')['uri'];
+        dump($url);
         $allData = $YManager->getAllAdv($url);
+        dump($allData);
         $allData[$id]['media'] = $image->getId();
+        dump($allData[$id]['media']);
         $allData[$id]['data'][0]['link'] = $this->container->get('sonata.media.twig.extension')->path($image, $allData[$id]['format']);
         $allData[$id]['data'][0]['target'] = $adv_url;
         $dumper = new Dumper();

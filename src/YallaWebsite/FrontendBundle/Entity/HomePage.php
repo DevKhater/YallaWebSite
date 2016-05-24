@@ -32,16 +32,16 @@ class HomePage extends BaseHome
     /**
      * @var string
      *
-     * @ORM\Column(name="videolink", type="string", length=255)
+     * @ORM\Column(name="videolink", type="string", length=255, nullable=true)
      * )
      */
-    protected $videoLink = 'dummmy';
+    protected $videoLink;
 
     /**
      * @var gallery
      * 
      * @ORM\ManyToOne(targetEntity="Application\Sonata\MediaBundle\Entity\Gallery", cascade={"persist"})
-     * @ORM\JoinColumn(name="gallery_id", referencedColumnName="id", nullable=true)     * 
+     * @ORM\JoinColumn(name="gallery_id", referencedColumnName="id", nullable=true)
      */
     protected $selectedGallery;
 
@@ -49,7 +49,7 @@ class HomePage extends BaseHome
      * @var article
      * 
      * @ORM\ManyToOne(targetEntity="YallaWebsite\BackendBundle\Entity\Article", cascade={"persist"})
-     * @ORM\JoinColumn(name="mainarticle_id", referencedColumnName="id", nullable=true)     * 
+     * @ORM\JoinColumn(name="mainarticle_id", referencedColumnName="id", nullable=true)
      */
     protected $mainArticle;
 
@@ -57,7 +57,7 @@ class HomePage extends BaseHome
      * @ORM\Column(name="sidearticlesindex", type="integer")
      * @Assert\Range(min=0, max=3)
      */
-    protected $sideArticlesIndex;
+    protected $sideArticlesIndex = 0;
     /**
      * @ORM\Column(name="sidearticles", type="array")
      */
@@ -71,14 +71,14 @@ class HomePage extends BaseHome
     /**
      * @var string
      *
-     * @ORM\Column(name="about", type="text")
+     * @ORM\Column(name="about", type="text", nullable=true, options={"default" = null})
      */
     private $about;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="vision", type="text")
+     * @ORM\Column(name="vision", type="text", nullable=true, options={"default" = null})
      */
     private $vision;
 

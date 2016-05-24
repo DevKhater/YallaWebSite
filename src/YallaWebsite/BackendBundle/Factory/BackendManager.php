@@ -172,7 +172,6 @@ class BackendManager
 
     public function getEventsInDay($id)
     {
-        $homepage = $this->em->getRepository('YallaWebsiteFrontendBundle:HomePage')->find($this->homePageId);
         $events = $this->em->getRepository('YallaWebsiteBackendBundle:Event')->getEventsbyDay($id);
         return $events;
     }
@@ -190,6 +189,7 @@ class BackendManager
 
     private function modifyArray($ents)
     {
+        $arrr = array();
         foreach ($ents as $ent) {
             $object = $this->em->getRepository($this->em->getClassMetadata(get_class($ent))->getName())->find($ent->getId());
             $arrr[] = $object;

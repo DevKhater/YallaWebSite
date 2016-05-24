@@ -99,7 +99,7 @@ class ArticleController extends Controller
         if ($this->getRequest()->isMethod('POST')) {
             $editForm->handleRequest($request);
             if ($editForm->isValid()) {
-                if (is_array($entity->getMedia())) {
+                if (is_null($entity->getMedia())) {
                     $entity->setMedia($oldMedia);
                 } else {
                     $entity = $this->saveMedia($entity);
@@ -161,7 +161,6 @@ class ArticleController extends Controller
 
     private function saveMedia($entity)
     {
-        dump($entity);
         $mediaManager = $this->container->get('sonata.media.manager.media');
         $entity->getMedia()->setContext('article');
         $mediaManager->save($entity->getMedia());

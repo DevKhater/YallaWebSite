@@ -15,7 +15,10 @@ class DefaultController extends Controller
 
     public function aboutAction()
     {
-        return $this->render('YallaWebsiteFrontendBundle:Page:about.html.twig');
+        $BEManager = $this->container->get('backend_manager.manager');
+        $about = $BEManager->getHomepage()->getAbout();
+        $vision = $BEManager->getHomepage()->getVision();
+        return $this->render('YallaWebsiteFrontendBundle:Page:about.html.twig', array('about' => $about, 'vision' => $vision));
     }
 
     public function venuesAction()

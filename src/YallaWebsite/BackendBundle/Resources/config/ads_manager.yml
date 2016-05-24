@@ -4,16 +4,16 @@ home_header_first:
     cache_max_age: 28800
     random: true
     format: horiz
-    media: 103
-    data: [{ type: image, link: /uploads/media/adv/0001/01/thumb_103_adv_horiz.png, target: 'http://www.hotmail.com/', weight: 5 }]
+    media: 38
+    data: [{ type: image, link: /uploads/media/adv/0001/01/thumb_38_adv_horiz.jpeg, target: 'http://www.ggg.com', weight: 5 }]
 home_header_second:
     cache_public: true
     cache_shared_max_age: 86400
     cache_max_age: 28800
     random: true
     format: horiz
-    media: 104
-    data: [{ type: image, link: /uploads/media/adv/0001/01/thumb_104_adv_horiz.jpeg, target: 'http://www.gmail.com/', weight: 5 }]
+    media: 40
+    data: [{ type: image, link: /uploads/media/adv/0001/01/thumb_40_adv_horiz.jpeg, target: 'http://www.ggg.com', weight: 5 }]
 home_body_first:
     cache_public: true
     cache_shared_max_age: 86400
@@ -36,21 +36,21 @@ home_footer_first:
     cache_max_age: 28800
     random: true
     format: horiz
-    media: 114
-    data: [{ type: image, link: /uploads/media/adv/0001/01/thumb_114_adv_horiz.png, target: 'http://www.hotmail.com/', weight: 5 }]
+    media: 43
+    data: [{ type: image, link: /uploads/media/adv/0001/01/thumb_43_adv_horiz.jpeg, target: 'http://www.ggg.com', weight: 5 }]
 home_footer_second:
     cache_public: true
     cache_shared_max_age: 86400
     cache_max_age: 28800
     random: true
     format: horiz
-    media: 115
-    data: [{ type: image, link: /uploads/media/adv/0001/01/thumb_115_adv_horiz.jpeg, target: 'http://www.hotmail.com/', weight: 5 }]
+    media: 44
+    data: [{ type: image, link: /uploads/media/adv/0001/01/thumb_44_adv_horiz.jpeg, target: 'http://www.ggg.com', weight: 5 }]
 snapshot_popup:
     cache_public: true
     cache_shared_max_age: 86400
     cache_max_age: 28800
     random: true
     format: snapadv
-    media: 0
-    data: [{ type: image, link: /uploads/media/adv/0001/01/thumb_17_adv_snapadv.jpeg, target: 'http://www.megadeth.com/', weight: 5 }]
+    media: 41
+    data: [{ type: image, link: /uploads/media/adv/0001/01/thumb_41_adv_snapadv.jpeg, target: 'http://www.ggg.com', weight: 5 }]
