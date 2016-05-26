@@ -63,6 +63,7 @@ sonata_media:
                 large:     { width: 600, quality: 100}
                 displayIndex: {width:370, height:250, quality:50}
                 homePage: {width:920, height:500, quality:50}
+                mainHomeArt: {width: 1000, height:500, quality:50}
         gallery:
             providers:
                 - sonata.media.provider.image

@@ -30,11 +30,11 @@
 ===================================*/
 
 .bx-wrapper .bx-viewport {
-	-moz-box-shadow: 0 0 5px transparent;
+/*	-moz-box-shadow: 0 0 5px transparent;
 	-webkit-box-shadow: 0 0 5px transparent;
 	box-shadow: 0 0 5px transparent;
-	border:  5px solid transparent;
-	left: -5px;
+	border:  0px solid transparent;
+	left: -5px;*/
 	background: transparent;
 	
 	/*fix other elements on the page moving (on Chrome)*/

@@ -36,7 +36,8 @@
         "patchwork/jsqueeze": "^2.0",
         "adesigns/calendar-bundle": "^1.1",
         "friendsofsymfony/jsrouting-bundle": "^1.6",
-        "luxifer/doctrine-functions": "dev-master"
+        "luxifer/doctrine-functions": "dev-master",
+        "twig/extensions": "^1.3"
 
 
     },

@@ -12,16 +12,30 @@
             <div class="IndexTitle col-lg-12" >
                 <h1>EXCEPTIONAL LEVEL OF ENTERTAINMENT</h1>
             </div>
-            <div class="col-lg-12" style="padding: 0px; margin: 0px;">
-                 <div style="width:70%;float: left;vertical-align: top;padding-right: 0px; margin-right: -10px;">
+            <div class="col-lg-12">
+                <div id='HomePageSliderDiv'>
                     <ul class="bxslider">
                         {% for slider in home.SliderEntities %}
                             <li>
                                 <div class="HomeSliderDiv"> 
                                     <div class="HomeSliderContent" style="background-image: url('{% path  slider.media, 'homePage' %}')">
                                         <div class="HomeSlideDivTitle">
-                                            <h3>{{ slider.title }}</h3>
-                                            <h5>{{ slider.content[0:100]|raw }}...</h5>
+                                            <h3>
+                                                {% if slider.name is defined %}
+                                                    {{slider.name}}
+                                                {% else %}
+                                                    {{slider.title}}
+                                                {% endif%}
+                                            </h3>
+                                            <h5>
+                                                {% if slider.description is defined %}
+                                                    {{slider.description[0:100]|raw }}...
+                                                {% else %}
+                                                    {{ slider.content[0:100]|raw }}...
+                                                {% endif%}
+
+
+                                            </h5>
                                         </div>
                                     </div>
                                 </div>
@@ -29,12 +43,28 @@
                         {% endfor %}
                     </ul>
                 </div>
-                <div id='ytDiv' style="float: left;vertical-align: top;width:25%;padding-left: 0px; margin-left: 0px;">
+                <div id='HomePageRightDiv'>
                     <div id="yt_player">    
                         <div id="ytplayer"></div>
                     </div>
-                    <div id="hp_gallery" style="background-image: url('{% path  home.selectedGallery.media, 'medium' %}')">
-
+                    <div id="hp_gallery" style="background-image: url('{% path  home.selectedGallery.media, 'medium' %}');">
+                        {#<div style="background-color: yellow; height: 29px; width: 120px; top:20px;left:2px;position:absolute;">#}
+                        {#<p style="line-height: 29px;">SNAPSHOT</p>#}
+                        <p style="
+                           line-height: 10px;
+                           background-color: yellow;
+                           height: 29px;
+                           width: 89px;
+                           margin: 0px;
+                           display: table-cell;
+                           vertical-align: middle;
+                           padding: 9px;
+                           position: absolute;
+                           top: 23px;
+                           left: 8px;
+                           text-align: center;}
+                           ">SNAPSHOT</p>
+                        {#</div>#}
                     </div>
                 </div>
             </div>
@@ -44,14 +74,24 @@
             <p class="subtitle fancy"><span>WHAT'S ON</span></p>
         </div>
         <div class="row" id='homepage_part2'>
+            {% set art= [0,1,2,3] %}
+            {{ dump(art|shuffle)}}
             <div class="col-lg-3">
-                <div class="col-lg-12" style="height: 125px; background-color: #000099">{#{% thumbnail home.sideArticles[0].media, 'small' %}#}</div>
-                <div class="col-lg-12" style="height: 125px; background-color: #0044aa">{#{% thumbnail home.sideArticles[1].media, 'small' %}#}</div>
+                <div class="col-lg-12" style="height: 250px; background-color: #000099">{% thumbnail home.sideArticles[0].media, 'small' %}</div>
+                <div class="col-lg-12" style="height: 250px; background-color: #0044aa">{% thumbnail home.sideArticles[1].media, 'small' %}</div>
             </div>
-            <div class="col-lg-6" style="height: 250px; background-color: #000">{% thumbnail home.mainArticle.media, 'small' %}</div>
+            <div id='HomeArticlesFeatured' class="col-lg-6" style="height: 500px;background-image: url('{% path  home.mainArticle.media, 'medium' %}');">
+            
+                <img src="{{asset('bundles/yallawebsitefrontend/images/RC.png')}}" 
+                     style="position: absolute;
+                     right: 0;
+                     top: 0;
+                     height: 20%;"/>
+            
+            </div>
             <div class="col-lg-3">
-                <div class="col-lg-12" style="height: 125px; background-color: #0072b1">{#{% thumbnail home.sideArticles[2].media, 'small' %}#}</div>
-                <div class="col-lg-12" style="height: 125px; background-color: #ebebeb">{#{% thumbnail home.sideArticles[0].media, 'small' %}#}</div>
+                <div class="col-lg-12" style="height: 250px; background-color: #0072b1">{#{% thumbnail home.sideArticles[2].media, 'small' %}#}</div>
+                <div class="col-lg-12" style="height: 250px; background-color: #ebebeb">{#{% thumbnail home.sideArticles[0].media, 'small' %}#}</div>
             </div>
 
         </div>

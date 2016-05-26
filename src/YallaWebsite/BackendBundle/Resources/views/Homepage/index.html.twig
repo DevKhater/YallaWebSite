@@ -7,7 +7,7 @@
             <h4 class="page-head-line">Homepage</h4>
             <p><a href=#>About/Vision</a></p>
         </div>
-        
+
     </div>
     <div id='HomePagePartOne'>
         <h1>Homepage Top Part</h1>
@@ -40,9 +40,9 @@
         </div>
     </div>
     <hr>
-    
-    
-    
+
+
+
 
     <!-- Modal -->
     <div class="modal fade" id="ajaxResultMessages" role="dialog">
@@ -62,8 +62,8 @@
             </div>
         </div>
     </div>
-    
-    
+
+
 {% endblock %}
 
 {% block javascripts %}
@@ -83,9 +83,9 @@
                     console.log(xhr.responseText);
                     console.log(textStatus);
                     console.log(errorThrown);
-                        $('h4#ajaxTitle').text('Error');
-                        $('#ajaxMessage p').text(errorThrown);
-                        $('#ajaxResultMessages').modal('show');
+                    $('h4#ajaxTitle').text('Error');
+                    $('#ajaxMessage p').text(errorThrown);
+                    $('#ajaxResultMessages').modal('show');
                 }
             });
         }
