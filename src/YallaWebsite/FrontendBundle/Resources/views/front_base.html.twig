@@ -41,11 +41,11 @@
         </div>
     </header>
     <div id="bodyLeftAdv">{{ render_esi(url('ads_manager_show', { 'id': 'home_body_first' })) }}</div>
-    <div class="wrapper">
-        <div id='content'>
+    {#<div class="wrapper">#}
+        {#<div id='content'>#}
         {% block body %}{% endblock %}
-    </div>
-</div>
+    {#</div>#}
+{#</div>#}
 <div id="bodyRightAdv">{{ render_esi(url('ads_manager_show', { 'id': 'home_body_second' })) }}</div>
 <footer>
     <div id='bottomAdvRow'>

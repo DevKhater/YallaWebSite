@@ -1,11 +1,16 @@
 {# empty Twig template #}
 {% extends "@YallaWebsiteFrontendBundle/views/front_base.html.twig" %}
 {% block body %}
-    <div id='missionContent'>
-        {{about}}
+
+    <div class="pageContent">
+        <div class="wrapper">
+            <div id='missionContent'>
+                {{about}}
+            </div>
+            <div id='visionContent'>
+                {{vision}}
+            </div>
+            <div id='membersContent'></div>
+        </div>
     </div>
-    <div id='visionContent'>
-        {{vision}}
-    </div>
-<div id='membersContent'></div>
 {% endblock %}

@@ -104,8 +104,10 @@ class BackendManager
         $homepage = $this->em->getRepository('YallaWebsiteFrontendBundle:HomePage')->find($this->homePageId);
         $slider = $homepage->getSliderEntities();
         $sideArticles = $homepage->getSideArticles();
+        $weekEvents = $homepage->getWeekEvents();
         $homepage->setSliderEntities($this->modifyArray($slider));
         $homepage->setSideArticles($this->modifyArray($sideArticles));
+        $homepage->setWeekEvents($this->modifyArray($weekEvents));
         $this->em->persist($homepage);
         $this->em->flush();
         return $homepage;

@@ -1,6 +1,9 @@
 {% extends "@YallaWebsiteFrontendBundle/views/front_base.html.twig" %}
 {% block body %}
+
     <div class="pageContent">
+        <div class="wrapper">
+
         <div class="IndexTitle">
             <h1>All Around Us</h1>
         </div>
@@ -25,6 +28,7 @@
                 {{ knp_pagination_render(pagination, 'YallaWebsiteFrontendBundle:Template:pagination.html.twig') }}
             {% endif %}
         </div>
+    </div>
     </div>
 
 {% endblock %}
