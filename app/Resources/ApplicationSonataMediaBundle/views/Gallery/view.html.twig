@@ -3,9 +3,6 @@
     {{parent()}}
     <link rel="stylesheet" href="{{ asset('bundles/yallawebsitefrontend/css/blueimp-gallery.min.css') }}" />
     <link rel="stylesheet" href="{{ asset('bundles/yallawebsitefrontend/css/bootstrap-image-gallery.css') }}" />
-{% endblock %}    
-
-{% block body %}
     <style>
         .thumbnail {
             margin: 0 auto;
@@ -32,7 +29,7 @@
         /* ---- .im-item ---- */
         .grid-sizer,
         .im-item {
-            width: 33.333%;
+            width: 25%;
         }
         .im-item {
             float: left;
@@ -66,72 +63,88 @@
             float:left;
             margin-right: 4px;
         }
+        #gallery_modal_left { position: absolute; left: 0; top: 40%;}
+        #gallery_modal_right { position: absolute; right: 0; top: 40%;}
     </style>
+{% endblock %}    
+
+{% block body %}
+    <div id="fb-root"></div>
     <div class="pageContent">
-        <div class="theEntityDiv">
-            <div class="innerTitle">
-                <h1>{{gallery.name}} {{gallery.date|date("d/m/Y")}}</h1>
+        <div class="wrapper">
+            <div class="theEntityDiv">
+                <div class="innerTitle">
+                    <h1>{{gallery.name}} {{gallery.date|date("d/m/Y")}}</h1>
+                </div>
+                <div id="innerEntityContent">
+                    {{ gallery.description }}
+                </div>
+                <div id="galleryViewPhotogtapher">
+                    {% if gallery.photographers is not empty %}
+                        <p><span>Photo Credit</span>: 
+                            {% for ph in gallery.photographers %}
+                                <a href='ph.website'>{{ph.name}}</a> {% if not loop.last %} - {% endif %} 
+                            {% endfor %}
+                        </p>
+                    {% endif %}
+                </div>
             </div>
-            <div id="innerEntityContent">
-                {{ gallery.description }}
-            </div>
-            <div id="galleryViewPhotogtapher">
-                {% if gallery.photographers is not empty %}
-                    <p><span>Photo Credit</span>: 
-                        {% for ph in gallery.photographers %}
-                            <a href='ph.website'>{{ph.name}}</a> {% if not loop.last %} - {% endif %} 
+
+            <div class="row">
+                <div class="im">
+                    <div class="grid-sizer"></div>
+                    <div id='links'>
+
+                        {% for galleryHasMedia in gallery.GalleryHasMedias %}
+                            <div class="im-item">
+                                <a data-gallery='' title="" href="{% path galleryHasMedia.media, 'large' %}"><img class="thumbnail img-responsive" src="{% path galleryHasMedia.media, 'small' %}"></a></div>
+
                         {% endfor %}
-                    </p>
-                {% endif %}
-            </div>
-        </div>
-    </div>
-
-    <div class="row">
-        <div class="im">
-            <div class="grid-sizer"></div>
-            <div id='links'>
-
-                {% for galleryHasMedia in gallery.GalleryHasMedias %}
-                    <div class="im-item">
-                        <a data-gallery='' title="" href="{% path galleryHasMedia.media, 'large' %}"><img class="thumbnail img-responsive" src="{% path galleryHasMedia.media, 'small' %}"></a></div>
-
-                {% endfor %}
-            </div>
-        </div>
-    </div>
-
-
-
-    <div id="blueimp-gallery" class="blueimp-gallery">
-        <!-- The container for the modal slides -->
-        <div class="slides"></div>
-        <!-- Controls for the borderless lightbox -->
-        <h3 class="title"></h3>
-        <a class="prev">‹</a>
-        <a class="next">›</a>
-        <a class="close">×</a>
-        <a class="play-pause"></a>
-        <ol class="indicator"></ol>
-        <!-- The modal dialog, which will be used to wrap the lightbox content -->
-        <div class="modal fade">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <button type="button" class="close" aria-hidden="true">&times;</button>
-                        <h4 class="modal-title"></h4>
                     </div>
-                    <div class="modal-body next"></div>
-                    <div class="modal-footer">
-                        <div>{{ render_esi(url('ads_manager_show', { 'id': 'snapshot_popup' })) }}</div>
-                        <button type="button" class="btn btn-default pull-left prev">
-                            <i class="glyphicon glyphicon-chevron-left"></i>
-                            Previous
-                        </button>
-                        <button type="button" class="btn btn-primary next">
-                            Next
-                            <i class="glyphicon glyphicon-chevron-right"></i>
-                        </button>
+                </div>
+            </div>
+
+
+
+            <div id="blueimp-gallery" class="blueimp-gallery">
+                <!-- The container for the modal slides -->
+                <div class="slides"></div>
+                <!-- Controls for the borderless lightbox -->
+                <h3 class="title"></h3>
+                <a class="prev">‹</a>
+                <a class="next">›</a>
+                <a class="close">×</a>
+                <a class="play-pause"></a>
+                <ol class="indicator"></ol>
+                <!-- The modal dialog, which will be used to wrap the lightbox content -->
+                <div class="modal fade">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close" aria-hidden="true">&times;</button>
+                                <h4 class="modal-title"></h4>
+                            </div>
+                            <div class="modal-body next">
+
+                            </div>
+                            <div class="modal-footer">
+                                <div class='col-lg-12' style="text-align: center;margin-bottom: 2%;">
+                                    {% include '@YallaWebsiteFrontendBundle/views/Template/socialMediaShare.html.twig' %}
+                                </div>    
+                                <div id='gallery_modal_left'>
+                                    <button type="button" class="btn btn-default pull-left prev">
+                                        <i class="glyphicon glyphicon-chevron-left"></i>
+                                        Previous
+                                    </button>
+                                </div>
+                                <div class='col-lg-12' style="text-align: center;">{{ render_esi(url('ads_manager_show', { 'id': 'snapshot_popup' })) }}</div>
+                                <div id='gallery_modal_right'><button type="button" class="btn btn-primary next">
+                                        Next
+                                        <i class="glyphicon glyphicon-chevron-right"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -143,6 +156,7 @@
     {% javascripts '@massonary' '@imagesloaded'%}
     <script type="text/javascript" src="{{ asset_url }}"></script>
     {% endjavascripts %}
+    <script type="text/javascript" src="{{ asset('bundles/yallawebsitefrontend/js/socialite.min.js') }}"></script>
     <script>
         $(document).ready(function () {
             var $grid = $('.im').masonry({
@@ -157,7 +171,7 @@
 
 
         });
-        
+
         $('#links .im-item').onclick = function (event) {
             event = event || window.event;
             var target = event.target || event.srcElement,
@@ -169,4 +183,7 @@
     </script>
     <script src="{{ asset('bundles/yallawebsitefrontend/js/jquery.blueimp-gallery.min.js') }}"></script>
     <script src="{{ asset('bundles/yallawebsitefrontend/js/bootstrap-image-gallery.js') }}"></script>
+
+
+
 {% endblock %}

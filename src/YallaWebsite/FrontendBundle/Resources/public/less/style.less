@@ -60,6 +60,15 @@ and open the template in the editor.
     background-size: cover;
     background-repeat: no-repeat;
 }
+
+.socialMediaIcons { 
+    height: 30px;
+    width: 30px;
+    border-radius: 3px;
+    margin-right: 1%;
+}
+
+
 .RowIn4Col {
     .make-lg-column(4);
     .make-md-column(4);
@@ -272,10 +281,7 @@ body {
                 #socialLinksIcons {
                     .make-xs-column(12);
                     img {
-                        height: 30px;
-                        width: 30px;
-                        border-radius: 3px;
-                        margin-right: 1%;
+                        .socialMediaIcons;
                     }
                 }
             }
@@ -302,11 +308,9 @@ body {
                 .make-sm-column(6);
                 .make-xs-column(6);
                 min-height: 200px;
-                background-color: red;
             }
             #visionContent  { 
-                background-color: @tempColor - 300 ;
-                border-left: 2px solid black;
+                
             }
             #membersContent { 
                 .make-lg-column(12);
@@ -315,7 +319,6 @@ body {
                 .make-xs-column(12);
                 margin-top: 2%;
                 min-height: 200px;
-                background-color: @tempColor - 400;
             }
             //All Inner Pages Defaults
             .IndexTitle {

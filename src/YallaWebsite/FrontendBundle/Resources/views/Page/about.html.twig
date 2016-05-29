@@ -1,16 +1,27 @@
 {# empty Twig template #}
 {% extends "@YallaWebsiteFrontendBundle/views/front_base.html.twig" %}
 {% block body %}
-
     <div class="pageContent">
         <div class="wrapper">
             <div id='missionContent'>
+                <div class="innerPagesTitle col-lg-12" >
+                    <h1>Mission</h1>
+                </div>
                 {{about}}
             </div>
             <div id='visionContent'>
+                <div class="innerPagesTitle col-lg-12" >
+                    <h1>Vision</h1>
+                </div>
+                <div class="left_border" style="position: absolute; border-left: 1px solid black; left:0; bottom:0; height: 50%;"></div>
                 {{vision}}
             </div>
-            <div id='membersContent'></div>
+            <div id='membersContent'>
+                <div class="innerPagesTitle col-lg-12" >
+                    <h1>Members</h1>
+                </div>
+                
+            </div>
         </div>
     </div>
 {% endblock %}
