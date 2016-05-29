@@ -165,8 +165,36 @@
     #HomeArticlesFeatured {
         .mediaIntoBG;
         min-height: 511px;
+        padding-right: 0;
+        padding-left: 0;
+        img {
+            position: absolute;
+            right: 0;
+            top: 0;
+            height: 20%;
+        }
+        #FeaturedArticles_hover{
+            display:none;
+            min-height: 511px;
+            min-width: 100%;
+            background-color: rgba(0,0,0,0.7);
+            #FeaturedArticle_title{
+                text-align:center;
+                line-height: 500px;
+                color:#fff;
+                font-size: 2.5em;
+            }
+        }
+        &:hover {
+            img {
+                display: none;
+            }
+            #FeaturedArticles_hover{
+                display: block;
+                z-index: 4;
+            }
+        }
     }
-
 }
 
 #homepage_part3 {

@@ -33,3 +33,7 @@ Profile:
 Advertisment:
     resource: "@YallaWebsiteBackendBundle/Resources/config/ad_manager_routing.yml"
     prefix:   /adv
+
+Members:
+    resource: "@YallaWebsiteBackendBundle/Resources/config/members_routing.yml"
+    prefix:   /member

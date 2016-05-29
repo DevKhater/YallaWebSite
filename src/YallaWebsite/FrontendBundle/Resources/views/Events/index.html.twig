@@ -4,6 +4,10 @@
         .my-custom-class {
             background-color: black;
         }
+        .fc-widget-content div{
+            max-height: 80px;
+        }
+
     </style>
 {% endblock %}
 {% block body %}
@@ -30,10 +34,24 @@
             var m = date.getMonth();
             var y = date.getFullYear();
             $('#calendar-holder').fullCalendar({
+                customButtons: {
+                    theleftButton: {
+                        text: 'Previous!',
+                        click: function () {
+                            alert('clicked the custom button!');
+                        }
+                    },
+                    therightButton: {
+                        text: 'Next!',
+                        click: function () {
+                            alert('clicked the custom button!');
+                        }
+                    }
+                },
                 header: {
-                    left: 'prev',
+                    left: 'prev, theleftButton',
                     center: 'title',
-                    right: 'next'
+                    right: 'next, therightButton'
                 },
                 lazyFetching: true,
                 timeFormat: {
@@ -64,7 +82,6 @@
                 },
             });
         });
-
         function getEvents(thedate) {
             $.ajax({
                 type: "POST",
@@ -78,7 +95,6 @@
                     console.log(errorThrown);
                 }
             });
-
         }
     </script>
 {% endblock %}

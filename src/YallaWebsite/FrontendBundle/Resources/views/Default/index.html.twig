@@ -98,14 +98,11 @@
                             </div>
                         {% endfor %}
                     </div>
-                    <div id='HomeArticlesFeatured' class="col-lg-6" style="height: 500px;background-image: url('{% path  home.mainArticle.media, 'medium' %}');">
-
-                        <img src="{{asset('bundles/yallawebsitefrontend/images/RC.png')}}" 
-                             style="position: absolute;
-                             right: 0;
-                             top: 0;
-                             height: 20%;"/>
-
+                    <div id='HomeArticlesFeatured' class="col-lg-6" style="background-image: url('{% path  home.mainArticle.media, 'medium' %}');">
+                        <img src="{{asset('bundles/yallawebsitefrontend/images/RC.png')}}" />
+                        <div id="FeaturedArticles_hover">
+                            <p id="FeaturedArticle_title">{{home.mainArticle.title}}</p>
+                        </div>
                     </div>
                     <div class="col-lg-3">
                         {% for i in 2..3 %}

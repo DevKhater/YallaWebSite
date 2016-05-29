@@ -310,7 +310,13 @@ body {
                 min-height: 200px;
             }
             #visionContent  { 
-                
+                #left_border{
+                    position: absolute; 
+                    border-left: 2px solid black; 
+                    left:0; 
+                    bottom:0; 
+                    height: 60%;
+                }
             }
             #membersContent { 
                 .make-lg-column(12);
@@ -319,6 +325,18 @@ body {
                 .make-xs-column(12);
                 margin-top: 2%;
                 min-height: 200px;
+                .member_div{
+                    margin: 0 auto; 
+                    text-align: center;
+                    width: 150px; 
+                    height:150px; 
+                    max-height: 150px;
+                    .mediaIntoBG;
+                    &:hover {
+                        cursor: pointer;
+                    }
+                }
+                
             }
             //All Inner Pages Defaults
             .IndexTitle {

@@ -88,6 +88,18 @@ sonata_media:
                 horiz : { width: 590, height: 90, quality: 100}
                 verti : { width: 120, height: 600, quality: 100}
                 snapadv: { width: 300, height: 300, quality: 100}
+                event:
+        member:        
+            providers:
+                - sonata.media.provider.image
+            formats:
+#                preview:   { width: 100, quality: 100}
+                small:     { width: 200, quality: 100}
+#                medium:     { width: 400, quality: 100}
+#                large:     { width: 600, quality: 100}
+                displayIndex: {width:400, height:400, quality:50}
+                
+        
     cdn:
         server:
             path: /uploads/media

@@ -18,7 +18,8 @@ class DefaultController extends Controller
         $BEManager = $this->container->get('backend_manager.manager');
         $about = $BEManager->getHomepage()->getAbout();
         $vision = $BEManager->getHomepage()->getVision();
-        return $this->render('YallaWebsiteFrontendBundle:Page:about.html.twig', array('about' => $about, 'vision' => $vision));
+        $members = $this->getDoctrine()->getManager()->getRepository('YallaWebsiteBackendBundle:Member')->findAll();
+        return $this->render('YallaWebsiteFrontendBundle:Page:about.html.twig', array('about' => $about, 'vision' => $vision, 'members' => $members));
     }
 
     public function venuesAction()
