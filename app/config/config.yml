@@ -180,6 +180,9 @@ doctrine:
                 dql:
                     datetime_functions:
                         dayofweek:     Luxifer\DQL\Datetime\DayOfWeek
+                        year:     Luxifer\DQL\Datetime\Year
+                        Day:     Luxifer\DQL\Datetime\Day
+                        month:     Luxifer\DQL\Datetime\Month
 
 # Doctrine migrations
 #doctrine_migrations:

@@ -14,8 +14,7 @@ services:
     app.form.type.photographer:
         class: YallaWebsite\BackendBundle\Form\Type\PhotographerType
         tags:
-            - { name: form.type, alias: photographer_type }
-            
+            - { name: form.type, alias: photographer_type }           
     app.form.type.venue.location:
         class: YallaWebsite\BackendBundle\Form\Type\VenueLocationType
         arguments: ['@doctrine.orm.entity_manager']
@@ -34,12 +33,10 @@ services:
         tags:
             - { name: form.type, alias: multi_media_files }
     app.custom_sitemap_service:
-            class: YallaWebsite\BackendBundle\Model\SitemapIterator
-    
+            class: YallaWebsite\BackendBundle\Model\SitemapIterator  
     sonata.media.resizer.custom:
         class: YallaWebsite\BackendBundle\Resizer\CustomResizer
-        arguments: [@sonata.media.adapter.image.gd, 'outbound', @sonata.media.metadata.proxy]
-        
+        arguments: [@sonata.media.adapter.image.gd, 'outbound', @sonata.media.metadata.proxy]      
     backend_manager.manager:
         class: %backend_manager.class%
         arguments: [ @doctrine.orm.entity_manager, @sonata.media.manager.media ]
@@ -79,3 +76,14 @@ services:
        class: Twig_Extensions_Extension_Array
        tags:
             - { name: twig.extension }
+
+
+
+
+
+
+
+
+
+
+

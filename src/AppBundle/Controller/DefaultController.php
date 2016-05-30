@@ -13,6 +13,13 @@ class DefaultController extends Controller
      */
     public function indexAction(Request $request)
     {
+        
+        $em = $this->getDoctrine()->getManager();
+        $entities = $em->getRepository('YallaWebsiteBackendBundle:Event')->getEventDaysinMonthYear(5, 2016);
+        dump($entities);
+        if (array_key_exists('30',$entities)){
+            
+        }
         // replace this example code with whatever you need
         return $this->render('default/index.html.twig', array(
             'base_dir' => realpath($this->container->getParameter('kernel.root_dir').'/..'),

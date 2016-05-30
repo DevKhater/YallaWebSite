@@ -45,3 +45,23 @@ gogogo:
     defaults: { _controller: YallaWebsiteFrontendBundle:Template:homepage }
     
     
+    
+yfe_cal_page:
+    path:   /calednar
+    defaults: { _controller: YallaWebsiteFrontendBundle:Calendar:load }
+    options:
+        expose: true
+        
+yfe_get_calendar:
+    path:   /calednar/get
+    defaults: { _controller: YallaWebsiteFrontendBundle:Calendar:index}
+    options:
+        expose: true
+        
+yfe_get_month:
+    path:   /calednar/get/{month}
+    defaults: { _controller: YallaWebsiteFrontendBundle:Calendar:index }
+    options:
+        expose: true
+        
+        

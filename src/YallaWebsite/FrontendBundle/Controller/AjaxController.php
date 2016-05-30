@@ -10,7 +10,8 @@ class AjaxController extends Controller
     public function getEventByDateAction(Request $request)
     {
         
-        $theJSdate = substr($request->get('id'), 0, strpos($request->get('id'), '('));
+        //$theJSdate = substr($request->get('id'), 0, strpos($request->get('id'), '('));
+        $theJSdate = $request->get('id');
         $date = date("Y-m-d", strtotime($theJSdate));
         $theDay = $date . '%';
         $em = $this->getDoctrine()->getManager();

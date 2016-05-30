@@ -1,10 +1,10 @@
 <?php
-
 use Symfony\Component\HttpKernel\Kernel;
 use Symfony\Component\Config\Loader\LoaderInterface;
 
 class AppKernel extends Kernel
 {
+
     public function registerBundles()
     {
         $bundles = array(
@@ -30,17 +30,14 @@ class AppKernel extends Kernel
             // FOS Users
             new FOS\UserBundle\FOSUserBundle(),
             // FPN TAGS
-             //new Mykees\TagBundle\MykeesTagBundle(),
-             new DCS\TagBundle\DCSTagBundle(),
+            //new Mykees\TagBundle\MykeesTagBundle(),
+            new DCS\TagBundle\DCSTagBundle(),
             // Sonata SEO
-             new Knp\Bundle\MenuBundle\KnpMenuBundle(),
-             new Sonata\SeoBundle\SonataSeoBundle(),
+            new Knp\Bundle\MenuBundle\KnpMenuBundle(),
+            new Sonata\SeoBundle\SonataSeoBundle(),
             // Doctrine extension for glug
             new Stof\DoctrineExtensionsBundle\StofDoctrineExtensionsBundle(),
-             new FOS\JsRoutingBundle\FOSJsRoutingBundle(),
-            new ADesigns\CalendarBundle\ADesignsCalendarBundle(),
-
-            
+            new FOS\JsRoutingBundle\FOSJsRoutingBundle(),
             new AppBundle\AppBundle(),
             new YallaWebsite\BackendBundle\YallaWebsiteBackendBundle(),
             new YallaWebsite\FrontendBundle\YallaWebsiteFrontendBundle(),
@@ -58,12 +55,12 @@ class AppKernel extends Kernel
 
     public function registerContainerConfiguration(LoaderInterface $loader)
     {
-        $loader->load($this->getRootDir().'/config/config_'.$this->getEnvironment().'.yml');
+        $loader->load($this->getRootDir() . '/config/config_' . $this->getEnvironment() . '.yml');
     }
-    
+
     public function init()
     {
-        date_default_timezone_set( 'Africa/Cairo' );
+        date_default_timezone_set('Africa/Cairo');
         parent::init();
     }
 }
