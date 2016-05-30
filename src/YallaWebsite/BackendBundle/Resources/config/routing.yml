@@ -7,6 +7,9 @@ Homepage:
     prefix:   /homepage
 
 
+Artists:
+    resource: "@YallaWebsiteBackendBundle/Resources/config/artists_routing.yml"
+    prefix:   /artist
 Venues:
     resource: "@YallaWebsiteBackendBundle/Resources/config/venues_routing.yml"
     prefix:   /venue

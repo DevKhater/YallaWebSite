@@ -38,6 +38,8 @@ class CalendarController extends Controller
 
         // Get previous year and month
         $iPrevYear = $iYear;
+        $cPrevYear = $iYear-1;
+        $cNextYear = $iYear+1;
         $iPrevMonth = $iMonth - 1;
         if ($iPrevMonth <= 0) {
             $iPrevYear--;
@@ -69,7 +71,7 @@ class CalendarController extends Controller
 
         $bNextMonth = false;
         $sCalTblRows = '';
-        $table_header = '<table><thead><tr><th class="weekday">sun</th><th class="weekday">mon</th><th class="weekday">tue</th><th class="weekday">wed</th><th class="weekday">thu</th><th class="weekday">fri</th><th class="weekday">sat</th></tr></thead><tbody>';
+        $table_header = '<table id="calendar_table"><thead><tr><th class="weekday">sun</th><th class="weekday">mon</th><th class="weekday">tue</th><th class="weekday">wed</th><th class="weekday">thu</th><th class="weekday">fri</th><th class="weekday">sat</th></tr></thead><tbody>';
         // Generate rows for the calendar
         for ($i = 0; $i < 6; $i++) { // 6-weeks range
             $sCalTblRows .= '<tr>';
@@ -90,7 +92,7 @@ class CalendarController extends Controller
                     $sCalTblRows .= '<td class="' . $sClass . ' eventAvailable"><span onclick=' . $ajaxFunc . '>'
                         . $iCurrentDay . '</td>';
                 } else {
-                    $sCalTblRows .= '<td class="' . $sClass . '"><span">' . $iCurrentDay . '</span></td>';
+                    $sCalTblRows .= '<td class="' . $sClass . '"><span>' . $iCurrentDay . '</span></td>';
                 }
 
                 // Next day
@@ -111,6 +113,8 @@ class CalendarController extends Controller
         $aKeys = array(
             '__prev_month__' => "{$iPrevMonth}-{$iPrevYear}",
             '__next_month__' => "{$iNextMonth}-{$iNextYear}",
+            '__prev_year__' => "{$iMonth}-{$cPrevYear}",
+            '__next_year__' => "{$iMonth}-{$cNextYear}",
             '__cal_caption_year__' => $iYear,
             '__cal_caption_month__' => $sMonthName
         );

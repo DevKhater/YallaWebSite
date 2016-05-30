@@ -9551,6 +9551,21 @@ footer #bottomAdvRow:after {
     float: left;
   }
 }
+.homePageButtons {
+  width: 50%;
+  background-color: #4d4d4d;
+}
+.homePageButtons a {
+  text-decoration: none;
+  color: #FFF;
+}
+.homePageButtons:hover {
+  background-color: #FFF;
+  border: 1px solid #4d4d4d;
+}
+.homePageButtons:hover a {
+  color: #4d4d4d;
+}
 .subtitle {
   margin: 0 0 2em 0;
 }
@@ -9715,16 +9730,36 @@ footer #bottomAdvRow:after {
   height: 20%;
 }
 #homepage_part2 #HomeArticlesFeatured #FeaturedArticles_hover {
+  color: #fff;
+  text-align: center;
   display: none;
   min-height: 511px;
   min-width: 100%;
   background-color: rgba(0, 0, 0, 0.7);
 }
 #homepage_part2 #HomeArticlesFeatured #FeaturedArticles_hover #FeaturedArticle_title {
-  text-align: center;
-  line-height: 500px;
+  line-height: 100px;
   color: #fff;
   font-size: 2.5em;
+  margin-bottom: 3%;
+}
+#homepage_part2 #HomeArticlesFeatured #FeaturedArticles_hover #FeaturedArticle_title p {
+  margin-bottom: 8%;
+}
+#homepage_part2 #HomeArticlesFeatured #FeaturedArticles_hover #FeaturedArticle_title button {
+  width: 50%;
+  background-color: #4d4d4d;
+}
+#homepage_part2 #HomeArticlesFeatured #FeaturedArticles_hover #FeaturedArticle_title button a {
+  text-decoration: none;
+  color: #FFF;
+}
+#homepage_part2 #HomeArticlesFeatured #FeaturedArticles_hover #FeaturedArticle_title button:hover {
+  background-color: #FFF;
+  border: 1px solid #4d4d4d;
+}
+#homepage_part2 #HomeArticlesFeatured #FeaturedArticles_hover #FeaturedArticle_title button:hover a {
+  color: #4d4d4d;
 }
 #homepage_part2 #HomeArticlesFeatured:hover img {
   display: none;
@@ -9879,25 +9914,32 @@ footer #bottomAdvRow:after {
   min-width: 100px;
 }
 #calendar .navigation {
+  margin: 0 auto;
+  text-align: center;
+  margin-bottom: 3%;
+}
+#calendar .navigation .calendar_nav {
+  margin: 0 auto;
   text-align: center;
 }
-#calendar .navigation .prev p,
-#calendar .navigation .next p {
-  background-size: cover;
-  background-repeat: no-repeat;
-  height: 60px;
-  width: 60px;
+#calendar .navigation .calendar_nav tr td {
+  min-width: 15px;
 }
-#calendar .navigation .prev {
+#calendar .navigation .calendar_nav tr td .prev {
   float: right;
 }
-#calendar .navigation .next {
+#calendar .navigation .calendar_nav tr td .next {
   float: left;
 }
-table {
-  margin: 0 auto;
+#calendar .navigation .calendar_nav tr td .title #navigation_year,
+#calendar .navigation .calendar_nav tr td .title #navigation_month {
+  font-size: 3em;
 }
-table tr .weekday {
+#calendar_table {
+  margin: 0 auto;
+  border-collapse: collapse;
+}
+#calendar_table tr .weekday {
   text-transform: uppercase;
   background-color: #eaeaea;
   border: 5px solid #fff;
@@ -9912,12 +9954,12 @@ table tr .weekday {
   width: 100px;
   min-width: 100px;
 }
-table tr td {
-  background-color: #4d4d4d;
+#calendar_table tr td {
+  background-color: #cbcbcb;
   border: 5px solid #fff;
   padding: 0.5em 0.3em;
   text-align: center;
-  color: #fff;
+  color: #000;
   font-size: 1.8em;
   max-height: 60px;
   height: 60px;
@@ -9926,16 +9968,23 @@ table tr td {
   width: 100px;
   min-width: 100px;
 }
-table tr td span {
-  color: #fff;
+#calendar_table tr td span {
   display: block;
   font-weight: normal;
-  opacity: 0.7;
+  opacity: 0.3;
   padding: 0.2em;
   text-align: center;
   text-decoration: none;
 }
-table tr .today .eventAvailable span {
+#calendar_table tr td.current {
+  color: #fff;
+  opacity: 1;
+  background-color: #4d4d4d;
+}
+#calendar_table tr td.current span {
+  opacity: 1;
+}
+#calendar_table tr td.today .eventAvailable span {
   border: 2px solid #Color3;
   opacity: 1;
   border-radius: 50%;
@@ -9943,7 +9992,12 @@ table tr .today .eventAvailable span {
   width: 60px;
   margin: 0 auto;
 }
-table tr .today span {
+#calendar_table tr td.today {
+  background-color: #4d4d4d;
+  opacity: 1;
+}
+#calendar_table tr td.today span {
+  color: #ffde16;
   border: 2px solid #FFF;
   opacity: 1;
   border-radius: 50%;
@@ -9951,7 +10005,8 @@ table tr .today span {
   width: 60px;
   margin: 0 auto;
 }
-table tr .eventAvailable span {
+#calendar_table tr td.eventAvailable span {
+  opacity: 1;
   border-bottom: 2px solid #ffde16;
   cursor: pointer;
 }

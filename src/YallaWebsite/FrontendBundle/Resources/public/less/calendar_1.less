@@ -101,6 +101,7 @@
 }
 
 #calendar {
+    overflow-x:auto;
     .navigation {
         margin: 0 auto;
         text-align: center;
@@ -146,6 +147,7 @@
             font-size: 1.8em;
             .sizeCalendar;
             span {
+                color: @Color4 - 100;
                 display: block;
                 font-weight: normal;
                 opacity: 0.3;
@@ -176,7 +178,6 @@
             background-color: @Color2;
             opacity: 1;
             span {
-                opacity: 1;
                 color: @Color3;
                 border: 2px solid #FFF;
                 opacity: 1;
@@ -188,7 +189,6 @@
         }
         td.eventAvailable {
             span {
-                opacity: 1;
                 border-bottom: 2px solid @Color3;
                 cursor: pointer;
             }

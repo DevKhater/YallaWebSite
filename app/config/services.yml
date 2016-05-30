@@ -11,6 +11,11 @@ services:
         class: YallaWebsite\BackendBundle\Form\Type\LocationType
         tags:
             - { name: form.type, alias: location_information }
+    app.form.type.socialmedia:
+        class: YallaWebsite\BackendBundle\Form\Type\SocialMediaType
+        tags:
+            - { name: form.type, alias: social_media_information }
+            
     app.form.type.photographer:
         class: YallaWebsite\BackendBundle\Form\Type\PhotographerType
         tags:
