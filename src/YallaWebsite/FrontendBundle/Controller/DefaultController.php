@@ -35,8 +35,26 @@ class DefaultController extends Controller
         } else {
             $pagination = NULL;
         }
-
         return $this->render('YallaWebsiteFrontendBundle:Venue:index.html.twig', array(
+                'pagination' => $pagination
+        ));
+    }
+
+    public function artistsAction()
+    {
+        $em = $this->getDoctrine()->getManager();
+        $entities = $em->getRepository('YallaWebsiteBackendBundle:Artist');
+        $query = $entities->findAll();
+        if ($query != NULL) {
+            $paginator = $this->get('knp_paginator');
+            $pagination = $paginator->paginate(
+                $query, $this->get('request')->query->get('page', 1), 8
+            );
+        } else {
+            $pagination = NULL;
+        }
+
+        return $this->render('YallaWebsiteFrontendBundle:Artist:index.html.twig', array(
                 'pagination' => $pagination
         ));
     }

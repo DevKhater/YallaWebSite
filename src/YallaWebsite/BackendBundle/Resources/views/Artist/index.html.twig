@@ -21,7 +21,7 @@
             <div class="col-md-12 col-sm-12">
                 <div class="panel panel-primary">
                     <div class="panel-heading">
-                        Event Listing
+                        Artist Listing
                     </div>
                     <div class="panel-body">
                         <div class="table-responsive">
@@ -30,9 +30,8 @@
                                     <tr>
                                         <th></th>                                        
                                         <th>Artist Name</th>
-                                        <th>Artist Address</th>
-                                        <th>Artist Number</th>
-                                        <th>Artist Website</th>
+                                        <th>Artist Biogtaphy</th>
+                                        <th>Artist Social Media Links</th>
                                         <th>Artist Cover</th>
                                     </tr>
                                 </thead>
@@ -43,9 +42,12 @@
                                                 <a href="{{path ('backend_artist_show',  {'id': artist.id}) }}"><button class="btn btn-primary btn-sm"><i class="fa fa-eye"></i> View </button></a>
                                             </td>
                                             <td><a href="{{ path ('backend_artist_edit',  {'id': artist.id})}}">{{artist.title}}</a></td>
-                                            <td>{{artist.location.address}}</td>
-                                            <td>{{artist.location.telephone}}</td>
-                                            <td>{{artist.website}}</td>
+                                            
+                                            <td>{{artist.biography[0:80]}}</td>
+                                            <td>
+                                                {% set entity = artist %}
+                                                {% include '@YallaWebsiteFrontendBundle/views/Template/artistSocialMedia.html.twig'%}
+                                            </td>
                                             <td>{% thumbnail  artist.media, 'small' %}</td>
                                         </tr>
                                     {% endfor %}

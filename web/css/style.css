@@ -2373,6 +2373,10 @@ footer #bottomAdvRow:after {
   color: #fff;
   font-size: 2.5em;
 }
+#homepage_part3 .hp_eventDay .eventDay_TitleDiv .eventDay_title a {
+  color: #fff;
+  text-decoration: none;
+}
 #homepage_part3 .hp_eventDay:hover .eventDay_date {
   display: none;
 }
@@ -3131,7 +3135,10 @@ body .pageContent .wrapper .venueDiv .venueContent .venueDivTitle {
 }
 body .pageContent .wrapper .venueDiv .modal-dialog .modal-content {
   color: white;
-  background-color: #4d4d4d;
+  background-color: #1f1f1f;
+}
+body .pageContent .wrapper .venueDiv .modal-dialog .modal-content .modal_title {
+  text-align: center;
 }
 body .pageContent .wrapper .venueDiv .modal-dialog .modal-content .modal_description,
 body .pageContent .wrapper .venueDiv .modal-dialog .modal-content .modal_footer {

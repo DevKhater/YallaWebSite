@@ -1,4 +1,4 @@
-{% extends "YallaWebsiteBackendBundle:Artist:base_venue.html.twig" %}
+{% extends "YallaWebsiteBackendBundle:Artist:base_artist.html.twig" %}
 {% block controlleraction  %}
     <div class="panel panel-default">
         <div class="panel-heading">
@@ -7,40 +7,32 @@
 
         <div class="panel-body">
             <form enctype="multipart/form-data" action="{{ path('backend_artist_new')}}" method="POST">
-                {#    <div class="form-group">
+                    <div class="form-group">
                         <label for="title">Artist Name</label>
                         {{ form_widget(form.title)}}
                     </div>
 
                     <div class="form-group">
-                        <label for="date">Artist Address</label>
-                        {{ form_widget(form.location)}}
+                        <label for="date">Artist Biography</label>
+                        {{ form_widget(form.biography)}}
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="date">Artist Links</label>
+                        {{ form_widget(form.sm)}}
                     </div>
 
-                    <div class="form-group">
-                        <label for="date">Artist Working From</label>
-                        {{ form_widget(form.workingFrom)}}
-                        <label for="date">Artist Working To</label>
-                        {{ form_widget(form.workingTo)}}
-                    </div>
-
-                    <div class="form-group">
-                        <label for="date">Website</label>
-                        {{ form_widget(form.website)}}
-                    </div>
-                    <div class="form-group">
-                        <label for="date">Artist Description</label>
-                        {{ form_widget(form.content)}}
-                    </div>
-                    {{ form_row(form.tags) }}
+                    
+                    
+                    
                     <div class="form-group">
                         <label for="media">Cover Image</label>
                         {{ form_widget(form.media)}}
                         <p class="help-block">Only Images.</p>
                     </div>
                         {{ form_errors(form) }}
-                        {{ form_row(form._token) }}#}
-                {{form_widget(form)}}
+                        {{ form_row(form._token) }}
+                
                     <input type="submit" class="btn btn-default" value="Save"/>
                     
             </form>

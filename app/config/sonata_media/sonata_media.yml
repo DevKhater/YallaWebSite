@@ -53,6 +53,16 @@ sonata_media:
                 large:     { width: 598, quality: 100}
                 displayIndex: {width:570, height:250, quality:50}
                 homePage: {width:920, height:500, quality:50}
+        artist:
+            providers:
+                - sonata.media.provider.image
+            formats:
+                preview:   { width: 100, quality: 100}
+                small:     { width: 200, quality: 100}
+                medium:     { width: 400, quality: 100}
+                large:     { width: 598, quality: 100}
+                displayIndex: {width:570, height:250, quality:50}
+                homePage: {width:920, height:500, quality:50}
         article:
             providers:
                 - sonata.media.provider.image

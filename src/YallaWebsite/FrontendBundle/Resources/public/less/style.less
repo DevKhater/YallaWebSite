@@ -33,6 +33,7 @@ and open the template in the editor.
 @Color2: #4d4d4d;   //BG COLOR DARK GRAY
 @Color3: #ffde16;   //BG COLOR YELLOW
 @Color4: #CBCBCB;   // Inactive Calednar extra days
+@Color5: #1f1f1f;   //darker gray for modal
 @Pagination-Gray: #565656;
 @tempColor: #ff00ff;
 .hyperlink() {
@@ -369,7 +370,11 @@ body {
                 .modal-dialog {
                     .modal-content {
                         color: white;
-                        background-color: @Color2;
+                        background-color: @Color5;
+                        .modal_title {
+                            text-align: center;
+                            
+                        }
                         .modal_description, .modal_footer {
                             text-align:left;
                             padding: 2%;

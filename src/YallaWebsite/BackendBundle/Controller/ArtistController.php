@@ -53,9 +53,9 @@ class ArtistController extends Controller
             $createArtistForm->handleRequest($request);
             if ($createArtistForm->isValid()) {
                 $BEManager = $this->container->get('backend_manager.manager');
-                $BEManager->saveMedia($artist, 'venue');
+                $BEManager->saveMedia($artist, 'artist');
                 $artist = $this->create($artist);
-                return new RedirectResponse($this->generateUrl('backend_venue_show', array('id' => $artist->getId())));
+                return new RedirectResponse($this->generateUrl('backend_artist_show', array('id' => $artist->getId())));
             } else {
                 return $this->render('YallaWebsiteBackendBundle:Artist:new.html.twig', array(
                             'form' => $createArtistForm->createView(),
@@ -76,18 +76,18 @@ class ArtistController extends Controller
             $editForm->handleRequest($request);
             if ($editForm->isValid()) {
                 $BEManager = $this->container->get('backend_manager.manager');
-                $BEManager->updateMedia($entity, $oldMedia, 'venue');
+                $BEManager->updateMedia($entity, $oldMedia, 'artist');
                 $entity = $this->create($entity);
-                return new RedirectResponse($this->generateUrl('backend_venue_show', array('id' => $entity->getId())));
+                return new RedirectResponse($this->generateUrl('backend_artist_show', array('id' => $entity->getId())));
             } else {
                 return $this->render('YallaWebsiteBackendBundle:Artist:edit.html.twig', array(
-                            'venue' => $entity,
+                            'artist' => $entity,
                             'form' => $editForm->createView(),
                             'error' => $editForm->getErrors()));
             }
         }
         return $this->render('YallaWebsiteBackendBundle:Artist:edit.html.twig', array(
-                    'venue' => $entity,
+                    'artist' => $entity,
                     'form' => $editForm->createView(),
         ));
     }
@@ -97,11 +97,10 @@ class ArtistController extends Controller
         $entity = $this->getArtist($request);
         $BEManager = $this->container->get('backend_manager.manager');
         $BEManager->deleteMedia($entity->getMedia());
-        $BEManager->deleteTags($entity);
         $em = $this->getDoctrine()->getEntityManager();
         $em->remove($entity);
         $em->flush();
-        return new RedirectResponse($this->generateUrl('backend_venue_index'));
+        return new RedirectResponse($this->generateUrl('backend_artist_index'));
     }
 
     private function create(Artist $artist)

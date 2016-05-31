@@ -3,12 +3,16 @@ yalla_website_frontend_homepage:
     defaults: { _controller: YallaWebsiteFrontendBundle:Default:index }
 
 yalla_website_frontend_page_about:
-    path:     /page/about
+    path:     /about
     defaults: { _controller: YallaWebsiteFrontendBundle:Default:about }
 
 yalla_website_frontened_venues:
     path: /guides
     defaults: { _controller: YallaWebsiteFrontendBundle:Default:venues }
+
+yalla_website_frontened_artists:
+    path: /artists
+    defaults: { _controller: YallaWebsiteFrontendBundle:Default:artists }
 
 yalla_website_frontened_articles:
     path: /gossips

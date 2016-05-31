@@ -6,16 +6,11 @@
 {% block controlleraction  %}
     <div class='col-md-8'>
         <strong>Name : {{entity.title}} <br/>
-        <strong>Biography: </strong>{{entity.biography}} <br/>
-        <strong>Social Media: </strong><br/>
-        <p>
-            {% if entity.sm.facebook is not null %} <a href='{{entity.sm.facebook}}'>Facebook</a>{% endif %}
-            {% if entity.sm.googleplus is not null %} <a href='{{entity.sm.googleplus}}'>Google + </a>{% endif %}
-            {% if entity.sm.youtube is not null %} <a href='{{entity.sm.youtube}}'>YouTube</a>{% endif %}
-            {% if entity.sm.soundcloud is not null %} <a href='{{entity.sm.soundcloud}}'>SoundCloud</a>{% endif %}
-            {% if entity.sm.twitter is not null %} <a href='{{entity.sm.twitter}}'>Twitter</a>{% endif %}
-            {% if entity.sm.instagram is not null %} <a href='{{entity.sm.instagram}}'>Instagram</a>{% endif %}
-        </p>
+            <strong>Biography: </strong>{{entity.biography}} <br/>
+            <strong>Social Media: </strong><br/>
+            <p>
+                {% include '@YallaWebsiteFrontendBundle/views/Template/artistSocialMedia.html.twig'%}
+            </p>
     </div>
     <div class="col-md-4">
         {% thumbnail  entity.media, 'medium' %}

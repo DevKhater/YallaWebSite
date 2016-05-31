@@ -12,27 +12,27 @@ class SocialMediaType extends AbstractType
     {
         $builder
                 ->add('facebook', 'url', array(
-                'label' => false,'attr' => array(
+                'label' => 'Facebook','attr' => array(
                     'class' => 'form-control',
                     'placeholder' => 'Facebook')))
                 ->add('twitter', 'url', array(
-                'label' => false,'attr' => array(
+                'label' => 'Twitter','attr' => array(
                     'class' => 'form-control',
                     'placeholder' => 'Twitter')))
                 ->add('soundcloud', 'url', array(
-                'label' => false,'attr' => array(
+                'label' => 'SoundCloud','attr' => array(
                     'class' => 'form-control',
                     'placeholder' => 'SoundClound')))
                 ->add('youtube', 'url', array(
-                'label' => false,'attr' => array(
+                'label' => 'YouTube','attr' => array(
                     'class' => 'form-control',
                     'placeholder' => 'Youtube')))
                 ->add('googleplus', 'url', array(
-                'label' => false,'attr' => array(
+                'label' => 'Google +','attr' => array(
                     'class' => 'form-control',
                     'placeholder' => 'Google +')))
                 ->add('instagram', 'url', array(
-                'label' => false,'attr' => array(
+                'label' => 'Instagram','attr' => array(
                     'class' => 'form-control',
                     'placeholder' => 'Instagram')))
                 ;
