@@ -77,6 +77,7 @@ class Article extends BaseEntity
 
     public function __construct()
     {
+        parent::__construct();
         $this->tags = new \Doctrine\Common\Collections\ArrayCollection();
     }
 

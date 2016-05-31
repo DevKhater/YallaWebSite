@@ -15,8 +15,9 @@ class DefaultController extends Controller
     {
         
         $em = $this->getDoctrine()->getManager();
-        $entities = $em->getRepository('YallaWebsiteBackendBundle:Event')->getEventDaysinMonthYear(5, 2016);
-        dump($entities);
+        $art = $em->getRepository('YallaWebsiteBackendBundle:Artist')->find(4);
+        $entities = $em->getRepository('YallaWebsiteBackendBundle:Event')->getUpcomigEventsByArtist($art);
+        dump($entities);exit;
         if (array_key_exists('30',$entities)){
             
         }

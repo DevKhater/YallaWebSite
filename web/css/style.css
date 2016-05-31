@@ -2707,6 +2707,13 @@ body header nav #bs-navbar-collapse-1 ul li {
   height: 88px;
   min-height: 88px;
 }
+@media only screen and (max-width: 767px) {
+  body header nav #bs-navbar-collapse-1 ul li {
+    min-height: 14px;
+    height: 14px;
+    text-align: center;
+  }
+}
 body header nav #bs-navbar-collapse-1 ul li a {
   color: white;
   padding: 35px;
@@ -2829,6 +2836,11 @@ body header #topAdvRow {
   margin-top: 15px;
   min-height: 50px;
 }
+@media (max-width: 767px) {
+  body header #topAdvRow {
+    display: none !important;
+  }
+}
 body header #topAdvRow #leftAdv,
 body header #topAdvRow #rightAdv {
   position: relative;
@@ -2875,11 +2887,38 @@ body header #topAdvRow #leftAdv {
 body header #topAdvRow #leftAdv img {
   float: left;
 }
+@media screen and (max-width: 991px) {
+  body header #topAdvRow #leftAdv {
+    position: relative;
+    min-height: 1px;
+    padding-left: 15px;
+    padding-right: 15px;
+    text-align: center;
+    margin: 0 auto;
+    float: none;
+  }
+  body header #topAdvRow #leftAdv img {
+    text-align: center;
+    margin: 0 auto;
+    float: none;
+  }
+}
+@media screen and (max-width: 991px) and (min-width: 1200px) {
+  body header #topAdvRow #leftAdv {
+    float: left;
+    width: 100%;
+  }
+}
 body header #topAdvRow #rightAdv {
   float: right;
 }
 body header #topAdvRow #rightAdv img {
   float: right;
+}
+@media screen and (max-width: 991px) {
+  body header #topAdvRow #rightAdv {
+    display: none;
+  }
 }
 body header #socialSearchRow {
   margin-left: -15px;
@@ -2890,7 +2929,7 @@ body header #socialSearchRow #socialLinks,
 body header #socialSearchRow #searchBar {
   position: relative;
   float: left;
-  width: 41.66666667%;
+  width: 100%;
   min-height: 1px;
   padding-left: 15px;
   padding-right: 15px;
@@ -2916,7 +2955,7 @@ body header #socialSearchRow #searchBar {
   body header #socialSearchRow #socialLinks,
   body header #socialSearchRow #searchBar {
     float: left;
-    width: 41.66666667%;
+    width: 100%;
   }
 }
 body header #socialSearchRow #socialLinks {
@@ -2980,8 +3019,6 @@ body .pageContent .wrapper:after {
 body .pageContent .wrapper #missionContent,
 body .pageContent .wrapper #visionContent {
   position: relative;
-  float: left;
-  width: 50%;
   min-height: 1px;
   padding-left: 15px;
   padding-right: 15px;
@@ -3001,19 +3038,22 @@ body .pageContent .wrapper #visionContent {
     width: 50%;
   }
 }
-@media (min-width: 768px) {
-  body .pageContent .wrapper #missionContent,
-  body .pageContent .wrapper #visionContent {
-    float: left;
-    width: 50%;
-  }
-}
 body .pageContent .wrapper #visionContent #left_border {
   position: absolute;
   border-left: 2px solid black;
   left: 0;
   bottom: 0;
   height: 60%;
+}
+@media (min-width: 768px) and (max-width: 991px) {
+  body .pageContent .wrapper #visionContent #left_border {
+    display: none !important;
+  }
+}
+@media (max-width: 767px) {
+  body .pageContent .wrapper #visionContent #left_border {
+    display: none !important;
+  }
 }
 body .pageContent .wrapper #membersContent {
   position: relative;
@@ -3144,6 +3184,24 @@ body .pageContent .wrapper .venueDiv .modal-dialog .modal-content .modal_descrip
 body .pageContent .wrapper .venueDiv .modal-dialog .modal-content .modal_footer {
   text-align: left;
   padding: 2%;
+}
+body .pageContent .wrapper .venueDiv .modal-dialog .modal-content .modal_description .artist_upcoming_events span {
+  color: #ffde16;
+  font-style: italic;
+  font-weight: bold;
+}
+body .pageContent .wrapper .venueDiv .modal-dialog .modal-content .modal_description .artist_upcoming_events span a {
+  font-weight: bold;
+}
+body .pageContent .wrapper .venueDiv .modal-dialog .modal-content .modal_description .artist_upcoming_events span a:link {
+  color: #ffde16;
+}
+body .pageContent .wrapper .venueDiv .modal-dialog .modal-content .modal_description .artist_upcoming_events span a:hover {
+  color: #ffff7a;
+}
+body .pageContent .wrapper .venueDiv .modal-dialog .modal-content .modal_description .artist_upcoming_events span a:visited,
+body .pageContent .wrapper .venueDiv .modal-dialog .modal-content .modal_description .artist_upcoming_events span a:active {
+  color: #9b7a00;
 }
 body .pageContent .wrapper .venueDiv .modal-dialog .modal-content .modal_footer a {
   font-weight: bold;

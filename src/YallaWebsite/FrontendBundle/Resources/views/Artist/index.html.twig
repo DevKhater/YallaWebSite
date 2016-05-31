@@ -4,7 +4,7 @@
     <div class="pageContent">
         <div class="wrapper">
             <div class="IndexTitle">
-                <h1>Places To Go</h1>
+                <h1>Artists</h1>
             </div>
             {% for artist in pagination  %}
                 <div class="venueDiv">
@@ -24,11 +24,19 @@
                                 </div>
                                 <div class="modal_description">
                                     <p>{{artist.biography}}</p>
+                                    <div class="artist_upcoming_events">
+                                        <p>Upcoming Events</p>
+                                        {% for key, data in upcoming %}
+                                            {% if artist.id == key %} 
+                                                <span><a href='{{path('yalla_website_frontened_event', {id: data[0].slug})}}'>{{ data[0].title }}</a></span>
+                                                {%endif%}
+                                            {% endfor %}
+                                    </div>
                                 </div>
                                 <div class="modal_footer">
                                     <p>
                                         {% set entity = artist %}
-                                    {% include '@YallaWebsiteFrontendBundle/views/Template/artistSocialMedia.html.twig'%}
+                                        {% include '@YallaWebsiteFrontendBundle/views/Template/artistSocialMedia.html.twig'%}
                                     </p>
                                 </div>
                             </div>

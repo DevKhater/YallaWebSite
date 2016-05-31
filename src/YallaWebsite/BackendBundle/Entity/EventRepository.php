@@ -85,4 +85,17 @@ class EventRepository extends EntityRepository
         }
         return $days;
     }
+
+    public function getUpcomigEventsByArtist($artist)
+    {
+        $events = $this->getEntityManager()->createQueryBuilder()
+            ->select('e')
+            ->from('YallaWebsiteBackendBundle:Event', 'e')
+            ->leftJoin('e.similarArtist', 'a')
+            ->where('a = :artist')
+            ->andWhere('e.startDate > :today')
+            ->setParameter('today', new \DateTime())
+            ->setParameter('artist', $artist);
+        return $events->getQuery()->getResult();
+    }
 }

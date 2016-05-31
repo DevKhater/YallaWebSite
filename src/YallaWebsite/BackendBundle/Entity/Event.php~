@@ -8,12 +8,13 @@ use YallaWebsite\BackendBundle\Entity\BaseEntity;
 use Doctrine\Common\Collections\ArrayCollection;
 
 /**
- * Venue
- * @ORM\HasLifecycleCallbacks 
+ * Event
+ *
  * @ORM\Table()
- * @ORM\Entity(repositoryClass="YallaWebsite\BackendBundle\Entity\VenueRepository")
+ * @ORM\HasLifecycleCallbacks
+ * @ORM\Entity(repositoryClass="YallaWebsite\BackendBundle\Entity\EventRepository")
  */
-class Venue extends BaseEntity
+class Event extends BaseEntity
 {
 
     /**
@@ -28,80 +29,92 @@ class Venue extends BaseEntity
     /**
      * @var string
      *
-     * @ORM\Column(name="title", type="string", length=255)
+     * @ORM\Column(name="title", type="string")
+     * @Assert\NotBlank()
+     * 
      */
     private $title;
 
     /**
-     * @var string
-     * 
-     * @ORM\OneToOne(targetEntity="YallaWebsite\BackendBundle\Entity\LocationInformation", cascade={"persist", "remove"})
-     * @ORM\JoinColumn(name="location_id", referencedColumnName="id", onDelete="CASCADE")
-     * 
-     */
-    private $location;
-    
-    /**
      * @var datetime
      *
-     * @ORM\Column(name="workingFrom", type="time")
+     * @ORM\Column(name="startDate", type="datetime")
      * 
      */
-    private $workingFrom;
+    private $startDate;
 
     /**
      * @var datetime
      *
-     * @ORM\Column(name="workingTo", type="time")
+     * @ORM\Column(name="endDate", type="datetime")
      * 
      */
-    private $workingTo;
-
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="website", type="string", length=255)
-     * @Assert\Url(
-     * message = "The url '{{ value }}' is not a valid url.Format : http://xxx.xxxxxx.xxx",
-     * )
-     */
-    private $website;
+    private $endDate;
 
     /**
      * @var string
      *
      * @ORM\Column(name="content", type="text")
-     * )
      */
     private $content;
 
     /**
-     * @ORM\OneToOne(targetEntity="Application\Sonata\MediaBundle\Entity\Media", cascade={"persist"})
-     * @ORM\JoinColumn(name="media_id", referencedColumnName="id", nullable=true,  onDelete="SET NULL")
+     * @var boolean
+     * 
+     * @ORM\Column(name="is_venue", type="boolean")
+     * 
+     */
+    private $isVenue;
+
+    /**
+     * @var string
+     * 
+     * @ORM\ManyToOne(targetEntity="YallaWebsite\BackendBundle\Entity\Venue", cascade={"persist"})
+     * @ORM\JoinColumn(name="venue_id", referencedColumnName="id", nullable=true)     * 
+     */
+    private $venue;
+
+    /**
+     * @var string
+     * 
+     * @ORM\ManyToOne(targetEntity="YallaWebsite\BackendBundle\Entity\LocationInformation", cascade={"persist"})
+     * @ORM\JoinColumn(name="location_id", referencedColumnName="id", nullable=true)
+     * 
+     */
+    private $location;
+
+    /**
+     * @ORM\OneToOne(targetEntity="Application\Sonata\MediaBundle\Entity\Media", cascade={"persist"}, fetch="LAZY")
+     * @ORM\JoinColumn(name="media_id", referencedColumnName="id", nullable=true, onDelete="SET NULL")
      */
     protected $media;
 
     /**
      * @ORM\ManyToMany(targetEntity="YallaWebsite\BackendBundle\Entity\Tag", cascade={"remove", "persist"})
-     * @ORM\JoinTable(name="venue_has_tag",
+     * @ORM\JoinTable(name="event_has_tag",
      *      joinColumns={@ORM\JoinColumn(name="post_id", referencedColumnName="id")},
      *      inverseJoinColumns={@ORM\JoinColumn(name="tag_id", referencedColumnName="id")}
      *      )
      */
     protected $tags;
-
-    protected $ogType = 'place';
-    protected $metaTags;
-    protected $metaDescription;
-    protected $url;
-    protected $mediaUrl;
     
+    
+    /**
+     * @ORM\ManyToMany(targetEntity="YallaWebsite\BackendBundle\Entity\Artist", cascade={"persist"})
+     * @ORM\JoinTable(name="event_similar_artist",
+     *      joinColumns={@ORM\JoinColumn(name="event_id", referencedColumnName="id")},
+     *      inverseJoinColumns={@ORM\JoinColumn(name="artist_id", referencedColumnName="id")}
+     *      )
+     * 
+     */
+    protected $similarArtist;
+
     public function __construct()
     {
-        parent::__construct();
         $this->createdAt = new \DateTime();
         $this->location = new ArrayCollection();
         $this->tags = new \Doctrine\Common\Collections\ArrayCollection();
+        $this->similarArtist = new \Doctrine\Common\Collections\ArrayCollection();
     }
 
     /**
@@ -119,7 +132,7 @@ class Venue extends BaseEntity
      *
      * @param string $title
      *
-     * @return Venue
+     * @return Event
      */
     public function setTitle($title)
     {
@@ -139,27 +152,34 @@ class Venue extends BaseEntity
     }
 
     /**
-     * Set website
-     *
-     * @param string $website
-     *
-     * @return Venue
+     * @param MediaInterface $media
      */
-    public function setWebsite($website)
+    public function setMedia($media)
     {
-        $this->website = $website;
+        $this->media = $media;
+    }
 
-        return $this;
+    public function getMediaId()
+    {
+        return $this->getMedia()->getId();
     }
 
     /**
-     * Get website
-     *
-     * @return string
+     * @return MediaInterface
      */
-    public function getWebsite()
+    public function getMedia()
     {
-        return $this->website;
+        return $this->media;
+    }
+
+    public function getLocationAddress()
+    {
+        return $this->location->getAddress();
+    }
+
+    public function getLocationNumber()
+    {
+        return $this->location->getTelephone();
     }
 
     /**
@@ -187,24 +207,51 @@ class Venue extends BaseEntity
     }
 
     /**
-     * @param MediaInterface $media
+     * Set startDate
+     *
+     * @param \DateTime $startDate
+     *
+     * @return Event
      */
-    public function setMedia($media)
+    public function setStartDate($startDate)
     {
-        $this->media = $media;
-    }
+        $this->startDate = $startDate;
 
-    public function getMediaId()
-    {
-        return $this->getMedia()->getId();
+        return $this;
     }
 
     /**
-     * @return MediaInterface
+     * Get startDate
+     *
+     * @return \DateTime
      */
-    public function getMedia()
+    public function getStartDate()
     {
-        return $this->media;
+        return $this->startDate;
+    }
+
+    /**
+     * Set endDate
+     *
+     * @param \DateTime $endDate
+     *
+     * @return Event
+     */
+    public function setEndDate($endDate)
+    {
+        $this->endDate = $endDate;
+
+        return $this;
+    }
+
+    /**
+     * Get endDate
+     *
+     * @return \DateTime
+     */
+    public function getEndDate()
+    {
+        return $this->endDate;
     }
 
     /**
@@ -212,7 +259,7 @@ class Venue extends BaseEntity
      *
      * @param \YallaWebsite\BackendBundle\Entity\LocationInformation $location
      *
-     * @return Venue
+     * @return Event
      */
     public function setLocation(\YallaWebsite\BackendBundle\Entity\LocationInformation $location = null)
     {
@@ -264,13 +311,12 @@ class Venue extends BaseEntity
         return $this->tags;
     }
 
-
     /**
      * Set slug
      *
      * @param string $slug
      *
-     * @return Venue
+     * @return Event
      */
     public function setSlug($slug)
     {
@@ -290,51 +336,51 @@ class Venue extends BaseEntity
     }
 
     /**
-     * Set workingFrom
+     * Set isVenue
      *
-     * @param \DateTime $workingFrom
-     * @return Venue
+     * @param boolean $isVenue
+     * @return Event
      */
-    public function setWorkingFrom($workingFrom)
+    public function setIsVenue($isVenue)
     {
-        $this->workingFrom = $workingFrom;
+        $this->isVenue = $isVenue;
 
         return $this;
     }
 
     /**
-     * Get workingFrom
+     * Get isVenue
      *
-     * @return \DateTime 
+     * @return boolean 
      */
-    public function getWorkingFrom()
+    public function getIsVenue()
     {
-        return $this->workingFrom;
+        return $this->isVenue;
     }
 
     /**
-     * Set workingTo
+     * Set venue
      *
-     * @param \DateTime $workingTo
-     * @return Venue
+     * @param \YallaWebsite\BackendBundle\Entity\Venue $venue
+     * @return Event
      */
-    public function setWorkingTo($workingTo)
+    public function setVenue(\YallaWebsite\BackendBundle\Entity\Venue $venue = null)
     {
-        $this->workingTo = $workingTo;
+        $this->venue = $venue;
 
         return $this;
     }
 
     /**
-     * Get workingTo
+     * Get venue
      *
-     * @return \DateTime 
+     * @return \YallaWebsite\BackendBundle\Entity\Venue 
      */
-    public function getWorkingTo()
+    public function getVenue()
     {
-        return $this->workingTo;
+        return $this->venue;
     }
-    
+
     /**
      * @ORM\PrePersist
      * @ORM\PreUpdate
@@ -342,8 +388,13 @@ class Venue extends BaseEntity
     public function prePersist()
     {
         $this->updatedAt = new \DateTime();
-        $this->workingFrom = new \DateTime(date('H:i', $this->workingFrom->getTimestamp()));
-        $this->workingTo = new \DateTime(date('H:i', $this->workingTo->getTimestamp()));
+
+        if ($this->isVenue == true) {
+            $this->location = null;
+        } else {
+            $this->isVenue = false;
+            $this->venue = null;
+        }
     }
 
 }

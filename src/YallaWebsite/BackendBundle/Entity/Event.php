@@ -97,12 +97,24 @@ class Event extends BaseEntity
      *      )
      */
     protected $tags;
+    
+    
+    /**
+     * @ORM\ManyToMany(targetEntity="YallaWebsite\BackendBundle\Entity\Artist", cascade={"persist"})
+     * @ORM\JoinTable(name="event_similar_artist",
+     *      joinColumns={@ORM\JoinColumn(name="event_id", referencedColumnName="id")},
+     *      inverseJoinColumns={@ORM\JoinColumn(name="artist_id", referencedColumnName="id")}
+     *      )
+     * 
+     */
+    protected $similarArtist;
 
     public function __construct()
     {
         $this->createdAt = new \DateTime();
         $this->location = new ArrayCollection();
         $this->tags = new \Doctrine\Common\Collections\ArrayCollection();
+        $this->similarArtist = new \Doctrine\Common\Collections\ArrayCollection();
     }
 
     /**
@@ -385,4 +397,37 @@ class Event extends BaseEntity
         }
     }
 
+
+    /**
+     * Add similarArtist
+     *
+     * @param \YallaWebsite\BackendBundle\Entity\Artist $similarArtist
+     * @return Event
+     */
+    public function addSimilarArtist(\YallaWebsite\BackendBundle\Entity\Artist $similarArtist)
+    {
+        $this->similarArtist[] = $similarArtist;
+
+        return $this;
+    }
+
+    /**
+     * Remove similarArtist
+     *
+     * @param \YallaWebsite\BackendBundle\Entity\Artist $similarArtist
+     */
+    public function removeSimilarArtist(\YallaWebsite\BackendBundle\Entity\Artist $similarArtist)
+    {
+        $this->similarArtist->removeElement($similarArtist);
+    }
+
+    /**
+     * Get similarArtist
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getSimilarArtist()
+    {
+        return $this->similarArtist;
+    }
 }

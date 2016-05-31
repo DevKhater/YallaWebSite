@@ -30,7 +30,15 @@
                 {% for tag in entity.getTags %}
                     <span class="label label-primary"> {{ tag.name }} </span>
                 {% endfor %}
+            {% endif %}<br/>
+            <strong>Similar Artists</strong>
+            {% if entity.getSimilarArtist %}
+                {% for art in entity.getSimilarArtist %}
+                    <p> <a href='{{ path('backend_artist_show', {id: art.id}) }}'>{{ art.title }}</a> <p>
+                {% endfor %}
             {% endif %}
+            
+            
         </div>
         <div class="col-md-4">
             {% thumbnail  entity.media, 'medium' %}

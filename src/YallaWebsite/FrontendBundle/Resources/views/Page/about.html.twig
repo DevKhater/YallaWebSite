@@ -3,17 +3,17 @@
 {% block body %}
     <div class="pageContent">
         <div class="wrapper">
-            <div id='missionContent'>
+            <div id='missionContent' class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
                 <div class="innerPagesTitle col-lg-12" >
                     <h1>Mission</h1>
                 </div>
                 {{about}}
             </div>
-            <div id='visionContent'>
+            <div id='visionContent' class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
                 <div class="innerPagesTitle col-lg-12" >
                     <h1>Vision</h1>
                 </div>
-                <div id="left_border"></div>
+                <div id="left_border" style=""></div>
                 {{vision}}
             </div>
             <div id='membersContent'>
@@ -22,8 +22,7 @@
                 </div>
                 <div class="wrapper">
                     {% for member in members %} 
-                        <div class="col-lg-4" >
-                            
+                        <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12" >
                             <div onclick='window.open("{{member.website}}","_blank")' class='member_div' style="background-image: url('{% path  member.media, 'displayIndex' %}');"></div>
                         </div>
                     {% endfor %}

@@ -48,6 +48,15 @@ class CreateEventForm extends AbstractType
                 ->add('tags', 'dcs_tag', array(
                     'attr' => array('class' => 'form-control',
             )))
+            ->add('similarArtist', 'entity', array(
+                    'required' => false,
+                    'class' => 'YallaWebsiteBackendBundle:Artist',
+                    'choice_label' => 'title',
+                    'expanded' => false,
+                    'multiple' => true,
+                    'required' => false,
+                    'attr' => array('class' => 'form-control',)
+                ))    
                 ->add('media', 'media_file', array())
         ;
     }

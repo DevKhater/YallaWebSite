@@ -45,6 +45,11 @@ class DefaultController extends Controller
         $em = $this->getDoctrine()->getManager();
         $entities = $em->getRepository('YallaWebsiteBackendBundle:Artist');
         $query = $entities->findAll();
+        $upcoming = array();
+        foreach($query as $artist) {
+           $events = $em->getRepository('YallaWebsiteBackendBundle:Event')->getUpcomigEventsByArtist($artist);
+           if ($events) $upcoming[$artist->getId()] = $events;
+        }
         if ($query != NULL) {
             $paginator = $this->get('knp_paginator');
             $pagination = $paginator->paginate(
@@ -55,7 +60,8 @@ class DefaultController extends Controller
         }
 
         return $this->render('YallaWebsiteFrontendBundle:Artist:index.html.twig', array(
-                'pagination' => $pagination
+                'pagination' => $pagination,
+                'upcoming' => $upcoming
         ));
     }
 

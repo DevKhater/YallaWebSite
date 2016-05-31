@@ -203,6 +203,7 @@ body {
                     li{
                         height: 88px;
                         min-height: 88px;
+                        @media only screen and (max-width : 767px) { min-height: 14px; height: 14px; text-align:center; }
                         a{
                             color:white;
                             padding: 35px;
@@ -238,6 +239,7 @@ body {
 
         #topAdvRow{
             .row();
+            .hidden-xs;
             margin-top: 15px;
             min-height: 50px;
             #leftAdv,#rightAdv{
@@ -252,11 +254,25 @@ body {
                 img {
                     float: left;
                 }
+                @media screen and (max-width:991px) {
+                    .make-lg-column(12);
+                    text-align:center;
+                    margin: 0 auto;
+                    float: none;
+                    img {
+                        text-align:center;
+                        margin: 0 auto;
+                        float: none;
+                    }
+                }
             }
             #rightAdv {
                 float: right;
                 img {
                     float: right;
+                }
+                @media screen and (max-width:991px) {
+                    display: none;
                 }
             }
         }
@@ -267,8 +283,8 @@ body {
             #socialLinks,#searchBar {
                 .make-lg-column(2);
                 .make-md-column(4);
-                .make-sm-column(5);
-                .make-xs-column(5);
+                .make-sm-column(12);
+                .make-xs-column(12);
                 min-height: 20px;
                 margin-top: 1%;
                 margin-left: 3%;
@@ -308,8 +324,6 @@ body {
             #missionContent,#visionContent {
                 .make-lg-column(6);
                 .make-md-column(6);
-                .make-sm-column(6);
-                .make-xs-column(6);
                 min-height: 200px;
             }
             #visionContent  { 
@@ -319,6 +333,8 @@ body {
                     left:0; 
                     bottom:0; 
                     height: 60%;
+                    .hidden-sm;
+                    .hidden-xs;
                 }
             }
             #membersContent { 
@@ -339,7 +355,7 @@ body {
                         cursor: pointer;
                     }
                 }
-                
+
             }
             //All Inner Pages Defaults
             .IndexTitle {
@@ -373,12 +389,22 @@ body {
                         background-color: @Color5;
                         .modal_title {
                             text-align: center;
-                            
+
                         }
                         .modal_description, .modal_footer {
                             text-align:left;
                             padding: 2%;
-                        }   
+                        }
+                        .modal_description{
+                            .artist_upcoming_events {
+                                span {
+                                    color: @Color3;
+                                    font-style: italic;
+                                    font-weight: bold;
+                                    .hyperlink();
+                                }
+                            }
+                        }
                         .modal_footer{
                             .hyperlink();
                         }
