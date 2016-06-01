@@ -3,7 +3,7 @@
     {{parent()}}
     <link rel="stylesheet" href="{{ asset('bundles/yallawebsitefrontend/css/blueimp-gallery.min.css') }}" />
     <link rel="stylesheet" href="{{ asset('bundles/yallawebsitefrontend/css/bootstrap-image-gallery.css') }}" />
-    <style>
+    {#<style>
         .thumbnail {
             margin: 0 auto;
             padding: 0;
@@ -65,7 +65,52 @@
         }
         #gallery_modal_left { position: absolute; left: 0; top: 40%;}
         #gallery_modal_right { position: absolute; right: 0; top: 40%;}
-    </style>
+
+
+        .modal-dialog {
+            margin: 0 auto;
+
+        }
+        
+        .modal-content	{ z-index: 1; }
+        .blueimp-gallery .modal-body img { z-index: 5}
+        #Gallery_Left_Arrow {
+            font-size: 3em;
+            color: white;
+            padding-left: 70%;
+            z-index: 3;
+        }
+        #Gallery_Right_Arrow {
+            font-size: 3em;
+            color: white;
+            padding-right: 70%;
+            z-index: 3;
+        }
+        
+        @media screen and (max-width: 992px){
+             #Gallery_Left_Arrow { padding-left: 50%; }
+             #Gallery_Right_Arrow { padding-right: 50%; }
+        }
+        @media screen and (max-width: 768px){
+             #Gallery_Left_Arrow { padding-left: 30%; }
+             #Gallery_Right_Arrow { padding-right: 30%; }
+        }
+
+        @media screen and (max-width: 480px){
+             #Gallery_Left_Arrow { font-size: 2em; padding-left: 30%; }
+             #Gallery_Right_Arrow { font-size: 2em; padding-right: 30%; }
+        }
+
+        @media screen and (max-width: 271px){
+             #Gallery_Left_Arrow { font-size: 2em; padding-left: 30%; margin-top: -70%;}
+             #Gallery_Right_Arrow { font-size: 2em; padding-right: 30%; margin-top: -70%;}
+        }
+        @media screen and (max-width: 200px){
+             #Gallery_Left_Arrow { font-size: 2em; padding-left: 30%; margin-top: -100%;}
+             #Gallery_Right_Arrow { font-size: 2em; padding-right: 30%; margin-top: -100%;}
+        }
+        
+    </style>#}
 {% endblock %}    
 
 {% block body %}
@@ -132,16 +177,22 @@
                                     {% include '@YallaWebsiteFrontendBundle/views/Template/socialMediaShare.html.twig' %}
                                 </div>    
                                 <div id='gallery_modal_left'>
-                                    <button type="button" class="btn btn-default pull-left prev">
+                                    <span class="pull-left prev" id='Gallery_Left_Arrow'>&#8592;</span>
+                                    {#<button type="button" class="btn btn-default pull-left prev">
                                         <i class="glyphicon glyphicon-chevron-left"></i>
                                         Previous
-                                    </button>
+                                    </button>#}
                                 </div>
-                                <div class='col-lg-12' style="text-align: center;">{{ render_esi(url('ads_manager_show', { 'id': 'snapshot_popup' })) }}</div>
-                                <div id='gallery_modal_right'><button type="button" class="btn btn-primary next">
+                                <div class='col-lg-12 Adv_Display'>
+                                    <div id='SS_ADV'>{{ render_esi(url('ads_manager_show', { 'id': 'snapshot_popup' })) }}</div>
+                                </div>
+                                <div id='gallery_modal_right'>
+                                    <span class="pull-left next" id='Gallery_Right_Arrow'>&#8594;</span>
+                                    
+                                    {#<button type="button" class="btn btn-primary next">
                                         Next
                                         <i class="glyphicon glyphicon-chevron-right"></i>
-                                    </button>
+                                    </button>#}
                                 </div>
                             </div>
                         </div>

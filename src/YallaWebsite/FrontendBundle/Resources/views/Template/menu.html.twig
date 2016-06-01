@@ -10,7 +10,10 @@
             <span class="icon-bar"></span>
         </button>
         <!-- navbar-brand is hidden on larger screens, but visible when the menu is collapsed -->
-        <a class="navbar-brand" href="index.html">Yalla Night Life</a>
+        <a class="navbar-brand" href="/">
+            {% image '@YallaWebsiteFrontendBundle/Resources/public/images/base/logo.png' %}
+            <img id='logo_icon' src="{{ asset_url }}" alt="YNL Logo" height='80'/>
+                {% endimage %}</a>
     </div>
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-navbar-collapse-1">
