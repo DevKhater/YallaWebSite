@@ -37,6 +37,12 @@
         #calendar_table {
             margin: 0 auto;
             border-collapse: collapse;
+            @media screen and (max-width: 900px){
+                max-width: 90%;
+            }
+            @media screen and (max-width: 800px){
+                max-width: 70%;
+            }
             tr {
                 .weekday {
                     text-transform: uppercase;
@@ -68,7 +74,6 @@
                         width: auto;
                         height: auto;
                         font-size: 0.8em;
-
                     }
                     span {
                         display: block;
@@ -92,13 +97,11 @@
                         border: 2px solid #Color3;
                         opacity: 1;
                         border-radius: 50%;
-                        height: 60px;
-                        width: 60px;
                         margin: 0 auto;
                         @media screen and (max-width: 800px){
-                            width: auto;
-                            height: auto;
-                            border: 1px solid #Color3;
+                           width: auto;
+                           height: auto;
+                           border: 1px solid #Color3;
                         }
                     }
                 }
@@ -115,8 +118,8 @@
                         width: 60px;
                         margin: 0 auto;
                         @media screen and (max-width: 800px){
-                            width: auto;
-                            height: auto;
+                           width: auto;
+                           height: auto;
                             border: 1px solid #Color3;
                         }
                     }

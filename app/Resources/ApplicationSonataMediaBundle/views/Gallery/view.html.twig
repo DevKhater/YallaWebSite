@@ -3,197 +3,87 @@
     {{parent()}}
     <link rel="stylesheet" href="{{ asset('bundles/yallawebsitefrontend/css/blueimp-gallery.min.css') }}" />
     <link rel="stylesheet" href="{{ asset('bundles/yallawebsitefrontend/css/bootstrap-image-gallery.css') }}" />
-    {#<style>
-        .thumbnail {
-            margin: 0 auto;
-            padding: 0;
-        }
-        .carousel-control.left, .carousel-control.right {
-            background-image: none;
-        }
-        .carousel-control.left:hover, 
-        .carousel-control.right:hover {
-            background: rgba (0,0,0,0.5);
-        }
-        .modal-title {
-            text-align: center;
-        }
-        .modal-footer #moda_footer_social {
-            float:left;
-        }
-        .im:after {
-            content: '';
-            display: block;
-            clear: both;
-        }
-        /* ---- .im-item ---- */
-        .grid-sizer,
-        .im-item {
-            width: 25%;
-        }
-        .im-item {
-            float: left;
-        }
-        .im-item img {
-            display: block;
-            width: 100%;
-            max-width: 100%;
-        }
-        .modal-content {
-            background-color: rgb(26, 26, 26);
-        }
-        .modal-dialog {
-            background-color: rgb(26, 26, 26);
-            width: 60%;
-        }
-        .modal-header {
-            border-bottom: none;  
-        }
-        .modal-footer {
-            border-top: none;  
-        }
-
-        #socialButtonsLikeShare{
-            display: inline-block;
-            float:left;
-
-
-        }
-        #socialButtonsLikeShare .button{
-            float:left;
-            margin-right: 4px;
-        }
-        #gallery_modal_left { position: absolute; left: 0; top: 40%;}
-        #gallery_modal_right { position: absolute; right: 0; top: 40%;}
-
-
-        .modal-dialog {
-            margin: 0 auto;
-
-        }
-        
-        .modal-content	{ z-index: 1; }
-        .blueimp-gallery .modal-body img { z-index: 5}
-        #Gallery_Left_Arrow {
-            font-size: 3em;
-            color: white;
-            padding-left: 70%;
-            z-index: 3;
-        }
-        #Gallery_Right_Arrow {
-            font-size: 3em;
-            color: white;
-            padding-right: 70%;
-            z-index: 3;
-        }
-        
-        @media screen and (max-width: 992px){
-             #Gallery_Left_Arrow { padding-left: 50%; }
-             #Gallery_Right_Arrow { padding-right: 50%; }
-        }
-        @media screen and (max-width: 768px){
-             #Gallery_Left_Arrow { padding-left: 30%; }
-             #Gallery_Right_Arrow { padding-right: 30%; }
-        }
-
-        @media screen and (max-width: 480px){
-             #Gallery_Left_Arrow { font-size: 2em; padding-left: 30%; }
-             #Gallery_Right_Arrow { font-size: 2em; padding-right: 30%; }
-        }
-
-        @media screen and (max-width: 271px){
-             #Gallery_Left_Arrow { font-size: 2em; padding-left: 30%; margin-top: -70%;}
-             #Gallery_Right_Arrow { font-size: 2em; padding-right: 30%; margin-top: -70%;}
-        }
-        @media screen and (max-width: 200px){
-             #Gallery_Left_Arrow { font-size: 2em; padding-left: 30%; margin-top: -100%;}
-             #Gallery_Right_Arrow { font-size: 2em; padding-right: 30%; margin-top: -100%;}
-        }
-        
-    </style>#}
 {% endblock %}    
 
 {% block body %}
     <div id="fb-root"></div>
-    <div class="pageContent">
-        <div class="wrapper">
-            <div class="theEntityDiv">
-                <div class="innerTitle">
-                    <h1>{{gallery.name}} {{gallery.date|date("d/m/Y")}}</h1>
-                </div>
-                <div id="innerEntityContent">
-                    {{ gallery.description }}
-                </div>
-                <div id="galleryViewPhotogtapher">
-                    {% if gallery.photographers is not empty %}
-                        <p><span>Photo Credit</span>: 
-                            {% for ph in gallery.photographers %}
-                                <a href='ph.website'>{{ph.name}}</a> {% if not loop.last %} - {% endif %} 
-                            {% endfor %}
-                        </p>
-                    {% endif %}
-                </div>
+    <div class="wrapper">
+        <div class="theEntityDiv">
+            <div class="innerTitle">
+                <h1>{{gallery.name}} {{gallery.date|date("d/m/Y")}}</h1>
             </div>
-
-            <div class="row">
-                <div class="im">
-                    <div class="grid-sizer"></div>
-                    <div id='links'>
-
-                        {% for galleryHasMedia in gallery.GalleryHasMedias %}
-                            <div class="im-item">
-                                <a data-gallery='' title="" href="{% path galleryHasMedia.media, 'large' %}"><img class="thumbnail img-responsive" src="{% path galleryHasMedia.media, 'small' %}"></a></div>
-
+            <div id="innerEntityContent">
+                {{ gallery.description }}
+            </div>
+            <div id="galleryViewPhotogtapher">
+                {% if gallery.photographers is not empty %}
+                    <p><span>Photo Credit</span>: 
+                        {% for ph in gallery.photographers %}
+                            <a href='ph.website'>{{ph.name}}</a> {% if not loop.last %} - {% endif %} 
                         {% endfor %}
-                    </div>
+                    </p>
+                {% endif %}
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="im">
+                <div class="grid-sizer"></div>
+                <div id='links'>
+
+                    {% for galleryHasMedia in gallery.GalleryHasMedias %}
+                        <div class="im-item">
+                            <a data-gallery='' title="" href="{% path galleryHasMedia.media, 'large' %}"><img class="thumbnail img-responsive" src="{% path galleryHasMedia.media, 'small' %}"></a></div>
+
+                    {% endfor %}
                 </div>
             </div>
+        </div>
 
 
 
-            <div id="blueimp-gallery" class="blueimp-gallery">
-                <!-- The container for the modal slides -->
-                <div class="slides"></div>
-                <!-- Controls for the borderless lightbox -->
-                <h3 class="title"></h3>
-                <a class="prev">‹</a>
-                <a class="next">›</a>
-                <a class="close">×</a>
-                <a class="play-pause"></a>
-                <ol class="indicator"></ol>
-                <!-- The modal dialog, which will be used to wrap the lightbox content -->
-                <div class="modal fade">
-                    <div class="modal-dialog">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <button type="button" class="close" aria-hidden="true">&times;</button>
-                                <h4 class="modal-title"></h4>
+        <div id="blueimp-gallery" class="blueimp-gallery">
+            <!-- The container for the modal slides -->
+            <div class="slides"></div>
+            <!-- Controls for the borderless lightbox -->
+            <h3 class="title"></h3>
+            <a class="prev">‹</a>
+            <a class="next">›</a>
+            <a class="close">×</a>
+            <a class="play-pause"></a>
+            <ol class="indicator"></ol>
+            <!-- The modal dialog, which will be used to wrap the lightbox content -->
+            <div class="modal fade">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" aria-hidden="true">&times;</button>
+                            <h4 class="modal-title"></h4>
+                        </div>
+                        <div class="modal-body next">
+
+                        </div>
+                        <div class="modal-footer">
+                            <div class='col-lg-12' style="text-align: center;margin-bottom: 2%;">
+                                {% include '@YallaWebsiteFrontendBundle/views/Template/socialMediaShare.html.twig' %}
+                            </div>    
+                            <div id='gallery_modal_left'>
+                                <span class="pull-left prev" id='Gallery_Left_Arrow'>&#8592;</span>
+                                {#<button type="button" class="btn btn-default pull-left prev">
+                                    <i class="glyphicon glyphicon-chevron-left"></i>
+                                    Previous
+                                </button>#}
                             </div>
-                            <div class="modal-body next">
-
+                            <div class='col-lg-12 Adv_Display'>
+                                <div id='SS_ADV'>{{ render_esi(url('ads_manager_show', { 'id': 'snapshot_popup' })) }}</div>
                             </div>
-                            <div class="modal-footer">
-                                <div class='col-lg-12' style="text-align: center;margin-bottom: 2%;">
-                                    {% include '@YallaWebsiteFrontendBundle/views/Template/socialMediaShare.html.twig' %}
-                                </div>    
-                                <div id='gallery_modal_left'>
-                                    <span class="pull-left prev" id='Gallery_Left_Arrow'>&#8592;</span>
-                                    {#<button type="button" class="btn btn-default pull-left prev">
-                                        <i class="glyphicon glyphicon-chevron-left"></i>
-                                        Previous
-                                    </button>#}
-                                </div>
-                                <div class='col-lg-12 Adv_Display'>
-                                    <div id='SS_ADV'>{{ render_esi(url('ads_manager_show', { 'id': 'snapshot_popup' })) }}</div>
-                                </div>
-                                <div id='gallery_modal_right'>
-                                    <span class="pull-left next" id='Gallery_Right_Arrow'>&#8594;</span>
-                                    
-                                    {#<button type="button" class="btn btn-primary next">
-                                        Next
-                                        <i class="glyphicon glyphicon-chevron-right"></i>
-                                    </button>#}
-                                </div>
+                            <div id='gallery_modal_right'>
+                                <span class="pull-left next" id='Gallery_Right_Arrow'>&#8594;</span>
+
+                                {#<button type="button" class="btn btn-primary next">
+                                    Next
+                                    <i class="glyphicon glyphicon-chevron-right"></i>
+                                </button>#}
                             </div>
                         </div>
                     </div>

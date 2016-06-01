@@ -1,6 +1,11 @@
 #missionContent,#visionContent {
     min-height: 200px;
+    .make-xs-column(6);
+    @media screen and (max-width: 480px){
+        .make-xs-column(12);
+    }
 }
+
 #visionContent  { 
     #left_border{
         position: absolute; 

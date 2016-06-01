@@ -35,9 +35,11 @@
             </div>
         </div>
     </header>
+                <div class="pageContent">
     <div id="bodyLeftAdv" class="Adv_Display bodyColAdv">{{ render_esi(url('ads_manager_show', { 'id': 'home_body_first' })) }}</div>
 {% block body %}{% endblock %}
 <div id="bodyRightAdv" class="Adv_Display bodyColAdv">{{ render_esi(url('ads_manager_show', { 'id': 'home_body_second' })) }}</div>
+</div>
 <footer>
     <div class='anyAdvRow Adv_Display'>
         <div class='leftAdv_row'>{{ render_esi(url('ads_manager_show', { 'id': 'home_footer_first' })) }}</div>
