@@ -23,4 +23,7 @@ fos_user:
 
 fos_js_routing:
     resource: "@FOSJsRoutingBundle/Resources/config/routing/routing.xml"
-    
+
+KunstmaanVotingBundle:
+    resource: "@KunstmaanVotingBundle/Resources/config/routing.yml"
+    prefix:   /vote

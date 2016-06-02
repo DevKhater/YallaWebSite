@@ -64,31 +64,21 @@ services:
         tags : 
             - {name : 'templating.helper', alias : 'social-buttons'} 
         arguments : [ @templating ]
-
     twig.extension.ynl_social_bar:
         class : YallaWebsite\FrontendBundle\Twig\Extensions\YNLTwigSocialBar
         tags:
             - { name: 'twig.extension' }
         arguments : [ @service_container ]
 
-    twig.extension.class_twig_extension:
-        class : YallaWebsite\BackendBundle\Twig\Extensions\ClassTwigExtension
+    
+    twig.extension.vote_extension:
+        class : YallaWebsite\FrontendBundle\Twig\Extensions\VoteExtension
         tags:
             - { name: 'twig.extension' }
-        arguments : [ ]
+        arguments : [ @service_container ]
     
     twig.extension.array:
        class: Twig_Extensions_Extension_Array
        tags:
             - { name: twig.extension }
-
-
-
-
-
-
-
-
-
-
 

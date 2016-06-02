@@ -42,6 +42,7 @@
         return factory.call(this, obj, callback, factoryInterface)
       }
       var that = this
+      console.log(this)
       var modalTemplate = this.container.children('.modal')
       var modal = modalTemplate.clone().show().on('click', function (event) {
         // Close modal if click is outside of modal-content:
@@ -61,6 +62,7 @@
       }, factoryInterface)
       modal.find('.modal-title').text(element.title || String.fromCharCode(160))
       modal.find('.modal-body').append(element)
+      
       return modal[0]
     },
 

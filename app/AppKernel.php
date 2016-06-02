@@ -38,6 +38,10 @@ class AppKernel extends Kernel
             // Doctrine extension for glug
             new Stof\DoctrineExtensionsBundle\StofDoctrineExtensionsBundle(),
             new FOS\JsRoutingBundle\FOSJsRoutingBundle(),
+            
+            new Kunstmaan\VotingBundle\KunstmaanVotingBundle(),
+            new blackknight467\StarRatingBundle\StarRatingBundle(),
+            
             new AppBundle\AppBundle(),
             new YallaWebsite\BackendBundle\YallaWebsiteBackendBundle(),
             new YallaWebsite\FrontendBundle\YallaWebsiteFrontendBundle(),

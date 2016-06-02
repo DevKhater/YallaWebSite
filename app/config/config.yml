@@ -58,6 +58,7 @@ assetic:
         - YallaWebsiteFrontendBundle
         - FOSUserBundle
         - SonataMediaBundle
+        - StarRatingBundle
     # java: C:\\Program Files\\Java\\jdk1.8.0_60\\bin\\java.exe
     filters:
         cssrewrite:
@@ -112,14 +113,6 @@ assetic:
             inputs:
                 - %kernel.root_dir%/../src/YallaWebsite/FrontendBundle/Resources/public/fonts/CenturyGothic-Bold/CenturyGothic-Bold.eot
             output: "fonts/CenturyGothic-Bold.eot"
-#        century_gothic_boldsvg:
-#            inputs:
-#                - %kernel.root_dir%/../src/YallaWebsite/FrontendBundle/Resources/public/fonts/CenturyGothic-Bold/CenturyGothic-Bold.svg
-#            output: "fonts/CenturyGothic-Bold.svg"
-#        century_gothic_boldwoff:
-#            inputs:
-#                - %kernel.root_dir%/../src/YallaWebsite/FrontendBundle/Resources/public/fonts/CenturyGothic-Bold/CenturyGothic-Bold.woff
-#            output: "fonts/CenturyGothic-Bold.woff"
             
         ebrima_ttf:
             inputs:
@@ -147,7 +140,34 @@ assetic:
                 - %kernel.root_dir%/../src/YallaWebsite/FrontendBundle/Resources/public/js/masonry.pkgd.min.js
         imagesloaded:
             inputs:
-                - %kernel.root_dir%/../src/YallaWebsite/FrontendBundle/Resources/public/js/imagesloaded.pkgd.min.js         
+                - %kernel.root_dir%/../src/YallaWebsite/FrontendBundle/Resources/public/js/imagesloaded.pkgd.min.js
+        awesome_otf:
+            inputs:
+                - %kernel.root_dir%/../src/YallaWebsite/FrontendBundle/Resources/public/fonts/Awesome/FontAwesome.otf
+            output: "fonts/FontAwesome.otf"
+        awesome_eot:
+            inputs:
+                - %kernel.root_dir%/../src/YallaWebsite/FrontendBundle/Resources/public/fonts/Awesome/webfont.eot
+            output: "fonts/FontAwesome.eot"
+        awesome_svg:
+            inputs:
+                - %kernel.root_dir%/../src/YallaWebsite/FrontendBundle/Resources/public/fonts/Awesome/webfont.svg
+            output: "fonts/FontAwesome.svg"
+        awesome_ttf:
+            inputs:
+                - %kernel.root_dir%/../src/YallaWebsite/FrontendBundle/Resources/public/fonts/Awesome/webfont.ttf
+            output: "fonts/FontAwesome.ttf"
+        awesome_woff:
+            inputs:
+                - %kernel.root_dir%/../src/YallaWebsite/FrontendBundle/Resources/public/fonts/Awesome/webfont.woff
+            output: "fonts/FontAwesome.woff"
+        awesome_woff2:
+            inputs:
+                - %kernel.root_dir%/../src/YallaWebsite/FrontendBundle/Resources/public/fonts/Awesome/webfont.woff2
+            output: "fonts/FontAwesome.woff2"
+        fontawesome_css:
+            inputs:
+                - %kernel.root_dir%/../src/YallaWebsite/FrontendBundle/Resources/public/css/font-awesome.min.css
 
 # Doctrine Configuration
 doctrine:
@@ -202,3 +222,16 @@ swiftmailer:
     
 web_profiler:
     excluded_ajax_paths:  ^/bundles|^/_wdt
+    
+kunstmaan_voting:
+    actions:
+        up_vote:
+            default_value: 1
+        down_vote:
+            default_value: -1
+        facebook_like:
+            default_value: 1
+        facebook_send:
+            default_value: 1
+        linkedin_share:
+            default_value: 1
