@@ -7,58 +7,20 @@ parameters:
     frontend_manager.class: YallaWebsite\FrontendBundle\Factory\FrontendManager
 
 services:
-    app.form.type.location:
-        class: YallaWebsite\BackendBundle\Form\Type\LocationType
-        tags:
-            - { name: form.type, alias: location_information }
-    app.form.type.socialmedia:
-        class: YallaWebsite\BackendBundle\Form\Type\SocialMediaType
-        tags:
-            - { name: form.type, alias: social_media_information }
-            
-    app.form.type.photographer:
-        class: YallaWebsite\BackendBundle\Form\Type\PhotographerType
-        tags:
-            - { name: form.type, alias: photographer_type }           
-    app.form.type.venue.location:
-        class: YallaWebsite\BackendBundle\Form\Type\VenueLocationType
-        arguments: ['@doctrine.orm.entity_manager']
-        tags:
-            - { name: form.type, alias: venue_location_information }
-    app.form.type.event:
-        class: YallaWebsite\BackendBundle\Form\Type\EventType
-        tags:
-            - { name: form.type, alias: event }
-    app.form.type.media:
-        class: YallaWebsite\BackendBundle\Form\Type\MediaType
-        tags:
-            - { name: form.type, alias: media_file }        
-    app.form.type.gallery_media:
-        class: YallaWebsite\BackendBundle\Form\Type\multiMediaType
-        tags:
-            - { name: form.type, alias: multi_media_files }
     app.custom_sitemap_service:
             class: YallaWebsite\BackendBundle\Model\SitemapIterator  
     sonata.media.resizer.custom:
         class: YallaWebsite\BackendBundle\Resizer\CustomResizer
-        arguments: [@sonata.media.adapter.image.gd, 'outbound', @sonata.media.metadata.proxy]      
-    backend_manager.manager:
-        class: %backend_manager.class%
-        arguments: [ @doctrine.orm.entity_manager, @sonata.media.manager.media ]
-    yaml_manager.manager:
-        class: %yaml_manager.class%
-        arguments: [ @sonata.media.manager.media ]
+        arguments: [@sonata.media.adapter.image.gd, 'outbound', @sonata.media.metadata.proxy]
     
     frontend_manager.manager:
         class: %frontend_manager.class%
         arguments: [ @doctrine.orm.entity_manager, @sonata.media.manager.media ]
-    
     app.calendar_listener:
         class: YallaWebsite\FrontendBundle\EventListener\CalendarEventListener
         arguments: ['@doctrine.orm.entity_manager', '@service_container']
         tags:
             - { name: kernel.event_listener, event:calendar.load_events, method:loadEvents }
-    
     app.socialBarHelper:
         class : YallaWebsite\FrontendBundle\Templating\Helper\SocialBarHelper
         tags : 
@@ -69,8 +31,6 @@ services:
         tags:
             - { name: 'twig.extension' }
         arguments : [ @service_container ]
-
-    
     twig.extension.vote_extension:
         class : YallaWebsite\FrontendBundle\Twig\Extensions\VoteExtension
         tags:
@@ -81,4 +41,3 @@ services:
        class: Twig_Extensions_Extension_Array
        tags:
             - { name: twig.extension }
-

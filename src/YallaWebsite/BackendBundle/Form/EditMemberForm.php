@@ -25,7 +25,9 @@ class EditMemberForm extends AbstractType
                     'attr' => array(
                         'class' => 'form-control',
                         'placeholder' => 'Member Website')))
-                ->add('media', 'media_file', array())
+                ->add('media', 'media_file', array(
+                    'required' => false,
+                ))
         ;
     }
 

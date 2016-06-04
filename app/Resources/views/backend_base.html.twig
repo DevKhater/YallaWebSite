@@ -1,16 +1,12 @@
 <!DOCTYPE html>
-<html {{ sonata_seo_html_attributes() }}>
-    <head {{ sonata_seo_head_attributes() }}>
+<html>
+    <head>
         {{ sonata_seo_title() }}
-        {{ sonata_seo_metadatas() }}
-        {{ sonata_seo_link_canonical() }}
-        {{ sonata_seo_lang_alternates() }}
         <meta charset="UTF-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         {% stylesheets 
-                '@bootstrap_css' 
-                '@YallaWebsiteBackendBundle/Resources/public/css/font-awesome.css'
+                '@bootstrap_css' '@fontawesome_css_be'
                 '@YallaWebsiteBackendBundle/Resources/public/css/jquery-ui.css'
                 '@YallaWebsiteBackendBundle/Resources/public/css/select2.min.css'
                 '@YallaWebsiteBackendBundle/Resources/public/css/jquery.tagit.css'
@@ -48,7 +44,8 @@
     <header>
         <div class="container">
             <div class="row">
-                <div class="col-md-12">
+                <div class="col-md-6" style="float: left"><a href="{{path('yalla_website_frontend_homepage')}}">YallaNightlife.com</a></div>
+                <div class="col-md-6" style="float: right">
                     <a href="{{ path ('backend_profile_index') }}" style="color: black"><strong>Profile: </strong>{{ app.user.email }}</a>
                     &nbsp;&nbsp;
                     <strong><a href="{{ path ('fos_user_security_logout') }}">Logout</a></strong>
@@ -90,8 +87,13 @@
                             <li>{% if is_granted('ROLE_ADMIN_V') %}<a href="{{path('backend_venue_index')}}">Venues</a>{% endif %}</li>
                             <li>{% if is_granted('ROLE_ADMIN_G') %}<a href="{{path('backend_gallery_index')}}">Galleries</a>{% endif %}</li>
                             <li>{% if is_granted('ROLE_ADMIN_A') %}<a href="{{path('backend_article_index')}}">Articles</a>{% endif %}</li>
-                            <li>{% if is_granted('ROLE_SUPER_ADMIN') %}<a href="{{path('backend_ads_manager_index')}}">Advertisement</a>{% endif %}</li>
-                            <li>{% if is_granted('ROLE_SUPER_ADMIN') %}<a href="{{path('backend_user_index')}}">Users</a>{% endif %}</li>
+                            {% if is_granted('ROLE_SUPER_ADMIN') %}
+                            <li><a href="{{path('backend_ads_manager_index')}}">Advertisement</a></li>
+                            <li><a href="{{path('backend_member_index')}}">Members</a></li>
+                            <li><a href="{{path('backend_user_index')}}">Users</a></li>
+                            <li><a href="{{path('backend_homepage_index')}}">Homepage</a></li>
+                            {% endif %}
+                            
                         </ul>
                     </div>
                 </div>

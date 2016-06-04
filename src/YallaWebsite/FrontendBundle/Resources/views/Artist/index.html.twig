@@ -1,27 +1,27 @@
 {# empty Twig template #}
 {% extends "@YallaWebsiteFrontendBundle/views/front_base.html.twig" %}
 {% block body %}
-        <div class="wrapper">
-            <div class="IndexTitle">
-                <h1>Artists</h1>
-            </div>
-            {% for artist in pagination  %}
-                <div class="venueDiv">
-                    <div class="venueContent" data-toggle="modal" data-target="#{{artist.slug}}" style="background-image: url('{% path  artist.media, 'displayIndex' %}')">
-                        <div class="venueDivTitle">
-                            {{ artist.title }}
-                        </div>
-                    </div>
-                    <div id="{{artist.slug}}" class="modal fade" role="dialog">
-                        <div class="modal-dialog">
-                            <div class="modal-content">
+    <div class="wrapper">
+        <div class="IndexTitle">
+            <h1>Artists</h1>
+        </div>
+        {% for artist in pagination  %}
+            <div class="artistDiv col-xs-15 col-sm-15 col-md-15 col-lg-15">
+                <div class="artistContent" data-toggle="modal" data-target="#{{artist.id}}" style="background-image: url('{% path  artist.media, 'displayIndex' %}')">
+                </div>
+                <div class="artistDivTitle" data-toggle="modal" data-target="#{{artist.id}}" >
+                    <button type="button" class="btn btn-secondary btn-xs customArtistButton">
+                        {{ artist.title }}
+                    </button>
+                </div>
+                <div id="{{artist.id}}" class="modal fade" role="dialog">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
                                 <div class="modal_image">
-                                    {% thumbnail artist.media, 'large' with {'class': 'img-responsive'} %}
-                                </div>
-                                <div class="modal_title">
-                                    <h2>{{artist.title}}</h2>
+                                    {% thumbnail artist.media, 'large' %}
                                 </div>
                                 <div class="modal_description">
+                                    <h2>{{artist.title}}</h2>
                                     <p>{{artist.biography}}</p>
                                     <div class="artist_upcoming_events">
                                         <p>Upcoming Events</p>
@@ -39,17 +39,16 @@
                                     </p>
                                 </div>
                             </div>
-
                         </div>
                     </div>
-                </div>
-            {% endfor %}
-
-            <div class="page_pagination">
-
-                {% if (pagination) %}
-                    {{ knp_pagination_render(pagination, 'YallaWebsiteFrontendBundle:Template:pagination.html.twig') }}
-                {% endif %}
             </div>
+        {% endfor %}
+
+        <div class="page_pagination">
+
+            {% if (pagination) %}
+                {{ knp_pagination_render(pagination, 'YallaWebsiteFrontendBundle:Template:pagination.html.twig') }}
+            {% endif %}
         </div>
+    </div>
 {% endblock %}

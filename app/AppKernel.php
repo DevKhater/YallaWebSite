@@ -41,7 +41,6 @@ class AppKernel extends Kernel
             
             new Kunstmaan\VotingBundle\KunstmaanVotingBundle(),
             new blackknight467\StarRatingBundle\StarRatingBundle(),
-            
             new AppBundle\AppBundle(),
             new YallaWebsite\BackendBundle\YallaWebsiteBackendBundle(),
             new YallaWebsite\FrontendBundle\YallaWebsiteFrontendBundle(),

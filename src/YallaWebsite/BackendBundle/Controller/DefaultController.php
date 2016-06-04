@@ -24,11 +24,13 @@ class DefaultController extends Controller
         $numbVen = count($em->getRepository('YallaWebsiteBackendBundle:Venue')->findAll());
         $numbEve = count($em->getRepository('YallaWebsiteBackendBundle:Event')->findAll());
         $numbUser = count($em->getRepository('YallaWebsiteBackendBundle:User')->findAll());
+        $numbMemb = count($em->getRepository('YallaWebsiteBackendBundle:Member')->findAll());
+        $numbArtis = count($em->getRepository('YallaWebsiteBackendBundle:Artist')->findAll());
         $numbGal = count($em->getRepository('ApplicationSonataMediaBundle:Gallery')->findAll());
         return $this->render('YallaWebsiteBackendBundle:Default:index.html.twig', array(
             'user' => $currentUser,
             'profile' => $curentProfile,
-            'articles' =>$numbArt, 'venues' => $numbVen, 'events' => $numbEve, 'galleries' => $numbGal, 'users' => $numbUser
+            'articles' =>$numbArt, 'venues' => $numbVen, 'events' => $numbEve, 'galleries' => $numbGal, 'artists' => $numbArtis , 'members' => $numbMemb, 'users' => $numbUser
         ));
     }
 

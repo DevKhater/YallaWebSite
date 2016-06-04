@@ -9,6 +9,7 @@ imports:
     - { resource: sonata_seo/sonata_seo.yml }
     - { resource: fpn_tag/fpn_tag.yml }
     - { resource: gedmo/gedmo.yml }
+#    - { resource: fos_elastica/fos_elastica.yml }
     - { resource: yallawebsite.yml }
 
 # Put parameters here that don't need to change on each machine where the app is deployed
@@ -79,6 +80,25 @@ assetic:
                 - %kernel.root_dir%/../vendor/twitter/bootstrap/dist/css/bootstrap.css
                 - %kernel.root_dir%/../vendor/twitter/bootstrap/dist/css/bootstrap-theme.css
             filters: [cssrewrite]
+        jquery:
+            inputs:
+                - %kernel.root_dir%/../vendor/components/jquery/jquery.js    
+        frontend_css:
+            inputs:
+                - %kernel.root_dir%/../src/YallaWebsite/FrontendBundle/Resources/public/less/style.less
+            output: "css/style.css"
+        massonary:
+            inputs:
+                - %kernel.root_dir%/../src/YallaWebsite/FrontendBundle/Resources/public/js/masonry.pkgd.min.js
+        imagesloaded:
+            inputs:
+                - %kernel.root_dir%/../src/YallaWebsite/FrontendBundle/Resources/public/js/imagesloaded.pkgd.min.js
+        fontawesome_css:
+            inputs:
+                - %kernel.root_dir%/../src/YallaWebsite/FrontendBundle/Resources/public/css/font-awesome.min.css
+        fontawesome_css_be:
+            inputs:
+                - %kernel.root_dir%/../src/YallaWebsite/BackendBundle/Resources/public/css/font-awesome.css
         bootstrap_glyphicons_ttf:
             inputs:
                 - %kernel.root_dir%/../vendor/twitter/bootstrap/dist/fonts/glyphicons-halflings-regular.ttf
@@ -95,16 +115,6 @@ assetic:
             inputs:
                 - %kernel.root_dir%/../vendor/twitter/bootstrap/dist/fonts/glyphicons-halflings-regular.woff
             output: "fonts/glyphicons-halflings-regular.woff"
-
-        jquery:
-            inputs:
-                - %kernel.root_dir%/../vendor/components/jquery/jquery.js
-            
-        frontend_css:
-            inputs:
-                - %kernel.root_dir%/../src/YallaWebsite/FrontendBundle/Resources/public/less/style.less
-            output: "css/style.css"
-            
         century_gothic_boldttf:
             inputs:
                 - %kernel.root_dir%/../src/YallaWebsite/FrontendBundle/Resources/public/fonts/CenturyGothic-Bold/CenturyGothic-Bold.ttf
@@ -112,8 +122,7 @@ assetic:
         century_gothic_boldeot:
             inputs:
                 - %kernel.root_dir%/../src/YallaWebsite/FrontendBundle/Resources/public/fonts/CenturyGothic-Bold/CenturyGothic-Bold.eot
-            output: "fonts/CenturyGothic-Bold.eot"
-            
+            output: "fonts/CenturyGothic-Bold.eot"    
         ebrima_ttf:
             inputs:
                 - %kernel.root_dir%/../src/YallaWebsite/FrontendBundle/Resources/public/fonts/Ebrima/Ebrima.ttf
@@ -134,40 +143,31 @@ assetic:
             inputs:
                 - %kernel.root_dir%/../src/YallaWebsite/FrontendBundle/Resources/public/fonts/Ebrima/Ebrima.woff2
             output: "fonts/Ebrima.woff2"
-        
-        massonary:
-            inputs:
-                - %kernel.root_dir%/../src/YallaWebsite/FrontendBundle/Resources/public/js/masonry.pkgd.min.js
-        imagesloaded:
-            inputs:
-                - %kernel.root_dir%/../src/YallaWebsite/FrontendBundle/Resources/public/js/imagesloaded.pkgd.min.js
         awesome_otf:
             inputs:
                 - %kernel.root_dir%/../src/YallaWebsite/FrontendBundle/Resources/public/fonts/Awesome/FontAwesome.otf
-            output: "fonts/FontAwesome.otf"
+            output: "fonts/fontawesome-webfont.otf"
         awesome_eot:
             inputs:
                 - %kernel.root_dir%/../src/YallaWebsite/FrontendBundle/Resources/public/fonts/Awesome/webfont.eot
-            output: "fonts/FontAwesome.eot"
+            output: "fonts/fontawesome-webfont.eot"
         awesome_svg:
             inputs:
                 - %kernel.root_dir%/../src/YallaWebsite/FrontendBundle/Resources/public/fonts/Awesome/webfont.svg
-            output: "fonts/FontAwesome.svg"
+            output: "fonts/fontawesome-webfont.svg"
         awesome_ttf:
             inputs:
                 - %kernel.root_dir%/../src/YallaWebsite/FrontendBundle/Resources/public/fonts/Awesome/webfont.ttf
-            output: "fonts/FontAwesome.ttf"
+            output: "fonts/fontawesome-webfont.ttf"
         awesome_woff:
             inputs:
                 - %kernel.root_dir%/../src/YallaWebsite/FrontendBundle/Resources/public/fonts/Awesome/webfont.woff
-            output: "fonts/FontAwesome.woff"
+            output: "fonts/fontawesome-webfont.woff"
         awesome_woff2:
             inputs:
                 - %kernel.root_dir%/../src/YallaWebsite/FrontendBundle/Resources/public/fonts/Awesome/webfont.woff2
-            output: "fonts/FontAwesome.woff2"
-        fontawesome_css:
-            inputs:
-                - %kernel.root_dir%/../src/YallaWebsite/FrontendBundle/Resources/public/css/font-awesome.min.css
+            output: "fonts/fontawesome-webfont.woff2"
+        
 
 # Doctrine Configuration
 doctrine:

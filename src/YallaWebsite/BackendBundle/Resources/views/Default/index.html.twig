@@ -3,86 +3,113 @@
 {% block body %}
     <div class="row">
         <div class="col-md-12">
-            <h4 class="page-head-line">Dashboard</h4>
-
+            <h4 class="page-head-line">Super Admin Section</h4>
         </div>
     </div>
-    {% if is_granted('ROLE_SUPER_ADMIN') %} 
-        <div class="row">
-            <div class="col-md-6">
-                <div class="col-md-3"></div>
-                <a href="{{ path ('backend_user_index')}}">
-                    <div class="col-md-6 col-sm-12 col-xs-12">
+    <div class="container">
+        {% if is_granted('ROLE_SUPER_ADMIN') %} 
+            <div class="row">
+                <div class="col-md-3 col-sm-3 col-xs-6">
+                    <a href="{{ path ('backend_user_index')}}">
                         <div class="dashboard-div-wrapper" style="background-color: #CDCB5E">
-                            <i class="fa fa-venus dashboard-div-icon"></i>
+                            <i class="fa dashboard-div-icon">U</i>
                             <h5>USERS</h5>
                             <h6>Total Number <span class="badge badge-inverse">{{users}}</span></h6>
                         </div>
-                    </div></a>
-
-                <div class="col-md-3"></div>
-            </div>
-            <div class="col-md-6">
-                <div class="col-md-3"></div>
-                <a href="{{ path ('backend_ads_manager_index')}}">
-                    <div class="col-md-6 col-sm-12 col-xs-12">
+                    </a>
+                </div>
+                <div class="col-md-3 col-sm-3 col-xs-6">
+                    <a href="{{ path ('backend_homepage_index')}}">
+                        <div class="dashboard-div-wrapper" style="background-color: #777">
+                            <i class="fa fa-star dashboard-div-icon"></i>
+                            <h5>Homepage</h5>
+                            <h6>Homepage Settings</h6>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-md-3 col-sm-3 col-xs-6">
+                    <a href="{{ path ('backend_ads_manager_index')}}">
                         <div class="dashboard-div-wrapper" style="background-color: #dd1144">
-                            <i class="fa fa-venus dashboard-div-icon"></i>
+                            <i class="fa dashboard-div-icon">A</i>
                             <h5>Advertisments</h5>
                             <h6>Total Number <span class="badge badge-inverse">7</span></h6>
                         </div>
-                    </div></a>
-
-                <div class="col-md-3"></div>
+                    </a>
+                </div>
+                <div class="col-md-3 col-sm-3 col-xs-6">
+                    <a href="{{ path ('backend_member_index')}}">
+                        <div class="dashboard-div-wrapper" style="background-color: #000">
+                            <i class="fa dashboard-div-icon">M</i>
+                            <h5>Members</h5>
+                            <h6>Total Number <span class="badge badge-inverse">{{members}}</span></h6>
+                        </div>
+                    </a>
+                </div>
             </div>
         {% endif %}
     </div>
-    <div class="container">
     <div class="row">
-        {% if is_granted('ROLE_ADMIN_E') %} <a href="{{ path ('backend_event_index')}}">{% endif%}
-            <div class="col-md-3 col-sm-3 col-xs-6">
-                <div class="dashboard-div-wrapper bk-clr-one">
-                    <i class="fa fa-venus dashboard-div-icon"></i>
-                    <h5>Events</h5>
-                    <h6>Total Number <span class="badge badge-inverse">{{events}}</span></h6>
-                </div>
-            </div>
-        {% if is_granted('ROLE_ADMIN_E') %} </a>{% endif%}
-        
-        {% if is_granted('ROLE_ADMIN_V') %} <a href="{{ path ('backend_venue_index')}}">{% endif%}
-            <div class="col-md-3 col-sm-3 col-xs-6">
-                <div class="dashboard-div-wrapper bk-clr-two">
-                    <i class="fa fa-edit dashboard-div-icon"></i>
-
-                    <h5>Venues</h5>
-                    <h6>Total Number <span class="badge badge-inverse">{{venues}}</span></h6>
-                </div>
-            </div>
-        {% if is_granted('ROLE_ADMIN_V') %} </a>{% endif%}
-
-        {% if is_granted('ROLE_ADMIN_G') %} <a href="{{ path ('backend_gallery_index')}}">{% endif%}
-            <div class="col-md-3 col-sm-3 col-xs-6">
-                <div class="dashboard-div-wrapper bk-clr-three">
-                    <i class="fa fa-cogs dashboard-div-icon"></i>
-
-                    <h5>Galleries</h5>
-                    <h6>Total Number <span class="badge badge-inverse">{{galleries}}</span></h6>
-                </div>
-            </div>
-        {% if is_granted('ROLE_ADMIN_G') %} </a>{% endif%}
-
-        {% if is_granted('ROLE_ADMIN_A') %} <a href="{{ path ('backend_article_index')}}">{% endif%}
-            <div class="col-md-3 col-sm-3 col-xs-6">
-                <div class="dashboard-div-wrapper bk-clr-four">
-                    <i class="fa fa-bell-o dashboard-div-icon"></i>
-
-                    <h5>Articles</h5>
-                    <h6>Total Number <span class="badge badge-inverse">{{articles}}</span></h6>
-                </div>
-            </div>
-        {% if is_granted('ROLE_ADMIN_A') %} </a>{% endif%}
-
+        <div class="col-md-12">
+            <h4 class="page-head-line">Dashboard</h4>
+        </div>
     </div>
+    <div class="container">
+        <div class="row">
+            {% if is_granted('ROLE_ADMIN_E') %} <a href="{{ path ('backend_event_index')}}">{% endif%}
+                <div class="col-md-3 col-sm-3 col-xs-6">
+                    <div class="dashboard-div-wrapper bk-clr-one">
+                        <i class="fa fa-venus dashboard-div-icon"></i>
+                        <h5>Events</h5>
+                        <h6>Total Number <span class="badge badge-inverse">{{events}}</span></h6>
+                    </div>
+                </div>
+                {% if is_granted('ROLE_ADMIN_E') %} </a>{% endif%}
+
+            {% if is_granted('ROLE_ADMIN_V') %} <a href="{{ path ('backend_venue_index')}}">{% endif%}
+                <div class="col-md-3 col-sm-3 col-xs-6">
+                    <div class="dashboard-div-wrapper bk-clr-two">
+                        <i class="fa fa-edit dashboard-div-icon"></i>
+
+                        <h5>Venues</h5>
+                        <h6>Total Number <span class="badge badge-inverse">{{venues}}</span></h6>
+                    </div>
+                </div>
+                {% if is_granted('ROLE_ADMIN_V') %} </a>{% endif%}
+
+            {% if is_granted('ROLE_ADMIN_G') %} <a href="{{ path ('backend_gallery_index')}}">{% endif%}
+                <div class="col-md-3 col-sm-3 col-xs-6">
+                    <div class="dashboard-div-wrapper bk-clr-three">
+                        <i class="fa fa-cogs dashboard-div-icon"></i>
+
+                        <h5>Galleries</h5>
+                        <h6>Total Number <span class="badge badge-inverse">{{galleries}}</span></h6>
+                    </div>
+                </div>
+                {% if is_granted('ROLE_ADMIN_G') %} </a>{% endif%}
+
+            {% if is_granted('ROLE_ADMIN_A') %} <a href="{{ path ('backend_article_index')}}">{% endif%}
+                <div class="col-md-3 col-sm-3 col-xs-6">
+                    <div class="dashboard-div-wrapper bk-clr-four">
+                        <i class="fa fa-bell-o dashboard-div-icon"></i>
+
+                        <h5>Articles</h5>
+                        <h6>Total Number <span class="badge badge-inverse">{{articles}}</span></h6>
+                    </div>
+                </div>
+                {% if is_granted('ROLE_ADMIN_A') %} </a>{% endif%}
+
+            <a href="{{ path ('backend_artist_index')}}">
+                <div class="col-md-3 col-sm-3 col-xs-6">
+                    <div class="dashboard-div-wrapper bk-clr-four">
+                        <i class="fa fa-bell-o dashboard-div-icon"></i>
+
+                        <h5>Artists</h5>
+                        <h6>Total Number <span class="badge badge-inverse">{{artists}}</span></h6>
+                    </div>
+                </div>
+            </a>
+
+        </div>
     </div>
 
     {#    <div class="row">

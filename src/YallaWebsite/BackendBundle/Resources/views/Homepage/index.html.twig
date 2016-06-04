@@ -5,44 +5,60 @@
         {% set  arr = [events, articles, venues, galleries]%}
         <div class="col-md-12">
             <h4 class="page-head-line">Homepage</h4>
-            <p><a href=#>About/Vision</a></p>
+            <p><a href={{path('backend_homepage_about')}}>About/Vision</a></p>
         </div>
 
     </div>
-    <div id='HomePagePartOne'>
-        <h1>Homepage Top Part</h1>
-        <div id='ajaxDiv' class="col-lg-12"></div>
-        <div class="row">
-            {% include '@YallaWebsiteBackendBundle/views/Homepage/html/homepage_backend_slider.html.twig' %}
-        </div>
+    <div class="col-md-12">
+        <div class="panel panel-primary">
+            <div class="panel-heading">
+                Homepage Top Part
+            </div>
+            <div id='HomePagePartOne' class="panel-body">
+                <div class="col-md-12">
+                    {% include '@YallaWebsiteBackendBundle/views/Homepage/html/homepage_backend_slider.html.twig' %}
+                </div>
 
-        <div class="row">
-            {% include '@YallaWebsiteBackendBundle/views/Homepage/html/homepage_backend_video.html.twig' %}
-        </div>
+                <div class="col-md-12">
+                    {% include '@YallaWebsiteBackendBundle/views/Homepage/html/homepage_backend_video.html.twig' %}
+                </div>
 
-        <div class="row">
-            {% include '@YallaWebsiteBackendBundle/views/Homepage/html/homepage_backend_selected_gallery.html.twig' %}
-        </div>
-
-    </div>
-    <hr>
-    <div id='HomePagePartTwo'>
-        <h1>Homepage Article Section</h1>
-        <div class="row">
-            {% include '@YallaWebsiteBackendBundle/views/Homepage/html/homepage_backend_selected_article.html.twig' %}
+                <div class="col-md-12">
+                    {% include '@YallaWebsiteBackendBundle/views/Homepage/html/homepage_backend_selected_gallery.html.twig' %}
+                </div>
+            </div>
         </div>
     </div>
     <hr>
-    <div id='HomePagePartThree'>
-        <h1>Homepage Events Section</h1>
-        <div class="row">
-            {% include '@YallaWebsiteBackendBundle/views/Homepage/html/homepage_backend_week_events.html.twig' %}
+    <div class="col-md-12">
+        <div class="panel panel-primary">
+            <div class="panel-heading">
+                Homepage Middle Part
+            </div>
+            <div id='HomePagePartTwo' class="panel-body">
+                <h5><strong>Homepage Article Section</strong></h5>
+                <div class="col-md-12">
+                    {% include '@YallaWebsiteBackendBundle/views/Homepage/html/homepage_backend_selected_article.html.twig' %}
+                </div>
+            </div>
         </div>
     </div>
     <hr>
 
-
-
+    <div class="col-md-12">
+        <div class="panel panel-primary">
+            <div class="panel-heading">
+                Homepage Bottom Part
+            </div>
+            <div id='HomePagePartThree' class="panel-body">
+                <h5><strong>Homepage Article Section</strong></h5>
+                <div class="col-md-12">
+                    {% include '@YallaWebsiteBackendBundle/views/Homepage/html/homepage_backend_week_events.html.twig' %}
+                </div>
+            </div>
+        </div>
+    </div>
+    <hr>
 
     <!-- Modal -->
     <div class="modal fade" id="ajaxResultMessages" role="dialog">

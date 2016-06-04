@@ -9,88 +9,9 @@ and open the template in the editor.
 */
 
 @import "bootstrap/bootstrap.less";
+@import "MixandVar.less";
 @import "adv.less";
 
-@font-face {
-    font-family: 'CenturyGothicBold';
-    src: url('../fonts/CenturyGothic-Bold.eot');
-    src: url('../fonts/CenturyGothic-Bold.ttf') format('truetype');
-    font-weight: normal;
-    font-style: normal;
-}
-@font-face {
-    font-family: 'Ebrima';
-    src: url('../fonts/Ebrima.eot');
-    src: url('../fonts/Ebrima.eot?#iefix') format('embedded-opentype'),
-        url('../fonts/Ebrima.woff') format('woff'),
-        url('../fonts/Ebrima.woff') format('woff2'),
-        url('../fonts/Ebrima.ttf') format('truetype'),
-        url('../fonts/Ebrima.svg') format('svg');
-    font-weight: normal;
-    font-style: normal;
-}
-@font-face {
-    font-family: 'FontAwesome';
-    src: url('../fonts/FontAwesome.eot');
-    src: url('../fonts/FontAwesome.eot?#iefix') format('embedded-opentype'),
-        url('../fonts/FontAwesome.woff') format('woff'),
-        url('../fonts/FontAwesome.woff') format('woff2'),
-        url('../fonts/FontAwesome.ttf') format('truetype'),
-        url('../fonts/FontAwesome.svg') format('svg');
-    font-weight: normal;
-    font-style: normal;
-}
-@Color1: #eaeaea;   //BG COLOR LIGHT GRAY
-@Color2: #4d4d4d;   //BG COLOR DARK GRAY
-@Color3: #ffde16;   //BG COLOR YELLOW
-@Color4: #CBCBCB;   // Inactive Calednar extra days
-@Color5: #1f1f1f;   //darker gray for modal
-@Pagination-Gray: #565656;
-@tempColor: #ff00ff;
-.hyperlink() {
-    a {
-        font-weight: bold;
-        &:link
-            {
-            color: @Color3;
-        }
-        &:hover
-            {
-            color: @Color3 + 100;
-        }
-        &:visited,&:active {
-            color: @Color3 - 100 ;
-        }
-    } 
-}
-
-#yellow_color {
-    font-weight: bold;
-    color: @Color3;
-}
-
-.mediaIntoBG {
-    background-size: cover;
-    background-repeat: no-repeat;
-}
-
-.socialMediaIcons { 
-    height: 30px;
-    width: 30px;
-    border-radius: 3px;
-    margin-right: 1%;
-    
-}
-
-
-.RowIn4Col {
-    .make-lg-column(4);
-    .make-md-column(4);
-    .make-sm-column(4);
-    .make-xs-column(4);
-    margin-bottom: 2%;
-    text-align: center;
-}
 .innerPagesTitle {
     .make-lg-column(12);
     .make-md-column(12);
@@ -103,6 +24,8 @@ and open the template in the editor.
         font-weight: bold;
         display: inline-block;
         border-bottom: 3px solid @Color3;
+        @media screen and (max-width: 480px){ font-size: 16px;}
+        @media screen and (max-width: 768px){ font-size: 26px;}
     }
 }
 .navbar-brand {
@@ -193,21 +116,11 @@ and open the template in the editor.
         margin-top: -30px;
     }
 }
-
 #menuImageLogo {
     @media screen and (max-width:780px) {
         display:none;
     }
 }
-
-
-
-@import "homepage.less";
-@import "about.less";
-@import "gallery.less";
-@import "calendar.less";
-
-
 
 body {
     background-color: @Color1;
@@ -472,7 +385,11 @@ body {
 }
 
 
-
+@import "homepage.less";
+@import "about.less";
+@import "gallery.less";
+@import "calendar.less";
+@import "artist.less";
 
 
 footer{

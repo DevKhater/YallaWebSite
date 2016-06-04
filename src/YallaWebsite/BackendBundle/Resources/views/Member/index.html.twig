@@ -40,7 +40,7 @@
                                             <td style="text-align: center;"><a href="{{path ('backend_member_delete',  {'id': member.id}) }}"><button class="btn btn-danger btn-sm"><i class="fa fa-pencil"></i> Delete</button></a>
                                                 <a href="{{path ('backend_member_show',  {'id': member.id}) }}"><button class="btn btn-primary btn-sm"><i class="fa fa-eye"></i> View </button></a>
                                             </td>
-                                            <td><a href="{{ path ('backend_member_edit',  {'id': member.id})}}">{{member.title}}</a></td>
+                                            <td><a href="{{ path ('backend_member_edit',  {'id': member.id})}}">{{member.name}}</a></td>
                                             <td>{{member.website}}</td>
                                             <td>{% thumbnail  member.media, 'small' %}</td>
                                         </tr>
