@@ -6,6 +6,7 @@
     }
 }(function($, window, document, undefined) {
     var calls = 0;
+    var temp = null;
     var defaults = {
         container         : window, // window or jquery object or jquery selector, or element
         imageSelector     : '.chocolat-image',
@@ -28,6 +29,7 @@
         timerDebounce     : false,
         images            : [],
         enableZoom        : true,
+        advSelector       : '#chocolat-image-data-adv'
     };
 
     function Chocolat(element, settings) {
@@ -37,7 +39,7 @@
         this._defaults = defaults;
         this.elems     = {};
         this.element   = element;
-
+        this.adv = temp;
         this._cssClasses = [
             'chocolat-open',
             'chocolat-mobile',
@@ -68,7 +70,9 @@
             $(this).remove();
             m++;
         });
-
+        
+        that.adv = this.element.find(this.settings.advSelector);
+        
         this.element.find(this.settings.imageSelector).each(function (i) {
             $(this).off('click.chocolat').on('click.chocolat', function(e){
                 that.init(i);
@@ -78,6 +82,7 @@
 
         return this;
     }
+    
     $.extend(Chocolat.prototype, {
 
         init : function(i) {
@@ -406,23 +411,30 @@
             this.elems.bottom = $('<div/>', {
                 'class' : 'chocolat-bottom'
             }).appendTo(this.elems.wrapper);
+            
+            this.elems.bottom_inner = $('<div/>', {
+                'class' : 'chocolat-bottom-inner'
+            }).appendTo(this.elems.bottom);
 
             this.elems.fullscreen = $('<span/>', {
                 'class' : 'chocolat-fullscreen'
-            }).appendTo(this.elems.bottom);
-
+            }).appendTo(this.elems.bottom_inner);
+            
             this.elems.description = $('<div/>', {
                 'class' : 'chocolat-description'
-            }).appendTo(this.elems.bottom);
-
+            }).appendTo(this.elems.bottom_inner);
+            
+            this.adv.appendTo(this.elems.bottom_inner);
+            
+            
             this.elems.pagination = $('<span/>', {
                 'class' : 'chocolat-pagination'
-            }).appendTo(this.elems.bottom);
+            }).appendTo(this.elems.bottom_inner);
 
             this.elems.setTitle = $('<span/>', {
                 'class' : 'chocolat-set-title',
                 'html' : this.settings.setTitle
-            }).appendTo(this.elems.bottom);
+            }).appendTo(this.elems.bottom_inner);
 
             this.elems.close = $('<span/>', {
                 'class' : 'chocolat-close'

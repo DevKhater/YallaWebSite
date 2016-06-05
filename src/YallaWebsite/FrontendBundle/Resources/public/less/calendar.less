@@ -99,9 +99,9 @@
                         border-radius: 50%;
                         margin: 0 auto;
                         @media screen and (max-width: 800px){
-                           width: auto;
-                           height: auto;
-                           border: 1px solid #Color3;
+                            width: auto;
+                            height: auto;
+                            border: 1px solid #Color3;
                         }
                     }
                 }
@@ -118,8 +118,8 @@
                         width: 60px;
                         margin: 0 auto;
                         @media screen and (max-width: 800px){
-                           width: auto;
-                           height: auto;
+                            width: auto;
+                            height: auto;
                             border: 1px solid #Color3;
                         }
                     }
@@ -177,5 +177,63 @@
                 }
             } 
         }
+    }
+}
+
+
+.theEntityDiv {
+    .row();
+    margin-bottom: 2%;
+    text-align: center;
+    .innerTitle {
+        .innerPagesTitle;
+    }
+    #innerEntityImage {
+        .make-lg-column(12);
+        .make-md-column(12);
+        .make-sm-column(12);
+        .make-xs-column(12);
+        padding-right: 0;
+        margin-bottom: 2%;
+        img {margin: 0 auto;} 
+    }
+    .event_innerEntityImage  {img {float:right} }
+    #innerEntityContent {
+        .make-lg-column(12);
+        .make-md-column(12);
+        .make-sm-column(12);
+        .make-xs-column(12);
+        text-align: left;
+    }
+    .resp_font {.mediaScreenForFontSize();}
+    #galleryViewPhotogtapher{
+        .make-lg-column(12);
+        .make-md-column(12);
+        .make-sm-column(12);
+        .make-xs-column(12);
+        text-align:right;
+        border-bottom: 3px solid @Color3;
+        .hyperlink();
+    }
+    #innerGalleryImages {
+        .make-lg-column(12);
+        .make-md-column(12);
+        .make-sm-column(12);
+        .make-xs-column(12);
+        #innerGalleryImage{
+            .make-lg-column(3);
+            .make-md-column(4);
+            .make-sm-column(5);
+            .make-xs-column(6);
+            height: 250px;
+            min-height: 250px;
+            .mediaIntoBG;
+        }
+    }
+    #innerEventInformation{
+        float: left;
+        text-align: left;
+        .hyperlink();
+        .mediaScreenForFontSize();
     }
 }

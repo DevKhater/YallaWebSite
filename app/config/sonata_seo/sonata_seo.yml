@@ -21,8 +21,8 @@ sonata_seo:
         default:          sonata.seo.page.default
         metas:
             name:
-                keywords:             foo bar
-                description:          The description
+                keywords:             artists, venues. events, galleries, images, nigh, life, night life
+                description:          yalla night life website for all new events in egypt
                 robots:               index, follow
 
             property:
@@ -32,17 +32,16 @@ sonata_seo:
 
                 # Open Graph information
                 # see http://developers.facebook.com/docs/opengraphprotocol/#types or http://ogp.me/
-                'og:site_name':       YallaNightLife
-                    
-                'og:description':     A demo of the some rich bundles for your Symfony2 projects
+                'og:site_name':         YallaNightLife
+                'og:description':       YallaNightLife Website.
                 'og:see_also' :         http://www.yallanightlife.com/
 #                'og:url' :
 #                'og:image' :
-                'og:type' :            website
-                'twitter:card':        summary
+                'og:type' :             website
+                'twitter:card':         yalla night life website for all new events in egypt
                 'twitter:url' :         http://www.yallanightlife.com/
-                'twitter:title' :         http://www.yallanightlife.com/
-                'twitter:description': description
+                'twitter:title' :       http://www.yallanightlife.com/
+                'twitter:description':  yalla night life website for all new events in egypt
             
             http-equiv:
                 'Content-Type':         text/html; charset=utf-8
@@ -53,26 +52,8 @@ sonata_seo:
                 UTF-8:    ''
 
         head:
-            'xmlns':              http://www.w3.org/1999/xhtml
-            'xmlns:og':           http://opengraphprotocol.org/schema/
+            'xmlns':                http://www.w3.org/1999/xhtml
+            'xmlns:og':             http://opengraphprotocol.org/schema/
             #'xmlns:fb':           "http://www.facebook.com/2008/fbml"
 #            'prefix':
-            'itemscope itemtype':    http://schema.org/WebPage
-    
-    
-    
-    
-    
-    
-    
-    
-#    twitter:card– This is the card type. Your options are summary, photo or player. Twitter will default to “summary” if it is not specified.Format:
-#    <meta name=”twitter:card” content=”summary”>
-
-#    <meta name=”twitter:url” content=”http://www.nytimes.com/2012/02/19/arts/music/amid-police-presence-fans-congregate-for-whitney-houstons-funeral-in-newark.html”>
-#    twitter:title–This is the title of the content to be shared and should be limited to 70 characters after which Twitter will truncate. Again, go for headlines instead of keywords.Format:
-#    <meta name=”twitter:title” content=”Parade of Fans for Houston’s Funeral”>
-#    twitter:description– This is the description of the content to be shared and should be limited to 200 characters after which Twitter will truncate. Again, go for engaging text, you have more opportunity here than the actual tweet does.Format:
-#    <meta name=”twitter:description” content=”NEWARK – The guest list and parade of limousines with celebrities emerging from them seemed more suited to a red carpet event in Hollywood or New York than than a gritty stretch of Sussex Avenue near the former site of the James M. Baxter Terrace public housing project here.”>
-#    twitter:image – This is the image that will be displayed on the Twitter Card and it should be a square image no smaller than 60×60 pixels.
-#    <meta name=”twitter:image” content=”http://graphics8.nytimes.com/images/2012/02/19/us/19whitney-span/19whitney-span-articleLarge.jpg”>
+            'itemscope itemtype':   http://schema.org/WebPage

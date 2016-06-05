@@ -68,7 +68,7 @@
                                 <div class="hp_sideArticle_image" style="background-image: url('{% path article.media, 'small' %}');"></div>
                                 <div class="hp_sideArticle_text">
                                     <div class="sideArticle_text">
-                                        <p>{{ article.content[0:100]|raw }}</p>
+                                        <p>{{ article.content[0:75]|raw }}</p>
                                     </div>
                                     <div class="sideArticle_button">
                                         <button type="button" class="btn btn-secondary btn-xs"><a href="{{path('yalla_website_frontened_article',  {'id': article.slug}) }}">Read More</a></button>
@@ -97,7 +97,7 @@
                                 <div class="hp_sideArticle_image" style="background-image: url('{% path article.media, 'small' %}');"></div>
                                 <div class="hp_sideArticle_text">
                                     <div class="sideArticle_text">
-                                        <p>{{ article.content[0:100]|raw }}</p>
+                                        <p>{{ article.content[0:75]|raw }}</p>
                                     </div>
                                     <div class="sideArticle_button">
                                         <button type="button" class="btn btn-secondary btn-xs"><a href="{{path('yalla_website_frontened_article',  {'id': article.slug}) }}">Read More</a></button>

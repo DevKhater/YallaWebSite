@@ -87,6 +87,7 @@ assetic:
             inputs:
                 - %kernel.root_dir%/../src/YallaWebsite/FrontendBundle/Resources/public/less/style.less
             output: "css/style.css"
+            filters: [lessphp]
         massonary:
             inputs:
                 - %kernel.root_dir%/../src/YallaWebsite/FrontendBundle/Resources/public/js/masonry.pkgd.min.js

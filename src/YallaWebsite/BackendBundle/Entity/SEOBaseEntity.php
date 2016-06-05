@@ -26,7 +26,6 @@ abstract class SEOBaseEntity
         public function getMetaTags ()
     {
         $tags = $this->getTags();
-        dump($tags);
         foreach ($tags as $tag){
             $this->metaTags .= $tag->getName() .', ';
         }
@@ -36,7 +35,7 @@ abstract class SEOBaseEntity
     public function getMetaDescription ()
     {
         $content = $this->getContent();
-        $this->metaDescription =  implode(' ', array_slice(explode(' ', $content), 0, 155));
+        $this->metaDescription =  mb_substr($content, 0, 160);
         return $this->metaDescription;
     }
 
@@ -46,9 +45,8 @@ abstract class SEOBaseEntity
         
     }
     
-    public function getUrls($provider) {
-        $media = $this->getMedia();
-        $this->mediaUrl = $provider->generatePublicUrl($media, 'small', true);
+    public function getUrls() {
+        
         return $this->mediaUrl;
     }
 

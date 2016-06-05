@@ -3,11 +3,6 @@
 {% block stylesheets %}
     {{parent()}}
     <link rel="stylesheet" href="{{ asset('bundles/yallawebsitefrontend/css/chocolat.css') }}" />
-    <link rel="stylesheet" href="{{ asset('bundles/yallawebsitefrontend/css/rateit.css') }}" />
-
-    {% stylesheets '@fontawesome_css'%}
-    <link rel="stylesheet" type="text/css" media="screen" href="{{ asset_url }}"/>
-    {% endstylesheets %}
 {% endblock %}    
 
 {% block body %}
@@ -42,7 +37,7 @@
                             </a>
                             <div class="chocolat-image-data">
                                 {%  include 'KunstmaanVotingBundle:UpDown:vote.html.twig' with {'reference' : galleryHasMedia.id } %}
-                                <div>{% include '@YallaWebsiteFrontendBundle/views/Template/socialMediaShare.html.twig' %}</div>
+                                <div class="Gallery_SM_Share">{% include '@YallaWebsiteFrontendBundle/views/Template/socialMediaShare.html.twig' %}</div>
                                 <div class="rateit" id='_{{id}}'>
                                 </div>
                                 {#{{ voteValue(galleryHasMedia.id)|rating(5) }}#}
@@ -50,7 +45,7 @@
                             </div>
                         </div>
                     {% endfor %}
-                    {{dump(tempArray)}}
+                    <div id='chocolat-image-data-adv'>{{ render_esi(url('ads_manager_show', { 'id': 'snapshot_popup' })) }}</div>
                 </div>
             </div>
         </div>
@@ -62,8 +57,6 @@
     <script type="text/javascript" src="{{ asset_url }}"></script>
     {% endjavascripts %}
     <script type="text/javascript" src="{{ asset('bundles/yallawebsitefrontend/js/socialite.min.js') }}"></script>
-    <script src="{{ asset('bundles/yallawebsitefrontend/js/jquery.blueimp-gallery.min.js') }}"></script>
-    <script src="{{ asset('bundles/yallawebsitefrontend/js/jquery.rateit.js') }}"></script>
     <script src="{{ asset('bundles/yallawebsitefrontend/js/jquery.chocolat.js') }}"></script>
     <script>
         $(document).ready(function () {
@@ -72,21 +65,25 @@
                 percentPosition: true,
                 columnWidth: '.grid-sizer'
             });
+            console.log('masonary initialized');
             // layout Isotope after each image loads
             $grid.imagesLoaded().progress(function () {
                 $grid.masonry();
             });
-        {% for key, value in tempArray %}
-                console.log(key + value);
-                $("#{{key}}").bind('rated', function (event, value) {
-                    console.log(value);
-                });
-        {% endfor %}
+            console.log('masonary progress');
                 $('#links').Chocolat({
                     imageSize: 'contain',
                 });
-
+            console.log('chocolat initialized');
+            
+            $('.epub a').click(function(e) {
+                e.preventDefault();
             });
+            $('.epub img').click(function(e) {
+                var href = $('.epub a').attr('href');
+                window.open(href,'_blank');
+            });
+        });
     </script>
 
 {% endblock %}

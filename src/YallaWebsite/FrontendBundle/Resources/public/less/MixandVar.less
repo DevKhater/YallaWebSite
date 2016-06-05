@@ -179,12 +179,37 @@
         }
     }
     #longer {
-            &:before,
-                &:after{
-                @media screen and (max-width: 480px){width: 60px;}
-                @media screen and (min-width: 480px){width: 60%;}
-                @media screen and (min-width: 600px){ width: 100%;}
-                @media screen and (min-width: 1200px){ width: 200%;}
-            }
+        &:before,
+            &:after{
+            @media screen and (max-width: 480px){width: 60px;}
+            @media screen and (min-width: 480px){width: 60%;}
+            @media screen and (min-width: 600px){ width: 100%;}
+            @media screen and (min-width: 1200px){ width: 200%;}
         }
+    }
+}
+
+
+.mediaScreenForFontSize() {
+    @media only screen and (min-width : 1020px) {
+        font-size: 22px;
+    }
+    @media only screen and (min-width : 930px) and (max-width : 1020px) {
+        font-size: 18.5px;
+    }
+    @media only screen and (min-width : 840px)  and (max-width : 930px) {
+        font-size: 17px;
+    }
+    @media only screen and (min-width : 660px)  and (max-width : 840px) {
+        font-size: 15px;
+    }
+    @media only screen and (min-width : 570px)  and (max-width : 660px) {
+        font-size: 11.5px;
+    }
+    @media only screen and (min-width : 480px) and (max-width : 570px) {
+        font-size: 10px;
+    }
+    @media only screen and (max-width : 480px) {
+        font-size: 8px;
+    }
 }
