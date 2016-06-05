@@ -109,6 +109,8 @@ class Event extends BaseEntity
      */
     protected $similarArtist;
 
+    protected $ogType = 'website';
+    
     public function __construct()
     {
         $this->createdAt = new \DateTime();

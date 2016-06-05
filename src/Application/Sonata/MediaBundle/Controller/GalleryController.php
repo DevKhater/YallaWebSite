@@ -36,7 +36,7 @@ class GalleryController extends Controller
         $seoPage->setTitle('Snapshots - Yalla Night Life')
             ->addMeta('name', 'keywords', 'Yalla, Night, Life, Galleries, Snapshots, Events, Images, Nightlife')
             ->addMeta('property', 'og:title', 'Snapshots - Yalla Night Life')
-            ->addMeta('property', 'og:type', 'gallery')
+            ->addMeta('property', 'og:type', 'website')
             ->addMeta('property', 'og:url',  'http://www.yallanightlife.com/snapshots')
             ->addMeta('property', 'twitter:url',  'http://www.yallanightlife.com/snapshots')
             ->addMeta('property', 'twitter:title',  'Snapshots - Yalla Night Life');
@@ -73,7 +73,7 @@ class GalleryController extends Controller
             ->addMeta('name', 'description', mb_substr($gallery->getDescription(), 0, 160))
             ->addMeta('name', 'keywords', mb_substr($keys, 0, 250))
             ->addMeta('property', 'og:title', $gallery->getName() .' - Yalla Night Life')
-            ->addMeta('property', 'og:type', 'gallery')
+            ->addMeta('property', 'og:type', 'website')
             ->addMeta('property', 'og:url',  'http://www.yallanightlife.com'.$this->generateUrl('sonata_media_gallery_view', array('id' => $gallery->getSlug())))
             ->addMeta('property', 'og:image',  'http://www.yallanightlife.com'.$url)
             ->addMeta('property', 'twitter:card',  mb_substr($gallery->getDescription(), 0, 160))

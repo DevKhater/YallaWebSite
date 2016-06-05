@@ -60,6 +60,8 @@ class Artist
      *
      * @return integer 
      */
+    
+    protected $ogType = 'profile';
     public function getId()
     {
         return $this->id;
