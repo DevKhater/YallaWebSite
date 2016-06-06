@@ -9,7 +9,7 @@ imports:
     - { resource: sonata_seo/sonata_seo.yml }
     - { resource: fpn_tag/fpn_tag.yml }
     - { resource: gedmo/gedmo.yml }
-#    - { resource: fos_elastica/fos_elastica.yml }
+    - { resource: hwi_oauth/hwi_oauth.yml }
     - { resource: yallawebsite.yml }
 
 # Put parameters here that don't need to change on each machine where the app is deployed

@@ -1,0 +1,2 @@
+[06-Jun-2016 22:19:59 Africa/Cairo] PHP Fatal error:  Class 'FOS\UserBundle\Entity\User' not found in /home/yallabre/public_html/__demo/__Sym/src/YallaWebsite/FrontendBundle/Entity/Guest.php on line 13
+[06-Jun-2016 22:19:59 Africa/Cairo] PHP Fatal error:  Class 'FOS\UserBundle\Propel\om\BaseUser' not found in /home/yallabre/public_html/__demo/__Sym/vendor/friendsofsymfony/user-bundle/Propel/User.php on line 18

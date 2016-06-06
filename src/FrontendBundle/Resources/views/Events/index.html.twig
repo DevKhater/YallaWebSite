@@ -1,0 +1,49 @@
+{% extends "@YallaWebsiteFrontendBundle/views/front_base.html.twig" %}
+{% block body %}
+        <div class="wrapper">
+            <div class="IndexTitle">
+                <h1>Events</h1>
+            </div>
+            <div id="theCalendarRow">
+                <div id="calendar"></div>
+            </div>
+            <div id="ajaxDiv" class="row" ></div>
+        </div>
+ {% endblock %}
+
+{% block js_calednar %}
+    <script>
+
+        $(document).ready(function () {
+            $.ajax({
+                type: "POST",
+                url: Routing.generate('frontend_ajax_get_calendar'),
+                dataType: 'json',
+                success: function (data) {
+                    $('#calendar').html(data.nav);
+                    $('#calendar').append(data.cal);
+                },
+                error: function (xhr, textStatus, errorThrown) {
+                    console.log(xhr.responseText);
+                    console.log(textStatus);
+                    console.log(errorThrown);
+                }
+            });
+        });
+
+        function getEvents(thedate) {
+            $.ajax({
+                type: "POST",
+                url: Routing.generate('frontend_ajax_get_event_by_date', {id: thedate}),
+                success: function (data) {
+                    $('#ajaxDiv').html(data);
+                },
+                error: function (xhr, textStatus, errorThrown) {
+                    console.log(xhr.responseText);
+                    console.log(textStatus);
+                    console.log(errorThrown);
+                }
+            });
+        }
+    </script>
+{% endblock %}

@@ -36,7 +36,12 @@
                             <a class="chocolat-image" title="GallerySomething" href="{% path galleryHasMedia.media, 'large' %}"><img class="thumbnail img-responsive" src="{% path galleryHasMedia.media, 'small' %}">
                             </a>
                             <div class="chocolat-image-data">
+                                <div class="fb_vote">
+                                    <span id='{{galleryHasMedia.id}}'onclick="fb_login();">Vote</span>
+                                </div>
+                                <div class="Kunstmaan">
                                 {%  include 'KunstmaanVotingBundle:UpDown:vote.html.twig' with {'reference' : galleryHasMedia.id } %}
+                                </div>
                                 <div class="Gallery_SM_Share">{% include '@YallaWebsiteFrontendBundle/views/Template/socialMediaShare.html.twig' %}</div>
                                 <div class="rateit" id='_{{id}}'>
                                 </div>
@@ -58,32 +63,57 @@
     {% endjavascripts %}
     <script type="text/javascript" src="{{ asset('bundles/yallawebsitefrontend/js/socialite.min.js') }}"></script>
     <script src="{{ asset('bundles/yallawebsitefrontend/js/jquery.chocolat.js') }}"></script>
-    <script>
-        $(document).ready(function () {
-            var $grid = $('.im').masonry({
-                itemSelector: '.im-item',
-                percentPosition: true,
-                columnWidth: '.grid-sizer'
-            });
-            console.log('masonary initialized');
-            // layout Isotope after each image loads
-            $grid.imagesLoaded().progress(function () {
-                $grid.masonry();
-            });
-            console.log('masonary progress');
-                $('#links').Chocolat({
-                    imageSize: 'contain',
-                });
-            console.log('chocolat initialized');
-            
-            $('.epub a').click(function(e) {
-                e.preventDefault();
-            });
-            $('.epub img').click(function(e) {
-                var href = $('.epub a').attr('href');
-                window.open(href,'_blank');
-            });
-        });
+    <script type="text/javascript">
+
+                                        function fb_login() {
+                                            var gID = {{gallery.id}};
+                                                    FB.getLoginStatus(function (response) {
+                                                        if (response.status === 'connected') {
+                                                            var uid = response.authResponse.userID;
+                                                            var img = $('.fb_vote span').attr('id');
+                                                            var token = uid + '-' + gID + '-' + img;
+                                                            $('.Kunstmaan').css('display', 'block');
+                                                            console.log(token);
+                                                        } else {
+                                                            FB.login(function (response) {
+                                                                if (response.authResponse) {
+                                                                    document.location = "{{ url("hwi_oauth_service_redirect", {service: "facebook"}) }}";
+                                                                } else {
+                                                                    alert('Cancelled.');
+                                                                }
+                                                            }, {scope: 'email'});
+                                                        }
+                                                    });
+                                        }
+                                        ;
+                                        $(document).ready(function () {
+                                            var $grid = $('.im').masonry({
+                                                itemSelector: '.im-item',
+                                                percentPosition: true,
+                                                columnWidth: '.grid-sizer'
+                                            });
+                                            console.log('masonary initialized');
+                                            // layout Isotope after each image loads
+                                            $grid.imagesLoaded().progress(function () {
+                                                $grid.masonry();
+                                            });
+                                            console.log('masonary progress');
+                                            $('.Kunstmaan').css('display', 'none');
+                                            $('#links').Chocolat({
+                                                imageSize: 'contain',
+                                            });
+                                            console.log('chocolat initialized');
+                                            
+                                            $('.epub a').click(function (e) {
+                                                e.preventDefault();
+                                            });
+                                            $('.epub img').click(function (e) {
+                                                var href = $('.epub a').attr('href');
+                                                window.open(href, '_blank');
+                                            });
+                                        });
+
+
     </script>
 
 {% endblock %}

@@ -26,4 +26,26 @@ fos_js_routing:
 
 KunstmaanVotingBundle:
     resource: "@KunstmaanVotingBundle/Resources/config/routing.yml"
-    prefix:   /vote
+    prefix:   /secured/vote
+
+
+
+hwi_oauth_security:
+    resource: "@HWIOAuthBundle/Resources/config/routing/login.xml"
+    prefix: /secured/connect
+
+hwi_oauth_connect:
+    resource: "@HWIOAuthBundle/Resources/config/routing/connect.xml"
+    prefix: /secured/connect
+
+hwi_oauth_redirect:
+    resource: "@HWIOAuthBundle/Resources/config/routing/redirect.xml"
+    prefix:   /secured/connect
+
+hwi_oauth_login:
+    resource: "@HWIOAuthBundle/Resources/config/routing/login.xml"
+    prefix:   /secured/login
+    
+#
+#facebook_login:
+#    pattern: /secured/login/check-facebook
