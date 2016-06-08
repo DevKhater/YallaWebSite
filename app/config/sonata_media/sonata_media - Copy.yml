@@ -84,7 +84,7 @@ sonata_media:
                 snapadv: { width: 300, height: 300, quality: 100}
     cdn:
         server:
-            path: /uploads/media
+            path: http://yallabreak.com/__demo/__Sym/web/uploads/media
 
     filesystem:
         local:

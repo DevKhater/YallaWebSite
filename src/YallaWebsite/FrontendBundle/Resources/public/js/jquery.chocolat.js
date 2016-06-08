@@ -427,11 +427,11 @@
             this.adv.appendTo(this.elems.bottom_inner);
             
             
-            this.elems.pagination = $('<span/>', {
+            this.elems.pagination = $('<div/>', {
                 'class' : 'chocolat-pagination'
             }).appendTo(this.elems.bottom_inner);
 
-            this.elems.setTitle = $('<span/>', {
+            this.elems.setTitle = $('<div/>', {
                 'class' : 'chocolat-set-title',
                 'html' : this.settings.setTitle
             }).appendTo(this.elems.bottom_inner);

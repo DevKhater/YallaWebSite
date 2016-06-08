@@ -1,11 +1,21 @@
 {% extends "@YallaWebsiteFrontendBundle/views/front_base.html.twig" %}
 {% block body %}
         <div class="wrapper">
-            <div class="IndexTitle">
-                <h1>Events</h1>
+            
+            <div class="row">   
+                <div class="IndexTitle">
+                    <h1>Events</h1>
+                </div>
             </div>
             <div id="theCalendarRow">
-                <div id="calendar"></div>
+                <div id='calendar_bg' class='col-lg-12 col-md-12 col-sm-12 col-xs-12' style="margin: 0 auto;background-image: url('{{ asset('bundles/yallawebsitefrontend/images/calednar_background.jpg') }}');">
+                    <div class="col-xs-1"></div>
+                    <div class="col-xs-10" style="margin: 0px auto 300px;">
+                        <div id='calendarTopLine'class="col-xs-12"> horizontal line </div>
+                        <div id="calendar"></div>
+                        <div class="col-xs-12"> horizontal line </div>
+                    </div>
+                </div>
             </div>
             <div id="ajaxDiv" class="row" ></div>
         </div>

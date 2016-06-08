@@ -1,21 +1,17 @@
-<?php
-
-namespace YallaWebsite\BackendBundle\Entity;
+<?php namespace YallaWebsite\BackendBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 
-
-
-/** @ORM\MappedSuperclass */ 
+/** @ORM\MappedSuperclass */
 abstract class SEOBaseEntity
 {
+
     protected $metaTags;
     protected $metaDescription;
     protected $url;
     protected $mediaUrl;
     protected $ogType;
-    
-    
+
     public function __construct()
     {
         $this->metaTags = $this->getMetaTags();
@@ -23,34 +19,36 @@ abstract class SEOBaseEntity
         $this->mediaUrl = $this->getUrls();
     }
 
-        public function getMetaTags ()
+    public function getMetaTags()
     {
         $tags = $this->getTags();
-        foreach ($tags as $tag){
-            $this->metaTags .= $tag->getName() .', ';
+        if ($tags != null) {
+            foreach ($tags as $tag) {
+                $this->metaTags .= $tag->getName() . ', ';
+            }
+        } else {
+            $this->metaTags = '';
         }
         return $this->metaTags;
     }
-    
-    public function getMetaDescription ()
+
+    public function getMetaDescription()
     {
         $content = $this->getContent();
-        $this->metaDescription =  mb_substr($content, 0, 160);
+        $this->metaDescription = mb_substr($content, 0, 160);
         return $this->metaDescription;
     }
 
     public function getOgType()
     {
         return $this->ogType;
-        
     }
-    
-    public function getUrls() {
-        
+
+    public function getUrls()
+    {
+
         return $this->mediaUrl;
     }
-
-
     //        $seoTags = '';
 //        foreach ($entity->getTags() as $tag) {
 //            $seoTags .= $tag->getSlug() . ',';
@@ -70,5 +68,4 @@ abstract class SEOBaseEntity
 //                ->addMeta('property', 'og:url', $this->generateUrl('backend_article_show', array('id' => $id), true))
 //                ->addMeta('property', 'og:description', implode(' ', array_slice(explode(' ', $entity->getContent()), 0, 10)))
 //        ;
-
 }

@@ -9,130 +9,141 @@
 #theCalendarRow{
     .row();
     margin-top: 15px;
-    #calendar {
-        .navigation {
-            margin: 0 auto;
-            text-align: center;
-            margin-bottom: 3%;
-            .calendar_nav {
+    #calendar_bg {
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center top;
+     #calendarTopLine {
+         @media screen and (min-width:1024px) {
+             margin-top: 214px;
+         }
+     }
+     #calendar {
+            margin: 0px auto 300px;
+            .navigation {
                 margin: 0 auto;
                 text-align: center;
-                tr {
-                    td { 
-                        min-width: 15px;
-                        .prev{float: right;}
-                        .next{float: left;}
-                        .title {
-                            #navigation_year, #navigation_month {
-                                font-size: 3em;
-                                @media screen and (max-width: 800px){
-                                    font-size: 2em;
+                margin-bottom: 3%;
+                .calendar_nav {
+                    margin: 0 auto;
+                    text-align: center;
+                    tr {
+                        td { 
+                            min-width: 15px;
+                            .prev{float: right;}
+                            .next{float: left;}
+                            .title {
+                                #navigation_year, #navigation_month {
+                                    font-size: 3em;
+                                    @media screen and (max-width: 800px){
+                                        font-size: 2em;
+                                    }
                                 }
                             }
                         }
                     }
                 }
             }
-        }
-        #calendar_table {
-            margin: 0 auto;
-            border-collapse: collapse;
-            @media screen and (max-width: 900px){
-                max-width: 90%;
-            }
-            @media screen and (max-width: 800px){
-                max-width: 70%;
-            }
-            tr {
-                .weekday {
-                    text-transform: uppercase;
-                    background-color: @Color1;
-                    border: 5px solid #fff;
-                    font-weight: bolder;
-                    color: @Color2;
-                    font-size: 2em;
-                    text-align: center;
-                    width: 100px;
-                    height: 60px;
-                    @media screen and (max-width: 800px){
-                        width: auto;
-                        height: auto;
-                        font-size: 1em;
-
-                    }
+            #calendar_table {
+                margin: 0 auto;
+                border-collapse: collapse;
+                @media screen and (max-width: 900px){
+                    max-width: 90%;
                 }
-                td {
-                    background-color: @Color4;
-                    border: 5px solid #fff;
-                    padding: 0.5em 0.3em;
-                    text-align: center;
-                    color: #000;
-                    font-size: 1.8em;
-                    width: 100px;
-                    height: 60px;
-                    @media screen and (max-width: 800px){
-                        width: auto;
-                        height: auto;
-                        font-size: 0.8em;
-                    }
-                    span {
-                        display: block;
-                        font-weight: normal;
-                        opacity: 0.3;
-                        padding: 0.2em;
+                @media screen and (max-width: 800px){
+                    max-width: 70%;
+                }
+                tr {
+                    .weekday {
+                        text-transform: uppercase;
+                        background-color: @Color1;
+                        border: 5px solid #fff;
+                        font-weight: bolder;
+                        color: @Color2;
+                        font-size: 2em;
                         text-align: center;
-                        text-decoration: none;
-                    }
-                }
-                td.current {
-                    color: #fff;
-                    opacity: 1;
-                    background-color: @Color2;
-                    span {
-                        opacity: 1;
-                    }
-                }
-                td.today .eventAvailable {
-                    span {
-                        border: 2px solid #Color3;
-                        opacity: 1;
-                        border-radius: 50%;
-                        margin: 0 auto;
-                        @media screen and (max-width: 800px){
-                            width: auto;
-                            height: auto;
-                            border: 1px solid #Color3;
-                        }
-                    }
-                }
-                td.today {
-                    background-color: @Color2;
-                    opacity: 1;
-                    span {
-                        opacity: 1;
-                        color: @Color3;
-                        border: 2px solid #FFF;
-                        opacity: 1;
-                        border-radius: 50%;
+                        width: 100px;
                         height: 60px;
-                        width: 60px;
-                        margin: 0 auto;
                         @media screen and (max-width: 800px){
                             width: auto;
                             height: auto;
-                            border: 1px solid #Color3;
+                            font-size: 1em;
+
                         }
                     }
-                }
-                td.eventAvailable {
-                    span {
-                        opacity: 1;
-                        border-bottom: 2px solid @Color3;
-                        cursor: pointer;
+                    td {
+                        background-color: @Color4;
+                        border: 5px solid #fff;
+                        padding: 0.5em 0.3em;
+                        text-align: center;
+                        color: #000;
+                        font-size: 1.8em;
+                        width: 100px;
+                        height: 60px;
                         @media screen and (max-width: 800px){
                             width: auto;
                             height: auto;
-                            border: 1px solid #Color3;
+                            font-size: 0.8em;
+                        }
+                        span {
+                            display: block;
+                            font-weight: normal;
+                            opacity: 0.3;
+                            padding: 0.2em;
+                            text-align: center;
+                            text-decoration: none;
+                        }
+                    }
+                    td.current {
+                        color: #fff;
+                        opacity: 1;
+                        background-color: @Color2;
+                        span {
+                            opacity: 1;
+                        }
+                    }
+                    td.today.eventAvailable {
+                        span {
+                            border: 2px solid #Color3;
+                            opacity: 1;
+                            border-radius: 50%;
+                            margin: 0 auto;
+                            @media screen and (max-width: 800px){
+                                width: auto;
+                                height: auto;
+                                border: 1px solid #Color3;
+                            }
+                        }
+                    }
+                    td.today {
+                        background-color: @Color2;
+                        opacity: 1;
+                        span {
+                            opacity: 1;
+                            color: @Color3;
+                            border: 2px solid #FFF;
+                            opacity: 1;
+                            border-radius: 50%;
+                            height: 60px;
+                            width: 60px;
+                            margin: 0 auto;
+                            @media screen and (max-width: 800px){
+                                width: auto;
+                                height: auto;
+                                border: 1px solid #Color3;
+                            }
+                        }
+                    }
+                    td.current.eventAvailable {
+                        span {
+                            opacity: 1;
+                            border-bottom: 2px solid @Color3;
+                            cursor: pointer;
+                            @media screen and (max-width: 800px){
+                                width: auto;
+                                height: auto;
+                                border: 1px solid #Color3;
+                            }
                         }
                     }
                 }
@@ -203,6 +214,7 @@
         .make-md-column(12);
         .make-sm-column(12);
         .make-xs-column(12);
+        .bodyFontResizer;
         text-align: left;
     }
     .resp_font {.mediaScreenForFontSize();}

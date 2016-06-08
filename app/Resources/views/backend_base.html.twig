@@ -9,13 +9,13 @@
                 '@bootstrap_css' '@fontawesome_css_be'
                 '@YallaWebsiteBackendBundle/Resources/public/css/jquery-ui.css'
                 '@YallaWebsiteBackendBundle/Resources/public/css/select2.min.css'
-                '@YallaWebsiteBackendBundle/Resources/public/css/jquery.tagit.css'
+                '@YallaWebsiteBackendBundle/Resources/public/css/jquery.tagsinput.min.css'
                 '@YallaWebsiteBackendBundle/Resources/public/css/image-picker.css'
                 '@YallaWebsiteBackendBundle/Resources/public/css/style.css'
         %}
         <link rel="stylesheet" type="text/css" media="screen" href="{{ asset_url }}"/>
         {% endstylesheets %}
-
+<link rel="stylesheet" type="text/css" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1/themes/flick/jquery-ui.css">
     {% block stylesheets %}{% endblock %}
     <!-- HTML5 Shiv and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -113,17 +113,19 @@
 <script type="text/javascript" src="{{ asset_url }}"></script>
 {% endjavascripts %}
 <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.12/jquery-ui.min.js" type="text/javascript" charset="utf-8"></script>
-{% javascripts '@YallaWebsiteBackendBundle/Resources/public/js/*' %}
-<script src="{{ asset_url }}"></script>
-{% endjavascripts %}
+
+<script src="{{ asset('bundles/yallawebsitebackend/js/image-picker.min.js') }}"></script>
+<script src="{{ asset('bundles/yallawebsitebackend/js/jquery.tagsinput.min.js') }}"></script>
+<script src="{{ asset('bundles/yallawebsitebackend/js/select2.min.js') }}"></script>
+<script src="{{ asset('bundles/yallawebsitebackend/js/simple-dtpicker.js') }}"></script>
+
+
 {% block tinymce %} {% endblock %}
 {% block datepicker %}{% endblock %}
 {% block javascripts %}
     <script type="text/javascript">
         $(document).ready(function () {
-            $("input[name$='[tags]']").tagit({
-                allowSpaces: true
-            });
+            $("input[name$='[tags]']").tagsInput();
         });
     </script>
 {% endblock %}

@@ -88,8 +88,9 @@ class CalendarController extends Controller
                     $ajaxFunc = 'javascript:getEvents("';
                     $ajaxFunc .= "$iYear-$iMonth-$iCurrentDay";
                     $ajaxFunc .= '");';
+                    $sClass .= " eventAvailable";
 
-                    $sCalTblRows .= '<td class="' . $sClass . ' eventAvailable"><span onclick=' . $ajaxFunc . '>'
+                    $sCalTblRows .= '<td class="' . $sClass . '"><span onclick=' . $ajaxFunc . '>'
                         . $iCurrentDay . '</td>';
                 } else {
                     $sCalTblRows .= '<td class="' . $sClass . '"><span>' . $iCurrentDay . '</span></td>';

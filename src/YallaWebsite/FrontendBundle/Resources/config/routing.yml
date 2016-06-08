@@ -67,5 +67,3 @@ yfe_get_month:
     defaults: { _controller: YallaWebsiteFrontendBundle:Calendar:index }
     options:
         expose: true
-        
-        

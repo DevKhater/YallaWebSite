@@ -97,8 +97,7 @@ sonata_media:
             formats:
                 horiz : { width: 590, height: 90, quality: 100}
                 verti : { width: 120, height: 600, quality: 100}
-                snapadv: { width: 300, height: 300, quality: 100}
-                event:
+                snapadv: { width: 300, height: 300, constraint: false}
         member:        
             providers:
                 - sonata.media.provider.image
@@ -112,7 +111,8 @@ sonata_media:
         
     cdn:
         server:
-            path: http://yallabreak.com/__demo/__Sym/web/uploads/media
+            path: /uploads/media
+            
 
     filesystem:
         local:
@@ -133,11 +133,11 @@ sonata_media:
         image:
             service:    sonata.media.provider.image
             #resizer:    sonata.media.resizer.simple
-            resizer: sonata.media.resizer.custom
+            resizer: sonata.media.resizer.fixedDimensions
             filesystem: sonata.media.filesystem.local
             cdn:        sonata.media.cdn.server
             generator:  sonata.media.generator.default
             thumbnail:  sonata.media.thumbnail.format
             allowed_extensions: ['jpg', 'png', 'jpeg']
             allowed_mime_types: ['image/pjpeg', 'image/jpeg', 'image/png', 'image/x-png']
-            
+ 

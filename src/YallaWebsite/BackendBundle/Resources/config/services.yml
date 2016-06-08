@@ -40,3 +40,8 @@ services:
         tags:
             - { name: 'twig.extension' }
         arguments : [ ]
+    
+#    app.oauth.user_provider:
+#        class: YallaWebsite\BackendBundle\Model\UserProvider
+#        arguments: [ @fos_user.user_manager, [] ]
+

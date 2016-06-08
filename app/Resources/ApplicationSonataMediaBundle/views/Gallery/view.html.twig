@@ -3,6 +3,7 @@
 {% block stylesheets %}
     {{parent()}}
     <link rel="stylesheet" href="{{ asset('bundles/yallawebsitefrontend/css/chocolat.css') }}" />
+    <link rel="stylesheet" href="{{ asset('bundles/yallawebsitefrontend/css/sweetalert.css') }}" />
 {% endblock %}    
 
 {% block body %}
@@ -36,21 +37,15 @@
                             <a class="chocolat-image" title="GallerySomething" href="{% path galleryHasMedia.media, 'large' %}"><img class="thumbnail img-responsive" src="{% path galleryHasMedia.media, 'small' %}">
                             </a>
                             <div class="chocolat-image-data">
-                                <div class="fb_vote">
+                                <div class="fb_vote" id="vote{{ galleryHasMedia.id }}" style="color:#000;font-weight: bold;">
                                     <span id='{{galleryHasMedia.id}}'onclick="fb_login();">Vote</span>
                                 </div>
-                                <div class="Kunstmaan">
-                                {%  include 'KunstmaanVotingBundle:UpDown:vote.html.twig' with {'reference' : galleryHasMedia.id } %}
-                                </div>
                                 <div class="Gallery_SM_Share">{% include '@YallaWebsiteFrontendBundle/views/Template/socialMediaShare.html.twig' %}</div>
-                                <div class="rateit" id='_{{id}}'>
-                                </div>
                                 {#{{ voteValue(galleryHasMedia.id)|rating(5) }}#}
-
                             </div>
                         </div>
                     {% endfor %}
-                    <div id='chocolat-image-data-adv'>{{ render_esi(url('ads_manager_show', { 'id': 'snapshot_popup' })) }}</div>
+                    <div id='chocolat-image-data-adv' class="Adv_Display">{{ render_esi(url('ads_manager_show', { 'id': 'snapshot_popup' })) }}</div>
                 </div>
             </div>
         </div>
@@ -63,8 +58,8 @@
     {% endjavascripts %}
     <script type="text/javascript" src="{{ asset('bundles/yallawebsitefrontend/js/socialite.min.js') }}"></script>
     <script src="{{ asset('bundles/yallawebsitefrontend/js/jquery.chocolat.js') }}"></script>
+    <script src="{{ asset('bundles/yallawebsitefrontend/js/sweetalert.min.js') }}"></script>
     <script type="text/javascript">
-
                                         function fb_login() {
                                             var gID = {{gallery.id}};
                                                     FB.getLoginStatus(function (response) {
@@ -72,20 +67,40 @@
                                                             var uid = response.authResponse.userID;
                                                             var img = $('.fb_vote span').attr('id');
                                                             var token = uid + '-' + gID + '-' + img;
-                                                            $('.Kunstmaan').css('display', 'block');
-                                                            console.log(token);
+                                                            voteAjax(img, token);
                                                         } else {
+                                                            // not_authorized
                                                             FB.login(function (response) {
                                                                 if (response.authResponse) {
-                                                                    document.location = "{{ url("hwi_oauth_service_redirect", {service: "facebook"}) }}";
+                                                                    FB.api('/me', function (response) {
+                                                                        //alert('Thank You '+ response.name +  ' You Can Vote Now');
+                                                                        swal(response.name, "Thank You You Can Vote Now", "success");
+                                                                    });
+
                                                                 } else {
-                                                                    alert('Cancelled.');
+                                                                    sweetAlert("You Must Be Logged In To Vote", "You Can't Vote Now", "error");
                                                                 }
                                                             }, {scope: 'email'});
                                                         }
                                                     });
                                         }
-                                        ;
+                                        function voteAjax(img, token) {
+                                            $.ajax({
+                                                type: "POST",
+                                                url: '{{ url('voting_upvote') }}?reference=' + img + '&value=1&token=' + token,
+                                                success: function (data) {
+                                                    $('#vote' + img).html(data);
+                                                    $('#vote' + img).css('color', '#000');
+                                                    $('#vote' + img).css('font-weight', 'bold');
+                                                },
+                                                error: function (xhr, textStatus, errorThrown) {
+                                                    console.log(xhr.responseText);
+                                                    console.log(textStatus);
+                                                    console.log(errorThrown);
+
+                                                }
+                                            });
+                                        }
                                         $(document).ready(function () {
                                             var $grid = $('.im').masonry({
                                                 itemSelector: '.im-item',
@@ -93,7 +108,7 @@
                                                 columnWidth: '.grid-sizer'
                                             });
                                             console.log('masonary initialized');
-                                            // layout Isotope after each image loads
+// layout Isotope after each image loads
                                             $grid.imagesLoaded().progress(function () {
                                                 $grid.masonry();
                                             });
@@ -103,7 +118,7 @@
                                                 imageSize: 'contain',
                                             });
                                             console.log('chocolat initialized');
-                                            
+
                                             $('.epub a').click(function (e) {
                                                 e.preventDefault();
                                             });
@@ -112,8 +127,6 @@
                                                 window.open(href, '_blank');
                                             });
                                         });
-
-
     </script>
 
 {% endblock %}

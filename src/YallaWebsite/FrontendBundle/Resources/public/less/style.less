@@ -12,20 +12,25 @@ and open the template in the editor.
 @import "MixandVar.less";
 @import "adv.less";
 
+
 .innerPagesTitle {
     .make-lg-column(12);
     .make-md-column(12);
     .make-sm-column(12);
     .make-xs-column(12);
     text-align: center;
-    margin-bottom: 15px;
     color: @Color2;
     h1 {
         font-weight: bold;
         display: inline-block;
         border-bottom: 3px solid @Color3;
-        @media screen and (max-width: 480px){ font-size: 20px;}
-        @media screen and (max-width: 768px){ font-size: 26px;}
+        .fontResizer();
+    }
+    .longerTitle {
+        font-weight: bold;
+        display: inline-block;
+        border-bottom: 3px solid @Color3;
+        .longFontResizer();
     }
 }
 .navbar-brand {
@@ -117,7 +122,7 @@ and open the template in the editor.
     }
 }
 #menuImageLogo {
-    @media screen and (max-width:780px) {
+    @media screen and (max-width:767px) {
         display:none;
     }
 }
@@ -175,8 +180,8 @@ body {
                             @media screen and (max-width:860px) { padding: 10px; letter-spacing: 0.5px;padding-top: 30px;}
                             @media screen and (max-width:845px) { padding: 8px; letter-spacing: 1px;padding-top: 35px;}
                             @media screen and (max-width:832px) { padding: 5px; letter-spacing: 1px;padding-top: 35px;}
-                            @media screen and (max-width:800px) { padding: 3px; letter-spacing: 1px;}
-                            @media screen and (max-width:768px) { padding: 5px; letter-spacing: none;}
+                            @media screen and (max-width:800px) { padding: 3px; letter-spacing: 1px;padding-top: 40px;}
+                            @media screen and (max-width:768px) { padding: 5px; letter-spacing: none;padding-top: 29px;}
                         }
                         &:hover {
                             background-color: @Color1;
@@ -210,7 +215,6 @@ body {
                 @media only screen and (max-width : 480px) {}
                 #socialLinksTitle {
                     h5 {
-                        //.make-xs-column(5);
                         text-align: center;
                     }
                 }
@@ -224,7 +228,6 @@ body {
             #searchBar {
                 float: right;
                 margin-left: 0;
-                background-color: @tempColor;
             }
             @media only screen and (max-width : 480px) {}
         }

@@ -46,6 +46,7 @@ hwi_oauth_login:
     resource: "@HWIOAuthBundle/Resources/config/routing/login.xml"
     prefix:   /secured/login
     
-#
-#facebook_login:
-#    pattern: /secured/login/check-facebook
+
+facebook_login:
+    path: /secured/login/login_facebook
+    defaults: { _controller: YallaWebsiteFrontendBundle:Default:FaceBookRedirect }

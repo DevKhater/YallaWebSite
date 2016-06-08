@@ -4,8 +4,8 @@ home_header_first:
     cache_max_age: 28800
     random: true
     format: horiz
-    media: 38
-    data: [{ type: image, link: /uploads/media/adv/0001/01/thumb_38_adv_horiz.jpeg, target: 'http://www.ggg.com', weight: 5 }]
+    media: 149
+    data: [{ type: image, link: /uploads/media/adv/0001/01/thumb_149_adv_horiz.png, target: 'http://www.lalaland.com/', weight: 5 }]
 home_header_second:
     cache_public: true
     cache_shared_max_age: 86400
@@ -52,5 +52,5 @@ snapshot_popup:
     cache_max_age: 28800
     random: true
     format: snapadv
-    media: 41
-    data: [{ type: image, link: /uploads/media/adv/0001/01/thumb_41_adv_snapadv.jpeg, target: 'http://www.ggg.com', weight: 5 }]
+    media: 150
+    data: [{ type: image, link: /uploads/media/adv/0001/01/thumb_150_adv_snapadv.jpeg, target: 'http://www.lalaland.com/', weight: 5 }]

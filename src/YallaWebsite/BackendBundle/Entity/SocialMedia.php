@@ -60,8 +60,6 @@ class SocialMedia
     public function setSocialMediaData($socialMediaData)
     {
         $this->socialMediaData = $socialMediaData;
-
-        return $this;
     }
 
     /**

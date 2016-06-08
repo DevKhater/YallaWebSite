@@ -10,9 +10,9 @@
                 <div class="artistContent" data-toggle="modal" data-target="#{{artist.id}}" style="background-image: url('{% path  artist.media, 'displayIndex' %}')">
                 </div>
                 <div class="artistDivTitle" data-toggle="modal" data-target="#{{artist.id}}" >
-                    <button type="button" class="btn btn-secondary btn-xs customArtistButton">
+                    <span type="button" class="btn btn-secondary btn-xs customArtistButton">
                         {{ artist.title }}
-                    </button>
+                    </span>
                 </div>
                 <div id="{{artist.id}}" class="modal fade" role="dialog">
                     <div class="modal-dialog">

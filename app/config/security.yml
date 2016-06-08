@@ -12,31 +12,9 @@ security:
 
     providers:
         fos_userbundle:
-            id: fos_user.user_provider.username_email
-
-#    firewalls:
-
-#        secured_area:
-#            pattern: ^/secured/
-#            anonymous: ~
-#            oauth:
-#                resource_owners:
-#                    facebook:      /secured/login/login_facebook
-#                login_path:        /secured/login
-#                check_path:        /secured/login_check
-#                failure_path:      /secured/login
-#                oauth_user_provider:
-#                    service: app.oauth.user_provider
-#                use_forward:       false
-#                oauth_user_provider:
-#                    service: hwi_oauth.user.provider.entity
-
+            id: fos_user.user_provider.username
 
     firewalls:
-        dev:
-            pattern:  ^/(_(profiler|wdt)|css|images|js)/
-            security: false
-        
         main:
             pattern: ^/
             form_login:
@@ -48,36 +26,21 @@ security:
             logout:
                 invalidate_session: false
             anonymous:    true
-        
         secured_area:
-            pattern: ^/
-            form_login:
-                provider: fos_userbundle
-                csrf_provider: form.csrf_provider
-                login_path: /login
-                check_path: /login_check
+            pattern: ^/secured/
+            anonymous: ~
             oauth:
                 resource_owners:
-                    facebook:           "/secured/login/check-facebook"
+                    facebook:      /secured/login/login_facebook
                 login_path:        /secured/login
+                check_path:        /secured/login_check
                 failure_path:      /secured/login
-
                 oauth_user_provider:
-                    #this is my custom user provider, created from FOSUBUserProvider - will manage the
-                    #automatic user registration on your site, with data from the provider (facebook. google, etc.)
                     service: my_user_provider
-            logout:       true
-            anonymous:    true
+                use_forward:       false
+                oauth_user_provider:
+                    service: hwi_oauth.user.provider.entity
 
-        login:
-            pattern:  ^/login$
-            security: false
-
-            remember_me:
-                key: "%secret%"
-                lifetime: 31536000 # 365 days in seconds
-                path: /
-                domain: ~ # Defaults to the current domain from $_SERVER
             
             
     access_control:

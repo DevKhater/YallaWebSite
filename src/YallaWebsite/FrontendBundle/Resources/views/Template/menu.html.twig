@@ -18,18 +18,18 @@
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-navbar-collapse-1">
         <ul class="nav navbar-nav">
-            <li><a href="/">Yalla</a></li>
-            <li><a href="/about">About</a></li>
-            <li><a href="/snapshots">Snapshots</a></li>
-            <li><a href="/events">Events</a></li>
+            <li><a href="{{path('yalla_website_frontend_homepage')}}">Yalla</a></li>
+            <li><a href="{{path('yalla_website_frontend_page_about')}}">About</a></li>
+            <li><a href="{{path('sonata_media_gallery_index')}}">Snapshots</a></li>
+            <li><a href="{{path('yalla_website_frontened_events')}}">Events</a></li>
             <li id='menuImageLogo'>{% image '@YallaWebsiteFrontendBundle/Resources/public/images/base/logo.png' %}
                 <img id='logo_icon' src="{{ asset_url }}" alt="YNL Logo" />
                 {% endimage %}
             </li>
-            <li><a href="/gossips">Gossip</a></li>
-            <li><a href="/guides">Guides</a></li>
-            <li><a href="/artists">Artists</a></li>
-            <li><a href="/contact">Contact</a></li>
+            <li><a href="{{path('yalla_website_frontened_articles')}}">Gossip</a></li>
+            <li><a href="{{path('yalla_website_frontened_venues')}}">Guides</a></li>
+            <li><a href="{{path('yalla_website_frontened_artists')}}">Artists</a></li>
+            <li><a href="{{path('yalla_website_frontend_homepage')}}">Contact</a></li>
 
         </ul>
     </div>

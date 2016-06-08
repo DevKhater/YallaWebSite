@@ -21,7 +21,7 @@
     height: 515px;
     padding-right: 0;
     padding-left: 0;
-    @media only screen and (min-width : 768px) {
+    @media only screen and (min-width : 769px) {
         .make-xs-column(8);
         padding-right: 0;
         padding-left: 0;
@@ -33,18 +33,35 @@
         padding-left: 0;
         height:250px;
     }
+    @media only screen and (max-width : 480px) {
+        .make-xs-column(12);
+        padding-right: 0;
+        padding-left: 0;
+        height:125px;
+    }
+    @media screen and (min-width:320px){}
+    @media screen and (min-width:375px){}
+    @media screen and (min-width:425px){}
+    @media screen and (min-width:768px){}
+    @media screen and (min-width:1024px){}
+    @media screen and (min-width:1440px){}
+    @media screen and (min-width:2560px){ height: 700px;}
 
     .HomeSliderDiv {
         .HomeSliderContent {
             .mediaIntoBG;
             min-height: 125px;
             position: relative;
-            @media only screen and (min-width : 768px) {
+            @media only screen and (min-width : 769px) {
                 height:500px;
             }
             @media only screen and (max-width : 768px) {
                 min-height:250px;
             }
+            @media only screen and (max-width : 480px) {
+                min-height:125px;
+            }
+            @media screen and (min-width:2560px){ height: 700px;}
 
             .HomeSlideDivTitle {
                 font-weight: bold;
@@ -68,7 +85,7 @@
     vertical-align: top;
     padding-left: 0px; 
     margin-left: 0px;
-    @media only screen and (min-width : 768px) {
+    @media only screen and (min-width : 769px) {
         .make-xs-column(4);
         padding: 0;
     }
@@ -79,7 +96,7 @@
     #yt_player, #hp_gallery { 
         width:100%;
         padding:0;
-        @media only screen and (min-width : 768px) {
+        @media only screen and (min-width : 769px) {
             .make-xs-column(12);
             padding: 0;
             height: 250px;
@@ -89,27 +106,47 @@
             padding: 0;
             height: 125px;
         }
+        @media only screen and (max-width : 480px) {
+            .make-xs-column(6);
+            padding: 0;
+            height: 75px;
+        }
+        @media screen and (min-width:2560px){ height: 350px;}
     }
+    #a_hp_gallery {
+        text-decoration: none;
+        color: @Color2;
+        &:link
+            {
+            color: @Color2;
+        }
+        &:hover
+            {
+            color: @Color2;
+        }
+        &:visited,&:active {
+            color: @Color2 ;
+        }
+        #hp_gallery {
+            .mediaIntoBG;
+            p {
+                line-height: 10px;
+                background-color: yellow;
+                height: 29px;
+                width: 89px;
+                margin: 0px;
+                display: table-cell;
+                vertical-align: middle;
+                padding: 9px;
+                position: absolute;
+                top: 23px;
+                left: 8px;
+                text-align: center;
+            }
 
-    #hp_gallery {
-        .mediaIntoBG;
-        p {
-            line-height: 10px;
-            background-color: yellow;
-            height: 29px;
-            width: 89px;
-            margin: 0px;
-            display: table-cell;
-            vertical-align: middle;
-            padding: 9px;
-            position: absolute;
-            top: 23px;
-            left: 8px;
-            text-align: center;
         }
     }
 }
-
 #homepage_part2 {
     background-color: #fff;
     margin-bottom: 2%;
@@ -126,67 +163,68 @@
         }
         .hp_sideArticles {
             padding:0;
-            margin-bottom: 25px;
             @media only screen and (min-width : 768px) {
                 .make-xs-column(12);
-                height: 250px;
+                margin-bottom:15px;
             }
             @media only screen and (max-width : 768px) {
                 .make-xs-column(6);
-                height: 250px;
             }
+            @media screen and (max-width:320px){height: 125px;margin-bottom:0;}
+            @media screen and (min-width:320px){margin-bottom:0;}
+            @media screen and (min-width:425px){height: 165px;}
+            @media screen and (min-width:768px){height: 250px;}
+            @media screen and (min-width:1024px){ margin-bottom: 26px;}
+            @media screen and (min-width:1440px){ margin-bottom: 26px;}
+            @media screen and (min-width:2560px){margin-bottom: 26px; height: 350px;}
             .hp_sideArticles_cont {
-                margin-bottom: 15px;
                 border: 2px solid @Color2;
                 .hp_sideArticle_image {
                     .mediaIntoBG;
                     width: 100%;
-                    height: 150px;
+                    @media screen and (max-width:320px){height: 65px;}
+                    @media screen and (max-width:320px){height: 75px;}
+                    @media screen and (min-width:320px){height: 75px;}
+                    @media screen and (min-width:425px){height: 100px;}
+                    @media screen and (min-width:768px){height: 150px;}
+                    @media screen and (min-width:2560px){height: 225px;}
                 }
                 .hp_sideArticle_text {
                     font-size: 1em;
                     height: 100px;
                     overflow: hidden;
+                    @media screen and (max-width:320px){height: 60px;}
+                    @media screen and (min-width:320px){height: 50px;}
+                    @media screen and (min-width:425px){height: 60px;}
+                    @media screen and (min-width:768px){height: 100px;}
+                    @media screen and (min-width:2560px){height: 125px;}
                     .sideArticle_text {
                         text-align: center;
                         height: 50px;
-                        @media screen and (max-width: 1087px){
-                            font-size: 0.9em;
-                            height:70px;
-                        }                        
-                        @media screen and (max-width: 820px){
-                            font-size: 0.8em;
-                            height:70px;
-                        }                        
-                        @media screen and (max-width: 768px){
-                            font-size: 1em;
-                            height:60px;
-                        }
-                        @media screen and (max-width: 480px){
-                            font-size: 0.8em;
-                        }
-
+                        overflow: hidden;
+                        @media screen and (max-width:320px){font-size: 8px;height: 30px;}
+                        @media screen and (min-width:320px){font-size: 8px;height: 25px;}
+                        @media screen and (min-width:425px){font-size: 11px;height: 30px;}
+                        @media screen and (min-width:768px){font-size: 16px;height: 50px;}
+                        @media screen and (min-width:1024px){font-size:15px; height: 60px;}
+                        @media screen and (min-width:1440px){font-size:17px; height: 60px;}
+                        @media screen and (min-width:2560px){font-size:29px; height: 69px;}
                     }
                     .sideArticle_button {
                         text-align: center;
                         height: 40px;
                         font-size: 0.9em;
                         padding: 2%;
+                        @media screen and (min-width:320px){height: 20px;}
                         button {
                             .homePageButtons;
-
-                            @media screen and (max-width: 1087px){
-                                font-size: 0.8em;
-                            }
-                            @media screen and (max-width: 820px){
-                                font-size: 0.7em;
-                            }
-                            @media screen and (max-width: 768px){
-                                font-size: 0.9em;
-                            }
-                            @media screen and (max-width: 480px){
-                                font-size: 0.7em;
-                            }
+                            @media screen and (max-width:320px){font-size: 8px;}
+                            @media screen and (min-width:320px){font-size: 8px;}
+                            @media screen and (min-width:425px){font-size: 11px;}
+                            @media screen and (min-width:768px){font-size: 16px;}
+                            @media screen and (min-width:1024px){font-size:15px;}
+                            @media screen and (min-width:1440px){font-size:17px;}
+                            @media screen and (min-width:2560px){font-size:24px; }
                         }
                     }
                 }
@@ -196,22 +234,17 @@
     #HomeArticlesFeatured {
         @media only screen and (min-width : 768px) {
             .make-xs-column(6);
-            height: 538px;
             padding: 0;
-
-
         }
         @media only screen and (max-width : 768px) {
             .make-xs-column(12);
-            height: 280px;
             padding: 0;
-
         }
         #TheFeaturedArticle{
             .mediaIntoBG;
             padding: 0;
             @media only screen and (min-width : 768px) {
-                height: 538px;
+                height: 530px;
                 padding-right: 0;
                 padding-left: 0;
 
@@ -221,6 +254,9 @@
                 padding: 0;
                 margin:15px;
             }
+            @media screen and (min-width:768px){height: 300px;}
+            @media screen and (min-width:1024px){height: 530px;}
+            @media screen and (min-width:2560px){height: 730px;}
             img {
                 position: absolute;
                 right: 0;
@@ -264,12 +300,21 @@
         }
     }
 }
+
+
 #homepage_part3 {
-    .hp_eventDay {
-        min-height: 200px;
+    .hp_eventDay {  
+/*        min-height: 200px;*/
         .mediaIntoBG;
         position: relative;
         border-radius: 5px;
+            @media screen and (max-width:319px){height: 75px;}
+            @media screen and (min-width:320px){height: 100px;}
+            @media screen and (min-width:425px){height: 125px;}
+            @media screen and (min-width:768px){height: 150px;}
+            @media screen and (min-width:1024px){height: 150px;}
+            @media screen and (min-width:1440px){height: 200px;}
+            @media screen and (min-width:2560px){height: 350px;}
         .eventDay_date{
             position: absolute;
             right: 0;
@@ -291,15 +336,29 @@
 
         .eventDay_TitleDiv {
             display: none;
-            min-height: 200px;
+/*            min-height: 200px;*/
             min-width: 100%;
             background-color: rgba(0,0,0,0.7);
             border-radius: 5px;
+            @media screen and (max-width:319px){height: 75px;}
+            @media screen and (min-width:320px){height: 100px;}
+            @media screen and (min-width:425px){height: 125px;}
+            @media screen and (min-width:768px){height: 150px;}
+            @media screen and (min-width:1024px){height: 150px;}
+            @media screen and (min-width:1440px){height: 200px;}
+            @media screen and (min-width:2560px){height: 350px;}
             .eventDay_title {
                 text-align:center;
-                line-height: 190px;
+/*                line-height: 190px;*/
                 color:#fff;
-                font-size: 2.5em;
+                font-size: 1.5em;
+                @media screen and (max-width:319px){line-height: 75px;}
+                @media screen and (min-width:320px){line-height: 100px;}
+                @media screen and (min-width:425px){line-height: 125px;}
+                @media screen and (min-width:768px){line-height: 150px;}
+                @media screen and (min-width:1024px){font-size:32px;line-height: 150px;}
+                @media screen and (min-width:1440px){font-size:32px;line-height: 200px;}
+                @media screen and (min-width:2560px){font-size:45px;line-height: 350px;}
                 a {
                     color: #fff;
                     text-decoration: none;

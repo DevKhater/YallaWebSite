@@ -4,6 +4,7 @@ namespace YallaWebsite\FrontendBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
+use HWI\Bundle\OAuthBundle\OAuth\Response\UserResponseInterface;
 
 class DefaultController extends Controller
 {
@@ -211,5 +212,11 @@ class DefaultController extends Controller
         $provider = $this->container->get($media->getProviderName());
         return $provider->generatePublicUrl($media, 'small');
     }
-
+    
+    public function FaceBookRedirectAction(Request $req)
+    {
+        
+        dump($req);EXIT;
+    }
+    
 }
