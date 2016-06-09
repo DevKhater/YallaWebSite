@@ -92,6 +92,9 @@ and open the template in the editor.
         background-color: @Color1;
         border-color: @Color1;
     }
+    @media screen and (max-width: 240px){
+        display: none;
+    }
 }
 .pagination_round_border {
     span {
@@ -102,6 +105,9 @@ and open the template in the editor.
         border-color: @Pagination-Gray;
         border-color: @Pagination-Gray;
         border: 1px solid @Pagination-Gray;
+        @media screen and (max-width: 152px){
+            display: none;
+        }
         &:hover {
             height: 34px;
             z-index: 2;

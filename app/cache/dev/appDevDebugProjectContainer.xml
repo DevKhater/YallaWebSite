@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <container xmlns="http://symfony.com/schema/dic/services" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
   <parameters>
-    <parameter key="kernel.root_dir">C:\TEMP\YNL_SERVER\app</parameter>
+    <parameter key="kernel.root_dir">F:\MK\YallaWebSite\app</parameter>
     <parameter key="kernel.environment">dev</parameter>
     <parameter key="kernel.debug">true</parameter>
     <parameter key="kernel.name">app</parameter>
-    <parameter key="kernel.cache_dir">C:/TEMP/YNL_SERVER/app/cache/dev</parameter>
-    <parameter key="kernel.logs_dir">C:\TEMP\YNL_SERVER\app\logs</parameter>
+    <parameter key="kernel.cache_dir">F:/MK/YallaWebSite/app/cache/dev</parameter>
+    <parameter key="kernel.logs_dir">F:\MK\YallaWebSite\app\logs</parameter>
     <parameter key="kernel.bundles" type="collection">
       <parameter key="FrameworkBundle">Symfony\Bundle\FrameworkBundle\FrameworkBundle</parameter>
       <parameter key="SecurityBundle">Symfony\Bundle\SecurityBundle\SecurityBundle</parameter>
@@ -44,9 +44,9 @@
     <parameter key="kernel.container_class">appDevDebugProjectContainer</parameter>
     <parameter key="database_host">127.0.0.1</parameter>
     <parameter key="database_port">3306</parameter>
-    <parameter key="database_name">yallaNightLife</parameter>
+    <parameter key="database_name">ynl_us_test</parameter>
     <parameter key="database_user">root</parameter>
-    <parameter key="database_password">123123123</parameter>
+    <parameter key="database_password">null</parameter>
     <parameter key="mailer_transport">smtp</parameter>
     <parameter key="mailer_host">127.0.0.1</parameter>
     <parameter key="mailer_user">null</parameter>
@@ -56,7 +56,7 @@
     <parameter key="yaml_manager.class">YallaWebsite\BackendBundle\Factory\YamlManager</parameter>
     <parameter key="frontend_manager.class">YallaWebsite\FrontendBundle\Factory\FrontendManager</parameter>
     <parameter key="ads" type="collection">
-      <parameter key="uri">C:\TEMP\YNL_SERVER\app/../src/YallaWebsite/BackendBundle/Resources/config/ads_manager.yml</parameter>
+      <parameter key="uri">F:\MK\YallaWebSite\app/../src/YallaWebsite/BackendBundle/Resources/config/ads_manager.yml</parameter>
       <parameter key="allowed_types" type="collection">
         <parameter>image</parameter>
         <parameter>video</parameter>
@@ -139,7 +139,7 @@
     <parameter key="session.storage.options" type="collection">
       <parameter key="gc_probability">1</parameter>
     </parameter>
-    <parameter key="session.save_path">C:/TEMP/YNL_SERVER/app/cache/dev/sessions</parameter>
+    <parameter key="session.save_path">F:/MK/YallaWebSite/app/cache/dev/sessions</parameter>
     <parameter key="session.metadata.update_threshold">0</parameter>
     <parameter key="security.secure_random.class">Symfony\Component\Security\Core\Util\SecureRandom</parameter>
     <parameter key="form.resolved_type_factory.class">Symfony\Component\Form\ResolvedFormTypeFactory</parameter>
@@ -199,7 +199,7 @@
     <parameter key="data_collector.form.extractor.class">Symfony\Component\Form\Extension\DataCollector\FormDataExtractor</parameter>
     <parameter key="profiler_listener.only_exceptions">false</parameter>
     <parameter key="profiler_listener.only_master_requests">false</parameter>
-    <parameter key="profiler.storage.dsn">file:C:/TEMP/YNL_SERVER/app/cache/dev/profiler</parameter>
+    <parameter key="profiler.storage.dsn">file:F:/MK/YallaWebSite/app/cache/dev/profiler</parameter>
     <parameter key="profiler.storage.username"></parameter>
     <parameter key="profiler.storage.password"></parameter>
     <parameter key="profiler.storage.lifetime">86400</parameter>
@@ -223,7 +223,7 @@
     <parameter key="router.request_context.host">localhost</parameter>
     <parameter key="router.request_context.scheme">http</parameter>
     <parameter key="router.request_context.base_url"></parameter>
-    <parameter key="router.resource">C:/TEMP/YNL_SERVER/app/cache/dev/assetic/routing.yml</parameter>
+    <parameter key="router.resource">F:/MK/YallaWebSite/app/cache/dev/assetic/routing.yml</parameter>
     <parameter key="router.cache_class_prefix">appDev</parameter>
     <parameter key="request_listener.http_port">80</parameter>
     <parameter key="request_listener.https_port">443</parameter>
@@ -234,7 +234,7 @@
     <parameter key="debug.stopwatch.class">Symfony\Component\Stopwatch\Stopwatch</parameter>
     <parameter key="debug.error_handler.throw_at">-1</parameter>
     <parameter key="debug.event_dispatcher.class">Symfony\Component\HttpKernel\Debug\TraceableEventDispatcher</parameter>
-    <parameter key="debug.container.dump">C:/TEMP/YNL_SERVER/app/cache/dev/appDevDebugProjectContainer.xml</parameter>
+    <parameter key="debug.container.dump">F:/MK/YallaWebSite/app/cache/dev/appDevDebugProjectContainer.xml</parameter>
     <parameter key="debug.controller_resolver.class">Symfony\Component\HttpKernel\Controller\TraceableControllerResolver</parameter>
     <parameter key="security.context.class">Symfony\Component\Security\Core\SecurityContext</parameter>
     <parameter key="security.user_checker.class">Symfony\Component\Security\Core\User\UserChecker</parameter>
@@ -441,7 +441,7 @@
     <parameter key="swiftmailer.mailer.default.transport.smtp.auth_mode">null</parameter>
     <parameter key="swiftmailer.mailer.default.transport.smtp.timeout">30</parameter>
     <parameter key="swiftmailer.mailer.default.transport.smtp.source_ip">null</parameter>
-    <parameter key="swiftmailer.spool.default.memory.path">C:/TEMP/YNL_SERVER/app/cache/dev/swiftmailer/spool/default</parameter>
+    <parameter key="swiftmailer.spool.default.memory.path">F:/MK/YallaWebSite/app/cache/dev/swiftmailer/spool/default</parameter>
     <parameter key="swiftmailer.mailer.default.spool.enabled">true</parameter>
     <parameter key="swiftmailer.mailer.default.plugin.impersonate">null</parameter>
     <parameter key="swiftmailer.mailer.default.single_address">null</parameter>
@@ -466,7 +466,7 @@
     <parameter key="assetic.worker.cache_busting.class">Assetic\Factory\Worker\CacheBustingWorker</parameter>
     <parameter key="assetic.value_supplier.class">Symfony\Bundle\AsseticBundle\DefaultValueSupplier</parameter>
     <parameter key="assetic.node.paths" type="collection"/>
-    <parameter key="assetic.cache_dir">C:/TEMP/YNL_SERVER/app/cache/dev/assetic</parameter>
+    <parameter key="assetic.cache_dir">F:/MK/YallaWebSite/app/cache/dev/assetic</parameter>
     <parameter key="assetic.bundles" type="collection">
       <parameter>YallaWebsiteBackendBundle</parameter>
       <parameter>YallaWebsiteFrontendBundle</parameter>
@@ -482,12 +482,12 @@
     <parameter key="assetic.debug">true</parameter>
     <parameter key="assetic.use_controller">true</parameter>
     <parameter key="assetic.enable_profiler">false</parameter>
-    <parameter key="assetic.read_from">C:\TEMP\YNL_SERVER\app/../web</parameter>
-    <parameter key="assetic.write_to">C:\TEMP\YNL_SERVER\app/../web</parameter>
+    <parameter key="assetic.read_from">F:\MK\YallaWebSite\app/../web</parameter>
+    <parameter key="assetic.write_to">F:\MK\YallaWebSite\app/../web</parameter>
     <parameter key="assetic.variables" type="collection"/>
     <parameter key="assetic.java.bin">C:\ProgramData\Oracle\Java\javapath\java.EXE</parameter>
     <parameter key="assetic.node.bin">C:\Program Files\nodejs\\node.EXE</parameter>
-    <parameter key="assetic.ruby.bin">/usr/bin/ruby</parameter>
+    <parameter key="assetic.ruby.bin">C:\Ruby22\bin\ruby.EXE</parameter>
     <parameter key="assetic.sass.bin">/usr/bin/sass</parameter>
     <parameter key="assetic.reactjsx.bin">/usr/bin/jsx</parameter>
     <parameter key="assetic.filter.lessphp.class">Assetic\Filter\LessphpFilter</parameter>
@@ -613,7 +613,7 @@
     <parameter key="doctrine.orm.second_level_cache.cache_configuration.class">Doctrine\ORM\Cache\CacheConfiguration</parameter>
     <parameter key="doctrine.orm.second_level_cache.regions_configuration.class">Doctrine\ORM\Cache\RegionsConfiguration</parameter>
     <parameter key="doctrine.orm.auto_generate_proxy_classes">true</parameter>
-    <parameter key="doctrine.orm.proxy_dir">C:/TEMP/YNL_SERVER/app/cache/dev/doctrine/orm/Proxies</parameter>
+    <parameter key="doctrine.orm.proxy_dir">F:/MK/YallaWebSite/app/cache/dev/doctrine/orm/Proxies</parameter>
     <parameter key="doctrine.orm.proxy_namespace">Proxies</parameter>
     <parameter key="sensio_framework_extra.view.guesser.class">Sensio\Bundle\FrameworkExtraBundle\Templating\TemplateGuesser</parameter>
     <parameter key="sensio_framework_extra.controller.listener.class">Sensio\Bundle\FrameworkExtraBundle\EventListener\ControllerListener</parameter>
@@ -1099,16 +1099,16 @@
   </parameters>
   <services>
     <service id="app.custom_sitemap_service" class="YallaWebsite\BackendBundle\Model\SitemapIterator"/>
+    <service id="sonata.media.resizer.custom" class="YallaWebsite\BackendBundle\Resizer\CustomResizer">
+      <argument type="service" id="sonata.media.adapter.image.gd"/>
+      <argument>outbound</argument>
+      <argument type="service" id="sonata.media.metadata.proxy"/>
+    </service>
     <service id="my_user_provider" class="YallaWebsite\BackendBundle\Security\Core\User\FOSUBUserProvider">
       <argument type="service" id="fos_user.user_manager"/>
       <argument type="collection">
         <argument key="facebook">facebook_id</argument>
       </argument>
-    </service>
-    <service id="sonata.media.resizer.fixeddimensions" class="Application\Sonata\MediaBundle\Resizer\FixedDimensionsResizer">
-      <argument type="service" id="sonata.media.adapter.image.gd"/>
-      <argument>outbound</argument>
-      <argument type="service" id="sonata.media.metadata.proxy"/>
     </service>
     <service id="hwi_oauth.user.provider.entity" class="HWI\Bundle\OAuthBundle\Security\Core\User\OAuthUserProvider"/>
     <service id="controller_name_converter" class="Symfony\Bundle\FrameworkBundle\Controller\ControllerNameParser" public="false">
@@ -1150,7 +1150,7 @@
               <service class="Symfony\Bundle\FrameworkBundle\CacheWarmer\TemplateFinder" public="false">
                 <argument type="service" id="kernel"/>
                 <argument type="service" id="templating.filename_parser"/>
-                <argument>C:\TEMP\YNL_SERVER\app/Resources</argument>
+                <argument>F:\MK\YallaWebSite\app/Resources</argument>
               </service>
             </argument>
             <argument type="service" id="templating.locator"/>
@@ -1182,7 +1182,7 @@
               <service class="Symfony\Bundle\FrameworkBundle\CacheWarmer\TemplateFinder" public="false">
                 <argument type="service" id="kernel"/>
                 <argument type="service" id="templating.filename_parser"/>
-                <argument>C:\TEMP\YNL_SERVER\app/Resources</argument>
+                <argument>F:\MK\YallaWebSite\app/Resources</argument>
               </service>
             </argument>
           </service>
@@ -1204,7 +1204,7 @@
     <service id="filesystem" class="Symfony\Component\Filesystem\Filesystem"/>
     <service id="file_locator" class="Symfony\Component\HttpKernel\Config\FileLocator">
       <argument type="service" id="kernel"/>
-      <argument>C:\TEMP\YNL_SERVER\app/Resources</argument>
+      <argument>F:\MK\YallaWebSite\app/Resources</argument>
     </service>
     <service id="uri_signer" class="Symfony\Component\HttpKernel\UriSigner">
       <argument>ThisTokenIsNotSoSecretChangeIt</argument>
@@ -1312,379 +1312,379 @@
         </argument>
       </argument>
       <argument type="collection">
-        <argument key="cache_dir">C:/TEMP/YNL_SERVER/app/cache/dev/translations</argument>
+        <argument key="cache_dir">F:/MK/YallaWebSite/app/cache/dev/translations</argument>
         <argument key="debug">true</argument>
         <argument key="resource_files" type="collection">
           <argument key="af" type="collection">
-            <argument>C:\TEMP\YNL_SERVER\vendor\symfony\symfony\src\Symfony\Component\Validator/Resources/translations\validators.af.xlf</argument>
-            <argument>C:\TEMP\YNL_SERVER\vendor\friendsofsymfony\user-bundle/Resources/translations\FOSUserBundle.af.yml</argument>
+            <argument>F:\MK\YallaWebSite\vendor\symfony\symfony\src\Symfony\Component\Validator/Resources/translations\validators.af.xlf</argument>
+            <argument>F:\MK\YallaWebSite\vendor\friendsofsymfony\user-bundle/Resources/translations\FOSUserBundle.af.yml</argument>
           </argument>
           <argument key="ar" type="collection">
-            <argument>C:\TEMP\YNL_SERVER\vendor\symfony\symfony\src\Symfony\Component\Validator/Resources/translations\validators.ar.xlf</argument>
-            <argument>C:\TEMP\YNL_SERVER\vendor\symfony\symfony\src\Symfony\Component\Form/Resources/translations\validators.ar.xlf</argument>
-            <argument>C:\TEMP\YNL_SERVER\vendor\symfony\symfony\src\Symfony\Component\Security\Core\Exception/../Resources/translations\security.ar.xlf</argument>
-            <argument>C:\TEMP\YNL_SERVER\vendor\sonata-project\core-bundle/Resources/translations\SonataCoreBundle.ar.xliff</argument>
-            <argument>C:\TEMP\YNL_SERVER\vendor\friendsofsymfony\user-bundle/Resources/translations\FOSUserBundle.ar.yml</argument>
-            <argument>C:\TEMP\YNL_SERVER\vendor\friendsofsymfony\user-bundle/Resources/translations\validators.ar.yml</argument>
+            <argument>F:\MK\YallaWebSite\vendor\symfony\symfony\src\Symfony\Component\Validator/Resources/translations\validators.ar.xlf</argument>
+            <argument>F:\MK\YallaWebSite\vendor\symfony\symfony\src\Symfony\Component\Form/Resources/translations\validators.ar.xlf</argument>
+            <argument>F:\MK\YallaWebSite\vendor\symfony\symfony\src\Symfony\Component\Security\Core\Exception/../Resources/translations\security.ar.xlf</argument>
+            <argument>F:\MK\YallaWebSite\vendor\sonata-project\core-bundle/Resources/translations\SonataCoreBundle.ar.xliff</argument>
+            <argument>F:\MK\YallaWebSite\vendor\friendsofsymfony\user-bundle/Resources/translations\FOSUserBundle.ar.yml</argument>
+            <argument>F:\MK\YallaWebSite\vendor\friendsofsymfony\user-bundle/Resources/translations\validators.ar.yml</argument>
           </argument>
           <argument key="az" type="collection">
-            <argument>C:\TEMP\YNL_SERVER\vendor\symfony\symfony\src\Symfony\Component\Validator/Resources/translations\validators.az.xlf</argument>
-            <argument>C:\TEMP\YNL_SERVER\vendor\symfony\symfony\src\Symfony\Component\Form/Resources/translations\validators.az.xlf</argument>
-            <argument>C:\TEMP\YNL_SERVER\vendor\symfony\symfony\src\Symfony\Component\Security\Core\Exception/../Resources/translations\security.az.xlf</argument>
+            <argument>F:\MK\YallaWebSite\vendor\symfony\symfony\src\Symfony\Component\Validator/Resources/translations\validators.az.xlf</argument>
+            <argument>F:\MK\YallaWebSite\vendor\symfony\symfony\src\Symfony\Component\Form/Resources/translations\validators.az.xlf</argument>
+            <argument>F:\MK\YallaWebSite\vendor\symfony\symfony\src\Symfony\Component\Security\Core\Exception/../Resources/translations\security.az.xlf</argument>
           </argument>
           <argument key="bg" type="collection">
-            <argument>C:\TEMP\YNL_SERVER\vendor\symfony\symfony\src\Symfony\Component\Validator/Resources/translations\validators.bg.xlf</argument>
-            <argument>C:\TEMP\YNL_SERVER\vendor\symfony\symfony\src\Symfony\Component\Form/Resources/translations\validators.bg.xlf</argument>
-            <argument>C:\TEMP\YNL_SERVER\vendor\symfony\symfony\src\Symfony\Component\Security\Core\Exception/../Resources/translations\security.bg.xlf</argument>
-            <argument>C:\TEMP\YNL_SERVER\vendor\sonata-project\core-bundle/Resources/translations\SonataCoreBundle.bg.xliff</argument>
-            <argument>C:\TEMP\YNL_SERVER\vendor\sonata-project\media-bundle/Resources/translations\SonataMediaBundle.bg.xliff</argument>
-            <argument>C:\TEMP\YNL_SERVER\vendor\friendsofsymfony\user-bundle/Resources/translations\FOSUserBundle.bg.yml</argument>
-            <argument>C:\TEMP\YNL_SERVER\vendor\friendsofsymfony\user-bundle/Resources/translations\validators.bg.yml</argument>
+            <argument>F:\MK\YallaWebSite\vendor\symfony\symfony\src\Symfony\Component\Validator/Resources/translations\validators.bg.xlf</argument>
+            <argument>F:\MK\YallaWebSite\vendor\symfony\symfony\src\Symfony\Component\Form/Resources/translations\validators.bg.xlf</argument>
+            <argument>F:\MK\YallaWebSite\vendor\symfony\symfony\src\Symfony\Component\Security\Core\Exception/../Resources/translations\security.bg.xlf</argument>
+            <argument>F:\MK\YallaWebSite\vendor\sonata-project\core-bundle/Resources/translations\SonataCoreBundle.bg.xliff</argument>
+            <argument>F:\MK\YallaWebSite\vendor\sonata-project\media-bundle/Resources/translations\SonataMediaBundle.bg.xliff</argument>
+            <argument>F:\MK\YallaWebSite\vendor\friendsofsymfony\user-bundle/Resources/translations\FOSUserBundle.bg.yml</argument>
+            <argument>F:\MK\YallaWebSite\vendor\friendsofsymfony\user-bundle/Resources/translations\validators.bg.yml</argument>
           </argument>
           <argument key="ca" type="collection">
-            <argument>C:\TEMP\YNL_SERVER\vendor\symfony\symfony\src\Symfony\Component\Validator/Resources/translations\validators.ca.xlf</argument>
-            <argument>C:\TEMP\YNL_SERVER\vendor\symfony\symfony\src\Symfony\Component\Form/Resources/translations\validators.ca.xlf</argument>
-            <argument>C:\TEMP\YNL_SERVER\vendor\symfony\symfony\src\Symfony\Component\Security\Core\Exception/../Resources/translations\security.ca.xlf</argument>
-            <argument>C:\TEMP\YNL_SERVER\vendor\sonata-project\core-bundle/Resources/translations\SonataCoreBundle.ca.xliff</argument>
-            <argument>C:\TEMP\YNL_SERVER\vendor\friendsofsymfony\user-bundle/Resources/translations\FOSUserBundle.ca.yml</argument>
-            <argument>C:\TEMP\YNL_SERVER\vendor\friendsofsymfony\user-bundle/Resources/translations\validators.ca.yml</argument>
+            <argument>F:\MK\YallaWebSite\vendor\symfony\symfony\src\Symfony\Component\Validator/Resources/translations\validators.ca.xlf</argument>
+            <argument>F:\MK\YallaWebSite\vendor\symfony\symfony\src\Symfony\Component\Form/Resources/translations\validators.ca.xlf</argument>
+            <argument>F:\MK\YallaWebSite\vendor\symfony\symfony\src\Symfony\Component\Security\Core\Exception/../Resources/translations\security.ca.xlf</argument>
+            <argument>F:\MK\YallaWebSite\vendor\sonata-project\core-bundle/Resources/translations\SonataCoreBundle.ca.xliff</argument>
+            <argument>F:\MK\YallaWebSite\vendor\friendsofsymfony\user-bundle/Resources/translations\FOSUserBundle.ca.yml</argument>
+            <argument>F:\MK\YallaWebSite\vendor\friendsofsymfony\user-bundle/Resources/translations\validators.ca.yml</argument>
           </argument>
           <argument key="cs" type="collection">
-            <argument>C:\TEMP\YNL_SERVER\vendor\symfony\symfony\src\Symfony\Component\Validator/Resources/translations\validators.cs.xlf</argument>
-            <argument>C:\TEMP\YNL_SERVER\vendor\symfony\symfony\src\Symfony\Component\Form/Resources/translations\validators.cs.xlf</argument>
-            <argument>C:\TEMP\YNL_SERVER\vendor\symfony\symfony\src\Symfony\Component\Security\Core\Exception/../Resources/translations\security.cs.xlf</argument>
-            <argument>C:\TEMP\YNL_SERVER\vendor\sonata-project\core-bundle/Resources/translations\SonataCoreBundle.cs.xliff</argument>
-            <argument>C:\TEMP\YNL_SERVER\vendor\friendsofsymfony\user-bundle/Resources/translations\FOSUserBundle.cs.yml</argument>
-            <argument>C:\TEMP\YNL_SERVER\vendor\friendsofsymfony\user-bundle/Resources/translations\validators.cs.yml</argument>
+            <argument>F:\MK\YallaWebSite\vendor\symfony\symfony\src\Symfony\Component\Validator/Resources/translations\validators.cs.xlf</argument>
+            <argument>F:\MK\YallaWebSite\vendor\symfony\symfony\src\Symfony\Component\Form/Resources/translations\validators.cs.xlf</argument>
+            <argument>F:\MK\YallaWebSite\vendor\symfony\symfony\src\Symfony\Component\Security\Core\Exception/../Resources/translations\security.cs.xlf</argument>
+            <argument>F:\MK\YallaWebSite\vendor\sonata-project\core-bundle/Resources/translations\SonataCoreBundle.cs.xliff</argument>
+            <argument>F:\MK\YallaWebSite\vendor\friendsofsymfony\user-bundle/Resources/translations\FOSUserBundle.cs.yml</argument>
+            <argument>F:\MK\YallaWebSite\vendor\friendsofsymfony\user-bundle/Resources/translations\validators.cs.yml</argument>
           </argument>
           <argument key="cy" type="collection">
-            <argument>C:\TEMP\YNL_SERVER\vendor\symfony\symfony\src\Symfony\Component\Validator/Resources/translations\validators.cy.xlf</argument>
+            <argument>F:\MK\YallaWebSite\vendor\symfony\symfony\src\Symfony\Component\Validator/Resources/translations\validators.cy.xlf</argument>
           </argument>
           <argument key="da" type="collection">
-            <argument>C:\TEMP\YNL_SERVER\vendor\symfony\symfony\src\Symfony\Component\Validator/Resources/translations\validators.da.xlf</argument>
-            <argument>C:\TEMP\YNL_SERVER\vendor\symfony\symfony\src\Symfony\Component\Form/Resources/translations\validators.da.xlf</argument>
-            <argument>C:\TEMP\YNL_SERVER\vendor\symfony\symfony\src\Symfony\Component\Security\Core\Exception/../Resources/translations\security.da.xlf</argument>
-            <argument>C:\TEMP\YNL_SERVER\vendor\friendsofsymfony\user-bundle/Resources/translations\FOSUserBundle.da.yml</argument>
-            <argument>C:\TEMP\YNL_SERVER\vendor\friendsofsymfony\user-bundle/Resources/translations\validators.da.yml</argument>
+            <argument>F:\MK\YallaWebSite\vendor\symfony\symfony\src\Symfony\Component\Validator/Resources/translations\validators.da.xlf</argument>
+            <argument>F:\MK\YallaWebSite\vendor\symfony\symfony\src\Symfony\Component\Form/Resources/translations\validators.da.xlf</argument>
+            <argument>F:\MK\YallaWebSite\vendor\symfony\symfony\src\Symfony\Component\Security\Core\Exception/../Resources/translations\security.da.xlf</argument>
+            <argument>F:\MK\YallaWebSite\vendor\friendsofsymfony\user-bundle/Resources/translations\FOSUserBundle.da.yml</argument>
+            <argument>F:\MK\YallaWebSite\vendor\friendsofsymfony\user-bundle/Resources/translations\validators.da.yml</argument>
           </argument>
           <argument key="de" type="collection">
-            <argument>C:\TEMP\YNL_SERVER\vendor\symfony\symfony\src\Symfony\Component\Validator/Resources/translations\validators.de.xlf</argument>
-            <argument>C:\TEMP\YNL_SERVER\vendor\symfony\symfony\src\Symfony\Component\Form/Resources/translations\validators.de.xlf</argument>
-            <argument>C:\TEMP\YNL_SERVER\vendor\symfony\symfony\src\Symfony\Component\Security\Core\Exception/../Resources/translations\security.de.xlf</argument>
-            <argument>C:\TEMP\YNL_SERVER\vendor\sonata-project\core-bundle/Resources/translations\SonataCoreBundle.de.xliff</argument>
-            <argument>C:\TEMP\YNL_SERVER\vendor\sonata-project\media-bundle/Resources/translations\SonataMediaBundle.de.xliff</argument>
-            <argument>C:\TEMP\YNL_SERVER\vendor\friendsofsymfony\user-bundle/Resources/translations\FOSUserBundle.de.yml</argument>
-            <argument>C:\TEMP\YNL_SERVER\vendor\friendsofsymfony\user-bundle/Resources/translations\validators.de.yml</argument>
-            <argument>C:\TEMP\YNL_SERVER\vendor\hwi\oauth-bundle/Resources/translations\HWIOAuthBundle.de.yml</argument>
+            <argument>F:\MK\YallaWebSite\vendor\symfony\symfony\src\Symfony\Component\Validator/Resources/translations\validators.de.xlf</argument>
+            <argument>F:\MK\YallaWebSite\vendor\symfony\symfony\src\Symfony\Component\Form/Resources/translations\validators.de.xlf</argument>
+            <argument>F:\MK\YallaWebSite\vendor\symfony\symfony\src\Symfony\Component\Security\Core\Exception/../Resources/translations\security.de.xlf</argument>
+            <argument>F:\MK\YallaWebSite\vendor\sonata-project\core-bundle/Resources/translations\SonataCoreBundle.de.xliff</argument>
+            <argument>F:\MK\YallaWebSite\vendor\sonata-project\media-bundle/Resources/translations\SonataMediaBundle.de.xliff</argument>
+            <argument>F:\MK\YallaWebSite\vendor\friendsofsymfony\user-bundle/Resources/translations\FOSUserBundle.de.yml</argument>
+            <argument>F:\MK\YallaWebSite\vendor\friendsofsymfony\user-bundle/Resources/translations\validators.de.yml</argument>
+            <argument>F:\MK\YallaWebSite\vendor\hwi\oauth-bundle/Resources/translations\HWIOAuthBundle.de.yml</argument>
           </argument>
           <argument key="el" type="collection">
-            <argument>C:\TEMP\YNL_SERVER\vendor\symfony\symfony\src\Symfony\Component\Validator/Resources/translations\validators.el.xlf</argument>
-            <argument>C:\TEMP\YNL_SERVER\vendor\symfony\symfony\src\Symfony\Component\Form/Resources/translations\validators.el.xlf</argument>
-            <argument>C:\TEMP\YNL_SERVER\vendor\symfony\symfony\src\Symfony\Component\Security\Core\Exception/../Resources/translations\security.el.xlf</argument>
-            <argument>C:\TEMP\YNL_SERVER\vendor\friendsofsymfony\user-bundle/Resources/translations\FOSUserBundle.el.yml</argument>
-            <argument>C:\TEMP\YNL_SERVER\vendor\friendsofsymfony\user-bundle/Resources/translations\validators.el.yml</argument>
+            <argument>F:\MK\YallaWebSite\vendor\symfony\symfony\src\Symfony\Component\Validator/Resources/translations\validators.el.xlf</argument>
+            <argument>F:\MK\YallaWebSite\vendor\symfony\symfony\src\Symfony\Component\Form/Resources/translations\validators.el.xlf</argument>
+            <argument>F:\MK\YallaWebSite\vendor\symfony\symfony\src\Symfony\Component\Security\Core\Exception/../Resources/translations\security.el.xlf</argument>
+            <argument>F:\MK\YallaWebSite\vendor\friendsofsymfony\user-bundle/Resources/translations\FOSUserBundle.el.yml</argument>
+            <argument>F:\MK\YallaWebSite\vendor\friendsofsymfony\user-bundle/Resources/translations\validators.el.yml</argument>
           </argument>
           <argument key="en" type="collection">
-            <argument>C:\TEMP\YNL_SERVER\vendor\symfony\symfony\src\Symfony\Component\Validator/Resources/translations\validators.en.xlf</argument>
-            <argument>C:\TEMP\YNL_SERVER\vendor\symfony\symfony\src\Symfony\Component\Form/Resources/translations\validators.en.xlf</argument>
-            <argument>C:\TEMP\YNL_SERVER\vendor\symfony\symfony\src\Symfony\Component\Security\Core\Exception/../Resources/translations\security.en.xlf</argument>
-            <argument>C:\TEMP\YNL_SERVER\vendor\sonata-project\core-bundle/Resources/translations\SonataCoreBundle.en.xliff</argument>
-            <argument>C:\TEMP\YNL_SERVER\vendor\sonata-project\media-bundle/Resources/translations\SonataMediaBundle.en.xliff</argument>
-            <argument>C:\TEMP\YNL_SERVER\vendor\friendsofsymfony\user-bundle/Resources/translations\FOSUserBundle.en.yml</argument>
-            <argument>C:\TEMP\YNL_SERVER\vendor\friendsofsymfony\user-bundle/Resources/translations\validators.en.yml</argument>
-            <argument>C:\TEMP\YNL_SERVER\vendor\sonata-project\seo-bundle/Resources/translations\SonataSeoBundle.en.xliff</argument>
-            <argument>C:\TEMP\YNL_SERVER\vendor\hwi\oauth-bundle/Resources/translations\HWIOAuthBundle.en.yml</argument>
+            <argument>F:\MK\YallaWebSite\vendor\symfony\symfony\src\Symfony\Component\Validator/Resources/translations\validators.en.xlf</argument>
+            <argument>F:\MK\YallaWebSite\vendor\symfony\symfony\src\Symfony\Component\Form/Resources/translations\validators.en.xlf</argument>
+            <argument>F:\MK\YallaWebSite\vendor\symfony\symfony\src\Symfony\Component\Security\Core\Exception/../Resources/translations\security.en.xlf</argument>
+            <argument>F:\MK\YallaWebSite\vendor\sonata-project\core-bundle/Resources/translations\SonataCoreBundle.en.xliff</argument>
+            <argument>F:\MK\YallaWebSite\vendor\sonata-project\media-bundle/Resources/translations\SonataMediaBundle.en.xliff</argument>
+            <argument>F:\MK\YallaWebSite\vendor\friendsofsymfony\user-bundle/Resources/translations\FOSUserBundle.en.yml</argument>
+            <argument>F:\MK\YallaWebSite\vendor\friendsofsymfony\user-bundle/Resources/translations\validators.en.yml</argument>
+            <argument>F:\MK\YallaWebSite\vendor\sonata-project\seo-bundle/Resources/translations\SonataSeoBundle.en.xliff</argument>
+            <argument>F:\MK\YallaWebSite\vendor\hwi\oauth-bundle/Resources/translations\HWIOAuthBundle.en.yml</argument>
           </argument>
           <argument key="es" type="collection">
-            <argument>C:\TEMP\YNL_SERVER\vendor\symfony\symfony\src\Symfony\Component\Validator/Resources/translations\validators.es.xlf</argument>
-            <argument>C:\TEMP\YNL_SERVER\vendor\symfony\symfony\src\Symfony\Component\Form/Resources/translations\validators.es.xlf</argument>
-            <argument>C:\TEMP\YNL_SERVER\vendor\symfony\symfony\src\Symfony\Component\Security\Core\Exception/../Resources/translations\security.es.xlf</argument>
-            <argument>C:\TEMP\YNL_SERVER\vendor\sonata-project\core-bundle/Resources/translations\SonataCoreBundle.es.xliff</argument>
-            <argument>C:\TEMP\YNL_SERVER\vendor\sonata-project\media-bundle/Resources/translations\SonataMediaBundle.es.xliff</argument>
-            <argument>C:\TEMP\YNL_SERVER\vendor\friendsofsymfony\user-bundle/Resources/translations\FOSUserBundle.es.yml</argument>
-            <argument>C:\TEMP\YNL_SERVER\vendor\friendsofsymfony\user-bundle/Resources/translations\validators.es.yml</argument>
-            <argument>C:\TEMP\YNL_SERVER\vendor\hwi\oauth-bundle/Resources/translations\HWIOAuthBundle.es.yml</argument>
+            <argument>F:\MK\YallaWebSite\vendor\symfony\symfony\src\Symfony\Component\Validator/Resources/translations\validators.es.xlf</argument>
+            <argument>F:\MK\YallaWebSite\vendor\symfony\symfony\src\Symfony\Component\Form/Resources/translations\validators.es.xlf</argument>
+            <argument>F:\MK\YallaWebSite\vendor\symfony\symfony\src\Symfony\Component\Security\Core\Exception/../Resources/translations\security.es.xlf</argument>
+            <argument>F:\MK\YallaWebSite\vendor\sonata-project\core-bundle/Resources/translations\SonataCoreBundle.es.xliff</argument>
+            <argument>F:\MK\YallaWebSite\vendor\sonata-project\media-bundle/Resources/translations\SonataMediaBundle.es.xliff</argument>
+            <argument>F:\MK\YallaWebSite\vendor\friendsofsymfony\user-bundle/Resources/translations\FOSUserBundle.es.yml</argument>
+            <argument>F:\MK\YallaWebSite\vendor\friendsofsymfony\user-bundle/Resources/translations\validators.es.yml</argument>
+            <argument>F:\MK\YallaWebSite\vendor\hwi\oauth-bundle/Resources/translations\HWIOAuthBundle.es.yml</argument>
           </argument>
           <argument key="et" type="collection">
-            <argument>C:\TEMP\YNL_SERVER\vendor\symfony\symfony\src\Symfony\Component\Validator/Resources/translations\validators.et.xlf</argument>
-            <argument>C:\TEMP\YNL_SERVER\vendor\symfony\symfony\src\Symfony\Component\Form/Resources/translations\validators.et.xlf</argument>
-            <argument>C:\TEMP\YNL_SERVER\vendor\friendsofsymfony\user-bundle/Resources/translations\FOSUserBundle.et.yml</argument>
+            <argument>F:\MK\YallaWebSite\vendor\symfony\symfony\src\Symfony\Component\Validator/Resources/translations\validators.et.xlf</argument>
+            <argument>F:\MK\YallaWebSite\vendor\symfony\symfony\src\Symfony\Component\Form/Resources/translations\validators.et.xlf</argument>
+            <argument>F:\MK\YallaWebSite\vendor\friendsofsymfony\user-bundle/Resources/translations\FOSUserBundle.et.yml</argument>
           </argument>
           <argument key="eu" type="collection">
-            <argument>C:\TEMP\YNL_SERVER\vendor\symfony\symfony\src\Symfony\Component\Validator/Resources/translations\validators.eu.xlf</argument>
-            <argument>C:\TEMP\YNL_SERVER\vendor\symfony\symfony\src\Symfony\Component\Form/Resources/translations\validators.eu.xlf</argument>
-            <argument>C:\TEMP\YNL_SERVER\vendor\sonata-project\core-bundle/Resources/translations\SonataCoreBundle.eu.xliff</argument>
-            <argument>C:\TEMP\YNL_SERVER\vendor\friendsofsymfony\user-bundle/Resources/translations\FOSUserBundle.eu.yml</argument>
-            <argument>C:\TEMP\YNL_SERVER\vendor\friendsofsymfony\user-bundle/Resources/translations\validators.eu.yml</argument>
+            <argument>F:\MK\YallaWebSite\vendor\symfony\symfony\src\Symfony\Component\Validator/Resources/translations\validators.eu.xlf</argument>
+            <argument>F:\MK\YallaWebSite\vendor\symfony\symfony\src\Symfony\Component\Form/Resources/translations\validators.eu.xlf</argument>
+            <argument>F:\MK\YallaWebSite\vendor\sonata-project\core-bundle/Resources/translations\SonataCoreBundle.eu.xliff</argument>
+            <argument>F:\MK\YallaWebSite\vendor\friendsofsymfony\user-bundle/Resources/translations\FOSUserBundle.eu.yml</argument>
+            <argument>F:\MK\YallaWebSite\vendor\friendsofsymfony\user-bundle/Resources/translations\validators.eu.yml</argument>
           </argument>
           <argument key="fa" type="collection">
-            <argument>C:\TEMP\YNL_SERVER\vendor\symfony\symfony\src\Symfony\Component\Validator/Resources/translations\validators.fa.xlf</argument>
-            <argument>C:\TEMP\YNL_SERVER\vendor\symfony\symfony\src\Symfony\Component\Form/Resources/translations\validators.fa.xlf</argument>
-            <argument>C:\TEMP\YNL_SERVER\vendor\symfony\symfony\src\Symfony\Component\Security\Core\Exception/../Resources/translations\security.fa.xlf</argument>
-            <argument>C:\TEMP\YNL_SERVER\vendor\sonata-project\core-bundle/Resources/translations\SonataCoreBundle.fa.xliff</argument>
-            <argument>C:\TEMP\YNL_SERVER\vendor\friendsofsymfony\user-bundle/Resources/translations\FOSUserBundle.fa.yml</argument>
-            <argument>C:\TEMP\YNL_SERVER\vendor\friendsofsymfony\user-bundle/Resources/translations\validators.fa.yml</argument>
-            <argument>C:\TEMP\YNL_SERVER\vendor\hwi\oauth-bundle/Resources/translations\HWIOAuthBundle.fa.yml</argument>
+            <argument>F:\MK\YallaWebSite\vendor\symfony\symfony\src\Symfony\Component\Validator/Resources/translations\validators.fa.xlf</argument>
+            <argument>F:\MK\YallaWebSite\vendor\symfony\symfony\src\Symfony\Component\Form/Resources/translations\validators.fa.xlf</argument>
+            <argument>F:\MK\YallaWebSite\vendor\symfony\symfony\src\Symfony\Component\Security\Core\Exception/../Resources/translations\security.fa.xlf</argument>
+            <argument>F:\MK\YallaWebSite\vendor\sonata-project\core-bundle/Resources/translations\SonataCoreBundle.fa.xliff</argument>
+            <argument>F:\MK\YallaWebSite\vendor\friendsofsymfony\user-bundle/Resources/translations\FOSUserBundle.fa.yml</argument>
+            <argument>F:\MK\YallaWebSite\vendor\friendsofsymfony\user-bundle/Resources/translations\validators.fa.yml</argument>
+            <argument>F:\MK\YallaWebSite\vendor\hwi\oauth-bundle/Resources/translations\HWIOAuthBundle.fa.yml</argument>
           </argument>
           <argument key="fi" type="collection">
-            <argument>C:\TEMP\YNL_SERVER\vendor\symfony\symfony\src\Symfony\Component\Validator/Resources/translations\validators.fi.xlf</argument>
-            <argument>C:\TEMP\YNL_SERVER\vendor\symfony\symfony\src\Symfony\Component\Form/Resources/translations\validators.fi.xlf</argument>
-            <argument>C:\TEMP\YNL_SERVER\vendor\sonata-project\core-bundle/Resources/translations\SonataCoreBundle.fi.xliff</argument>
-            <argument>C:\TEMP\YNL_SERVER\vendor\friendsofsymfony\user-bundle/Resources/translations\FOSUserBundle.fi.yml</argument>
-            <argument>C:\TEMP\YNL_SERVER\vendor\friendsofsymfony\user-bundle/Resources/translations\validators.fi.yml</argument>
+            <argument>F:\MK\YallaWebSite\vendor\symfony\symfony\src\Symfony\Component\Validator/Resources/translations\validators.fi.xlf</argument>
+            <argument>F:\MK\YallaWebSite\vendor\symfony\symfony\src\Symfony\Component\Form/Resources/translations\validators.fi.xlf</argument>
+            <argument>F:\MK\YallaWebSite\vendor\sonata-project\core-bundle/Resources/translations\SonataCoreBundle.fi.xliff</argument>
+            <argument>F:\MK\YallaWebSite\vendor\friendsofsymfony\user-bundle/Resources/translations\FOSUserBundle.fi.yml</argument>
+            <argument>F:\MK\YallaWebSite\vendor\friendsofsymfony\user-bundle/Resources/translations\validators.fi.yml</argument>
           </argument>
           <argument key="fr" type="collection">
-            <argument>C:\TEMP\YNL_SERVER\vendor\symfony\symfony\src\Symfony\Component\Validator/Resources/translations\validators.fr.xlf</argument>
-            <argument>C:\TEMP\YNL_SERVER\vendor\symfony\symfony\src\Symfony\Component\Form/Resources/translations\validators.fr.xlf</argument>
-            <argument>C:\TEMP\YNL_SERVER\vendor\symfony\symfony\src\Symfony\Component\Security\Core\Exception/../Resources/translations\security.fr.xlf</argument>
-            <argument>C:\TEMP\YNL_SERVER\vendor\sonata-project\core-bundle/Resources/translations\SonataCoreBundle.fr.xliff</argument>
-            <argument>C:\TEMP\YNL_SERVER\vendor\sonata-project\media-bundle/Resources/translations\SonataMediaBundle.fr.xliff</argument>
-            <argument>C:\TEMP\YNL_SERVER\vendor\friendsofsymfony\user-bundle/Resources/translations\FOSUserBundle.fr.yml</argument>
-            <argument>C:\TEMP\YNL_SERVER\vendor\friendsofsymfony\user-bundle/Resources/translations\validators.fr.yml</argument>
-            <argument>C:\TEMP\YNL_SERVER\vendor\sonata-project\seo-bundle/Resources/translations\SonataSeoBundle.fr.xliff</argument>
-            <argument>C:\TEMP\YNL_SERVER\vendor\hwi\oauth-bundle/Resources/translations\HWIOAuthBundle.fr.yml</argument>
-            <argument>C:\TEMP\YNL_SERVER\src\YallaWebsite\FrontendBundle/Resources/translations\messages.fr.xlf</argument>
+            <argument>F:\MK\YallaWebSite\vendor\symfony\symfony\src\Symfony\Component\Validator/Resources/translations\validators.fr.xlf</argument>
+            <argument>F:\MK\YallaWebSite\vendor\symfony\symfony\src\Symfony\Component\Form/Resources/translations\validators.fr.xlf</argument>
+            <argument>F:\MK\YallaWebSite\vendor\symfony\symfony\src\Symfony\Component\Security\Core\Exception/../Resources/translations\security.fr.xlf</argument>
+            <argument>F:\MK\YallaWebSite\vendor\sonata-project\core-bundle/Resources/translations\SonataCoreBundle.fr.xliff</argument>
+            <argument>F:\MK\YallaWebSite\vendor\sonata-project\media-bundle/Resources/translations\SonataMediaBundle.fr.xliff</argument>
+            <argument>F:\MK\YallaWebSite\vendor\friendsofsymfony\user-bundle/Resources/translations\FOSUserBundle.fr.yml</argument>
+            <argument>F:\MK\YallaWebSite\vendor\friendsofsymfony\user-bundle/Resources/translations\validators.fr.yml</argument>
+            <argument>F:\MK\YallaWebSite\vendor\sonata-project\seo-bundle/Resources/translations\SonataSeoBundle.fr.xliff</argument>
+            <argument>F:\MK\YallaWebSite\vendor\hwi\oauth-bundle/Resources/translations\HWIOAuthBundle.fr.yml</argument>
+            <argument>F:\MK\YallaWebSite\src\YallaWebsite\FrontendBundle/Resources/translations\messages.fr.xlf</argument>
           </argument>
           <argument key="gl" type="collection">
-            <argument>C:\TEMP\YNL_SERVER\vendor\symfony\symfony\src\Symfony\Component\Validator/Resources/translations\validators.gl.xlf</argument>
-            <argument>C:\TEMP\YNL_SERVER\vendor\symfony\symfony\src\Symfony\Component\Form/Resources/translations\validators.gl.xlf</argument>
-            <argument>C:\TEMP\YNL_SERVER\vendor\symfony\symfony\src\Symfony\Component\Security\Core\Exception/../Resources/translations\security.gl.xlf</argument>
+            <argument>F:\MK\YallaWebSite\vendor\symfony\symfony\src\Symfony\Component\Validator/Resources/translations\validators.gl.xlf</argument>
+            <argument>F:\MK\YallaWebSite\vendor\symfony\symfony\src\Symfony\Component\Form/Resources/translations\validators.gl.xlf</argument>
+            <argument>F:\MK\YallaWebSite\vendor\symfony\symfony\src\Symfony\Component\Security\Core\Exception/../Resources/translations\security.gl.xlf</argument>
           </argument>
           <argument key="he" type="collection">
-            <argument>C:\TEMP\YNL_SERVER\vendor\symfony\symfony\src\Symfony\Component\Validator/Resources/translations\validators.he.xlf</argument>
-            <argument>C:\TEMP\YNL_SERVER\vendor\symfony\symfony\src\Symfony\Component\Form/Resources/translations\validators.he.xlf</argument>
-            <argument>C:\TEMP\YNL_SERVER\vendor\symfony\symfony\src\Symfony\Component\Security\Core\Exception/../Resources/translations\security.he.xlf</argument>
-            <argument>C:\TEMP\YNL_SERVER\vendor\friendsofsymfony\user-bundle/Resources/translations\FOSUserBundle.he.yml</argument>
-            <argument>C:\TEMP\YNL_SERVER\vendor\friendsofsymfony\user-bundle/Resources/translations\validators.he.yml</argument>
+            <argument>F:\MK\YallaWebSite\vendor\symfony\symfony\src\Symfony\Component\Validator/Resources/translations\validators.he.xlf</argument>
+            <argument>F:\MK\YallaWebSite\vendor\symfony\symfony\src\Symfony\Component\Form/Resources/translations\validators.he.xlf</argument>
+            <argument>F:\MK\YallaWebSite\vendor\symfony\symfony\src\Symfony\Component\Security\Core\Exception/../Resources/translations\security.he.xlf</argument>
+            <argument>F:\MK\YallaWebSite\vendor\friendsofsymfony\user-bundle/Resources/translations\FOSUserBundle.he.yml</argument>
+            <argument>F:\MK\YallaWebSite\vendor\friendsofsymfony\user-bundle/Resources/translations\validators.he.yml</argument>
           </argument>
           <argument key="hr" type="collection">
-            <argument>C:\TEMP\YNL_SERVER\vendor\symfony\symfony\src\Symfony\Component\Validator/Resources/translations\validators.hr.xlf</argument>
-            <argument>C:\TEMP\YNL_SERVER\vendor\symfony\symfony\src\Symfony\Component\Form/Resources/translations\validators.hr.xlf</argument>
-            <argument>C:\TEMP\YNL_SERVER\vendor\symfony\symfony\src\Symfony\Component\Security\Core\Exception/../Resources/translations\security.hr.xlf</argument>
-            <argument>C:\TEMP\YNL_SERVER\vendor\sonata-project\core-bundle/Resources/translations\SonataCoreBundle.hr.xliff</argument>
-            <argument>C:\TEMP\YNL_SERVER\vendor\friendsofsymfony\user-bundle/Resources/translations\FOSUserBundle.hr.yml</argument>
-            <argument>C:\TEMP\YNL_SERVER\vendor\friendsofsymfony\user-bundle/Resources/translations\validators.hr.yml</argument>
+            <argument>F:\MK\YallaWebSite\vendor\symfony\symfony\src\Symfony\Component\Validator/Resources/translations\validators.hr.xlf</argument>
+            <argument>F:\MK\YallaWebSite\vendor\symfony\symfony\src\Symfony\Component\Form/Resources/translations\validators.hr.xlf</argument>
+            <argument>F:\MK\YallaWebSite\vendor\symfony\symfony\src\Symfony\Component\Security\Core\Exception/../Resources/translations\security.hr.xlf</argument>
+            <argument>F:\MK\YallaWebSite\vendor\sonata-project\core-bundle/Resources/translations\SonataCoreBundle.hr.xliff</argument>
+            <argument>F:\MK\YallaWebSite\vendor\friendsofsymfony\user-bundle/Resources/translations\FOSUserBundle.hr.yml</argument>
+            <argument>F:\MK\YallaWebSite\vendor\friendsofsymfony\user-bundle/Resources/translations\validators.hr.yml</argument>
           </argument>
           <argument key="hu" type="collection">
-            <argument>C:\TEMP\YNL_SERVER\vendor\symfony\symfony\src\Symfony\Component\Validator/Resources/translations\validators.hu.xlf</argument>
-            <argument>C:\TEMP\YNL_SERVER\vendor\symfony\symfony\src\Symfony\Component\Form/Resources/translations\validators.hu.xlf</argument>
-            <argument>C:\TEMP\YNL_SERVER\vendor\symfony\symfony\src\Symfony\Component\Security\Core\Exception/../Resources/translations\security.hu.xlf</argument>
-            <argument>C:\TEMP\YNL_SERVER\vendor\sonata-project\core-bundle/Resources/translations\SonataCoreBundle.hu.xliff</argument>
-            <argument>C:\TEMP\YNL_SERVER\vendor\sonata-project\media-bundle/Resources/translations\SonataMediaBundle.hu.xliff</argument>
-            <argument>C:\TEMP\YNL_SERVER\vendor\friendsofsymfony\user-bundle/Resources/translations\FOSUserBundle.hu.yml</argument>
-            <argument>C:\TEMP\YNL_SERVER\vendor\friendsofsymfony\user-bundle/Resources/translations\validators.hu.yml</argument>
-            <argument>C:\TEMP\YNL_SERVER\vendor\hwi\oauth-bundle/Resources/translations\HWIOAuthBundle.hu.yml</argument>
+            <argument>F:\MK\YallaWebSite\vendor\symfony\symfony\src\Symfony\Component\Validator/Resources/translations\validators.hu.xlf</argument>
+            <argument>F:\MK\YallaWebSite\vendor\symfony\symfony\src\Symfony\Component\Form/Resources/translations\validators.hu.xlf</argument>
+            <argument>F:\MK\YallaWebSite\vendor\symfony\symfony\src\Symfony\Component\Security\Core\Exception/../Resources/translations\security.hu.xlf</argument>
+            <argument>F:\MK\YallaWebSite\vendor\sonata-project\core-bundle/Resources/translations\SonataCoreBundle.hu.xliff</argument>
+            <argument>F:\MK\YallaWebSite\vendor\sonata-project\media-bundle/Resources/translations\SonataMediaBundle.hu.xliff</argument>
+            <argument>F:\MK\YallaWebSite\vendor\friendsofsymfony\user-bundle/Resources/translations\FOSUserBundle.hu.yml</argument>
+            <argument>F:\MK\YallaWebSite\vendor\friendsofsymfony\user-bundle/Resources/translations\validators.hu.yml</argument>
+            <argument>F:\MK\YallaWebSite\vendor\hwi\oauth-bundle/Resources/translations\HWIOAuthBundle.hu.yml</argument>
           </argument>
           <argument key="hy" type="collection">
-            <argument>C:\TEMP\YNL_SERVER\vendor\symfony\symfony\src\Symfony\Component\Validator/Resources/translations\validators.hy.xlf</argument>
-            <argument>C:\TEMP\YNL_SERVER\vendor\symfony\symfony\src\Symfony\Component\Form/Resources/translations\validators.hy.xlf</argument>
+            <argument>F:\MK\YallaWebSite\vendor\symfony\symfony\src\Symfony\Component\Validator/Resources/translations\validators.hy.xlf</argument>
+            <argument>F:\MK\YallaWebSite\vendor\symfony\symfony\src\Symfony\Component\Form/Resources/translations\validators.hy.xlf</argument>
           </argument>
           <argument key="id" type="collection">
-            <argument>C:\TEMP\YNL_SERVER\vendor\symfony\symfony\src\Symfony\Component\Validator/Resources/translations\validators.id.xlf</argument>
-            <argument>C:\TEMP\YNL_SERVER\vendor\symfony\symfony\src\Symfony\Component\Form/Resources/translations\validators.id.xlf</argument>
-            <argument>C:\TEMP\YNL_SERVER\vendor\symfony\symfony\src\Symfony\Component\Security\Core\Exception/../Resources/translations\security.id.xlf</argument>
-            <argument>C:\TEMP\YNL_SERVER\vendor\friendsofsymfony\user-bundle/Resources/translations\FOSUserBundle.id.yml</argument>
-            <argument>C:\TEMP\YNL_SERVER\vendor\friendsofsymfony\user-bundle/Resources/translations\validators.id.yml</argument>
+            <argument>F:\MK\YallaWebSite\vendor\symfony\symfony\src\Symfony\Component\Validator/Resources/translations\validators.id.xlf</argument>
+            <argument>F:\MK\YallaWebSite\vendor\symfony\symfony\src\Symfony\Component\Form/Resources/translations\validators.id.xlf</argument>
+            <argument>F:\MK\YallaWebSite\vendor\symfony\symfony\src\Symfony\Component\Security\Core\Exception/../Resources/translations\security.id.xlf</argument>
+            <argument>F:\MK\YallaWebSite\vendor\friendsofsymfony\user-bundle/Resources/translations\FOSUserBundle.id.yml</argument>
+            <argument>F:\MK\YallaWebSite\vendor\friendsofsymfony\user-bundle/Resources/translations\validators.id.yml</argument>
           </argument>
           <argument key="it" type="collection">
-            <argument>C:\TEMP\YNL_SERVER\vendor\symfony\symfony\src\Symfony\Component\Validator/Resources/translations\validators.it.xlf</argument>
-            <argument>C:\TEMP\YNL_SERVER\vendor\symfony\symfony\src\Symfony\Component\Form/Resources/translations\validators.it.xlf</argument>
-            <argument>C:\TEMP\YNL_SERVER\vendor\symfony\symfony\src\Symfony\Component\Security\Core\Exception/../Resources/translations\security.it.xlf</argument>
-            <argument>C:\TEMP\YNL_SERVER\vendor\sonata-project\core-bundle/Resources/translations\SonataCoreBundle.it.xliff</argument>
-            <argument>C:\TEMP\YNL_SERVER\vendor\sonata-project\media-bundle/Resources/translations\SonataMediaBundle.it.xliff</argument>
-            <argument>C:\TEMP\YNL_SERVER\vendor\friendsofsymfony\user-bundle/Resources/translations\FOSUserBundle.it.yml</argument>
-            <argument>C:\TEMP\YNL_SERVER\vendor\friendsofsymfony\user-bundle/Resources/translations\validators.it.yml</argument>
-            <argument>C:\TEMP\YNL_SERVER\vendor\hwi\oauth-bundle/Resources/translations\HWIOAuthBundle.it.yml</argument>
+            <argument>F:\MK\YallaWebSite\vendor\symfony\symfony\src\Symfony\Component\Validator/Resources/translations\validators.it.xlf</argument>
+            <argument>F:\MK\YallaWebSite\vendor\symfony\symfony\src\Symfony\Component\Form/Resources/translations\validators.it.xlf</argument>
+            <argument>F:\MK\YallaWebSite\vendor\symfony\symfony\src\Symfony\Component\Security\Core\Exception/../Resources/translations\security.it.xlf</argument>
+            <argument>F:\MK\YallaWebSite\vendor\sonata-project\core-bundle/Resources/translations\SonataCoreBundle.it.xliff</argument>
+            <argument>F:\MK\YallaWebSite\vendor\sonata-project\media-bundle/Resources/translations\SonataMediaBundle.it.xliff</argument>
+            <argument>F:\MK\YallaWebSite\vendor\friendsofsymfony\user-bundle/Resources/translations\FOSUserBundle.it.yml</argument>
+            <argument>F:\MK\YallaWebSite\vendor\friendsofsymfony\user-bundle/Resources/translations\validators.it.yml</argument>
+            <argument>F:\MK\YallaWebSite\vendor\hwi\oauth-bundle/Resources/translations\HWIOAuthBundle.it.yml</argument>
           </argument>
           <argument key="ja" type="collection">
-            <argument>C:\TEMP\YNL_SERVER\vendor\symfony\symfony\src\Symfony\Component\Validator/Resources/translations\validators.ja.xlf</argument>
-            <argument>C:\TEMP\YNL_SERVER\vendor\symfony\symfony\src\Symfony\Component\Form/Resources/translations\validators.ja.xlf</argument>
-            <argument>C:\TEMP\YNL_SERVER\vendor\symfony\symfony\src\Symfony\Component\Security\Core\Exception/../Resources/translations\security.ja.xlf</argument>
-            <argument>C:\TEMP\YNL_SERVER\vendor\sonata-project\core-bundle/Resources/translations\SonataCoreBundle.ja.xliff</argument>
-            <argument>C:\TEMP\YNL_SERVER\vendor\friendsofsymfony\user-bundle/Resources/translations\FOSUserBundle.ja.yml</argument>
-            <argument>C:\TEMP\YNL_SERVER\vendor\friendsofsymfony\user-bundle/Resources/translations\validators.ja.yml</argument>
+            <argument>F:\MK\YallaWebSite\vendor\symfony\symfony\src\Symfony\Component\Validator/Resources/translations\validators.ja.xlf</argument>
+            <argument>F:\MK\YallaWebSite\vendor\symfony\symfony\src\Symfony\Component\Form/Resources/translations\validators.ja.xlf</argument>
+            <argument>F:\MK\YallaWebSite\vendor\symfony\symfony\src\Symfony\Component\Security\Core\Exception/../Resources/translations\security.ja.xlf</argument>
+            <argument>F:\MK\YallaWebSite\vendor\sonata-project\core-bundle/Resources/translations\SonataCoreBundle.ja.xliff</argument>
+            <argument>F:\MK\YallaWebSite\vendor\friendsofsymfony\user-bundle/Resources/translations\FOSUserBundle.ja.yml</argument>
+            <argument>F:\MK\YallaWebSite\vendor\friendsofsymfony\user-bundle/Resources/translations\validators.ja.yml</argument>
           </argument>
           <argument key="lb" type="collection">
-            <argument>C:\TEMP\YNL_SERVER\vendor\symfony\symfony\src\Symfony\Component\Validator/Resources/translations\validators.lb.xlf</argument>
-            <argument>C:\TEMP\YNL_SERVER\vendor\symfony\symfony\src\Symfony\Component\Form/Resources/translations\validators.lb.xlf</argument>
-            <argument>C:\TEMP\YNL_SERVER\vendor\symfony\symfony\src\Symfony\Component\Security\Core\Exception/../Resources/translations\security.lb.xlf</argument>
-            <argument>C:\TEMP\YNL_SERVER\vendor\sonata-project\core-bundle/Resources/translations\SonataCoreBundle.lb.xliff</argument>
-            <argument>C:\TEMP\YNL_SERVER\vendor\friendsofsymfony\user-bundle/Resources/translations\FOSUserBundle.lb.yml</argument>
+            <argument>F:\MK\YallaWebSite\vendor\symfony\symfony\src\Symfony\Component\Validator/Resources/translations\validators.lb.xlf</argument>
+            <argument>F:\MK\YallaWebSite\vendor\symfony\symfony\src\Symfony\Component\Form/Resources/translations\validators.lb.xlf</argument>
+            <argument>F:\MK\YallaWebSite\vendor\symfony\symfony\src\Symfony\Component\Security\Core\Exception/../Resources/translations\security.lb.xlf</argument>
+            <argument>F:\MK\YallaWebSite\vendor\sonata-project\core-bundle/Resources/translations\SonataCoreBundle.lb.xliff</argument>
+            <argument>F:\MK\YallaWebSite\vendor\friendsofsymfony\user-bundle/Resources/translations\FOSUserBundle.lb.yml</argument>
           </argument>
           <argument key="lt" type="collection">
-            <argument>C:\TEMP\YNL_SERVER\vendor\symfony\symfony\src\Symfony\Component\Validator/Resources/translations\validators.lt.xlf</argument>
-            <argument>C:\TEMP\YNL_SERVER\vendor\symfony\symfony\src\Symfony\Component\Form/Resources/translations\validators.lt.xlf</argument>
-            <argument>C:\TEMP\YNL_SERVER\vendor\symfony\symfony\src\Symfony\Component\Security\Core\Exception/../Resources/translations\security.lt.xlf</argument>
-            <argument>C:\TEMP\YNL_SERVER\vendor\sonata-project\core-bundle/Resources/translations\SonataCoreBundle.lt.xliff</argument>
-            <argument>C:\TEMP\YNL_SERVER\vendor\sonata-project\media-bundle/Resources/translations\SonataMediaBundle.lt.xliff</argument>
-            <argument>C:\TEMP\YNL_SERVER\vendor\friendsofsymfony\user-bundle/Resources/translations\FOSUserBundle.lt.yml</argument>
-            <argument>C:\TEMP\YNL_SERVER\vendor\friendsofsymfony\user-bundle/Resources/translations\validators.lt.yml</argument>
+            <argument>F:\MK\YallaWebSite\vendor\symfony\symfony\src\Symfony\Component\Validator/Resources/translations\validators.lt.xlf</argument>
+            <argument>F:\MK\YallaWebSite\vendor\symfony\symfony\src\Symfony\Component\Form/Resources/translations\validators.lt.xlf</argument>
+            <argument>F:\MK\YallaWebSite\vendor\symfony\symfony\src\Symfony\Component\Security\Core\Exception/../Resources/translations\security.lt.xlf</argument>
+            <argument>F:\MK\YallaWebSite\vendor\sonata-project\core-bundle/Resources/translations\SonataCoreBundle.lt.xliff</argument>
+            <argument>F:\MK\YallaWebSite\vendor\sonata-project\media-bundle/Resources/translations\SonataMediaBundle.lt.xliff</argument>
+            <argument>F:\MK\YallaWebSite\vendor\friendsofsymfony\user-bundle/Resources/translations\FOSUserBundle.lt.yml</argument>
+            <argument>F:\MK\YallaWebSite\vendor\friendsofsymfony\user-bundle/Resources/translations\validators.lt.yml</argument>
           </argument>
           <argument key="mn" type="collection">
-            <argument>C:\TEMP\YNL_SERVER\vendor\symfony\symfony\src\Symfony\Component\Validator/Resources/translations\validators.mn.xlf</argument>
-            <argument>C:\TEMP\YNL_SERVER\vendor\symfony\symfony\src\Symfony\Component\Form/Resources/translations\validators.mn.xlf</argument>
+            <argument>F:\MK\YallaWebSite\vendor\symfony\symfony\src\Symfony\Component\Validator/Resources/translations\validators.mn.xlf</argument>
+            <argument>F:\MK\YallaWebSite\vendor\symfony\symfony\src\Symfony\Component\Form/Resources/translations\validators.mn.xlf</argument>
           </argument>
           <argument key="nl" type="collection">
-            <argument>C:\TEMP\YNL_SERVER\vendor\symfony\symfony\src\Symfony\Component\Validator/Resources/translations\validators.nl.xlf</argument>
-            <argument>C:\TEMP\YNL_SERVER\vendor\symfony\symfony\src\Symfony\Component\Form/Resources/translations\validators.nl.xlf</argument>
-            <argument>C:\TEMP\YNL_SERVER\vendor\symfony\symfony\src\Symfony\Component\Security\Core\Exception/../Resources/translations\security.nl.xlf</argument>
-            <argument>C:\TEMP\YNL_SERVER\vendor\sonata-project\core-bundle/Resources/translations\SonataCoreBundle.nl.xliff</argument>
-            <argument>C:\TEMP\YNL_SERVER\vendor\sonata-project\media-bundle/Resources/translations\SonataMediaBundle.nl.xliff</argument>
-            <argument>C:\TEMP\YNL_SERVER\vendor\friendsofsymfony\user-bundle/Resources/translations\FOSUserBundle.nl.yml</argument>
-            <argument>C:\TEMP\YNL_SERVER\vendor\friendsofsymfony\user-bundle/Resources/translations\validators.nl.yml</argument>
-            <argument>C:\TEMP\YNL_SERVER\vendor\sonata-project\seo-bundle/Resources/translations\SonataSeoBundle.nl.xliff</argument>
-            <argument>C:\TEMP\YNL_SERVER\vendor\hwi\oauth-bundle/Resources/translations\HWIOAuthBundle.nl.yml</argument>
+            <argument>F:\MK\YallaWebSite\vendor\symfony\symfony\src\Symfony\Component\Validator/Resources/translations\validators.nl.xlf</argument>
+            <argument>F:\MK\YallaWebSite\vendor\symfony\symfony\src\Symfony\Component\Form/Resources/translations\validators.nl.xlf</argument>
+            <argument>F:\MK\YallaWebSite\vendor\symfony\symfony\src\Symfony\Component\Security\Core\Exception/../Resources/translations\security.nl.xlf</argument>
+            <argument>F:\MK\YallaWebSite\vendor\sonata-project\core-bundle/Resources/translations\SonataCoreBundle.nl.xliff</argument>
+            <argument>F:\MK\YallaWebSite\vendor\sonata-project\media-bundle/Resources/translations\SonataMediaBundle.nl.xliff</argument>
+            <argument>F:\MK\YallaWebSite\vendor\friendsofsymfony\user-bundle/Resources/translations\FOSUserBundle.nl.yml</argument>
+            <argument>F:\MK\YallaWebSite\vendor\friendsofsymfony\user-bundle/Resources/translations\validators.nl.yml</argument>
+            <argument>F:\MK\YallaWebSite\vendor\sonata-project\seo-bundle/Resources/translations\SonataSeoBundle.nl.xliff</argument>
+            <argument>F:\MK\YallaWebSite\vendor\hwi\oauth-bundle/Resources/translations\HWIOAuthBundle.nl.yml</argument>
           </argument>
           <argument key="nn" type="collection">
-            <argument>C:\TEMP\YNL_SERVER\vendor\symfony\symfony\src\Symfony\Component\Validator/Resources/translations\validators.nn.xlf</argument>
+            <argument>F:\MK\YallaWebSite\vendor\symfony\symfony\src\Symfony\Component\Validator/Resources/translations\validators.nn.xlf</argument>
           </argument>
           <argument key="no" type="collection">
-            <argument>C:\TEMP\YNL_SERVER\vendor\symfony\symfony\src\Symfony\Component\Validator/Resources/translations\validators.no.xlf</argument>
-            <argument>C:\TEMP\YNL_SERVER\vendor\symfony\symfony\src\Symfony\Component\Form/Resources/translations\validators.no.xlf</argument>
-            <argument>C:\TEMP\YNL_SERVER\vendor\symfony\symfony\src\Symfony\Component\Security\Core\Exception/../Resources/translations\security.no.xlf</argument>
+            <argument>F:\MK\YallaWebSite\vendor\symfony\symfony\src\Symfony\Component\Validator/Resources/translations\validators.no.xlf</argument>
+            <argument>F:\MK\YallaWebSite\vendor\symfony\symfony\src\Symfony\Component\Form/Resources/translations\validators.no.xlf</argument>
+            <argument>F:\MK\YallaWebSite\vendor\symfony\symfony\src\Symfony\Component\Security\Core\Exception/../Resources/translations\security.no.xlf</argument>
           </argument>
           <argument key="pl" type="collection">
-            <argument>C:\TEMP\YNL_SERVER\vendor\symfony\symfony\src\Symfony\Component\Validator/Resources/translations\validators.pl.xlf</argument>
-            <argument>C:\TEMP\YNL_SERVER\vendor\symfony\symfony\src\Symfony\Component\Form/Resources/translations\validators.pl.xlf</argument>
-            <argument>C:\TEMP\YNL_SERVER\vendor\symfony\symfony\src\Symfony\Component\Security\Core\Exception/../Resources/translations\security.pl.xlf</argument>
-            <argument>C:\TEMP\YNL_SERVER\vendor\sonata-project\core-bundle/Resources/translations\SonataCoreBundle.pl.xliff</argument>
-            <argument>C:\TEMP\YNL_SERVER\vendor\sonata-project\media-bundle/Resources/translations\SonataMediaBundle.pl.xliff</argument>
-            <argument>C:\TEMP\YNL_SERVER\vendor\friendsofsymfony\user-bundle/Resources/translations\FOSUserBundle.pl.yml</argument>
-            <argument>C:\TEMP\YNL_SERVER\vendor\friendsofsymfony\user-bundle/Resources/translations\validators.pl.yml</argument>
-            <argument>C:\TEMP\YNL_SERVER\vendor\hwi\oauth-bundle/Resources/translations\HWIOAuthBundle.pl.yml</argument>
+            <argument>F:\MK\YallaWebSite\vendor\symfony\symfony\src\Symfony\Component\Validator/Resources/translations\validators.pl.xlf</argument>
+            <argument>F:\MK\YallaWebSite\vendor\symfony\symfony\src\Symfony\Component\Form/Resources/translations\validators.pl.xlf</argument>
+            <argument>F:\MK\YallaWebSite\vendor\symfony\symfony\src\Symfony\Component\Security\Core\Exception/../Resources/translations\security.pl.xlf</argument>
+            <argument>F:\MK\YallaWebSite\vendor\sonata-project\core-bundle/Resources/translations\SonataCoreBundle.pl.xliff</argument>
+            <argument>F:\MK\YallaWebSite\vendor\sonata-project\media-bundle/Resources/translations\SonataMediaBundle.pl.xliff</argument>
+            <argument>F:\MK\YallaWebSite\vendor\friendsofsymfony\user-bundle/Resources/translations\FOSUserBundle.pl.yml</argument>
+            <argument>F:\MK\YallaWebSite\vendor\friendsofsymfony\user-bundle/Resources/translations\validators.pl.yml</argument>
+            <argument>F:\MK\YallaWebSite\vendor\hwi\oauth-bundle/Resources/translations\HWIOAuthBundle.pl.yml</argument>
           </argument>
           <argument key="pt" type="collection">
-            <argument>C:\TEMP\YNL_SERVER\vendor\symfony\symfony\src\Symfony\Component\Validator/Resources/translations\validators.pt.xlf</argument>
-            <argument>C:\TEMP\YNL_SERVER\vendor\symfony\symfony\src\Symfony\Component\Form/Resources/translations\validators.pt.xlf</argument>
-            <argument>C:\TEMP\YNL_SERVER\vendor\sonata-project\core-bundle/Resources/translations\SonataCoreBundle.pt.xliff</argument>
-            <argument>C:\TEMP\YNL_SERVER\vendor\friendsofsymfony\user-bundle/Resources/translations\FOSUserBundle.pt.yml</argument>
-            <argument>C:\TEMP\YNL_SERVER\vendor\friendsofsymfony\user-bundle/Resources/translations\validators.pt.yml</argument>
+            <argument>F:\MK\YallaWebSite\vendor\symfony\symfony\src\Symfony\Component\Validator/Resources/translations\validators.pt.xlf</argument>
+            <argument>F:\MK\YallaWebSite\vendor\symfony\symfony\src\Symfony\Component\Form/Resources/translations\validators.pt.xlf</argument>
+            <argument>F:\MK\YallaWebSite\vendor\sonata-project\core-bundle/Resources/translations\SonataCoreBundle.pt.xliff</argument>
+            <argument>F:\MK\YallaWebSite\vendor\friendsofsymfony\user-bundle/Resources/translations\FOSUserBundle.pt.yml</argument>
+            <argument>F:\MK\YallaWebSite\vendor\friendsofsymfony\user-bundle/Resources/translations\validators.pt.yml</argument>
           </argument>
           <argument key="pt_BR" type="collection">
-            <argument>C:\TEMP\YNL_SERVER\vendor\symfony\symfony\src\Symfony\Component\Validator/Resources/translations\validators.pt_BR.xlf</argument>
-            <argument>C:\TEMP\YNL_SERVER\vendor\symfony\symfony\src\Symfony\Component\Form/Resources/translations\validators.pt_BR.xlf</argument>
-            <argument>C:\TEMP\YNL_SERVER\vendor\symfony\symfony\src\Symfony\Component\Security\Core\Exception/../Resources/translations\security.pt_BR.xlf</argument>
-            <argument>C:\TEMP\YNL_SERVER\vendor\sonata-project\core-bundle/Resources/translations\SonataCoreBundle.pt_BR.xliff</argument>
-            <argument>C:\TEMP\YNL_SERVER\vendor\sonata-project\media-bundle/Resources/translations\SonataMediaBundle.pt_BR.xliff</argument>
-            <argument>C:\TEMP\YNL_SERVER\vendor\friendsofsymfony\user-bundle/Resources/translations\FOSUserBundle.pt_BR.yml</argument>
-            <argument>C:\TEMP\YNL_SERVER\vendor\friendsofsymfony\user-bundle/Resources/translations\validators.pt_BR.yml</argument>
+            <argument>F:\MK\YallaWebSite\vendor\symfony\symfony\src\Symfony\Component\Validator/Resources/translations\validators.pt_BR.xlf</argument>
+            <argument>F:\MK\YallaWebSite\vendor\symfony\symfony\src\Symfony\Component\Form/Resources/translations\validators.pt_BR.xlf</argument>
+            <argument>F:\MK\YallaWebSite\vendor\symfony\symfony\src\Symfony\Component\Security\Core\Exception/../Resources/translations\security.pt_BR.xlf</argument>
+            <argument>F:\MK\YallaWebSite\vendor\sonata-project\core-bundle/Resources/translations\SonataCoreBundle.pt_BR.xliff</argument>
+            <argument>F:\MK\YallaWebSite\vendor\sonata-project\media-bundle/Resources/translations\SonataMediaBundle.pt_BR.xliff</argument>
+            <argument>F:\MK\YallaWebSite\vendor\friendsofsymfony\user-bundle/Resources/translations\FOSUserBundle.pt_BR.yml</argument>
+            <argument>F:\MK\YallaWebSite\vendor\friendsofsymfony\user-bundle/Resources/translations\validators.pt_BR.yml</argument>
           </argument>
           <argument key="ro" type="collection">
-            <argument>C:\TEMP\YNL_SERVER\vendor\symfony\symfony\src\Symfony\Component\Validator/Resources/translations\validators.ro.xlf</argument>
-            <argument>C:\TEMP\YNL_SERVER\vendor\symfony\symfony\src\Symfony\Component\Form/Resources/translations\validators.ro.xlf</argument>
-            <argument>C:\TEMP\YNL_SERVER\vendor\symfony\symfony\src\Symfony\Component\Security\Core\Exception/../Resources/translations\security.ro.xlf</argument>
-            <argument>C:\TEMP\YNL_SERVER\vendor\sonata-project\core-bundle/Resources/translations\SonataCoreBundle.ro.xliff</argument>
-            <argument>C:\TEMP\YNL_SERVER\vendor\friendsofsymfony\user-bundle/Resources/translations\FOSUserBundle.ro.yml</argument>
-            <argument>C:\TEMP\YNL_SERVER\vendor\friendsofsymfony\user-bundle/Resources/translations\validators.ro.yml</argument>
+            <argument>F:\MK\YallaWebSite\vendor\symfony\symfony\src\Symfony\Component\Validator/Resources/translations\validators.ro.xlf</argument>
+            <argument>F:\MK\YallaWebSite\vendor\symfony\symfony\src\Symfony\Component\Form/Resources/translations\validators.ro.xlf</argument>
+            <argument>F:\MK\YallaWebSite\vendor\symfony\symfony\src\Symfony\Component\Security\Core\Exception/../Resources/translations\security.ro.xlf</argument>
+            <argument>F:\MK\YallaWebSite\vendor\sonata-project\core-bundle/Resources/translations\SonataCoreBundle.ro.xliff</argument>
+            <argument>F:\MK\YallaWebSite\vendor\friendsofsymfony\user-bundle/Resources/translations\FOSUserBundle.ro.yml</argument>
+            <argument>F:\MK\YallaWebSite\vendor\friendsofsymfony\user-bundle/Resources/translations\validators.ro.yml</argument>
           </argument>
           <argument key="ru" type="collection">
-            <argument>C:\TEMP\YNL_SERVER\vendor\symfony\symfony\src\Symfony\Component\Validator/Resources/translations\validators.ru.xlf</argument>
-            <argument>C:\TEMP\YNL_SERVER\vendor\symfony\symfony\src\Symfony\Component\Form/Resources/translations\validators.ru.xlf</argument>
-            <argument>C:\TEMP\YNL_SERVER\vendor\symfony\symfony\src\Symfony\Component\Security\Core\Exception/../Resources/translations\security.ru.xlf</argument>
-            <argument>C:\TEMP\YNL_SERVER\vendor\sonata-project\core-bundle/Resources/translations\SonataCoreBundle.ru.xliff</argument>
-            <argument>C:\TEMP\YNL_SERVER\vendor\sonata-project\media-bundle/Resources/translations\SonataMediaBundle.ru.xliff</argument>
-            <argument>C:\TEMP\YNL_SERVER\vendor\friendsofsymfony\user-bundle/Resources/translations\FOSUserBundle.ru.yml</argument>
-            <argument>C:\TEMP\YNL_SERVER\vendor\friendsofsymfony\user-bundle/Resources/translations\validators.ru.yml</argument>
-            <argument>C:\TEMP\YNL_SERVER\vendor\hwi\oauth-bundle/Resources/translations\HWIOAuthBundle.ru.yml</argument>
+            <argument>F:\MK\YallaWebSite\vendor\symfony\symfony\src\Symfony\Component\Validator/Resources/translations\validators.ru.xlf</argument>
+            <argument>F:\MK\YallaWebSite\vendor\symfony\symfony\src\Symfony\Component\Form/Resources/translations\validators.ru.xlf</argument>
+            <argument>F:\MK\YallaWebSite\vendor\symfony\symfony\src\Symfony\Component\Security\Core\Exception/../Resources/translations\security.ru.xlf</argument>
+            <argument>F:\MK\YallaWebSite\vendor\sonata-project\core-bundle/Resources/translations\SonataCoreBundle.ru.xliff</argument>
+            <argument>F:\MK\YallaWebSite\vendor\sonata-project\media-bundle/Resources/translations\SonataMediaBundle.ru.xliff</argument>
+            <argument>F:\MK\YallaWebSite\vendor\friendsofsymfony\user-bundle/Resources/translations\FOSUserBundle.ru.yml</argument>
+            <argument>F:\MK\YallaWebSite\vendor\friendsofsymfony\user-bundle/Resources/translations\validators.ru.yml</argument>
+            <argument>F:\MK\YallaWebSite\vendor\hwi\oauth-bundle/Resources/translations\HWIOAuthBundle.ru.yml</argument>
           </argument>
           <argument key="sk" type="collection">
-            <argument>C:\TEMP\YNL_SERVER\vendor\symfony\symfony\src\Symfony\Component\Validator/Resources/translations\validators.sk.xlf</argument>
-            <argument>C:\TEMP\YNL_SERVER\vendor\symfony\symfony\src\Symfony\Component\Form/Resources/translations\validators.sk.xlf</argument>
-            <argument>C:\TEMP\YNL_SERVER\vendor\symfony\symfony\src\Symfony\Component\Security\Core\Exception/../Resources/translations\security.sk.xlf</argument>
-            <argument>C:\TEMP\YNL_SERVER\vendor\sonata-project\core-bundle/Resources/translations\SonataCoreBundle.sk.xliff</argument>
-            <argument>C:\TEMP\YNL_SERVER\vendor\friendsofsymfony\user-bundle/Resources/translations\FOSUserBundle.sk.yml</argument>
-            <argument>C:\TEMP\YNL_SERVER\vendor\friendsofsymfony\user-bundle/Resources/translations\validators.sk.yml</argument>
+            <argument>F:\MK\YallaWebSite\vendor\symfony\symfony\src\Symfony\Component\Validator/Resources/translations\validators.sk.xlf</argument>
+            <argument>F:\MK\YallaWebSite\vendor\symfony\symfony\src\Symfony\Component\Form/Resources/translations\validators.sk.xlf</argument>
+            <argument>F:\MK\YallaWebSite\vendor\symfony\symfony\src\Symfony\Component\Security\Core\Exception/../Resources/translations\security.sk.xlf</argument>
+            <argument>F:\MK\YallaWebSite\vendor\sonata-project\core-bundle/Resources/translations\SonataCoreBundle.sk.xliff</argument>
+            <argument>F:\MK\YallaWebSite\vendor\friendsofsymfony\user-bundle/Resources/translations\FOSUserBundle.sk.yml</argument>
+            <argument>F:\MK\YallaWebSite\vendor\friendsofsymfony\user-bundle/Resources/translations\validators.sk.yml</argument>
           </argument>
           <argument key="sl" type="collection">
-            <argument>C:\TEMP\YNL_SERVER\vendor\symfony\symfony\src\Symfony\Component\Validator/Resources/translations\validators.sl.xlf</argument>
-            <argument>C:\TEMP\YNL_SERVER\vendor\symfony\symfony\src\Symfony\Component\Form/Resources/translations\validators.sl.xlf</argument>
-            <argument>C:\TEMP\YNL_SERVER\vendor\symfony\symfony\src\Symfony\Component\Security\Core\Exception/../Resources/translations\security.sl.xlf</argument>
-            <argument>C:\TEMP\YNL_SERVER\vendor\sonata-project\core-bundle/Resources/translations\SonataCoreBundle.sl.xliff</argument>
-            <argument>C:\TEMP\YNL_SERVER\vendor\sonata-project\media-bundle/Resources/translations\SonataMediaBundle.sl.xliff</argument>
-            <argument>C:\TEMP\YNL_SERVER\vendor\friendsofsymfony\user-bundle/Resources/translations\FOSUserBundle.sl.yml</argument>
-            <argument>C:\TEMP\YNL_SERVER\vendor\friendsofsymfony\user-bundle/Resources/translations\validators.sl.yml</argument>
+            <argument>F:\MK\YallaWebSite\vendor\symfony\symfony\src\Symfony\Component\Validator/Resources/translations\validators.sl.xlf</argument>
+            <argument>F:\MK\YallaWebSite\vendor\symfony\symfony\src\Symfony\Component\Form/Resources/translations\validators.sl.xlf</argument>
+            <argument>F:\MK\YallaWebSite\vendor\symfony\symfony\src\Symfony\Component\Security\Core\Exception/../Resources/translations\security.sl.xlf</argument>
+            <argument>F:\MK\YallaWebSite\vendor\sonata-project\core-bundle/Resources/translations\SonataCoreBundle.sl.xliff</argument>
+            <argument>F:\MK\YallaWebSite\vendor\sonata-project\media-bundle/Resources/translations\SonataMediaBundle.sl.xliff</argument>
+            <argument>F:\MK\YallaWebSite\vendor\friendsofsymfony\user-bundle/Resources/translations\FOSUserBundle.sl.yml</argument>
+            <argument>F:\MK\YallaWebSite\vendor\friendsofsymfony\user-bundle/Resources/translations\validators.sl.yml</argument>
           </argument>
           <argument key="sq" type="collection">
-            <argument>C:\TEMP\YNL_SERVER\vendor\symfony\symfony\src\Symfony\Component\Validator/Resources/translations\validators.sq.xlf</argument>
+            <argument>F:\MK\YallaWebSite\vendor\symfony\symfony\src\Symfony\Component\Validator/Resources/translations\validators.sq.xlf</argument>
           </argument>
           <argument key="sr_Cyrl" type="collection">
-            <argument>C:\TEMP\YNL_SERVER\vendor\symfony\symfony\src\Symfony\Component\Validator/Resources/translations\validators.sr_Cyrl.xlf</argument>
-            <argument>C:\TEMP\YNL_SERVER\vendor\symfony\symfony\src\Symfony\Component\Form/Resources/translations\validators.sr_Cyrl.xlf</argument>
-            <argument>C:\TEMP\YNL_SERVER\vendor\symfony\symfony\src\Symfony\Component\Security\Core\Exception/../Resources/translations\security.sr_Cyrl.xlf</argument>
+            <argument>F:\MK\YallaWebSite\vendor\symfony\symfony\src\Symfony\Component\Validator/Resources/translations\validators.sr_Cyrl.xlf</argument>
+            <argument>F:\MK\YallaWebSite\vendor\symfony\symfony\src\Symfony\Component\Form/Resources/translations\validators.sr_Cyrl.xlf</argument>
+            <argument>F:\MK\YallaWebSite\vendor\symfony\symfony\src\Symfony\Component\Security\Core\Exception/../Resources/translations\security.sr_Cyrl.xlf</argument>
           </argument>
           <argument key="sr_Latn" type="collection">
-            <argument>C:\TEMP\YNL_SERVER\vendor\symfony\symfony\src\Symfony\Component\Validator/Resources/translations\validators.sr_Latn.xlf</argument>
-            <argument>C:\TEMP\YNL_SERVER\vendor\symfony\symfony\src\Symfony\Component\Form/Resources/translations\validators.sr_Latn.xlf</argument>
-            <argument>C:\TEMP\YNL_SERVER\vendor\symfony\symfony\src\Symfony\Component\Security\Core\Exception/../Resources/translations\security.sr_Latn.xlf</argument>
-            <argument>C:\TEMP\YNL_SERVER\vendor\friendsofsymfony\user-bundle/Resources/translations\FOSUserBundle.sr_Latn.yml</argument>
-            <argument>C:\TEMP\YNL_SERVER\vendor\friendsofsymfony\user-bundle/Resources/translations\validators.sr_Latn.yml</argument>
+            <argument>F:\MK\YallaWebSite\vendor\symfony\symfony\src\Symfony\Component\Validator/Resources/translations\validators.sr_Latn.xlf</argument>
+            <argument>F:\MK\YallaWebSite\vendor\symfony\symfony\src\Symfony\Component\Form/Resources/translations\validators.sr_Latn.xlf</argument>
+            <argument>F:\MK\YallaWebSite\vendor\symfony\symfony\src\Symfony\Component\Security\Core\Exception/../Resources/translations\security.sr_Latn.xlf</argument>
+            <argument>F:\MK\YallaWebSite\vendor\friendsofsymfony\user-bundle/Resources/translations\FOSUserBundle.sr_Latn.yml</argument>
+            <argument>F:\MK\YallaWebSite\vendor\friendsofsymfony\user-bundle/Resources/translations\validators.sr_Latn.yml</argument>
           </argument>
           <argument key="sv" type="collection">
-            <argument>C:\TEMP\YNL_SERVER\vendor\symfony\symfony\src\Symfony\Component\Validator/Resources/translations\validators.sv.xlf</argument>
-            <argument>C:\TEMP\YNL_SERVER\vendor\symfony\symfony\src\Symfony\Component\Form/Resources/translations\validators.sv.xlf</argument>
-            <argument>C:\TEMP\YNL_SERVER\vendor\symfony\symfony\src\Symfony\Component\Security\Core\Exception/../Resources/translations\security.sv.xlf</argument>
-            <argument>C:\TEMP\YNL_SERVER\vendor\friendsofsymfony\user-bundle/Resources/translations\FOSUserBundle.sv.yml</argument>
-            <argument>C:\TEMP\YNL_SERVER\vendor\friendsofsymfony\user-bundle/Resources/translations\validators.sv.yml</argument>
+            <argument>F:\MK\YallaWebSite\vendor\symfony\symfony\src\Symfony\Component\Validator/Resources/translations\validators.sv.xlf</argument>
+            <argument>F:\MK\YallaWebSite\vendor\symfony\symfony\src\Symfony\Component\Form/Resources/translations\validators.sv.xlf</argument>
+            <argument>F:\MK\YallaWebSite\vendor\symfony\symfony\src\Symfony\Component\Security\Core\Exception/../Resources/translations\security.sv.xlf</argument>
+            <argument>F:\MK\YallaWebSite\vendor\friendsofsymfony\user-bundle/Resources/translations\FOSUserBundle.sv.yml</argument>
+            <argument>F:\MK\YallaWebSite\vendor\friendsofsymfony\user-bundle/Resources/translations\validators.sv.yml</argument>
           </argument>
           <argument key="th" type="collection">
-            <argument>C:\TEMP\YNL_SERVER\vendor\symfony\symfony\src\Symfony\Component\Validator/Resources/translations\validators.th.xlf</argument>
-            <argument>C:\TEMP\YNL_SERVER\vendor\symfony\symfony\src\Symfony\Component\Security\Core\Exception/../Resources/translations\security.th.xlf</argument>
-            <argument>C:\TEMP\YNL_SERVER\vendor\friendsofsymfony\user-bundle/Resources/translations\FOSUserBundle.th.yml</argument>
-            <argument>C:\TEMP\YNL_SERVER\vendor\friendsofsymfony\user-bundle/Resources/translations\validators.th.yml</argument>
+            <argument>F:\MK\YallaWebSite\vendor\symfony\symfony\src\Symfony\Component\Validator/Resources/translations\validators.th.xlf</argument>
+            <argument>F:\MK\YallaWebSite\vendor\symfony\symfony\src\Symfony\Component\Security\Core\Exception/../Resources/translations\security.th.xlf</argument>
+            <argument>F:\MK\YallaWebSite\vendor\friendsofsymfony\user-bundle/Resources/translations\FOSUserBundle.th.yml</argument>
+            <argument>F:\MK\YallaWebSite\vendor\friendsofsymfony\user-bundle/Resources/translations\validators.th.yml</argument>
           </argument>
           <argument key="tr" type="collection">
-            <argument>C:\TEMP\YNL_SERVER\vendor\symfony\symfony\src\Symfony\Component\Validator/Resources/translations\validators.tr.xlf</argument>
-            <argument>C:\TEMP\YNL_SERVER\vendor\symfony\symfony\src\Symfony\Component\Security\Core\Exception/../Resources/translations\security.tr.xlf</argument>
-            <argument>C:\TEMP\YNL_SERVER\vendor\friendsofsymfony\user-bundle/Resources/translations\FOSUserBundle.tr.yml</argument>
-            <argument>C:\TEMP\YNL_SERVER\vendor\friendsofsymfony\user-bundle/Resources/translations\validators.tr.yml</argument>
-            <argument>C:\TEMP\YNL_SERVER\vendor\hwi\oauth-bundle/Resources/translations\HWIOAuthBundle.tr.yml</argument>
+            <argument>F:\MK\YallaWebSite\vendor\symfony\symfony\src\Symfony\Component\Validator/Resources/translations\validators.tr.xlf</argument>
+            <argument>F:\MK\YallaWebSite\vendor\symfony\symfony\src\Symfony\Component\Security\Core\Exception/../Resources/translations\security.tr.xlf</argument>
+            <argument>F:\MK\YallaWebSite\vendor\friendsofsymfony\user-bundle/Resources/translations\FOSUserBundle.tr.yml</argument>
+            <argument>F:\MK\YallaWebSite\vendor\friendsofsymfony\user-bundle/Resources/translations\validators.tr.yml</argument>
+            <argument>F:\MK\YallaWebSite\vendor\hwi\oauth-bundle/Resources/translations\HWIOAuthBundle.tr.yml</argument>
           </argument>
           <argument key="uk" type="collection">
-            <argument>C:\TEMP\YNL_SERVER\vendor\symfony\symfony\src\Symfony\Component\Validator/Resources/translations\validators.uk.xlf</argument>
-            <argument>C:\TEMP\YNL_SERVER\vendor\symfony\symfony\src\Symfony\Component\Form/Resources/translations\validators.uk.xlf</argument>
-            <argument>C:\TEMP\YNL_SERVER\vendor\sonata-project\core-bundle/Resources/translations\SonataCoreBundle.uk.xliff</argument>
-            <argument>C:\TEMP\YNL_SERVER\vendor\friendsofsymfony\user-bundle/Resources/translations\FOSUserBundle.uk.yml</argument>
-            <argument>C:\TEMP\YNL_SERVER\vendor\friendsofsymfony\user-bundle/Resources/translations\validators.uk.yml</argument>
-            <argument>C:\TEMP\YNL_SERVER\vendor\hwi\oauth-bundle/Resources/translations\HWIOAuthBundle.uk.yml</argument>
+            <argument>F:\MK\YallaWebSite\vendor\symfony\symfony\src\Symfony\Component\Validator/Resources/translations\validators.uk.xlf</argument>
+            <argument>F:\MK\YallaWebSite\vendor\symfony\symfony\src\Symfony\Component\Form/Resources/translations\validators.uk.xlf</argument>
+            <argument>F:\MK\YallaWebSite\vendor\sonata-project\core-bundle/Resources/translations\SonataCoreBundle.uk.xliff</argument>
+            <argument>F:\MK\YallaWebSite\vendor\friendsofsymfony\user-bundle/Resources/translations\FOSUserBundle.uk.yml</argument>
+            <argument>F:\MK\YallaWebSite\vendor\friendsofsymfony\user-bundle/Resources/translations\validators.uk.yml</argument>
+            <argument>F:\MK\YallaWebSite\vendor\hwi\oauth-bundle/Resources/translations\HWIOAuthBundle.uk.yml</argument>
           </argument>
           <argument key="vi" type="collection">
-            <argument>C:\TEMP\YNL_SERVER\vendor\symfony\symfony\src\Symfony\Component\Validator/Resources/translations\validators.vi.xlf</argument>
-            <argument>C:\TEMP\YNL_SERVER\vendor\symfony\symfony\src\Symfony\Component\Security\Core\Exception/../Resources/translations\security.vi.xlf</argument>
-            <argument>C:\TEMP\YNL_SERVER\vendor\friendsofsymfony\user-bundle/Resources/translations\FOSUserBundle.vi.yml</argument>
-            <argument>C:\TEMP\YNL_SERVER\vendor\friendsofsymfony\user-bundle/Resources/translations\validators.vi.yml</argument>
+            <argument>F:\MK\YallaWebSite\vendor\symfony\symfony\src\Symfony\Component\Validator/Resources/translations\validators.vi.xlf</argument>
+            <argument>F:\MK\YallaWebSite\vendor\symfony\symfony\src\Symfony\Component\Security\Core\Exception/../Resources/translations\security.vi.xlf</argument>
+            <argument>F:\MK\YallaWebSite\vendor\friendsofsymfony\user-bundle/Resources/translations\FOSUserBundle.vi.yml</argument>
+            <argument>F:\MK\YallaWebSite\vendor\friendsofsymfony\user-bundle/Resources/translations\validators.vi.yml</argument>
           </argument>
           <argument key="zh_CN" type="collection">
-            <argument>C:\TEMP\YNL_SERVER\vendor\symfony\symfony\src\Symfony\Component\Validator/Resources/translations\validators.zh_CN.xlf</argument>
-            <argument>C:\TEMP\YNL_SERVER\vendor\symfony\symfony\src\Symfony\Component\Form/Resources/translations\validators.zh_CN.xlf</argument>
-            <argument>C:\TEMP\YNL_SERVER\vendor\symfony\symfony\src\Symfony\Component\Security\Core\Exception/../Resources/translations\security.zh_CN.xlf</argument>
-            <argument>C:\TEMP\YNL_SERVER\vendor\sonata-project\core-bundle/Resources/translations\SonataCoreBundle.zh_CN.xliff</argument>
-            <argument>C:\TEMP\YNL_SERVER\vendor\friendsofsymfony\user-bundle/Resources/translations\FOSUserBundle.zh_CN.yml</argument>
-            <argument>C:\TEMP\YNL_SERVER\vendor\friendsofsymfony\user-bundle/Resources/translations\validators.zh_CN.yml</argument>
+            <argument>F:\MK\YallaWebSite\vendor\symfony\symfony\src\Symfony\Component\Validator/Resources/translations\validators.zh_CN.xlf</argument>
+            <argument>F:\MK\YallaWebSite\vendor\symfony\symfony\src\Symfony\Component\Form/Resources/translations\validators.zh_CN.xlf</argument>
+            <argument>F:\MK\YallaWebSite\vendor\symfony\symfony\src\Symfony\Component\Security\Core\Exception/../Resources/translations\security.zh_CN.xlf</argument>
+            <argument>F:\MK\YallaWebSite\vendor\sonata-project\core-bundle/Resources/translations\SonataCoreBundle.zh_CN.xliff</argument>
+            <argument>F:\MK\YallaWebSite\vendor\friendsofsymfony\user-bundle/Resources/translations\FOSUserBundle.zh_CN.yml</argument>
+            <argument>F:\MK\YallaWebSite\vendor\friendsofsymfony\user-bundle/Resources/translations\validators.zh_CN.yml</argument>
           </argument>
           <argument key="zh_TW" type="collection">
-            <argument>C:\TEMP\YNL_SERVER\vendor\symfony\symfony\src\Symfony\Component\Validator/Resources/translations\validators.zh_TW.xlf</argument>
+            <argument>F:\MK\YallaWebSite\vendor\symfony\symfony\src\Symfony\Component\Validator/Resources/translations\validators.zh_TW.xlf</argument>
           </argument>
           <argument key="lv" type="collection">
-            <argument>C:\TEMP\YNL_SERVER\vendor\symfony\symfony\src\Symfony\Component\Form/Resources/translations\validators.lv.xlf</argument>
-            <argument>C:\TEMP\YNL_SERVER\vendor\friendsofsymfony\user-bundle/Resources/translations\FOSUserBundle.lv.yml</argument>
-            <argument>C:\TEMP\YNL_SERVER\vendor\friendsofsymfony\user-bundle/Resources/translations\validators.lv.yml</argument>
+            <argument>F:\MK\YallaWebSite\vendor\symfony\symfony\src\Symfony\Component\Form/Resources/translations\validators.lv.xlf</argument>
+            <argument>F:\MK\YallaWebSite\vendor\friendsofsymfony\user-bundle/Resources/translations\FOSUserBundle.lv.yml</argument>
+            <argument>F:\MK\YallaWebSite\vendor\friendsofsymfony\user-bundle/Resources/translations\validators.lv.yml</argument>
           </argument>
           <argument key="pt_PT" type="collection">
-            <argument>C:\TEMP\YNL_SERVER\vendor\symfony\symfony\src\Symfony\Component\Security\Core\Exception/../Resources/translations\security.pt_PT.xlf</argument>
+            <argument>F:\MK\YallaWebSite\vendor\symfony\symfony\src\Symfony\Component\Security\Core\Exception/../Resources/translations\security.pt_PT.xlf</argument>
           </argument>
           <argument key="ua" type="collection">
-            <argument>C:\TEMP\YNL_SERVER\vendor\symfony\symfony\src\Symfony\Component\Security\Core\Exception/../Resources/translations\security.ua.xlf</argument>
+            <argument>F:\MK\YallaWebSite\vendor\symfony\symfony\src\Symfony\Component\Security\Core\Exception/../Resources/translations\security.ua.xlf</argument>
           </argument>
           <argument key="ky" type="collection">
-            <argument>C:\TEMP\YNL_SERVER\vendor\friendsofsymfony\user-bundle/Resources/translations\FOSUserBundle.ky.yml</argument>
-            <argument>C:\TEMP\YNL_SERVER\vendor\friendsofsymfony\user-bundle/Resources/translations\validators.ky.yml</argument>
+            <argument>F:\MK\YallaWebSite\vendor\friendsofsymfony\user-bundle/Resources/translations\FOSUserBundle.ky.yml</argument>
+            <argument>F:\MK\YallaWebSite\vendor\friendsofsymfony\user-bundle/Resources/translations\validators.ky.yml</argument>
           </argument>
           <argument key="nb" type="collection">
-            <argument>C:\TEMP\YNL_SERVER\vendor\friendsofsymfony\user-bundle/Resources/translations\FOSUserBundle.nb.yml</argument>
-            <argument>C:\TEMP\YNL_SERVER\vendor\friendsofsymfony\user-bundle/Resources/translations\validators.nb.yml</argument>
+            <argument>F:\MK\YallaWebSite\vendor\friendsofsymfony\user-bundle/Resources/translations\FOSUserBundle.nb.yml</argument>
+            <argument>F:\MK\YallaWebSite\vendor\friendsofsymfony\user-bundle/Resources/translations\validators.nb.yml</argument>
           </argument>
           <argument key="zh" type="collection">
-            <argument>C:\TEMP\YNL_SERVER\vendor\hwi\oauth-bundle/Resources/translations\HWIOAuthBundle.zh.yml</argument>
+            <argument>F:\MK\YallaWebSite\vendor\hwi\oauth-bundle/Resources/translations\HWIOAuthBundle.zh.yml</argument>
           </argument>
         </argument>
       </argument>
@@ -2174,7 +2174,7 @@
     <service id="templating.filename_parser" class="Symfony\Bundle\FrameworkBundle\Templating\TemplateFilenameParser"/>
     <service id="templating.locator" class="Symfony\Bundle\FrameworkBundle\Templating\Loader\TemplateLocator" public="false">
       <argument type="service" id="file_locator"/>
-      <argument>C:/TEMP/YNL_SERVER/app/cache/dev</argument>
+      <argument>F:/MK/YallaWebSite/app/cache/dev</argument>
     </service>
     <service id="templating.helper.assets" class="Symfony\Bundle\FrameworkBundle\Templating\Helper\AssetsHelper">
       <tag name="templating.helper" alias="assets"/>
@@ -2200,9 +2200,9 @@
       </call>
       <call method="addXmlMappings">
         <argument type="collection">
-          <argument>C:\TEMP\YNL_SERVER\vendor\symfony\symfony\src\Symfony\Component\Form/Resources/config/validation.xml</argument>
-          <argument>C:\TEMP\YNL_SERVER\vendor\sonata-project\media-bundle\Resources\config\validation.xml</argument>
-          <argument>C:\TEMP\YNL_SERVER\vendor\friendsofsymfony\user-bundle\Resources\config\validation.xml</argument>
+          <argument>F:\MK\YallaWebSite\vendor\symfony\symfony\src\Symfony\Component\Form/Resources/config/validation.xml</argument>
+          <argument>F:\MK\YallaWebSite\vendor\sonata-project\media-bundle\Resources\config\validation.xml</argument>
+          <argument>F:\MK\YallaWebSite\vendor\friendsofsymfony\user-bundle\Resources\config\validation.xml</argument>
         </argument>
       </call>
       <call method="enableAnnotationMapping">
@@ -2223,7 +2223,7 @@
         </argument>
       </call>
       <call method="addXmlMapping">
-        <argument>C:\TEMP\YNL_SERVER\vendor\friendsofsymfony\user-bundle\DependencyInjection\Compiler/../../Resources/config/storage-validation/orm.xml</argument>
+        <argument>F:\MK\YallaWebSite\vendor\friendsofsymfony\user-bundle\DependencyInjection\Compiler/../../Resources/config/storage-validation/orm.xml</argument>
       </call>
       <factory class="Symfony\Component\Validator\Validation" method="createValidatorBuilder"/>
     </service>
@@ -2265,7 +2265,7 @@
       <tag name="monolog.logger" channel="profiler"/>
       <argument type="service">
         <service class="Symfony\Component\HttpKernel\Profiler\FileProfilerStorage" public="false">
-          <argument>file:C:/TEMP/YNL_SERVER/app/cache/dev/profiler</argument>
+          <argument>file:F:/MK/YallaWebSite/app/cache/dev/profiler</argument>
           <argument></argument>
           <argument></argument>
           <argument>86400</argument>
@@ -2801,7 +2801,7 @@
         </argument>
         <argument type="service">
           <service class="Symfony\Component\Security\Core\Authentication\Provider\AnonymousAuthenticationProvider" public="false">
-            <argument>57586a8a415705.60089759</argument>
+            <argument>57595476d7c275.12067290</argument>
           </service>
         </argument>
         <argument type="service">
@@ -2813,7 +2813,7 @@
         </argument>
         <argument type="service">
           <service class="Symfony\Component\Security\Core\Authentication\Provider\AnonymousAuthenticationProvider" public="false">
-            <argument>57586a8a415705.60089759</argument>
+            <argument>57595476d7c275.12067290</argument>
           </service>
         </argument>
       </argument>
@@ -3173,7 +3173,7 @@
         <argument type="service">
           <service class="Symfony\Component\Security\Http\Firewall\AnonymousAuthenticationListener" public="false">
             <argument type="service" id="security.token_storage"/>
-            <argument>57586a8a415705.60089759</argument>
+            <argument>57595476d7c275.12067290</argument>
             <argument type="service" id="monolog.logger.security" on-invalid="null"/>
             <argument type="service" id="security.authentication.manager"/>
           </service>
@@ -3287,7 +3287,7 @@
         <argument type="service">
           <service class="Symfony\Component\Security\Http\Firewall\AnonymousAuthenticationListener" public="false">
             <argument type="service" id="security.token_storage"/>
-            <argument>57586a8a415705.60089759</argument>
+            <argument>57595476d7c275.12067290</argument>
             <argument type="service" id="monolog.logger.security" on-invalid="null"/>
             <argument type="service" id="security.authentication.manager"/>
           </service>
@@ -3321,16 +3321,16 @@
         <argument key="debug">true</argument>
         <argument key="strict_variables">true</argument>
         <argument key="paths" type="collection">
-          <argument key="C:\TEMP\YNL_SERVER\app/../app/Resources/FOSUserBundle">FOSUserBundle</argument>
-          <argument key="C:\TEMP\YNL_SERVER\app/../src/YallaWebsite/BackendBundle/Resources">YallaWebsiteBackendBundle</argument>
-          <argument key="C:\TEMP\YNL_SERVER\app/../src/YallaWebsite/FrontendBundle/Resources">YallaWebsiteFrontendBundle</argument>
+          <argument key="F:\MK\YallaWebSite\app/../app/Resources/FOSUserBundle">FOSUserBundle</argument>
+          <argument key="F:\MK\YallaWebSite\app/../src/YallaWebsite/BackendBundle/Resources">YallaWebsiteBackendBundle</argument>
+          <argument key="F:\MK\YallaWebSite\app/../src/YallaWebsite/FrontendBundle/Resources">YallaWebsiteFrontendBundle</argument>
         </argument>
         <argument key="exception_controller">twig.controller.exception:showAction</argument>
         <argument key="form_themes" type="collection">
           <argument>form_div_layout.html.twig</argument>
         </argument>
         <argument key="autoescape">filename</argument>
-        <argument key="cache">C:/TEMP/YNL_SERVER/app/cache/dev/twig</argument>
+        <argument key="cache">F:/MK/YallaWebSite/app/cache/dev/twig</argument>
         <argument key="charset">UTF-8</argument>
         <argument key="date" type="collection">
           <argument key="format">F j, Y H:i</argument>
@@ -3404,7 +3404,7 @@
           <service class="Symfony\Bridge\Twig\Extension\CodeExtension" public="false">
             <tag name="twig.extension"/>
             <argument>null</argument>
-            <argument>C:\TEMP\YNL_SERVER\app</argument>
+            <argument>F:\MK\YallaWebSite\app</argument>
             <argument>UTF-8</argument>
           </service>
         </argument>
@@ -3671,7 +3671,7 @@
       <argument>twig.controller.exception:showAction</argument>
     </service>
     <service id="monolog.handler.main" class="Monolog\Handler\StreamHandler">
-      <argument>C:\TEMP\YNL_SERVER\app\logs/dev.log</argument>
+      <argument>F:\MK\YallaWebSite\app\logs/dev.log</argument>
       <argument>100</argument>
       <argument>true</argument>
       <argument>null</argument>
@@ -3722,7 +3722,7 @@
             </argument>
             <argument type="service">
               <service class="Assetic\Cache\ConfigCache" public="false">
-                <argument>C:/TEMP/YNL_SERVER/app/cache/dev/assetic/config</argument>
+                <argument>F:/MK/YallaWebSite/app/cache/dev/assetic/config</argument>
               </service>
             </argument>
             <argument>true</argument>
@@ -3736,29 +3736,29 @@
             <argument type="collection">
               <argument key="bootstrap_js" type="collection">
                 <argument type="collection">
-                  <argument>C:\TEMP\YNL_SERVER\app/../vendor/twitter/bootstrap/dist/js/bootstrap.js</argument>
+                  <argument>F:\MK\YallaWebSite\app/../vendor/twitter/bootstrap/dist/js/bootstrap.js</argument>
                 </argument>
                 <argument type="collection"/>
                 <argument type="collection"/>
               </argument>
               <argument key="bootstrap_css" type="collection">
                 <argument type="collection">
-                  <argument>C:\TEMP\YNL_SERVER\app/../vendor/twitter/bootstrap/dist/css/bootstrap.css</argument>
-                  <argument>C:\TEMP\YNL_SERVER\app/../vendor/twitter/bootstrap/dist/css/bootstrap-theme.css</argument>
+                  <argument>F:\MK\YallaWebSite\app/../vendor/twitter/bootstrap/dist/css/bootstrap.css</argument>
+                  <argument>F:\MK\YallaWebSite\app/../vendor/twitter/bootstrap/dist/css/bootstrap-theme.css</argument>
                 </argument>
                 <argument type="collection"/>
                 <argument type="collection"/>
               </argument>
               <argument key="jquery" type="collection">
                 <argument type="collection">
-                  <argument>C:\TEMP\YNL_SERVER\app/../vendor/components/jquery/jquery.js</argument>
+                  <argument>F:\MK\YallaWebSite\app/../vendor/components/jquery/jquery.js</argument>
                 </argument>
                 <argument type="collection"/>
                 <argument type="collection"/>
               </argument>
               <argument key="frontend_css" type="collection">
                 <argument type="collection">
-                  <argument>C:\TEMP\YNL_SERVER\app/../src/YallaWebsite/FrontendBundle/Resources/public/less/style.less</argument>
+                  <argument>F:\MK\YallaWebSite\app/../src/YallaWebsite/FrontendBundle/Resources/public/less/style.less</argument>
                 </argument>
                 <argument type="collection">
                   <argument>lessphp</argument>
@@ -3769,35 +3769,35 @@
               </argument>
               <argument key="massonary" type="collection">
                 <argument type="collection">
-                  <argument>C:\TEMP\YNL_SERVER\app/../src/YallaWebsite/FrontendBundle/Resources/public/js/masonry.pkgd.min.js</argument>
+                  <argument>F:\MK\YallaWebSite\app/../src/YallaWebsite/FrontendBundle/Resources/public/js/masonry.pkgd.min.js</argument>
                 </argument>
                 <argument type="collection"/>
                 <argument type="collection"/>
               </argument>
               <argument key="imagesloaded" type="collection">
                 <argument type="collection">
-                  <argument>C:\TEMP\YNL_SERVER\app/../src/YallaWebsite/FrontendBundle/Resources/public/js/imagesloaded.pkgd.min.js</argument>
+                  <argument>F:\MK\YallaWebSite\app/../src/YallaWebsite/FrontendBundle/Resources/public/js/imagesloaded.pkgd.min.js</argument>
                 </argument>
                 <argument type="collection"/>
                 <argument type="collection"/>
               </argument>
               <argument key="fontawesome_css" type="collection">
                 <argument type="collection">
-                  <argument>C:\TEMP\YNL_SERVER\app/../src/YallaWebsite/FrontendBundle/Resources/public/css/font-awesome.min.css</argument>
+                  <argument>F:\MK\YallaWebSite\app/../src/YallaWebsite/FrontendBundle/Resources/public/css/font-awesome.min.css</argument>
                 </argument>
                 <argument type="collection"/>
                 <argument type="collection"/>
               </argument>
               <argument key="fontawesome_css_be" type="collection">
                 <argument type="collection">
-                  <argument>C:\TEMP\YNL_SERVER\app/../src/YallaWebsite/BackendBundle/Resources/public/css/font-awesome.css</argument>
+                  <argument>F:\MK\YallaWebSite\app/../src/YallaWebsite/BackendBundle/Resources/public/css/font-awesome.css</argument>
                 </argument>
                 <argument type="collection"/>
                 <argument type="collection"/>
               </argument>
               <argument key="bootstrap_glyphicons_ttf" type="collection">
                 <argument type="collection">
-                  <argument>C:\TEMP\YNL_SERVER\app/../vendor/twitter/bootstrap/dist/fonts/glyphicons-halflings-regular.ttf</argument>
+                  <argument>F:\MK\YallaWebSite\app/../vendor/twitter/bootstrap/dist/fonts/glyphicons-halflings-regular.ttf</argument>
                 </argument>
                 <argument type="collection"/>
                 <argument type="collection">
@@ -3806,7 +3806,7 @@
               </argument>
               <argument key="bootstrap_glyphicons_eot" type="collection">
                 <argument type="collection">
-                  <argument>C:\TEMP\YNL_SERVER\app/../vendor/twitter/bootstrap/dist/fonts/glyphicons-halflings-regular.eot</argument>
+                  <argument>F:\MK\YallaWebSite\app/../vendor/twitter/bootstrap/dist/fonts/glyphicons-halflings-regular.eot</argument>
                 </argument>
                 <argument type="collection"/>
                 <argument type="collection">
@@ -3815,7 +3815,7 @@
               </argument>
               <argument key="bootstrap_glyphicons_svg" type="collection">
                 <argument type="collection">
-                  <argument>C:\TEMP\YNL_SERVER\app/../vendor/twitter/bootstrap/dist/fonts/glyphicons-halflings-regular.svg</argument>
+                  <argument>F:\MK\YallaWebSite\app/../vendor/twitter/bootstrap/dist/fonts/glyphicons-halflings-regular.svg</argument>
                 </argument>
                 <argument type="collection"/>
                 <argument type="collection">
@@ -3824,7 +3824,7 @@
               </argument>
               <argument key="bootstrap_glyphicons_woff" type="collection">
                 <argument type="collection">
-                  <argument>C:\TEMP\YNL_SERVER\app/../vendor/twitter/bootstrap/dist/fonts/glyphicons-halflings-regular.woff</argument>
+                  <argument>F:\MK\YallaWebSite\app/../vendor/twitter/bootstrap/dist/fonts/glyphicons-halflings-regular.woff</argument>
                 </argument>
                 <argument type="collection"/>
                 <argument type="collection">
@@ -3833,7 +3833,7 @@
               </argument>
               <argument key="century_gothic_boldttf" type="collection">
                 <argument type="collection">
-                  <argument>C:\TEMP\YNL_SERVER\app/../src/YallaWebsite/FrontendBundle/Resources/public/fonts/CenturyGothic-Bold/CenturyGothic-Bold.ttf</argument>
+                  <argument>F:\MK\YallaWebSite\app/../src/YallaWebsite/FrontendBundle/Resources/public/fonts/CenturyGothic-Bold/CenturyGothic-Bold.ttf</argument>
                 </argument>
                 <argument type="collection"/>
                 <argument type="collection">
@@ -3842,7 +3842,7 @@
               </argument>
               <argument key="century_gothic_boldeot" type="collection">
                 <argument type="collection">
-                  <argument>C:\TEMP\YNL_SERVER\app/../src/YallaWebsite/FrontendBundle/Resources/public/fonts/CenturyGothic-Bold/CenturyGothic-Bold.eot</argument>
+                  <argument>F:\MK\YallaWebSite\app/../src/YallaWebsite/FrontendBundle/Resources/public/fonts/CenturyGothic-Bold/CenturyGothic-Bold.eot</argument>
                 </argument>
                 <argument type="collection"/>
                 <argument type="collection">
@@ -3851,7 +3851,7 @@
               </argument>
               <argument key="ebrima_ttf" type="collection">
                 <argument type="collection">
-                  <argument>C:\TEMP\YNL_SERVER\app/../src/YallaWebsite/FrontendBundle/Resources/public/fonts/Ebrima/Ebrima.ttf</argument>
+                  <argument>F:\MK\YallaWebSite\app/../src/YallaWebsite/FrontendBundle/Resources/public/fonts/Ebrima/Ebrima.ttf</argument>
                 </argument>
                 <argument type="collection"/>
                 <argument type="collection">
@@ -3860,7 +3860,7 @@
               </argument>
               <argument key="ebrima_eot" type="collection">
                 <argument type="collection">
-                  <argument>C:\TEMP\YNL_SERVER\app/../src/YallaWebsite/FrontendBundle/Resources/public/fonts/Ebrima/Ebrima.eot</argument>
+                  <argument>F:\MK\YallaWebSite\app/../src/YallaWebsite/FrontendBundle/Resources/public/fonts/Ebrima/Ebrima.eot</argument>
                 </argument>
                 <argument type="collection"/>
                 <argument type="collection">
@@ -3869,7 +3869,7 @@
               </argument>
               <argument key="ebrima_svg" type="collection">
                 <argument type="collection">
-                  <argument>C:\TEMP\YNL_SERVER\app/../src/YallaWebsite/FrontendBundle/Resources/public/fonts/Ebrima/Ebrima.svg</argument>
+                  <argument>F:\MK\YallaWebSite\app/../src/YallaWebsite/FrontendBundle/Resources/public/fonts/Ebrima/Ebrima.svg</argument>
                 </argument>
                 <argument type="collection"/>
                 <argument type="collection">
@@ -3878,7 +3878,7 @@
               </argument>
               <argument key="ebrima_woff" type="collection">
                 <argument type="collection">
-                  <argument>C:\TEMP\YNL_SERVER\app/../src/YallaWebsite/FrontendBundle/Resources/public/fonts/Ebrima/Ebrima.woff</argument>
+                  <argument>F:\MK\YallaWebSite\app/../src/YallaWebsite/FrontendBundle/Resources/public/fonts/Ebrima/Ebrima.woff</argument>
                 </argument>
                 <argument type="collection"/>
                 <argument type="collection">
@@ -3887,7 +3887,7 @@
               </argument>
               <argument key="ebrima_woff2" type="collection">
                 <argument type="collection">
-                  <argument>C:\TEMP\YNL_SERVER\app/../src/YallaWebsite/FrontendBundle/Resources/public/fonts/Ebrima/Ebrima.woff2</argument>
+                  <argument>F:\MK\YallaWebSite\app/../src/YallaWebsite/FrontendBundle/Resources/public/fonts/Ebrima/Ebrima.woff2</argument>
                 </argument>
                 <argument type="collection"/>
                 <argument type="collection">
@@ -3896,7 +3896,7 @@
               </argument>
               <argument key="awesome_otf" type="collection">
                 <argument type="collection">
-                  <argument>C:\TEMP\YNL_SERVER\app/../src/YallaWebsite/FrontendBundle/Resources/public/fonts/Awesome/FontAwesome.otf</argument>
+                  <argument>F:\MK\YallaWebSite\app/../src/YallaWebsite/FrontendBundle/Resources/public/fonts/Awesome/FontAwesome.otf</argument>
                 </argument>
                 <argument type="collection"/>
                 <argument type="collection">
@@ -3905,7 +3905,7 @@
               </argument>
               <argument key="awesome_eot" type="collection">
                 <argument type="collection">
-                  <argument>C:\TEMP\YNL_SERVER\app/../src/YallaWebsite/FrontendBundle/Resources/public/fonts/Awesome/webfont.eot</argument>
+                  <argument>F:\MK\YallaWebSite\app/../src/YallaWebsite/FrontendBundle/Resources/public/fonts/Awesome/webfont.eot</argument>
                 </argument>
                 <argument type="collection"/>
                 <argument type="collection">
@@ -3914,7 +3914,7 @@
               </argument>
               <argument key="awesome_svg" type="collection">
                 <argument type="collection">
-                  <argument>C:\TEMP\YNL_SERVER\app/../src/YallaWebsite/FrontendBundle/Resources/public/fonts/Awesome/webfont.svg</argument>
+                  <argument>F:\MK\YallaWebSite\app/../src/YallaWebsite/FrontendBundle/Resources/public/fonts/Awesome/webfont.svg</argument>
                 </argument>
                 <argument type="collection"/>
                 <argument type="collection">
@@ -3923,7 +3923,7 @@
               </argument>
               <argument key="awesome_ttf" type="collection">
                 <argument type="collection">
-                  <argument>C:\TEMP\YNL_SERVER\app/../src/YallaWebsite/FrontendBundle/Resources/public/fonts/Awesome/webfont.ttf</argument>
+                  <argument>F:\MK\YallaWebSite\app/../src/YallaWebsite/FrontendBundle/Resources/public/fonts/Awesome/webfont.ttf</argument>
                 </argument>
                 <argument type="collection"/>
                 <argument type="collection">
@@ -3932,7 +3932,7 @@
               </argument>
               <argument key="awesome_woff" type="collection">
                 <argument type="collection">
-                  <argument>C:\TEMP\YNL_SERVER\app/../src/YallaWebsite/FrontendBundle/Resources/public/fonts/Awesome/webfont.woff</argument>
+                  <argument>F:\MK\YallaWebSite\app/../src/YallaWebsite/FrontendBundle/Resources/public/fonts/Awesome/webfont.woff</argument>
                 </argument>
                 <argument type="collection"/>
                 <argument type="collection">
@@ -3941,7 +3941,7 @@
               </argument>
               <argument key="awesome_woff2" type="collection">
                 <argument type="collection">
-                  <argument>C:\TEMP\YNL_SERVER\app/../src/YallaWebsite/FrontendBundle/Resources/public/fonts/Awesome/webfont.woff2</argument>
+                  <argument>F:\MK\YallaWebSite\app/../src/YallaWebsite/FrontendBundle/Resources/public/fonts/Awesome/webfont.woff2</argument>
                 </argument>
                 <argument type="collection"/>
                 <argument type="collection">
@@ -3963,7 +3963,7 @@
                 <service class="%assetic.directory_resource.class%" public="false">
                   <argument type="service" id="templating.loader"/>
                   <argument>YallaWebsiteBackendBundle</argument>
-                  <argument>C:\TEMP\YNL_SERVER\app/Resources/YallaWebsiteBackendBundle/views</argument>
+                  <argument>F:\MK\YallaWebSite\app/Resources/YallaWebsiteBackendBundle/views</argument>
                   <argument>/\.[^.]+\.twig$/</argument>
                 </service>
               </argument>
@@ -3971,7 +3971,7 @@
                 <service class="%assetic.directory_resource.class%" public="false">
                   <argument type="service" id="templating.loader"/>
                   <argument>YallaWebsiteBackendBundle</argument>
-                  <argument>C:\TEMP\YNL_SERVER\src\YallaWebsite\BackendBundle/Resources/views</argument>
+                  <argument>F:\MK\YallaWebSite\src\YallaWebsite\BackendBundle/Resources/views</argument>
                   <argument>/\.[^.]+\.twig$/</argument>
                 </service>
               </argument>
@@ -3990,7 +3990,7 @@
                 <service class="%assetic.directory_resource.class%" public="false">
                   <argument type="service" id="templating.loader"/>
                   <argument>YallaWebsiteFrontendBundle</argument>
-                  <argument>C:\TEMP\YNL_SERVER\app/Resources/YallaWebsiteFrontendBundle/views</argument>
+                  <argument>F:\MK\YallaWebSite\app/Resources/YallaWebsiteFrontendBundle/views</argument>
                   <argument>/\.[^.]+\.twig$/</argument>
                 </service>
               </argument>
@@ -3998,7 +3998,7 @@
                 <service class="%assetic.directory_resource.class%" public="false">
                   <argument type="service" id="templating.loader"/>
                   <argument>YallaWebsiteFrontendBundle</argument>
-                  <argument>C:\TEMP\YNL_SERVER\src\YallaWebsite\FrontendBundle/Resources/views</argument>
+                  <argument>F:\MK\YallaWebSite\src\YallaWebsite\FrontendBundle/Resources/views</argument>
                   <argument>/\.[^.]+\.twig$/</argument>
                 </service>
               </argument>
@@ -4017,7 +4017,7 @@
                 <service class="%assetic.directory_resource.class%" public="false">
                   <argument type="service" id="templating.loader"/>
                   <argument>FOSUserBundle</argument>
-                  <argument>C:\TEMP\YNL_SERVER\app/Resources/FOSUserBundle/views</argument>
+                  <argument>F:\MK\YallaWebSite\app/Resources/FOSUserBundle/views</argument>
                   <argument>/\.[^.]+\.twig$/</argument>
                 </service>
               </argument>
@@ -4025,7 +4025,7 @@
                 <service class="%assetic.directory_resource.class%" public="false">
                   <argument type="service" id="templating.loader"/>
                   <argument>FOSUserBundle</argument>
-                  <argument>C:\TEMP\YNL_SERVER\vendor\friendsofsymfony\user-bundle/Resources/views</argument>
+                  <argument>F:\MK\YallaWebSite\vendor\friendsofsymfony\user-bundle/Resources/views</argument>
                   <argument>/\.[^.]+\.twig$/</argument>
                 </service>
               </argument>
@@ -4044,7 +4044,7 @@
                 <service class="%assetic.directory_resource.class%" public="false">
                   <argument type="service" id="templating.loader"/>
                   <argument>SonataMediaBundle</argument>
-                  <argument>C:\TEMP\YNL_SERVER\app/Resources/SonataMediaBundle/views</argument>
+                  <argument>F:\MK\YallaWebSite\app/Resources/SonataMediaBundle/views</argument>
                   <argument>/\.[^.]+\.twig$/</argument>
                 </service>
               </argument>
@@ -4052,7 +4052,7 @@
                 <service class="%assetic.directory_resource.class%" public="false">
                   <argument type="service" id="templating.loader"/>
                   <argument>SonataMediaBundle</argument>
-                  <argument>C:\TEMP\YNL_SERVER\vendor\sonata-project\media-bundle/Resources/views</argument>
+                  <argument>F:\MK\YallaWebSite\vendor\sonata-project\media-bundle/Resources/views</argument>
                   <argument>/\.[^.]+\.twig$/</argument>
                 </service>
               </argument>
@@ -4071,7 +4071,7 @@
                 <service class="%assetic.directory_resource.class%" public="false">
                   <argument type="service" id="templating.loader"/>
                   <argument>StarRatingBundle</argument>
-                  <argument>C:\TEMP\YNL_SERVER\app/Resources/StarRatingBundle/views</argument>
+                  <argument>F:\MK\YallaWebSite\app/Resources/StarRatingBundle/views</argument>
                   <argument>/\.[^.]+\.twig$/</argument>
                 </service>
               </argument>
@@ -4079,7 +4079,7 @@
                 <service class="%assetic.directory_resource.class%" public="false">
                   <argument type="service" id="templating.loader"/>
                   <argument>StarRatingBundle</argument>
-                  <argument>C:\TEMP\YNL_SERVER\vendor\blackknight467\star-rating-bundle\blackknight467\StarRatingBundle/Resources/views</argument>
+                  <argument>F:\MK\YallaWebSite\vendor\blackknight467\star-rating-bundle\blackknight467\StarRatingBundle/Resources/views</argument>
                   <argument>/\.[^.]+\.twig$/</argument>
                 </service>
               </argument>
@@ -4095,7 +4095,7 @@
             <tag name="assetic.formula_resource" loader="twig"/>
             <argument type="service" id="templating.loader"/>
             <argument></argument>
-            <argument>C:\TEMP\YNL_SERVER\app/Resources/views</argument>
+            <argument>F:\MK\YallaWebSite\app/Resources/views</argument>
             <argument>/\.[^.]+\.twig$/</argument>
           </service>
         </argument>
@@ -4110,7 +4110,7 @@
           <factory service="service_container" method="getParameterBag"/>
         </service>
       </argument>
-      <argument>C:\TEMP\YNL_SERVER\app/../web</argument>
+      <argument>F:\MK\YallaWebSite\app/../web</argument>
       <argument>true</argument>
       <call method="addWorker">
         <argument type="service">
@@ -4131,7 +4131,7 @@
     </service>
     <service id="assetic.filter.lessphp" class="Assetic\Filter\LessphpFilter">
       <tag name="assetic.filter" alias="lessphp"/>
-      <file>C:\TEMP\YNL_SERVER\app/../vendor/oyejorge/less.php/lessc.inc.php</file>
+      <file>F:\MK\YallaWebSite\app/../vendor/oyejorge/less.php/lessc.inc.php</file>
       <call method="setPresets">
         <argument type="collection"/>
       </call>
@@ -4149,7 +4149,7 @@
       <argument type="service" id="assetic.asset_manager"/>
       <argument type="service">
         <service class="Assetic\Cache\FilesystemCache" public="false">
-          <argument>C:/TEMP/YNL_SERVER/app/cache/dev/assetic/assets</argument>
+          <argument>F:/MK/YallaWebSite/app/cache/dev/assetic/assets</argument>
         </service>
       </argument>
       <argument>false</argument>
@@ -4183,9 +4183,9 @@
         <argument key="driver">pdo_mysql</argument>
         <argument key="host">127.0.0.1</argument>
         <argument key="port">3306</argument>
-        <argument key="dbname">yallaNightLife</argument>
+        <argument key="dbname">ynl_us_test</argument>
         <argument key="user">root</argument>
-        <argument key="password">123123123</argument>
+        <argument key="password">null</argument>
         <argument key="charset">UTF8</argument>
         <argument key="driverOptions" type="collection"/>
         <argument key="defaultTableOptions" type="collection"/>
@@ -4262,17 +4262,17 @@
     </service>
     <service id="doctrine_cache.providers.doctrine.orm.default_metadata_cache" class="Doctrine\Common\Cache\ArrayCache">
       <call method="setNamespace">
-        <argument>sf2orm_default_7159355994b96c8d81d90096e79a2f8e416d9704e4afce7cb0b728ea79621006</argument>
+        <argument>sf2orm_default_81b6399474819fcf2c0477408e7f3f98fd94c368eb2434d730d620bc9406766a</argument>
       </call>
     </service>
     <service id="doctrine_cache.providers.doctrine.orm.default_result_cache" class="Doctrine\Common\Cache\ArrayCache">
       <call method="setNamespace">
-        <argument>sf2orm_default_7159355994b96c8d81d90096e79a2f8e416d9704e4afce7cb0b728ea79621006</argument>
+        <argument>sf2orm_default_81b6399474819fcf2c0477408e7f3f98fd94c368eb2434d730d620bc9406766a</argument>
       </call>
     </service>
     <service id="doctrine_cache.providers.doctrine.orm.default_query_cache" class="Doctrine\Common\Cache\ArrayCache">
       <call method="setNamespace">
-        <argument>sf2orm_default_7159355994b96c8d81d90096e79a2f8e416d9704e4afce7cb0b728ea79621006</argument>
+        <argument>sf2orm_default_81b6399474819fcf2c0477408e7f3f98fd94c368eb2434d730d620bc9406766a</argument>
       </call>
     </service>
     <service id="doctrine.orm.default_entity_listener_resolver" class="Doctrine\ORM\Mapping\DefaultEntityListenerResolver"/>
@@ -4310,9 +4310,9 @@
                   <argument type="service">
                     <service class="Doctrine\ORM\Mapping\Driver\SimplifiedXmlDriver" public="false">
                       <argument type="collection">
-                        <argument key="C:\TEMP\YNL_SERVER\vendor\sonata-project\media-bundle\Resources\config\doctrine">Sonata\MediaBundle\Entity</argument>
-                        <argument key="C:\TEMP\YNL_SERVER\src\Application\Sonata\MediaBundle\Resources\config\doctrine">Application\Sonata\MediaBundle\Entity</argument>
-                        <argument key="C:\TEMP\YNL_SERVER\vendor\damianociarla\tag-bundle\DCS\TagBundle\Resources\config\doctrine">DCS\TagBundle\Entity</argument>
+                        <argument key="F:\MK\YallaWebSite\vendor\sonata-project\media-bundle\Resources\config\doctrine">Sonata\MediaBundle\Entity</argument>
+                        <argument key="F:\MK\YallaWebSite\src\Application\Sonata\MediaBundle\Resources\config\doctrine">Application\Sonata\MediaBundle\Entity</argument>
+                        <argument key="F:\MK\YallaWebSite\vendor\damianociarla\tag-bundle\DCS\TagBundle\Resources\config\doctrine">DCS\TagBundle\Entity</argument>
                       </argument>
                       <call method="setGlobalBasename">
                         <argument>mapping</argument>
@@ -4325,9 +4325,9 @@
                   <argument type="service">
                     <service class="Doctrine\ORM\Mapping\Driver\SimplifiedXmlDriver" public="false">
                       <argument type="collection">
-                        <argument key="C:\TEMP\YNL_SERVER\vendor\sonata-project\media-bundle\Resources\config\doctrine">Sonata\MediaBundle\Entity</argument>
-                        <argument key="C:\TEMP\YNL_SERVER\src\Application\Sonata\MediaBundle\Resources\config\doctrine">Application\Sonata\MediaBundle\Entity</argument>
-                        <argument key="C:\TEMP\YNL_SERVER\vendor\damianociarla\tag-bundle\DCS\TagBundle\Resources\config\doctrine">DCS\TagBundle\Entity</argument>
+                        <argument key="F:\MK\YallaWebSite\vendor\sonata-project\media-bundle\Resources\config\doctrine">Sonata\MediaBundle\Entity</argument>
+                        <argument key="F:\MK\YallaWebSite\src\Application\Sonata\MediaBundle\Resources\config\doctrine">Application\Sonata\MediaBundle\Entity</argument>
+                        <argument key="F:\MK\YallaWebSite\vendor\damianociarla\tag-bundle\DCS\TagBundle\Resources\config\doctrine">DCS\TagBundle\Entity</argument>
                       </argument>
                       <call method="setGlobalBasename">
                         <argument>mapping</argument>
@@ -4340,9 +4340,9 @@
                   <argument type="service">
                     <service class="Doctrine\ORM\Mapping\Driver\SimplifiedXmlDriver" public="false">
                       <argument type="collection">
-                        <argument key="C:\TEMP\YNL_SERVER\vendor\sonata-project\media-bundle\Resources\config\doctrine">Sonata\MediaBundle\Entity</argument>
-                        <argument key="C:\TEMP\YNL_SERVER\src\Application\Sonata\MediaBundle\Resources\config\doctrine">Application\Sonata\MediaBundle\Entity</argument>
-                        <argument key="C:\TEMP\YNL_SERVER\vendor\damianociarla\tag-bundle\DCS\TagBundle\Resources\config\doctrine">DCS\TagBundle\Entity</argument>
+                        <argument key="F:\MK\YallaWebSite\vendor\sonata-project\media-bundle\Resources\config\doctrine">Sonata\MediaBundle\Entity</argument>
+                        <argument key="F:\MK\YallaWebSite\src\Application\Sonata\MediaBundle\Resources\config\doctrine">Application\Sonata\MediaBundle\Entity</argument>
+                        <argument key="F:\MK\YallaWebSite\vendor\damianociarla\tag-bundle\DCS\TagBundle\Resources\config\doctrine">DCS\TagBundle\Entity</argument>
                       </argument>
                       <call method="setGlobalBasename">
                         <argument>mapping</argument>
@@ -4356,9 +4356,9 @@
                     <service class="Doctrine\ORM\Mapping\Driver\AnnotationDriver" public="false">
                       <argument type="service" id="annotation_reader"/>
                       <argument type="collection">
-                        <argument>C:\TEMP\YNL_SERVER\src\Kunstmaan\VotingBundle\Entity</argument>
-                        <argument>C:\TEMP\YNL_SERVER\src\YallaWebsite\BackendBundle\Entity</argument>
-                        <argument>C:\TEMP\YNL_SERVER\src\YallaWebsite\FrontendBundle\Entity</argument>
+                        <argument>F:\MK\YallaWebSite\src\Kunstmaan\VotingBundle\Entity</argument>
+                        <argument>F:\MK\YallaWebSite\src\YallaWebsite\BackendBundle\Entity</argument>
+                        <argument>F:\MK\YallaWebSite\src\YallaWebsite\FrontendBundle\Entity</argument>
                       </argument>
                     </service>
                   </argument>
@@ -4369,9 +4369,9 @@
                     <service class="Doctrine\ORM\Mapping\Driver\AnnotationDriver" public="false">
                       <argument type="service" id="annotation_reader"/>
                       <argument type="collection">
-                        <argument>C:\TEMP\YNL_SERVER\src\Kunstmaan\VotingBundle\Entity</argument>
-                        <argument>C:\TEMP\YNL_SERVER\src\YallaWebsite\BackendBundle\Entity</argument>
-                        <argument>C:\TEMP\YNL_SERVER\src\YallaWebsite\FrontendBundle\Entity</argument>
+                        <argument>F:\MK\YallaWebSite\src\Kunstmaan\VotingBundle\Entity</argument>
+                        <argument>F:\MK\YallaWebSite\src\YallaWebsite\BackendBundle\Entity</argument>
+                        <argument>F:\MK\YallaWebSite\src\YallaWebsite\FrontendBundle\Entity</argument>
                       </argument>
                     </service>
                   </argument>
@@ -4382,9 +4382,9 @@
                     <service class="Doctrine\ORM\Mapping\Driver\AnnotationDriver" public="false">
                       <argument type="service" id="annotation_reader"/>
                       <argument type="collection">
-                        <argument>C:\TEMP\YNL_SERVER\src\Kunstmaan\VotingBundle\Entity</argument>
-                        <argument>C:\TEMP\YNL_SERVER\src\YallaWebsite\BackendBundle\Entity</argument>
-                        <argument>C:\TEMP\YNL_SERVER\src\YallaWebsite\FrontendBundle\Entity</argument>
+                        <argument>F:\MK\YallaWebSite\src\Kunstmaan\VotingBundle\Entity</argument>
+                        <argument>F:\MK\YallaWebSite\src\YallaWebsite\BackendBundle\Entity</argument>
+                        <argument>F:\MK\YallaWebSite\src\YallaWebsite\FrontendBundle\Entity</argument>
                       </argument>
                     </service>
                   </argument>
@@ -4396,7 +4396,7 @@
                       <argument type="service">
                         <service class="Doctrine\Common\Persistence\Mapping\Driver\SymfonyFileLocator">
                           <argument type="collection">
-                            <argument key="C:\TEMP\YNL_SERVER\vendor\friendsofsymfony\user-bundle\Resources\config\doctrine-mapping">FOS\UserBundle\Model</argument>
+                            <argument key="F:\MK\YallaWebSite\vendor\friendsofsymfony\user-bundle\Resources\config\doctrine-mapping">FOS\UserBundle\Model</argument>
                           </argument>
                           <argument>.orm.xml</argument>
                         </service>
@@ -4409,7 +4409,7 @@
             </argument>
           </call>
           <call method="setProxyDir">
-            <argument>C:/TEMP/YNL_SERVER/app/cache/dev/doctrine/orm/Proxies</argument>
+            <argument>F:/MK/YallaWebSite/app/cache/dev/doctrine/orm/Proxies</argument>
           </call>
           <call method="setProxyNamespace">
             <argument>Proxies</argument>
@@ -4903,7 +4903,7 @@
       <call method="setCache">
         <argument type="service">
           <service class="Metadata\Cache\FileCache" public="false">
-            <argument>C:/TEMP/YNL_SERVER/app/cache/dev/jms_serializer</argument>
+            <argument>F:/MK/YallaWebSite/app/cache/dev/jms_serializer</argument>
           </service>
         </argument>
       </call>
@@ -5531,9 +5531,16 @@
           <argument key="adv_snapadv" type="collection">
             <argument key="width">300</argument>
             <argument key="height">300</argument>
-            <argument key="constraint">false</argument>
+            <argument key="quality">100</argument>
+            <argument key="format">jpg</argument>
+            <argument key="constraint">true</argument>
+          </argument>
+          <argument key="adv_event" type="collection">
+            <argument key="width">false</argument>
+            <argument key="height">false</argument>
             <argument key="quality">80</argument>
             <argument key="format">jpg</argument>
+            <argument key="constraint">true</argument>
           </argument>
         </argument>
         <argument type="collection">
@@ -6026,9 +6033,19 @@
         <argument type="collection">
           <argument key="width">300</argument>
           <argument key="height">300</argument>
-          <argument key="constraint">false</argument>
+          <argument key="quality">100</argument>
+          <argument key="format">jpg</argument>
+          <argument key="constraint">true</argument>
+        </argument>
+      </call>
+      <call method="addFormat">
+        <argument>adv_event</argument>
+        <argument type="collection">
+          <argument key="width">false</argument>
+          <argument key="height">false</argument>
           <argument key="quality">80</argument>
           <argument key="format">jpg</argument>
+          <argument key="constraint">true</argument>
         </argument>
       </call>
       <call method="addFormat">
@@ -6052,7 +6069,7 @@
         </argument>
       </call>
       <call method="setResizer">
-        <argument type="service" id="sonata.media.resizer.fixeddimensions"/>
+        <argument type="service" id="sonata.media.resizer.custom"/>
       </call>
       <call method="addFormat">
         <argument>admin</argument>
@@ -6436,7 +6453,7 @@
       <argument>Application\Sonata\MediaBundle\Entity\Media</argument>
     </service>
     <service id="sonata.media.adapter.filesystem.local" class="Sonata\MediaBundle\Filesystem\Local">
-      <argument>C:\TEMP\YNL_SERVER\app/../web/uploads/media</argument>
+      <argument>F:\MK\YallaWebSite\app/../web/uploads/media</argument>
       <argument>false</argument>
     </service>
     <service id="sonata.media.adapter.service.s3" class="Aws\S3\S3Client" factory-method="factory" factory-class="Aws\S3\S3Client">
@@ -6848,7 +6865,7 @@
     <service id="fos_js_routing.extractor" class="FOS\JsRoutingBundle\Extractor\ExposedRoutesExtractor">
       <argument type="service" id="router"/>
       <argument type="collection"/>
-      <argument>C:/TEMP/YNL_SERVER/app/cache/dev</argument>
+      <argument>F:/MK/YallaWebSite/app/cache/dev</argument>
       <argument type="collection">
         <argument key="FrameworkBundle">Symfony\Bundle\FrameworkBundle\FrameworkBundle</argument>
         <argument key="SecurityBundle">Symfony\Bundle\SecurityBundle\SecurityBundle</argument>
@@ -7179,7 +7196,7 @@
       <argument>^/(app(_[\w]+)?\.php/)?_wdt</argument>
     </service>
     <service id="sensio_distribution.webconfigurator" class="Sensio\Bundle\DistributionBundle\Configurator\Configurator">
-      <argument>C:\TEMP\YNL_SERVER\app</argument>
+      <argument>F:\MK\YallaWebSite\app</argument>
       <call method="addStep">
         <argument type="service">
           <service class="Sensio\Bundle\DistributionBundle\Configurator\Step\DoctrineStep" public="false">
@@ -7318,7 +7335,7 @@
       <argument>true</argument>
     </service>
     <service id="session.storage.filesystem" class="Symfony\Component\HttpFoundation\Session\Storage\MockFileSessionStorage">
-      <argument>C:/TEMP/YNL_SERVER/app/cache/dev/sessions</argument>
+      <argument>F:/MK/YallaWebSite/app/cache/dev/sessions</argument>
       <argument>MOCKSESSID</argument>
       <argument type="service" id="session.storage.metadata_bag"/>
     </service>
@@ -7342,9 +7359,9 @@
     <service id="router" class="Symfony\Bundle\FrameworkBundle\Routing\Router">
       <tag name="monolog.logger" channel="router"/>
       <argument type="service" id="service_container"/>
-      <argument>C:/TEMP/YNL_SERVER/app/cache/dev/assetic/routing.yml</argument>
+      <argument>F:/MK/YallaWebSite/app/cache/dev/assetic/routing.yml</argument>
       <argument type="collection">
-        <argument key="cache_dir">C:/TEMP/YNL_SERVER/app/cache/dev</argument>
+        <argument key="cache_dir">F:/MK/YallaWebSite/app/cache/dev</argument>
         <argument key="debug">true</argument>
         <argument key="generator_class">Symfony\Component\Routing\Generator\UrlGenerator</argument>
         <argument key="generator_base_class">Symfony\Component\Routing\Generator\UrlGenerator</argument>
@@ -7364,7 +7381,7 @@
       <argument type="service">
         <service class="Doctrine\Common\Annotations\AnnotationReader" public="false"/>
       </argument>
-      <argument>C:/TEMP/YNL_SERVER/app/cache/dev/annotations</argument>
+      <argument>F:/MK/YallaWebSite/app/cache/dev/annotations</argument>
       <argument>true</argument>
     </service>
     <service id="security.encoder_factory" class="Symfony\Component\Security\Core\Encoder\EncoderFactory">
@@ -7385,109 +7402,109 @@
       <argument type="service" id="templating.locator"/>
       <argument type="service" id="templating.name_parser"/>
       <call method="addPath">
-        <argument>C:\TEMP\YNL_SERVER\app/../app/Resources/FOSUserBundle</argument>
+        <argument>F:\MK\YallaWebSite\app/../app/Resources/FOSUserBundle</argument>
         <argument>FOSUserBundle</argument>
       </call>
       <call method="addPath">
-        <argument>C:\TEMP\YNL_SERVER\app/../src/YallaWebsite/BackendBundle/Resources</argument>
+        <argument>F:\MK\YallaWebSite\app/../src/YallaWebsite/BackendBundle/Resources</argument>
         <argument>YallaWebsiteBackendBundle</argument>
       </call>
       <call method="addPath">
-        <argument>C:\TEMP\YNL_SERVER\app/../src/YallaWebsite/FrontendBundle/Resources</argument>
+        <argument>F:\MK\YallaWebSite\app/../src/YallaWebsite/FrontendBundle/Resources</argument>
         <argument>YallaWebsiteFrontendBundle</argument>
       </call>
       <call method="addPath">
-        <argument>C:\TEMP\YNL_SERVER\vendor\symfony\symfony\src\Symfony\Bundle\FrameworkBundle/Resources/views</argument>
+        <argument>F:\MK\YallaWebSite\vendor\symfony\symfony\src\Symfony\Bundle\FrameworkBundle/Resources/views</argument>
         <argument>Framework</argument>
       </call>
       <call method="addPath">
-        <argument>C:\TEMP\YNL_SERVER\vendor\symfony\symfony\src\Symfony\Bundle\SecurityBundle/Resources/views</argument>
+        <argument>F:\MK\YallaWebSite\vendor\symfony\symfony\src\Symfony\Bundle\SecurityBundle/Resources/views</argument>
         <argument>Security</argument>
       </call>
       <call method="addPath">
-        <argument>C:\TEMP\YNL_SERVER\vendor\symfony\symfony\src\Symfony\Bundle\TwigBundle/Resources/views</argument>
+        <argument>F:\MK\YallaWebSite\vendor\symfony\symfony\src\Symfony\Bundle\TwigBundle/Resources/views</argument>
         <argument>Twig</argument>
       </call>
       <call method="addPath">
-        <argument>C:\TEMP\YNL_SERVER\vendor\symfony\swiftmailer-bundle/Resources/views</argument>
+        <argument>F:\MK\YallaWebSite\vendor\symfony\swiftmailer-bundle/Resources/views</argument>
         <argument>Swiftmailer</argument>
       </call>
       <call method="addPath">
-        <argument>C:\TEMP\YNL_SERVER\vendor\doctrine\doctrine-bundle/Resources/views</argument>
+        <argument>F:\MK\YallaWebSite\vendor\doctrine\doctrine-bundle/Resources/views</argument>
         <argument>Doctrine</argument>
       </call>
       <call method="addPath">
-        <argument>C:\TEMP\YNL_SERVER\vendor\sonata-project\core-bundle/Resources/views</argument>
+        <argument>F:\MK\YallaWebSite\vendor\sonata-project\core-bundle/Resources/views</argument>
         <argument>SonataCore</argument>
       </call>
       <call method="addPath">
-        <argument>C:\TEMP\YNL_SERVER\vendor\sonata-project\media-bundle/Resources/views</argument>
+        <argument>F:\MK\YallaWebSite\vendor\sonata-project\media-bundle/Resources/views</argument>
         <argument>SonataMedia</argument>
       </call>
       <call method="addPath">
-        <argument>C:\TEMP\YNL_SERVER\app/Resources/ApplicationSonataMediaBundle/views</argument>
+        <argument>F:\MK\YallaWebSite\app/Resources/ApplicationSonataMediaBundle/views</argument>
         <argument>ApplicationSonataMedia</argument>
       </call>
       <call method="addPath">
-        <argument>C:\TEMP\YNL_SERVER\vendor\knplabs\knp-paginator-bundle/Resources/views</argument>
+        <argument>F:\MK\YallaWebSite\vendor\knplabs\knp-paginator-bundle/Resources/views</argument>
         <argument>KnpPaginator</argument>
       </call>
       <call method="addPath">
-        <argument>C:\TEMP\YNL_SERVER\vendor\stfalcon\tinymce-bundle\Stfalcon\Bundle\TinymceBundle/Resources/views</argument>
+        <argument>F:\MK\YallaWebSite\vendor\stfalcon\tinymce-bundle\Stfalcon\Bundle\TinymceBundle/Resources/views</argument>
         <argument>StfalconTinymce</argument>
       </call>
       <call method="addPath">
-        <argument>C:\TEMP\YNL_SERVER\app/Resources/FOSUserBundle/views</argument>
+        <argument>F:\MK\YallaWebSite\app/Resources/FOSUserBundle/views</argument>
         <argument>FOSUser</argument>
       </call>
       <call method="addPath">
-        <argument>C:\TEMP\YNL_SERVER\vendor\friendsofsymfony\user-bundle/Resources/views</argument>
+        <argument>F:\MK\YallaWebSite\vendor\friendsofsymfony\user-bundle/Resources/views</argument>
         <argument>FOSUser</argument>
       </call>
       <call method="addPath">
-        <argument>C:\TEMP\YNL_SERVER\vendor\sonata-project\seo-bundle/Resources/views</argument>
+        <argument>F:\MK\YallaWebSite\vendor\sonata-project\seo-bundle/Resources/views</argument>
         <argument>SonataSeo</argument>
       </call>
       <call method="addPath">
-        <argument>C:\TEMP\YNL_SERVER\vendor\hwi\oauth-bundle/Resources/views</argument>
+        <argument>F:\MK\YallaWebSite\vendor\hwi\oauth-bundle/Resources/views</argument>
         <argument>HWIOAuth</argument>
       </call>
       <call method="addPath">
-        <argument>C:\TEMP\YNL_SERVER\src\Kunstmaan\VotingBundle/Resources/views</argument>
+        <argument>F:\MK\YallaWebSite\src\Kunstmaan\VotingBundle/Resources/views</argument>
         <argument>KunstmaanVoting</argument>
       </call>
       <call method="addPath">
-        <argument>C:\TEMP\YNL_SERVER\vendor\blackknight467\star-rating-bundle\blackknight467\StarRatingBundle/Resources/views</argument>
+        <argument>F:\MK\YallaWebSite\vendor\blackknight467\star-rating-bundle\blackknight467\StarRatingBundle/Resources/views</argument>
         <argument>StarRating</argument>
       </call>
       <call method="addPath">
-        <argument>C:\TEMP\YNL_SERVER\src\YallaWebsite\BackendBundle/Resources/views</argument>
+        <argument>F:\MK\YallaWebSite\src\YallaWebsite\BackendBundle/Resources/views</argument>
         <argument>YallaWebsiteBackend</argument>
       </call>
       <call method="addPath">
-        <argument>C:\TEMP\YNL_SERVER\src\YallaWebsite\FrontendBundle/Resources/views</argument>
+        <argument>F:\MK\YallaWebSite\src\YallaWebsite\FrontendBundle/Resources/views</argument>
         <argument>YallaWebsiteFrontend</argument>
       </call>
       <call method="addPath">
-        <argument>C:\TEMP\YNL_SERVER\vendor\symfony\symfony\src\Symfony\Bundle\DebugBundle/Resources/views</argument>
+        <argument>F:\MK\YallaWebSite\vendor\symfony\symfony\src\Symfony\Bundle\DebugBundle/Resources/views</argument>
         <argument>Debug</argument>
       </call>
       <call method="addPath">
-        <argument>C:\TEMP\YNL_SERVER\vendor\symfony\symfony\src\Symfony\Bundle\WebProfilerBundle/Resources/views</argument>
+        <argument>F:\MK\YallaWebSite\vendor\symfony\symfony\src\Symfony\Bundle\WebProfilerBundle/Resources/views</argument>
         <argument>WebProfiler</argument>
       </call>
       <call method="addPath">
-        <argument>C:\TEMP\YNL_SERVER\vendor\sensio\distribution-bundle\Sensio\Bundle\DistributionBundle/Resources/views</argument>
+        <argument>F:\MK\YallaWebSite\vendor\sensio\distribution-bundle\Sensio\Bundle\DistributionBundle/Resources/views</argument>
         <argument>SensioDistribution</argument>
       </call>
       <call method="addPath">
-        <argument>C:\TEMP\YNL_SERVER\app/Resources/views</argument>
+        <argument>F:\MK\YallaWebSite\app/Resources/views</argument>
       </call>
       <call method="addPath">
-        <argument>C:\TEMP\YNL_SERVER\vendor\symfony\symfony\src\Symfony\Bridge\Twig/Resources/views/Form</argument>
+        <argument>F:\MK\YallaWebSite\vendor\symfony\symfony\src\Symfony\Bridge\Twig/Resources/views/Form</argument>
       </call>
       <call method="addPath">
-        <argument>C:\TEMP\YNL_SERVER\vendor\knplabs\knp-menu\src\Knp\Menu/Resources/views</argument>
+        <argument>F:\MK\YallaWebSite\vendor\knplabs\knp-menu\src\Knp\Menu/Resources/views</argument>
       </call>
     </service>
     <service id="logger" class="Symfony\Bridge\Monolog\Logger">
@@ -7573,37 +7590,37 @@
                 <argument type="service">
                   <service class="Metadata\Driver\FileLocator" public="false">
                     <argument type="collection">
-                      <argument key="Symfony\Bundle\FrameworkBundle">C:\TEMP\YNL_SERVER\vendor\symfony\symfony\src\Symfony\Bundle\FrameworkBundle/Resources/config/serializer</argument>
-                      <argument key="Symfony\Bundle\SecurityBundle">C:\TEMP\YNL_SERVER\vendor\symfony\symfony\src\Symfony\Bundle\SecurityBundle/Resources/config/serializer</argument>
-                      <argument key="Symfony\Bundle\TwigBundle">C:\TEMP\YNL_SERVER\vendor\symfony\symfony\src\Symfony\Bundle\TwigBundle/Resources/config/serializer</argument>
-                      <argument key="Symfony\Bundle\MonologBundle">C:\TEMP\YNL_SERVER\vendor\symfony\monolog-bundle/Resources/config/serializer</argument>
-                      <argument key="Symfony\Bundle\SwiftmailerBundle">C:\TEMP\YNL_SERVER\vendor\symfony\swiftmailer-bundle/Resources/config/serializer</argument>
-                      <argument key="Symfony\Bundle\AsseticBundle">C:\TEMP\YNL_SERVER\vendor\symfony\assetic-bundle/Resources/config/serializer</argument>
-                      <argument key="Doctrine\Bundle\DoctrineBundle">C:\TEMP\YNL_SERVER\vendor\doctrine\doctrine-bundle/Resources/config/serializer</argument>
-                      <argument key="Sensio\Bundle\FrameworkExtraBundle">C:\TEMP\YNL_SERVER\vendor\sensio\framework-extra-bundle/Resources/config/serializer</argument>
-                      <argument key="JMS\SerializerBundle">C:\TEMP\YNL_SERVER\vendor\jms\serializer-bundle\JMS\SerializerBundle/Resources/config/serializer</argument>
-                      <argument key="Sonata\EasyExtendsBundle">C:\TEMP\YNL_SERVER\vendor\sonata-project\easy-extends-bundle/Resources/config/serializer</argument>
-                      <argument key="Sonata\CoreBundle">C:\TEMP\YNL_SERVER\vendor\sonata-project\core-bundle/Resources/config/serializer</argument>
-                      <argument key="Sonata\MediaBundle">C:\TEMP\YNL_SERVER\vendor\sonata-project\media-bundle/Resources/config/serializer</argument>
-                      <argument key="Application\Sonata\MediaBundle">C:\TEMP\YNL_SERVER\src\Application\Sonata\MediaBundle/Resources/config/serializer</argument>
-                      <argument key="Knp\Bundle\PaginatorBundle">C:\TEMP\YNL_SERVER\vendor\knplabs\knp-paginator-bundle/Resources/config/serializer</argument>
-                      <argument key="Stfalcon\Bundle\TinymceBundle">C:\TEMP\YNL_SERVER\vendor\stfalcon\tinymce-bundle\Stfalcon\Bundle\TinymceBundle/Resources/config/serializer</argument>
-                      <argument key="FOS\UserBundle">C:\TEMP\YNL_SERVER\vendor\friendsofsymfony\user-bundle/Resources/config/serializer</argument>
-                      <argument key="DCS\TagBundle">C:\TEMP\YNL_SERVER\vendor\damianociarla\tag-bundle\DCS\TagBundle/Resources/config/serializer</argument>
-                      <argument key="Knp\Bundle\MenuBundle">C:\TEMP\YNL_SERVER\vendor\knplabs\knp-menu-bundle/Resources/config/serializer</argument>
-                      <argument key="Sonata\SeoBundle">C:\TEMP\YNL_SERVER\vendor\sonata-project\seo-bundle/Resources/config/serializer</argument>
-                      <argument key="Stof\DoctrineExtensionsBundle">C:\TEMP\YNL_SERVER\vendor\stof\doctrine-extensions-bundle/Resources/config/serializer</argument>
-                      <argument key="FOS\JsRoutingBundle">C:\TEMP\YNL_SERVER\vendor\friendsofsymfony\jsrouting-bundle/Resources/config/serializer</argument>
-                      <argument key="HWI\Bundle\OAuthBundle">C:\TEMP\YNL_SERVER\vendor\hwi\oauth-bundle/Resources/config/serializer</argument>
-                      <argument key="Kunstmaan\VotingBundle">C:\TEMP\YNL_SERVER\src\Kunstmaan\VotingBundle/Resources/config/serializer</argument>
-                      <argument key="blackknight467\StarRatingBundle">C:\TEMP\YNL_SERVER\vendor\blackknight467\star-rating-bundle\blackknight467\StarRatingBundle/Resources/config/serializer</argument>
-                      <argument key="AppBundle">C:\TEMP\YNL_SERVER\src\AppBundle/Resources/config/serializer</argument>
-                      <argument key="YallaWebsite\BackendBundle">C:\TEMP\YNL_SERVER\src\YallaWebsite\BackendBundle/Resources/config/serializer</argument>
-                      <argument key="YallaWebsite\FrontendBundle">C:\TEMP\YNL_SERVER\src\YallaWebsite\FrontendBundle/Resources/config/serializer</argument>
-                      <argument key="Symfony\Bundle\DebugBundle">C:\TEMP\YNL_SERVER\vendor\symfony\symfony\src\Symfony\Bundle\DebugBundle/Resources/config/serializer</argument>
-                      <argument key="Symfony\Bundle\WebProfilerBundle">C:\TEMP\YNL_SERVER\vendor\symfony\symfony\src\Symfony\Bundle\WebProfilerBundle/Resources/config/serializer</argument>
-                      <argument key="Sensio\Bundle\DistributionBundle">C:\TEMP\YNL_SERVER\vendor\sensio\distribution-bundle\Sensio\Bundle\DistributionBundle/Resources/config/serializer</argument>
-                      <argument key="Sensio\Bundle\GeneratorBundle">C:\TEMP\YNL_SERVER\vendor\sensio\generator-bundle\Sensio\Bundle\GeneratorBundle/Resources/config/serializer</argument>
+                      <argument key="Symfony\Bundle\FrameworkBundle">F:\MK\YallaWebSite\vendor\symfony\symfony\src\Symfony\Bundle\FrameworkBundle/Resources/config/serializer</argument>
+                      <argument key="Symfony\Bundle\SecurityBundle">F:\MK\YallaWebSite\vendor\symfony\symfony\src\Symfony\Bundle\SecurityBundle/Resources/config/serializer</argument>
+                      <argument key="Symfony\Bundle\TwigBundle">F:\MK\YallaWebSite\vendor\symfony\symfony\src\Symfony\Bundle\TwigBundle/Resources/config/serializer</argument>
+                      <argument key="Symfony\Bundle\MonologBundle">F:\MK\YallaWebSite\vendor\symfony\monolog-bundle/Resources/config/serializer</argument>
+                      <argument key="Symfony\Bundle\SwiftmailerBundle">F:\MK\YallaWebSite\vendor\symfony\swiftmailer-bundle/Resources/config/serializer</argument>
+                      <argument key="Symfony\Bundle\AsseticBundle">F:\MK\YallaWebSite\vendor\symfony\assetic-bundle/Resources/config/serializer</argument>
+                      <argument key="Doctrine\Bundle\DoctrineBundle">F:\MK\YallaWebSite\vendor\doctrine\doctrine-bundle/Resources/config/serializer</argument>
+                      <argument key="Sensio\Bundle\FrameworkExtraBundle">F:\MK\YallaWebSite\vendor\sensio\framework-extra-bundle/Resources/config/serializer</argument>
+                      <argument key="JMS\SerializerBundle">F:\MK\YallaWebSite\vendor\jms\serializer-bundle\JMS\SerializerBundle/Resources/config/serializer</argument>
+                      <argument key="Sonata\EasyExtendsBundle">F:\MK\YallaWebSite\vendor\sonata-project\easy-extends-bundle/Resources/config/serializer</argument>
+                      <argument key="Sonata\CoreBundle">F:\MK\YallaWebSite\vendor\sonata-project\core-bundle/Resources/config/serializer</argument>
+                      <argument key="Sonata\MediaBundle">F:\MK\YallaWebSite\vendor\sonata-project\media-bundle/Resources/config/serializer</argument>
+                      <argument key="Application\Sonata\MediaBundle">F:\MK\YallaWebSite\src\Application\Sonata\MediaBundle/Resources/config/serializer</argument>
+                      <argument key="Knp\Bundle\PaginatorBundle">F:\MK\YallaWebSite\vendor\knplabs\knp-paginator-bundle/Resources/config/serializer</argument>
+                      <argument key="Stfalcon\Bundle\TinymceBundle">F:\MK\YallaWebSite\vendor\stfalcon\tinymce-bundle\Stfalcon\Bundle\TinymceBundle/Resources/config/serializer</argument>
+                      <argument key="FOS\UserBundle">F:\MK\YallaWebSite\vendor\friendsofsymfony\user-bundle/Resources/config/serializer</argument>
+                      <argument key="DCS\TagBundle">F:\MK\YallaWebSite\vendor\damianociarla\tag-bundle\DCS\TagBundle/Resources/config/serializer</argument>
+                      <argument key="Knp\Bundle\MenuBundle">F:\MK\YallaWebSite\vendor\knplabs\knp-menu-bundle/Resources/config/serializer</argument>
+                      <argument key="Sonata\SeoBundle">F:\MK\YallaWebSite\vendor\sonata-project\seo-bundle/Resources/config/serializer</argument>
+                      <argument key="Stof\DoctrineExtensionsBundle">F:\MK\YallaWebSite\vendor\stof\doctrine-extensions-bundle/Resources/config/serializer</argument>
+                      <argument key="FOS\JsRoutingBundle">F:\MK\YallaWebSite\vendor\friendsofsymfony\jsrouting-bundle/Resources/config/serializer</argument>
+                      <argument key="HWI\Bundle\OAuthBundle">F:\MK\YallaWebSite\vendor\hwi\oauth-bundle/Resources/config/serializer</argument>
+                      <argument key="Kunstmaan\VotingBundle">F:\MK\YallaWebSite\src\Kunstmaan\VotingBundle/Resources/config/serializer</argument>
+                      <argument key="blackknight467\StarRatingBundle">F:\MK\YallaWebSite\vendor\blackknight467\star-rating-bundle\blackknight467\StarRatingBundle/Resources/config/serializer</argument>
+                      <argument key="AppBundle">F:\MK\YallaWebSite\src\AppBundle/Resources/config/serializer</argument>
+                      <argument key="YallaWebsite\BackendBundle">F:\MK\YallaWebSite\src\YallaWebsite\BackendBundle/Resources/config/serializer</argument>
+                      <argument key="YallaWebsite\FrontendBundle">F:\MK\YallaWebSite\src\YallaWebsite\FrontendBundle/Resources/config/serializer</argument>
+                      <argument key="Symfony\Bundle\DebugBundle">F:\MK\YallaWebSite\vendor\symfony\symfony\src\Symfony\Bundle\DebugBundle/Resources/config/serializer</argument>
+                      <argument key="Symfony\Bundle\WebProfilerBundle">F:\MK\YallaWebSite\vendor\symfony\symfony\src\Symfony\Bundle\WebProfilerBundle/Resources/config/serializer</argument>
+                      <argument key="Sensio\Bundle\DistributionBundle">F:\MK\YallaWebSite\vendor\sensio\distribution-bundle\Sensio\Bundle\DistributionBundle/Resources/config/serializer</argument>
+                      <argument key="Sensio\Bundle\GeneratorBundle">F:\MK\YallaWebSite\vendor\sensio\generator-bundle\Sensio\Bundle\GeneratorBundle/Resources/config/serializer</argument>
                     </argument>
                   </service>
                 </argument>
@@ -7614,37 +7631,37 @@
                 <argument type="service">
                   <service class="Metadata\Driver\FileLocator" public="false">
                     <argument type="collection">
-                      <argument key="Symfony\Bundle\FrameworkBundle">C:\TEMP\YNL_SERVER\vendor\symfony\symfony\src\Symfony\Bundle\FrameworkBundle/Resources/config/serializer</argument>
-                      <argument key="Symfony\Bundle\SecurityBundle">C:\TEMP\YNL_SERVER\vendor\symfony\symfony\src\Symfony\Bundle\SecurityBundle/Resources/config/serializer</argument>
-                      <argument key="Symfony\Bundle\TwigBundle">C:\TEMP\YNL_SERVER\vendor\symfony\symfony\src\Symfony\Bundle\TwigBundle/Resources/config/serializer</argument>
-                      <argument key="Symfony\Bundle\MonologBundle">C:\TEMP\YNL_SERVER\vendor\symfony\monolog-bundle/Resources/config/serializer</argument>
-                      <argument key="Symfony\Bundle\SwiftmailerBundle">C:\TEMP\YNL_SERVER\vendor\symfony\swiftmailer-bundle/Resources/config/serializer</argument>
-                      <argument key="Symfony\Bundle\AsseticBundle">C:\TEMP\YNL_SERVER\vendor\symfony\assetic-bundle/Resources/config/serializer</argument>
-                      <argument key="Doctrine\Bundle\DoctrineBundle">C:\TEMP\YNL_SERVER\vendor\doctrine\doctrine-bundle/Resources/config/serializer</argument>
-                      <argument key="Sensio\Bundle\FrameworkExtraBundle">C:\TEMP\YNL_SERVER\vendor\sensio\framework-extra-bundle/Resources/config/serializer</argument>
-                      <argument key="JMS\SerializerBundle">C:\TEMP\YNL_SERVER\vendor\jms\serializer-bundle\JMS\SerializerBundle/Resources/config/serializer</argument>
-                      <argument key="Sonata\EasyExtendsBundle">C:\TEMP\YNL_SERVER\vendor\sonata-project\easy-extends-bundle/Resources/config/serializer</argument>
-                      <argument key="Sonata\CoreBundle">C:\TEMP\YNL_SERVER\vendor\sonata-project\core-bundle/Resources/config/serializer</argument>
-                      <argument key="Sonata\MediaBundle">C:\TEMP\YNL_SERVER\vendor\sonata-project\media-bundle/Resources/config/serializer</argument>
-                      <argument key="Application\Sonata\MediaBundle">C:\TEMP\YNL_SERVER\src\Application\Sonata\MediaBundle/Resources/config/serializer</argument>
-                      <argument key="Knp\Bundle\PaginatorBundle">C:\TEMP\YNL_SERVER\vendor\knplabs\knp-paginator-bundle/Resources/config/serializer</argument>
-                      <argument key="Stfalcon\Bundle\TinymceBundle">C:\TEMP\YNL_SERVER\vendor\stfalcon\tinymce-bundle\Stfalcon\Bundle\TinymceBundle/Resources/config/serializer</argument>
-                      <argument key="FOS\UserBundle">C:\TEMP\YNL_SERVER\vendor\friendsofsymfony\user-bundle/Resources/config/serializer</argument>
-                      <argument key="DCS\TagBundle">C:\TEMP\YNL_SERVER\vendor\damianociarla\tag-bundle\DCS\TagBundle/Resources/config/serializer</argument>
-                      <argument key="Knp\Bundle\MenuBundle">C:\TEMP\YNL_SERVER\vendor\knplabs\knp-menu-bundle/Resources/config/serializer</argument>
-                      <argument key="Sonata\SeoBundle">C:\TEMP\YNL_SERVER\vendor\sonata-project\seo-bundle/Resources/config/serializer</argument>
-                      <argument key="Stof\DoctrineExtensionsBundle">C:\TEMP\YNL_SERVER\vendor\stof\doctrine-extensions-bundle/Resources/config/serializer</argument>
-                      <argument key="FOS\JsRoutingBundle">C:\TEMP\YNL_SERVER\vendor\friendsofsymfony\jsrouting-bundle/Resources/config/serializer</argument>
-                      <argument key="HWI\Bundle\OAuthBundle">C:\TEMP\YNL_SERVER\vendor\hwi\oauth-bundle/Resources/config/serializer</argument>
-                      <argument key="Kunstmaan\VotingBundle">C:\TEMP\YNL_SERVER\src\Kunstmaan\VotingBundle/Resources/config/serializer</argument>
-                      <argument key="blackknight467\StarRatingBundle">C:\TEMP\YNL_SERVER\vendor\blackknight467\star-rating-bundle\blackknight467\StarRatingBundle/Resources/config/serializer</argument>
-                      <argument key="AppBundle">C:\TEMP\YNL_SERVER\src\AppBundle/Resources/config/serializer</argument>
-                      <argument key="YallaWebsite\BackendBundle">C:\TEMP\YNL_SERVER\src\YallaWebsite\BackendBundle/Resources/config/serializer</argument>
-                      <argument key="YallaWebsite\FrontendBundle">C:\TEMP\YNL_SERVER\src\YallaWebsite\FrontendBundle/Resources/config/serializer</argument>
-                      <argument key="Symfony\Bundle\DebugBundle">C:\TEMP\YNL_SERVER\vendor\symfony\symfony\src\Symfony\Bundle\DebugBundle/Resources/config/serializer</argument>
-                      <argument key="Symfony\Bundle\WebProfilerBundle">C:\TEMP\YNL_SERVER\vendor\symfony\symfony\src\Symfony\Bundle\WebProfilerBundle/Resources/config/serializer</argument>
-                      <argument key="Sensio\Bundle\DistributionBundle">C:\TEMP\YNL_SERVER\vendor\sensio\distribution-bundle\Sensio\Bundle\DistributionBundle/Resources/config/serializer</argument>
-                      <argument key="Sensio\Bundle\GeneratorBundle">C:\TEMP\YNL_SERVER\vendor\sensio\generator-bundle\Sensio\Bundle\GeneratorBundle/Resources/config/serializer</argument>
+                      <argument key="Symfony\Bundle\FrameworkBundle">F:\MK\YallaWebSite\vendor\symfony\symfony\src\Symfony\Bundle\FrameworkBundle/Resources/config/serializer</argument>
+                      <argument key="Symfony\Bundle\SecurityBundle">F:\MK\YallaWebSite\vendor\symfony\symfony\src\Symfony\Bundle\SecurityBundle/Resources/config/serializer</argument>
+                      <argument key="Symfony\Bundle\TwigBundle">F:\MK\YallaWebSite\vendor\symfony\symfony\src\Symfony\Bundle\TwigBundle/Resources/config/serializer</argument>
+                      <argument key="Symfony\Bundle\MonologBundle">F:\MK\YallaWebSite\vendor\symfony\monolog-bundle/Resources/config/serializer</argument>
+                      <argument key="Symfony\Bundle\SwiftmailerBundle">F:\MK\YallaWebSite\vendor\symfony\swiftmailer-bundle/Resources/config/serializer</argument>
+                      <argument key="Symfony\Bundle\AsseticBundle">F:\MK\YallaWebSite\vendor\symfony\assetic-bundle/Resources/config/serializer</argument>
+                      <argument key="Doctrine\Bundle\DoctrineBundle">F:\MK\YallaWebSite\vendor\doctrine\doctrine-bundle/Resources/config/serializer</argument>
+                      <argument key="Sensio\Bundle\FrameworkExtraBundle">F:\MK\YallaWebSite\vendor\sensio\framework-extra-bundle/Resources/config/serializer</argument>
+                      <argument key="JMS\SerializerBundle">F:\MK\YallaWebSite\vendor\jms\serializer-bundle\JMS\SerializerBundle/Resources/config/serializer</argument>
+                      <argument key="Sonata\EasyExtendsBundle">F:\MK\YallaWebSite\vendor\sonata-project\easy-extends-bundle/Resources/config/serializer</argument>
+                      <argument key="Sonata\CoreBundle">F:\MK\YallaWebSite\vendor\sonata-project\core-bundle/Resources/config/serializer</argument>
+                      <argument key="Sonata\MediaBundle">F:\MK\YallaWebSite\vendor\sonata-project\media-bundle/Resources/config/serializer</argument>
+                      <argument key="Application\Sonata\MediaBundle">F:\MK\YallaWebSite\src\Application\Sonata\MediaBundle/Resources/config/serializer</argument>
+                      <argument key="Knp\Bundle\PaginatorBundle">F:\MK\YallaWebSite\vendor\knplabs\knp-paginator-bundle/Resources/config/serializer</argument>
+                      <argument key="Stfalcon\Bundle\TinymceBundle">F:\MK\YallaWebSite\vendor\stfalcon\tinymce-bundle\Stfalcon\Bundle\TinymceBundle/Resources/config/serializer</argument>
+                      <argument key="FOS\UserBundle">F:\MK\YallaWebSite\vendor\friendsofsymfony\user-bundle/Resources/config/serializer</argument>
+                      <argument key="DCS\TagBundle">F:\MK\YallaWebSite\vendor\damianociarla\tag-bundle\DCS\TagBundle/Resources/config/serializer</argument>
+                      <argument key="Knp\Bundle\MenuBundle">F:\MK\YallaWebSite\vendor\knplabs\knp-menu-bundle/Resources/config/serializer</argument>
+                      <argument key="Sonata\SeoBundle">F:\MK\YallaWebSite\vendor\sonata-project\seo-bundle/Resources/config/serializer</argument>
+                      <argument key="Stof\DoctrineExtensionsBundle">F:\MK\YallaWebSite\vendor\stof\doctrine-extensions-bundle/Resources/config/serializer</argument>
+                      <argument key="FOS\JsRoutingBundle">F:\MK\YallaWebSite\vendor\friendsofsymfony\jsrouting-bundle/Resources/config/serializer</argument>
+                      <argument key="HWI\Bundle\OAuthBundle">F:\MK\YallaWebSite\vendor\hwi\oauth-bundle/Resources/config/serializer</argument>
+                      <argument key="Kunstmaan\VotingBundle">F:\MK\YallaWebSite\src\Kunstmaan\VotingBundle/Resources/config/serializer</argument>
+                      <argument key="blackknight467\StarRatingBundle">F:\MK\YallaWebSite\vendor\blackknight467\star-rating-bundle\blackknight467\StarRatingBundle/Resources/config/serializer</argument>
+                      <argument key="AppBundle">F:\MK\YallaWebSite\src\AppBundle/Resources/config/serializer</argument>
+                      <argument key="YallaWebsite\BackendBundle">F:\MK\YallaWebSite\src\YallaWebsite\BackendBundle/Resources/config/serializer</argument>
+                      <argument key="YallaWebsite\FrontendBundle">F:\MK\YallaWebSite\src\YallaWebsite\FrontendBundle/Resources/config/serializer</argument>
+                      <argument key="Symfony\Bundle\DebugBundle">F:\MK\YallaWebSite\vendor\symfony\symfony\src\Symfony\Bundle\DebugBundle/Resources/config/serializer</argument>
+                      <argument key="Symfony\Bundle\WebProfilerBundle">F:\MK\YallaWebSite\vendor\symfony\symfony\src\Symfony\Bundle\WebProfilerBundle/Resources/config/serializer</argument>
+                      <argument key="Sensio\Bundle\DistributionBundle">F:\MK\YallaWebSite\vendor\sensio\distribution-bundle\Sensio\Bundle\DistributionBundle/Resources/config/serializer</argument>
+                      <argument key="Sensio\Bundle\GeneratorBundle">F:\MK\YallaWebSite\vendor\sensio\generator-bundle\Sensio\Bundle\GeneratorBundle/Resources/config/serializer</argument>
                     </argument>
                   </service>
                 </argument>
@@ -7655,37 +7672,37 @@
                 <argument type="service">
                   <service class="Metadata\Driver\FileLocator" public="false">
                     <argument type="collection">
-                      <argument key="Symfony\Bundle\FrameworkBundle">C:\TEMP\YNL_SERVER\vendor\symfony\symfony\src\Symfony\Bundle\FrameworkBundle/Resources/config/serializer</argument>
-                      <argument key="Symfony\Bundle\SecurityBundle">C:\TEMP\YNL_SERVER\vendor\symfony\symfony\src\Symfony\Bundle\SecurityBundle/Resources/config/serializer</argument>
-                      <argument key="Symfony\Bundle\TwigBundle">C:\TEMP\YNL_SERVER\vendor\symfony\symfony\src\Symfony\Bundle\TwigBundle/Resources/config/serializer</argument>
-                      <argument key="Symfony\Bundle\MonologBundle">C:\TEMP\YNL_SERVER\vendor\symfony\monolog-bundle/Resources/config/serializer</argument>
-                      <argument key="Symfony\Bundle\SwiftmailerBundle">C:\TEMP\YNL_SERVER\vendor\symfony\swiftmailer-bundle/Resources/config/serializer</argument>
-                      <argument key="Symfony\Bundle\AsseticBundle">C:\TEMP\YNL_SERVER\vendor\symfony\assetic-bundle/Resources/config/serializer</argument>
-                      <argument key="Doctrine\Bundle\DoctrineBundle">C:\TEMP\YNL_SERVER\vendor\doctrine\doctrine-bundle/Resources/config/serializer</argument>
-                      <argument key="Sensio\Bundle\FrameworkExtraBundle">C:\TEMP\YNL_SERVER\vendor\sensio\framework-extra-bundle/Resources/config/serializer</argument>
-                      <argument key="JMS\SerializerBundle">C:\TEMP\YNL_SERVER\vendor\jms\serializer-bundle\JMS\SerializerBundle/Resources/config/serializer</argument>
-                      <argument key="Sonata\EasyExtendsBundle">C:\TEMP\YNL_SERVER\vendor\sonata-project\easy-extends-bundle/Resources/config/serializer</argument>
-                      <argument key="Sonata\CoreBundle">C:\TEMP\YNL_SERVER\vendor\sonata-project\core-bundle/Resources/config/serializer</argument>
-                      <argument key="Sonata\MediaBundle">C:\TEMP\YNL_SERVER\vendor\sonata-project\media-bundle/Resources/config/serializer</argument>
-                      <argument key="Application\Sonata\MediaBundle">C:\TEMP\YNL_SERVER\src\Application\Sonata\MediaBundle/Resources/config/serializer</argument>
-                      <argument key="Knp\Bundle\PaginatorBundle">C:\TEMP\YNL_SERVER\vendor\knplabs\knp-paginator-bundle/Resources/config/serializer</argument>
-                      <argument key="Stfalcon\Bundle\TinymceBundle">C:\TEMP\YNL_SERVER\vendor\stfalcon\tinymce-bundle\Stfalcon\Bundle\TinymceBundle/Resources/config/serializer</argument>
-                      <argument key="FOS\UserBundle">C:\TEMP\YNL_SERVER\vendor\friendsofsymfony\user-bundle/Resources/config/serializer</argument>
-                      <argument key="DCS\TagBundle">C:\TEMP\YNL_SERVER\vendor\damianociarla\tag-bundle\DCS\TagBundle/Resources/config/serializer</argument>
-                      <argument key="Knp\Bundle\MenuBundle">C:\TEMP\YNL_SERVER\vendor\knplabs\knp-menu-bundle/Resources/config/serializer</argument>
-                      <argument key="Sonata\SeoBundle">C:\TEMP\YNL_SERVER\vendor\sonata-project\seo-bundle/Resources/config/serializer</argument>
-                      <argument key="Stof\DoctrineExtensionsBundle">C:\TEMP\YNL_SERVER\vendor\stof\doctrine-extensions-bundle/Resources/config/serializer</argument>
-                      <argument key="FOS\JsRoutingBundle">C:\TEMP\YNL_SERVER\vendor\friendsofsymfony\jsrouting-bundle/Resources/config/serializer</argument>
-                      <argument key="HWI\Bundle\OAuthBundle">C:\TEMP\YNL_SERVER\vendor\hwi\oauth-bundle/Resources/config/serializer</argument>
-                      <argument key="Kunstmaan\VotingBundle">C:\TEMP\YNL_SERVER\src\Kunstmaan\VotingBundle/Resources/config/serializer</argument>
-                      <argument key="blackknight467\StarRatingBundle">C:\TEMP\YNL_SERVER\vendor\blackknight467\star-rating-bundle\blackknight467\StarRatingBundle/Resources/config/serializer</argument>
-                      <argument key="AppBundle">C:\TEMP\YNL_SERVER\src\AppBundle/Resources/config/serializer</argument>
-                      <argument key="YallaWebsite\BackendBundle">C:\TEMP\YNL_SERVER\src\YallaWebsite\BackendBundle/Resources/config/serializer</argument>
-                      <argument key="YallaWebsite\FrontendBundle">C:\TEMP\YNL_SERVER\src\YallaWebsite\FrontendBundle/Resources/config/serializer</argument>
-                      <argument key="Symfony\Bundle\DebugBundle">C:\TEMP\YNL_SERVER\vendor\symfony\symfony\src\Symfony\Bundle\DebugBundle/Resources/config/serializer</argument>
-                      <argument key="Symfony\Bundle\WebProfilerBundle">C:\TEMP\YNL_SERVER\vendor\symfony\symfony\src\Symfony\Bundle\WebProfilerBundle/Resources/config/serializer</argument>
-                      <argument key="Sensio\Bundle\DistributionBundle">C:\TEMP\YNL_SERVER\vendor\sensio\distribution-bundle\Sensio\Bundle\DistributionBundle/Resources/config/serializer</argument>
-                      <argument key="Sensio\Bundle\GeneratorBundle">C:\TEMP\YNL_SERVER\vendor\sensio\generator-bundle\Sensio\Bundle\GeneratorBundle/Resources/config/serializer</argument>
+                      <argument key="Symfony\Bundle\FrameworkBundle">F:\MK\YallaWebSite\vendor\symfony\symfony\src\Symfony\Bundle\FrameworkBundle/Resources/config/serializer</argument>
+                      <argument key="Symfony\Bundle\SecurityBundle">F:\MK\YallaWebSite\vendor\symfony\symfony\src\Symfony\Bundle\SecurityBundle/Resources/config/serializer</argument>
+                      <argument key="Symfony\Bundle\TwigBundle">F:\MK\YallaWebSite\vendor\symfony\symfony\src\Symfony\Bundle\TwigBundle/Resources/config/serializer</argument>
+                      <argument key="Symfony\Bundle\MonologBundle">F:\MK\YallaWebSite\vendor\symfony\monolog-bundle/Resources/config/serializer</argument>
+                      <argument key="Symfony\Bundle\SwiftmailerBundle">F:\MK\YallaWebSite\vendor\symfony\swiftmailer-bundle/Resources/config/serializer</argument>
+                      <argument key="Symfony\Bundle\AsseticBundle">F:\MK\YallaWebSite\vendor\symfony\assetic-bundle/Resources/config/serializer</argument>
+                      <argument key="Doctrine\Bundle\DoctrineBundle">F:\MK\YallaWebSite\vendor\doctrine\doctrine-bundle/Resources/config/serializer</argument>
+                      <argument key="Sensio\Bundle\FrameworkExtraBundle">F:\MK\YallaWebSite\vendor\sensio\framework-extra-bundle/Resources/config/serializer</argument>
+                      <argument key="JMS\SerializerBundle">F:\MK\YallaWebSite\vendor\jms\serializer-bundle\JMS\SerializerBundle/Resources/config/serializer</argument>
+                      <argument key="Sonata\EasyExtendsBundle">F:\MK\YallaWebSite\vendor\sonata-project\easy-extends-bundle/Resources/config/serializer</argument>
+                      <argument key="Sonata\CoreBundle">F:\MK\YallaWebSite\vendor\sonata-project\core-bundle/Resources/config/serializer</argument>
+                      <argument key="Sonata\MediaBundle">F:\MK\YallaWebSite\vendor\sonata-project\media-bundle/Resources/config/serializer</argument>
+                      <argument key="Application\Sonata\MediaBundle">F:\MK\YallaWebSite\src\Application\Sonata\MediaBundle/Resources/config/serializer</argument>
+                      <argument key="Knp\Bundle\PaginatorBundle">F:\MK\YallaWebSite\vendor\knplabs\knp-paginator-bundle/Resources/config/serializer</argument>
+                      <argument key="Stfalcon\Bundle\TinymceBundle">F:\MK\YallaWebSite\vendor\stfalcon\tinymce-bundle\Stfalcon\Bundle\TinymceBundle/Resources/config/serializer</argument>
+                      <argument key="FOS\UserBundle">F:\MK\YallaWebSite\vendor\friendsofsymfony\user-bundle/Resources/config/serializer</argument>
+                      <argument key="DCS\TagBundle">F:\MK\YallaWebSite\vendor\damianociarla\tag-bundle\DCS\TagBundle/Resources/config/serializer</argument>
+                      <argument key="Knp\Bundle\MenuBundle">F:\MK\YallaWebSite\vendor\knplabs\knp-menu-bundle/Resources/config/serializer</argument>
+                      <argument key="Sonata\SeoBundle">F:\MK\YallaWebSite\vendor\sonata-project\seo-bundle/Resources/config/serializer</argument>
+                      <argument key="Stof\DoctrineExtensionsBundle">F:\MK\YallaWebSite\vendor\stof\doctrine-extensions-bundle/Resources/config/serializer</argument>
+                      <argument key="FOS\JsRoutingBundle">F:\MK\YallaWebSite\vendor\friendsofsymfony\jsrouting-bundle/Resources/config/serializer</argument>
+                      <argument key="HWI\Bundle\OAuthBundle">F:\MK\YallaWebSite\vendor\hwi\oauth-bundle/Resources/config/serializer</argument>
+                      <argument key="Kunstmaan\VotingBundle">F:\MK\YallaWebSite\src\Kunstmaan\VotingBundle/Resources/config/serializer</argument>
+                      <argument key="blackknight467\StarRatingBundle">F:\MK\YallaWebSite\vendor\blackknight467\star-rating-bundle\blackknight467\StarRatingBundle/Resources/config/serializer</argument>
+                      <argument key="AppBundle">F:\MK\YallaWebSite\src\AppBundle/Resources/config/serializer</argument>
+                      <argument key="YallaWebsite\BackendBundle">F:\MK\YallaWebSite\src\YallaWebsite\BackendBundle/Resources/config/serializer</argument>
+                      <argument key="YallaWebsite\FrontendBundle">F:\MK\YallaWebSite\src\YallaWebsite\FrontendBundle/Resources/config/serializer</argument>
+                      <argument key="Symfony\Bundle\DebugBundle">F:\MK\YallaWebSite\vendor\symfony\symfony\src\Symfony\Bundle\DebugBundle/Resources/config/serializer</argument>
+                      <argument key="Symfony\Bundle\WebProfilerBundle">F:\MK\YallaWebSite\vendor\symfony\symfony\src\Symfony\Bundle\WebProfilerBundle/Resources/config/serializer</argument>
+                      <argument key="Sensio\Bundle\DistributionBundle">F:\MK\YallaWebSite\vendor\sensio\distribution-bundle\Sensio\Bundle\DistributionBundle/Resources/config/serializer</argument>
+                      <argument key="Sensio\Bundle\GeneratorBundle">F:\MK\YallaWebSite\vendor\sensio\generator-bundle\Sensio\Bundle\GeneratorBundle/Resources/config/serializer</argument>
                     </argument>
                   </service>
                 </argument>

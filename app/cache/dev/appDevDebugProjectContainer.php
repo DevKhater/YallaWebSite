@@ -350,7 +350,7 @@ class appDevDebugProjectContainer extends Container
             'sonata.media.provider.image' => 'getSonata_Media_Provider_ImageService',
             'sonata.media.provider.vimeo' => 'getSonata_Media_Provider_VimeoService',
             'sonata.media.provider.youtube' => 'getSonata_Media_Provider_YoutubeService',
-            'sonata.media.resizer.fixeddimensions' => 'getSonata_Media_Resizer_FixeddimensionsService',
+            'sonata.media.resizer.custom' => 'getSonata_Media_Resizer_CustomService',
             'sonata.media.resizer.simple' => 'getSonata_Media_Resizer_SimpleService',
             'sonata.media.resizer.square' => 'getSonata_Media_Resizer_SquareService',
             'sonata.media.security.connected_strategy' => 'getSonata_Media_Security_ConnectedStrategyService',
@@ -1072,7 +1072,7 @@ class appDevDebugProjectContainer extends Container
         $d->addEventSubscriber($this->get('sonata.media.doctrine.event_subscriber'));
         $d->addEventSubscriber($c);
 
-        return $this->services['doctrine.dbal.default_connection'] = $this->get('doctrine.dbal.connection_factory')->createConnection(array('driver' => 'pdo_mysql', 'host' => '127.0.0.1', 'port' => 3306, 'dbname' => 'yallaNightLife', 'user' => 'root', 'password' => 123123123, 'charset' => 'UTF8', 'driverOptions' => array(), 'defaultTableOptions' => array()), $b, $d, array());
+        return $this->services['doctrine.dbal.default_connection'] = $this->get('doctrine.dbal.connection_factory')->createConnection(array('driver' => 'pdo_mysql', 'host' => '127.0.0.1', 'port' => 3306, 'dbname' => 'ynl_us_test', 'user' => 'root', 'password' => NULL, 'charset' => 'UTF8', 'driverOptions' => array(), 'defaultTableOptions' => array()), $b, $d, array());
     }
 
     /**
@@ -1191,7 +1191,7 @@ class appDevDebugProjectContainer extends Container
     {
         $this->services['doctrine_cache.providers.doctrine.orm.default_metadata_cache'] = $instance = new \Doctrine\Common\Cache\ArrayCache();
 
-        $instance->setNamespace('sf2orm_default_7159355994b96c8d81d90096e79a2f8e416d9704e4afce7cb0b728ea79621006');
+        $instance->setNamespace('sf2orm_default_81b6399474819fcf2c0477408e7f3f98fd94c368eb2434d730d620bc9406766a');
 
         return $instance;
     }
@@ -1208,7 +1208,7 @@ class appDevDebugProjectContainer extends Container
     {
         $this->services['doctrine_cache.providers.doctrine.orm.default_query_cache'] = $instance = new \Doctrine\Common\Cache\ArrayCache();
 
-        $instance->setNamespace('sf2orm_default_7159355994b96c8d81d90096e79a2f8e416d9704e4afce7cb0b728ea79621006');
+        $instance->setNamespace('sf2orm_default_81b6399474819fcf2c0477408e7f3f98fd94c368eb2434d730d620bc9406766a');
 
         return $instance;
     }
@@ -1225,7 +1225,7 @@ class appDevDebugProjectContainer extends Container
     {
         $this->services['doctrine_cache.providers.doctrine.orm.default_result_cache'] = $instance = new \Doctrine\Common\Cache\ArrayCache();
 
-        $instance->setNamespace('sf2orm_default_7159355994b96c8d81d90096e79a2f8e416d9704e4afce7cb0b728ea79621006');
+        $instance->setNamespace('sf2orm_default_81b6399474819fcf2c0477408e7f3f98fd94c368eb2434d730d620bc9406766a');
 
         return $instance;
     }
@@ -3521,7 +3521,7 @@ class appDevDebugProjectContainer extends Container
         $h = new \Symfony\Component\Security\Http\Authentication\DefaultAuthenticationFailureHandler($e, $d, array(), $b);
         $h->setOptions(array('login_path' => '/login', 'failure_path' => NULL, 'failure_forward' => false, 'failure_path_parameter' => '_failure_path'));
 
-        return $this->services['security.firewall.map.context.main'] = new \Symfony\Bundle\SecurityBundle\Security\FirewallContext(array(0 => $this->get('security.channel_listener'), 1 => new \Symfony\Component\Security\Http\Firewall\ContextListener($a, array(0 => $this->get('fos_user.user_provider.username')), 'main', $b, $c), 2 => new \Symfony\Component\Security\Http\Firewall\LogoutListener($a, $d, new \Symfony\Component\Security\Http\Logout\DefaultLogoutSuccessHandler($d, '/'), array('csrf_parameter' => '_csrf_token', 'intention' => 'logout', 'logout_path' => '/logout')), 3 => new \Symfony\Component\Security\Http\Firewall\UsernamePasswordFormAuthenticationListener($a, $f, $this->get('security.authentication.session_strategy'), $d, 'main', $g, $h, array('check_path' => '/login_check', 'use_forward' => false, 'require_previous_session' => true, 'username_parameter' => '_username', 'password_parameter' => '_password', 'csrf_parameter' => '_csrf_token', 'intention' => 'authenticate', 'post_only' => true), $b, $c, $this->get('form.csrf_provider')), 4 => new \Symfony\Component\Security\Http\Firewall\AnonymousAuthenticationListener($a, '57586a8a415705.60089759', $b, $f), 5 => $this->get('security.access_listener')), new \Symfony\Component\Security\Http\Firewall\ExceptionListener($a, $this->get('security.authentication.trust_resolver'), $d, 'main', new \Symfony\Component\Security\Http\EntryPoint\FormAuthenticationEntryPoint($e, $d, '/login', false), NULL, NULL, $b, false));
+        return $this->services['security.firewall.map.context.main'] = new \Symfony\Bundle\SecurityBundle\Security\FirewallContext(array(0 => $this->get('security.channel_listener'), 1 => new \Symfony\Component\Security\Http\Firewall\ContextListener($a, array(0 => $this->get('fos_user.user_provider.username')), 'main', $b, $c), 2 => new \Symfony\Component\Security\Http\Firewall\LogoutListener($a, $d, new \Symfony\Component\Security\Http\Logout\DefaultLogoutSuccessHandler($d, '/'), array('csrf_parameter' => '_csrf_token', 'intention' => 'logout', 'logout_path' => '/logout')), 3 => new \Symfony\Component\Security\Http\Firewall\UsernamePasswordFormAuthenticationListener($a, $f, $this->get('security.authentication.session_strategy'), $d, 'main', $g, $h, array('check_path' => '/login_check', 'use_forward' => false, 'require_previous_session' => true, 'username_parameter' => '_username', 'password_parameter' => '_password', 'csrf_parameter' => '_csrf_token', 'intention' => 'authenticate', 'post_only' => true), $b, $c, $this->get('form.csrf_provider')), 4 => new \Symfony\Component\Security\Http\Firewall\AnonymousAuthenticationListener($a, '57595476d7c275.12067290', $b, $f), 5 => $this->get('security.access_listener')), new \Symfony\Component\Security\Http\Firewall\ExceptionListener($a, $this->get('security.authentication.trust_resolver'), $d, 'main', new \Symfony\Component\Security\Http\EntryPoint\FormAuthenticationEntryPoint($e, $d, '/login', false), NULL, NULL, $b, false));
     }
 
     /**
@@ -3552,7 +3552,7 @@ class appDevDebugProjectContainer extends Container
         $i->setResourceOwnerMap($this->get('hwi_oauth.resource_ownermap.secured_area'));
         $i->setCheckPaths(array(0 => '/secured/login/login_facebook'));
 
-        return $this->services['security.firewall.map.context.secured_area'] = new \Symfony\Bundle\SecurityBundle\Security\FirewallContext(array(0 => $this->get('security.channel_listener'), 1 => new \Symfony\Component\Security\Http\Firewall\ContextListener($a, array(0 => $this->get('fos_user.user_provider.username')), 'secured_area', $b, $c), 2 => $i, 3 => new \Symfony\Component\Security\Http\Firewall\AnonymousAuthenticationListener($a, '57586a8a415705.60089759', $b, $f), 4 => $this->get('security.access_listener')), new \Symfony\Component\Security\Http\Firewall\ExceptionListener($a, $this->get('security.authentication.trust_resolver'), $d, 'secured_area', new \HWI\Bundle\OAuthBundle\Security\Http\EntryPoint\OAuthEntryPoint($e, $d, '/secured/login', false), NULL, NULL, $b, false));
+        return $this->services['security.firewall.map.context.secured_area'] = new \Symfony\Bundle\SecurityBundle\Security\FirewallContext(array(0 => $this->get('security.channel_listener'), 1 => new \Symfony\Component\Security\Http\Firewall\ContextListener($a, array(0 => $this->get('fos_user.user_provider.username')), 'secured_area', $b, $c), 2 => $i, 3 => new \Symfony\Component\Security\Http\Firewall\AnonymousAuthenticationListener($a, '57595476d7c275.12067290', $b, $f), 4 => $this->get('security.access_listener')), new \Symfony\Component\Security\Http\Firewall\ExceptionListener($a, $this->get('security.authentication.trust_resolver'), $d, 'secured_area', new \HWI\Bundle\OAuthBundle\Security\Http\EntryPoint\OAuthEntryPoint($e, $d, '/secured/login', false), NULL, NULL, $b, false));
     }
 
     /**
@@ -4667,7 +4667,7 @@ class appDevDebugProjectContainer extends Container
         $instance->addContext('article', array(0 => 'sonata.media.provider.image'), array('article_preview' => array('width' => 100, 'quality' => 100, 'height' => false, 'format' => 'jpg', 'constraint' => true), 'article_small' => array('width' => 200, 'quality' => 100, 'height' => false, 'format' => 'jpg', 'constraint' => true), 'article_medium' => array('width' => 400, 'quality' => 100, 'height' => false, 'format' => 'jpg', 'constraint' => true), 'article_large' => array('width' => 600, 'quality' => 100, 'height' => false, 'format' => 'jpg', 'constraint' => true), 'article_displayIndex' => array('width' => 370, 'height' => 250, 'quality' => 50, 'format' => 'jpg', 'constraint' => true), 'article_homePage' => array('width' => 920, 'height' => 500, 'quality' => 50, 'format' => 'jpg', 'constraint' => true), 'article_mainHomeArt' => array('width' => 1000, 'height' => 500, 'quality' => 50, 'format' => 'jpg', 'constraint' => true)), array('strategy' => 'sonata.media.security.superadmin_strategy', 'mode' => 'http'));
         $instance->addContext('gallery', array(0 => 'sonata.media.provider.image'), array('gallery_preview' => array('width' => 100, 'quality' => 100, 'height' => false, 'format' => 'jpg', 'constraint' => true), 'gallery_small' => array('width' => 200, 'quality' => 100, 'height' => false, 'format' => 'jpg', 'constraint' => true), 'gallery_medium' => array('width' => 400, 'quality' => 100, 'height' => false, 'format' => 'jpg', 'constraint' => true), 'gallery_large' => array('width' => 600, 'quality' => 100, 'height' => false, 'format' => 'jpg', 'constraint' => true), 'gallery_displayIndex' => array('width' => 370, 'height' => 370, 'quality' => 50, 'format' => 'jpg', 'constraint' => true), 'gallery_homePage' => array('width' => 920, 'height' => 500, 'quality' => 50, 'format' => 'jpg', 'constraint' => true)), array('strategy' => 'sonata.media.security.superadmin_strategy', 'mode' => 'http'));
         $instance->addContext('profile', array(0 => 'sonata.media.provider.image'), array('profile_preview' => array('width' => 100, 'quality' => 100, 'height' => false, 'format' => 'jpg', 'constraint' => true), 'profile_small' => array('width' => 200, 'quality' => 100, 'height' => false, 'format' => 'jpg', 'constraint' => true), 'profile_medium' => array('width' => 400, 'quality' => 100, 'height' => false, 'format' => 'jpg', 'constraint' => true)), array('strategy' => 'sonata.media.security.superadmin_strategy', 'mode' => 'http'));
-        $instance->addContext('adv', array(0 => 'sonata.media.provider.image'), array('adv_horiz' => array('width' => 590, 'height' => 90, 'quality' => 100, 'format' => 'jpg', 'constraint' => true), 'adv_verti' => array('width' => 120, 'height' => 600, 'quality' => 100, 'format' => 'jpg', 'constraint' => true), 'adv_snapadv' => array('width' => 300, 'height' => 300, 'constraint' => false, 'quality' => 80, 'format' => 'jpg')), array('strategy' => 'sonata.media.security.superadmin_strategy', 'mode' => 'http'));
+        $instance->addContext('adv', array(0 => 'sonata.media.provider.image'), array('adv_horiz' => array('width' => 590, 'height' => 90, 'quality' => 100, 'format' => 'jpg', 'constraint' => true), 'adv_verti' => array('width' => 120, 'height' => 600, 'quality' => 100, 'format' => 'jpg', 'constraint' => true), 'adv_snapadv' => array('width' => 300, 'height' => 300, 'quality' => 100, 'format' => 'jpg', 'constraint' => true), 'adv_event' => array('width' => false, 'height' => false, 'quality' => 80, 'format' => 'jpg', 'constraint' => true)), array('strategy' => 'sonata.media.security.superadmin_strategy', 'mode' => 'http'));
         $instance->addContext('member', array(0 => 'sonata.media.provider.image'), array('member_small' => array('width' => 200, 'quality' => 100, 'height' => false, 'format' => 'jpg', 'constraint' => true), 'member_displayIndex' => array('width' => 400, 'height' => 400, 'quality' => 50, 'format' => 'jpg', 'constraint' => true)), array('strategy' => 'sonata.media.security.superadmin_strategy', 'mode' => 'http'));
         $instance->addDownloadSecurity('sonata.media.security.superadmin_strategy', $this->get('sonata.media.security.superadmin_strategy'));
         $instance->addProvider('sonata.media.provider.image', $this->get('sonata.media.provider.image'));
@@ -4777,10 +4777,11 @@ class appDevDebugProjectContainer extends Container
         $instance->addFormat('profile_medium', array('width' => 400, 'quality' => 100, 'height' => false, 'format' => 'jpg', 'constraint' => true));
         $instance->addFormat('adv_horiz', array('width' => 590, 'height' => 90, 'quality' => 100, 'format' => 'jpg', 'constraint' => true));
         $instance->addFormat('adv_verti', array('width' => 120, 'height' => 600, 'quality' => 100, 'format' => 'jpg', 'constraint' => true));
-        $instance->addFormat('adv_snapadv', array('width' => 300, 'height' => 300, 'constraint' => false, 'quality' => 80, 'format' => 'jpg'));
+        $instance->addFormat('adv_snapadv', array('width' => 300, 'height' => 300, 'quality' => 100, 'format' => 'jpg', 'constraint' => true));
+        $instance->addFormat('adv_event', array('width' => false, 'height' => false, 'quality' => 80, 'format' => 'jpg', 'constraint' => true));
         $instance->addFormat('member_small', array('width' => 200, 'quality' => 100, 'height' => false, 'format' => 'jpg', 'constraint' => true));
         $instance->addFormat('member_displayIndex', array('width' => 400, 'height' => 400, 'quality' => 50, 'format' => 'jpg', 'constraint' => true));
-        $instance->setResizer($this->get('sonata.media.resizer.fixeddimensions'));
+        $instance->setResizer($this->get('sonata.media.resizer.custom'));
         $instance->addFormat('admin', array('quality' => 80, 'width' => 100, 'format' => 'jpg', 'height' => false, 'constraint' => true));
 
         return $instance;
@@ -4829,16 +4830,16 @@ class appDevDebugProjectContainer extends Container
     }
 
     /**
-     * Gets the 'sonata.media.resizer.fixeddimensions' service.
+     * Gets the 'sonata.media.resizer.custom' service.
      *
      * This service is shared.
      * This method always returns the same instance of the service.
      *
-     * @return \Application\Sonata\MediaBundle\Resizer\FixedDimensionsResizer A Application\Sonata\MediaBundle\Resizer\FixedDimensionsResizer instance.
+     * @return \YallaWebsite\BackendBundle\Resizer\CustomResizer A YallaWebsite\BackendBundle\Resizer\CustomResizer instance.
      */
-    protected function getSonata_Media_Resizer_FixeddimensionsService()
+    protected function getSonata_Media_Resizer_CustomService()
     {
-        return $this->services['sonata.media.resizer.fixeddimensions'] = new \Application\Sonata\MediaBundle\Resizer\FixedDimensionsResizer($this->get('sonata.media.adapter.image.gd'), 'outbound', $this->get('sonata.media.metadata.proxy'));
+        return $this->services['sonata.media.resizer.custom'] = new \YallaWebsite\BackendBundle\Resizer\CustomResizer($this->get('sonata.media.adapter.image.gd'), 'outbound', $this->get('sonata.media.metadata.proxy'));
     }
 
     /**
@@ -6352,7 +6353,7 @@ class appDevDebugProjectContainer extends Container
     {
         $a = $this->get('hwi_oauth.user_checker');
 
-        $this->services['security.authentication.manager'] = $instance = new \Symfony\Component\Security\Core\Authentication\AuthenticationProviderManager(array(0 => new \Symfony\Component\Security\Core\Authentication\Provider\DaoAuthenticationProvider($this->get('fos_user.user_provider.username'), $a, 'main', $this->get('security.encoder_factory'), true), 1 => new \Symfony\Component\Security\Core\Authentication\Provider\AnonymousAuthenticationProvider('57586a8a415705.60089759'), 2 => new \HWI\Bundle\OAuthBundle\Security\Core\Authentication\Provider\OAuthProvider($this->get('my_user_provider'), $this->get('hwi_oauth.resource_ownermap.secured_area'), $a), 3 => new \Symfony\Component\Security\Core\Authentication\Provider\AnonymousAuthenticationProvider('57586a8a415705.60089759')), true);
+        $this->services['security.authentication.manager'] = $instance = new \Symfony\Component\Security\Core\Authentication\AuthenticationProviderManager(array(0 => new \Symfony\Component\Security\Core\Authentication\Provider\DaoAuthenticationProvider($this->get('fos_user.user_provider.username'), $a, 'main', $this->get('security.encoder_factory'), true), 1 => new \Symfony\Component\Security\Core\Authentication\Provider\AnonymousAuthenticationProvider('57595476d7c275.12067290'), 2 => new \HWI\Bundle\OAuthBundle\Security\Core\Authentication\Provider\OAuthProvider($this->get('my_user_provider'), $this->get('hwi_oauth.resource_ownermap.secured_area'), $a), 3 => new \Symfony\Component\Security\Core\Authentication\Provider\AnonymousAuthenticationProvider('57595476d7c275.12067290')), true);
 
         $instance->setEventDispatcher($this->get('debug.event_dispatcher'));
 
@@ -6664,9 +6665,9 @@ class appDevDebugProjectContainer extends Container
             'kernel.container_class' => 'appDevDebugProjectContainer',
             'database_host' => '127.0.0.1',
             'database_port' => 3306,
-            'database_name' => 'yallaNightLife',
+            'database_name' => 'ynl_us_test',
             'database_user' => 'root',
-            'database_password' => 123123123,
+            'database_password' => NULL,
             'mailer_transport' => 'smtp',
             'mailer_host' => '127.0.0.1',
             'mailer_user' => NULL,
@@ -7117,7 +7118,7 @@ class appDevDebugProjectContainer extends Container
             ),
             'assetic.java.bin' => 'C:\\ProgramData\\Oracle\\Java\\javapath\\java.EXE',
             'assetic.node.bin' => 'C:\\Program Files\\nodejs\\\\node.EXE',
-            'assetic.ruby.bin' => '/usr/bin/ruby',
+            'assetic.ruby.bin' => 'C:\\Ruby22\\bin\\ruby.EXE',
             'assetic.sass.bin' => '/usr/bin/sass',
             'assetic.reactjsx.bin' => '/usr/bin/jsx',
             'assetic.filter.lessphp.class' => 'Assetic\\Filter\\LessphpFilter',
